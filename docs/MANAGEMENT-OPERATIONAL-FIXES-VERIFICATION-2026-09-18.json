@@ -1,0 +1,937 @@
+{
+  "schema": "codex-management-operational-fixes-v1",
+  "status": "verified_management_candidate",
+  "completed_at": "2026-09-18T07:00:12.532061+00:00",
+  "iteration": "operational-fixes-20260918",
+  "deployed": false,
+  "full_reference_parity": false,
+  "previous_candidates_unchanged": true,
+  "scope": "Non-billing account scheduling/query resilience and operational usage time/coverage fixes.",
+  "separate_owner_changes": [
+    "The frozen Go source also contains separately owned native startup and WebSocket budget changes; this management artifact is not their release approval."
+  ],
+  "billing_enabled": false,
+  "retired_suites_counted_as_passed": false,
+  "go_source_sha256": "bdfbf92ba3102028440c00f75fb8d728f117fc5f4f3f227782429198b2147c82",
+  "go_source_files": 225,
+  "source_archive": ".local/management-parity/local-race-20260918t065425-d36576/source.tar.gz",
+  "source_archive_sha256": "028415dc9bdb795dc532d8219fe486719423d0793d8375b0b7ca66b63918f820",
+  "binaries": {
+    "codex-agent-windows-amd64.exe": {
+      "path": ".local/management-parity/local-race-20260918t065425-d36576/codex-agent-windows-amd64.exe",
+      "sha256": "613d7f9d195d8f57ff16f767e75b1d6709983616d4c065173802db471bd0bae4",
+      "size": 15729152
+    },
+    "codex-agent-linux-amd64": {
+      "path": ".local/management-parity/local-race-20260918t065425-d36576/codex-agent-linux-amd64",
+      "sha256": "1cf78c323fde2a4a26fbe728617ec861513b75a6142e8cff267da7b2178aefe1",
+      "size": 15290530
+    }
+  },
+  "frontend": {
+    "manifest_sha256": "0e286edbfa6e169513ab62d8bdfa57552867e8a7a7ad3cdf664a140805ab36af",
+    "frontend_sha256": "20254031d4fc61d78a3e1e04054b454b2845e7098611a09f67be44ede7ebc333",
+    "source_aggregate_sha256": "b0abc24906ec24e1551f74025df9c0b9976b9cd6078c252f106199d1cf9713b7",
+    "entries": {
+      "Accounts": "accounts-managed-DDB1Q0kq.js",
+      "Logs": "logs-managed-Bgcf_x3-.js"
+    },
+    "file_count": 54,
+    "source_file_count": 65,
+    "unchanged_baseline_resources": 48,
+    "archive": ".local/management-parity/operational-fixes-20260918/frontend-0e286edbfa6e.zip",
+    "archive_sha256": "227904fe278e62c2568198b424df9dc7fb279f8120e2489e6ddf3dd057d39f41",
+    "source_archive": ".local/management-parity/operational-fixes-20260918/frontend-source-0e286edbfa6e.tar.gz",
+    "source_archive_sha256": "7780841d2771a3fb1ed6284f5a285dcda72bca21d73523b547cb26bf4d03ebe5"
+  },
+  "checks": {
+    "management_linux_race": {
+      "pass": 94,
+      "skip": 0,
+      "fail": 0
+    },
+    "management_linux_race_events": {
+      "pass": 277,
+      "skip": 0,
+      "fail": 0
+    },
+    "full_go_test": {
+      "pass": 454,
+      "skip": 103,
+      "fail": 0
+    },
+    "full_go_test_events": {
+      "pass": 1176,
+      "skip": 116,
+      "fail": 0
+    },
+    "vet": "pass",
+    "windows_build": "pass",
+    "linux_build": "pass",
+    "frontend_node": {
+      "tests": 146,
+      "pass": 146,
+      "fail": 0,
+      "skipped": 0
+    },
+    "accounts_browser_groups": 53,
+    "logs_browser_groups": 38,
+    "browser_network": "isolated synthetic API",
+    "screenshots": {
+      "accounts": 56,
+      "logs": 138
+    }
+  },
+  "preview_evidence": "Published separately by the local preview owner; no preview directories or credentials read by this packager.",
+  "limits": [
+    "Environment-dependent Go skips remain separate from passes.",
+    "Historical missing observations remain unknown.",
+    "No deployment, rebuild, service change, upstream request or user data deletion performed."
+  ],
+  "evidence": [
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-batch-reauthorize-1440.png",
+      "sha256": "80ac2cdf6db8f453866e20a17038f37b8fde7897f2532412b350488d59326d46"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-controls-1440.png",
+      "sha256": "40a0a38a5c350aeb99b2e852055e03d52d4356e78ec180e6d22ab8f10fd1bb78"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-controls-320.png",
+      "sha256": "2d2ff1e001b69acac3071c41991ce0648bb7d8cf370ac899195b55dfb5822110"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-crs-1440.png",
+      "sha256": "880f68f5eedb3490e5b1745aea667424cbedea46a48e20cae724539383428457"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-resource-restore-1440.png",
+      "sha256": "c4a67027e9f0e0e5e46752d0f8b1c1fc4abd69ce76482f61dd70444d75a4b30e"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-resource-restore-320.png",
+      "sha256": "d2c4cf0e559219345df2fa3acf3b03e7da62e6c582bff25f1fb0598ddad4b549"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-runtime-1440.png",
+      "sha256": "f51a5b36927b3f0a5062a7042d314b5a56386baae0098048a2ce72baf476582e"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-runtime-320.png",
+      "sha256": "8a7b73ee8aaf41fc79edb55f9cb249b9465f2939e652c6b3fea54447d0e5d6f6"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-runtime-policy-1440.png",
+      "sha256": "bc25f3ce2fc18e6f1f293557d21a83bd1442f0b7b85430aaadb3cb50e06c3c85"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-runtime-policy-320.png",
+      "sha256": "b4778df49df3605b20e3cc2846c6b83d5a01f4c10c3258ca952b47a87c8db25c"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-schedule-unknown-dark-1440.png",
+      "sha256": "13d4a2003cbf93c3614c2169bf0a3c5c41b3692d2f11d0bbbb6d14610219dc0e"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-schedule-unknown-dark-390.png",
+      "sha256": "bee837b91cd65f737e7892157040efa122a13c61907dfea9364792023be9c2d9"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-schedule-unknown-light-1440.png",
+      "sha256": "feba128b7478e9ab068285f77ab915d1209a579c3ef55273dfc2751401c8311e"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-schedule-unknown-light-390.png",
+      "sha256": "9be37dda867ccb7fe70e5aeb03df0b8b212bec54c280e28e6af4070d39b9f49a"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-schedule-unknown-mint-1440.png",
+      "sha256": "fe1a39035904f2ce6cf5cc77c9b3cf86c7a3dc2a93d040fc1aca69e8c8b2588c"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-schedule-unknown-mint-390.png",
+      "sha256": "953afe6c2c57310b67e84252f0b2cf367b93514d75e8c7d118fc7b42b1adcedd"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-schedule-unknown-ocean-1440.png",
+      "sha256": "d5b1253d87554cdb26edbf9e8b22268c69ae159c9f676caf38041515199a47fb"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-schedule-unknown-ocean-390.png",
+      "sha256": "ffb13243282634a17a2652a5864307ab6f096ca9cbc7382b1f599b8f585d8fcb"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-schedules-1440.png",
+      "sha256": "6c2b9ac5d980f0fb6cf00eed310358bc473ce900305abed576f79930e477b9e8"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-schedules-320.png",
+      "sha256": "a428a4d6229a027814982f9cfe2a5b8a78f89d65a5cb9e73bbf7f8d51498c90a"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-statistics-1440.png",
+      "sha256": "1d0f5988570f4e49a54c80b77f786dbe7306637c5466f54d553c7fcd07feeadb"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-usage-summary-dark-1440.png",
+      "sha256": "7e1335245017034e7f030230f53efd6d1d01e36f31fdb95d52506dbd31d5fa38"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-usage-summary-dark-390.png",
+      "sha256": "52f3a682090f7c150994831c7cb8e3f561a830e5d5ee1059e49c48a15b05cd06"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-usage-summary-light-1440.png",
+      "sha256": "96fa12b5d7246da679f9bea0c0f6332f8874f869dd26045f24a95c72caa2baa6"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-usage-summary-light-390.png",
+      "sha256": "d474350fe53fb9d93f4f989734eb162047dac0000558b938c7bbb384bf7bb23c"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-usage-summary-mint-1440.png",
+      "sha256": "96fa12b5d7246da679f9bea0c0f6332f8874f869dd26045f24a95c72caa2baa6"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-usage-summary-mint-390.png",
+      "sha256": "d474350fe53fb9d93f4f989734eb162047dac0000558b938c7bbb384bf7bb23c"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-usage-summary-ocean-1440.png",
+      "sha256": "96fa12b5d7246da679f9bea0c0f6332f8874f869dd26045f24a95c72caa2baa6"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-usage-summary-ocean-390.png",
+      "sha256": "d474350fe53fb9d93f4f989734eb162047dac0000558b938c7bbb384bf7bb23c"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-usage-trend-dark-1440.png",
+      "sha256": "e0a117880f27e72b2da33e4f12447bf2944ac6603b6378c424768e543faf6c32"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-usage-trend-dark-390.png",
+      "sha256": "40617061d65bda8e42f4ea73ddcaf153f45a46af8efb4bbc9b3fa9ca9fdde5ba"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-usage-trend-light-1440.png",
+      "sha256": "0df0a252ac5c6b27891b6f98b158d49ab7432543d4fb8d1e757c1117bf319579"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-usage-trend-light-390.png",
+      "sha256": "1000f649be359f0ba358ee7175f557d0c7594d64efb06b2ed22610cf853ef5ab"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-usage-trend-mint-1440.png",
+      "sha256": "0df0a252ac5c6b27891b6f98b158d49ab7432543d4fb8d1e757c1117bf319579"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-usage-trend-mint-390.png",
+      "sha256": "1000f649be359f0ba358ee7175f557d0c7594d64efb06b2ed22610cf853ef5ab"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-usage-trend-ocean-1440.png",
+      "sha256": "0df0a252ac5c6b27891b6f98b158d49ab7432543d4fb8d1e757c1117bf319579"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/account-usage-trend-ocean-390.png",
+      "sha256": "1000f649be359f0ba358ee7175f557d0c7594d64efb06b2ed22610cf853ef5ab"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/external-lease-expired-confirm-320.png",
+      "sha256": "9a4ff480f16d9ff134abab89573b4e17b9429674562258a51d42e1470bc26260"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/external-lease-independent-receipt-dark-1440.png",
+      "sha256": "5531f5dc0315f02f91366ecb0f672a0916589d7cfda291b50c83238e6a6dc39f"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/external-lease-independent-receipt-dark-390.png",
+      "sha256": "4dbbb6e31fd9e50442a5df36a819cf430095681e1598b7f0752f2e3adf274773"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/external-lease-independent-receipt-light-1440.png",
+      "sha256": "d82d1816a02417cd0f2b45a4437ed9ea491cd0621616b61d21b922e2631ac59b"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/external-lease-independent-receipt-light-390.png",
+      "sha256": "77069759d43c4ac5c620cc3d7a2cd30b7d244d382ad80ec8a72ee5ca8212cd9c"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/external-lease-independent-receipt-mint-1440.png",
+      "sha256": "430f48cb3187aeafd69c656cd07dedca29304a45e0ff6fb85302ad0d5ce1089e"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/external-lease-independent-receipt-mint-390.png",
+      "sha256": "d993c2b0d73a82b0aa96620f0426bd392573fe07cbb03181607eaa0689366b4f"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/external-lease-independent-receipt-ocean-1440.png",
+      "sha256": "74366596a828738fdf8cb5d15a9a541c3f1b532d2f57c8218066904024c314d2"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/external-lease-independent-receipt-ocean-390.png",
+      "sha256": "4d97218c2bf016f2be7e5599ddd9e3f82270f08a82678aac01ce1c2be2cf82f4"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/external-lease-preview-dark-1440.png",
+      "sha256": "b562a973bc866874d39fa1602e4bb91c8ee0569ea856c33be9538f7805a3a35e"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/external-lease-preview-dark-390.png",
+      "sha256": "5118e7bf0e03e4f6fac646f1858463f02b40a600b47367a0cb2b41e102fa156c"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/external-lease-preview-light-1440.png",
+      "sha256": "ea449c90b1302fac1151f6d97d8c7d434d98944530e2f6c87ca5493df1ff33c3"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/external-lease-preview-light-390.png",
+      "sha256": "8054ba1c3a0cde4ad4c7d18a5c2ca663d7f736aa6df2e4d6f7a02a27d111ee90"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/external-lease-preview-mint-1440.png",
+      "sha256": "ea449c90b1302fac1151f6d97d8c7d434d98944530e2f6c87ca5493df1ff33c3"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/external-lease-preview-mint-390.png",
+      "sha256": "8054ba1c3a0cde4ad4c7d18a5c2ca663d7f736aa6df2e4d6f7a02a27d111ee90"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/external-lease-preview-ocean-1440.png",
+      "sha256": "ea449c90b1302fac1151f6d97d8c7d434d98944530e2f6c87ca5493df1ff33c3"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/external-lease-preview-ocean-390.png",
+      "sha256": "8054ba1c3a0cde4ad4c7d18a5c2ca663d7f736aa6df2e4d6f7a02a27d111ee90"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/lease-backup-ready-1440.png",
+      "sha256": "2da48275f616e7dea017a799c93404340bca26c140232bb5b324eedd5647fb17"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/lease-backup-ready-320.png",
+      "sha256": "eed20d796b85064138ad682244e7e508ec799c8a2f366ccb9b5d18dc57f34a21"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/report.json",
+      "sha256": "2fb73777a04cdb493938eaa02e88402473d500b57b8958437630de10b22cb7e1"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/account-browser/schedule-visual-report.json",
+      "sha256": "b475d67bfacffe8426c11041fca44c71ab7da040f6433ba924e71bd3f25eadcd"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/accounts-no-billing-verification.json",
+      "sha256": "1dcd36211ce61bd918840103ca46f89e78415e311a9c6f9b220eec62d6e39a52"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/build-manifest.json",
+      "sha256": "0e286edbfa6e169513ab62d8bdfa57552867e8a7a7ad3cdf664a140805ab36af"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/frontend-unit-report.json",
+      "sha256": "b3fdebad47b0cb91ae2050a33fc9036174117861fad162d38359ac1019c72deb"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/frontend-unit.tap",
+      "sha256": "237c187c8985a02eb2f360c937f2b92de7b2c84c8c99b8dab44425ceb843b535"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/error-review-list-dark-1440.png",
+      "sha256": "87f1c6713868ec669ba7a7159c426332021e4deaef798ba96d93ee2172f46cb4"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/error-review-list-dark-390.png",
+      "sha256": "f3ddd64790a21956555798c63eeb2dfcdad0edae817fd6b096a2f06a5baedc08"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/error-review-list-light-1440.png",
+      "sha256": "4e82cdb3798cbe0ae07c1aaabac345cf6aca26b6e042f41b8d28b3997a39e343"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/error-review-list-light-390.png",
+      "sha256": "9d7a66dbb27004be8900708e971bcf16799180138e9cefb951580f731809c491"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/error-review-list-mint-1440.png",
+      "sha256": "f1ab1cb0927c3ff21d5665b3e32cd505bdb8f86b2980d18ded11276080511950"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/error-review-list-mint-390.png",
+      "sha256": "5488027c8f4d8b88ca4427f05373481bd3d1a27f8224c437d5437c9a09c8f8ee"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/error-review-list-ocean-1440.png",
+      "sha256": "fc6aa10c81b78efba27ee8c8f09e84e2ac79990c4e34afc5a9503e8d345cb6e8"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/error-review-list-ocean-390.png",
+      "sha256": "6ac86c514668be55da4714ae318919c1b2bbee45193717136c20907b62f5ea95"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/error-review-panel-dark-1440.png",
+      "sha256": "8ff69867622defe2dfa0c5916fc7d94436ea8360bc6fc9da7559867716cd2441"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/error-review-panel-dark-390.png",
+      "sha256": "428accad9ea8ff269e81f441ab9ca5d31b5e7119294cdf837aa2496405b1505e"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/error-review-panel-light-1440.png",
+      "sha256": "c80ee0d560442e598d5fb348457e45c6f54ab8ab170e88d19e2e50bcc943e4d4"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/error-review-panel-light-390.png",
+      "sha256": "9c46f4cbf6e8a8345a556879a55811bb169a215ef0b21c729d76666e75f8e997"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/error-review-panel-mint-1440.png",
+      "sha256": "afcfd601cf929b5613d43d938f417ffbb26a0c12409d4154c4c3d6f423c81161"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/error-review-panel-mint-390.png",
+      "sha256": "34c6b947c6abd27855e6025e8ec7f76225720cc9b97d2bdb76a27d25959a66cd"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/error-review-panel-ocean-1440.png",
+      "sha256": "72cbebe66afc6c72915b1bf742b5d68436847c4a0c08badf969d71b4ce3a3ecb"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/error-review-panel-ocean-390.png",
+      "sha256": "e73332c0a1f4a61fca84abb7777f5bbfb841e8460c7897448612fd5699461f87"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/geo-batch-dark-1440.png",
+      "sha256": "5001c4ab8cdd1f74f724ffacfcf63a44b276a2e40c02a633c881c085d27ed83f"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/geo-batch-dark-390.png",
+      "sha256": "a4ff7be7599d8658d30a8bf31f5e3433a40ecda1980d1306d6878e2e526b0f5e"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/geo-batch-light-1440.png",
+      "sha256": "751eaa64b264639e18f8cbdc5bcbb9485a7a44117c6db5f2168e5a64dd8a45d4"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/geo-batch-light-390.png",
+      "sha256": "bfc4974d25eae0958766a6092f0fffd418d31b3a37962ba86221a57ee6e06ecd"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/geo-batch-mint-1440.png",
+      "sha256": "71ced4f07773e6224ec10e6ec4a7d3f8fc2cc978aba83504338143ecd21308f9"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/geo-batch-mint-390.png",
+      "sha256": "16c768b891a23e789a962cc9d8afb92de63118c822c4baf18152393e4eb3d074"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/geo-batch-ocean-1440.png",
+      "sha256": "f08bb14109521ca6a799a7f69ee8552ff6f0dfd2d5487cdd98c084b8cebffc15"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/geo-batch-ocean-390.png",
+      "sha256": "a74a628ef8b6eac6c0b0cdd2aaf63cb56bcd36cd057cdfff32923deb4d2feae2"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/geo-detail-dark-1440.png",
+      "sha256": "8c1fe6fb444489209dac3a58345a35346fed33530fc8541b57110d2fed583c03"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/geo-detail-dark-390.png",
+      "sha256": "437b30ce1d7d5ccac7245c6e82eddabf0d61c754d55dc237dd4b7eabf9bb5874"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/geo-detail-light-1440.png",
+      "sha256": "4319f681849e7dee941ca410e7a7e56a70509627ffc6d6ef1a5407d77df86e5f"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/geo-detail-light-390.png",
+      "sha256": "6e6382d0927f8376910d04e3e355177c271b2c01d2669299ead1ca405be5886a"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/geo-detail-mint-1440.png",
+      "sha256": "3f01436c5e151d76255e22856ee5f58fb47d0c97dd4ce487fb774f2aa73c7030"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/geo-detail-mint-390.png",
+      "sha256": "6d3bd01da4899249e9fb39510e942f5794c35ca293212f7a8279bb6ae2af8d9d"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/geo-detail-ocean-1440.png",
+      "sha256": "074efdcb33edb4ab86ea25afab8129d2bbc2dfe3ccbb30486d6c6777e8ead115"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/geo-detail-ocean-390.png",
+      "sha256": "06df271b9292d6eb061bfee3be4e73130f24fc8989a6fa69b48326da314960b9"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-analysis-1440.png",
+      "sha256": "6a1a71a53ae2d84ae294d5d951ad92d21c3dfe38e4deda3bc0660be1aac9060d"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-card-320.png",
+      "sha256": "1b1f1055f684c1dc6aa81541d7632a34c371bc2562a2899c0c7cd698a51cbaae"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-card-390.png",
+      "sha256": "4fe780feb6bd973cf569d33bf099de8ffda91d48244b49e2cbb92928b3b4dd07"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-cleanup-1440.png",
+      "sha256": "9b3cf71041a7a7a572e4eac47304ce41a9d67f219e76c0e20a2bf0ccab9cf6a0"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-cleanup-390.png",
+      "sha256": "02d33b5403e6a5c25e09284ac396eec108a3f1a89465e238ea26c18b30264617"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-ip-geo-390.png",
+      "sha256": "6e6382d0927f8376910d04e3e355177c271b2c01d2669299ead1ca405be5886a"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-ip-geo-batch-320.png",
+      "sha256": "aa59d7a5433bb74abc68ee4453ac22f38cf08b42fac77e5e1049ac9d539e1cef"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-management-1440.png",
+      "sha256": "e60ac97a1ac5ec2e29a10ff250eb39e82387f70070831b246ca7f6997740d6b7"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-management-320.png",
+      "sha256": "c316d35523bb21fafd913b222f5e2886c42cd57587cd862a0fecce5db2bfb15a"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-management-390.png",
+      "sha256": "0ccba0b9e99d38f572557620dd9a980d7308d8eba2e75e4d42313ea1cb97ac78"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-operational-ranking-dark-1440.png",
+      "sha256": "fb1e8a14af3f7c87f86453acf8b06971c416e747bfe0f7464e9ea8a46ea9e279"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-operational-ranking-dark-390.png",
+      "sha256": "e33ac3cb64276bf5a0ff1064819705793c1bb12e49987f13039a8fe62dad55d3"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-operational-ranking-light-1440.png",
+      "sha256": "5171958b0d4e58bcbc035d12c1902e2aea32a240aa2e88ea26d61fd27977c782"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-operational-ranking-light-390.png",
+      "sha256": "abaac03b11e4af991888fd8b4c34a4b6cbc731d294307c83fe7ac295651a19f1"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-operational-ranking-mint-1440.png",
+      "sha256": "3d752704e22f57e0a46cbe8d1f6e4f138c10dace47a1c0599bffe1c483e54a31"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-operational-ranking-mint-390.png",
+      "sha256": "77632b4e47912f6b03410e289dd45ecee7636b8232eaa6c2cf16a1493346e418"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-operational-ranking-ocean-1440.png",
+      "sha256": "d8d5acfc0406df840467da54f84081a9fd7c26cceaf167dbb25fe38a800f7146"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-operational-ranking-ocean-390.png",
+      "sha256": "4dccd12a76bad3cb2bc8a6993a60b6f794116ceff243b392d2501ebab782f10e"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-operations-only-dark-1440.png",
+      "sha256": "998e58a3029704e2793462fc30df6447b1d8363060e4d74b7b2d06e43bb772b5"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-operations-only-dark-390.png",
+      "sha256": "36e02cc161aeb2e0c6ff7631a123f2b1fe5b035bd7f308a08c2867643b424881"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-operations-only-light-1440.png",
+      "sha256": "94e4772d33423c7419a99ab3b978a5bb8613751f81bdb433df9da86a37a5c59a"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-operations-only-light-390.png",
+      "sha256": "3dca8c3c72a324ca760064b72481a0c14d08532dba965d7c81f8f6709f4ffc7e"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-operations-only-mint-1440.png",
+      "sha256": "a5652eb4cc336702d48a16e8280e593275d5202c72f5e884e8e01fa0ff4168df"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-operations-only-mint-390.png",
+      "sha256": "2e38e12cb6140f566b2a78a82f798a2ed2536d01044ac26a607c0d3fa17bf7af"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-operations-only-ocean-1440.png",
+      "sha256": "1c23a21d1d297c4cecaecd89bc45a69d3411a013c4d9bfb868614943ba20d276"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-operations-only-ocean-390.png",
+      "sha256": "aceed02fad90f6a569ed214c72d2c75b53ab798b47c6b7dea9dd6426c81d92d4"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-review-list-320.png",
+      "sha256": "0a56bb93a98e8dde539e86ef0dd862b1da7abecb6a653bdec2d34a3a3c16f53a"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-review-list-390.png",
+      "sha256": "1d1eacd097f3c78924115e32c16d5d14f4590e62432a642712219da6f2079266"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-review-panel-390.png",
+      "sha256": "6ed5fbc5e87ac37dcf2046f44dfede07db359ab114d7a3aaf6e99e1e5497fa99"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-shell-dark-1440.png",
+      "sha256": "20711c02eb66ee14d24f4352791779e88ccdef7dc140bb565f3d31364bf7153b"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-shell-dark-390.png",
+      "sha256": "399df5b56655b0de0376a92b31b323bf79595acefac35ae4e2658a05e293f77b"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-shell-light-1440.png",
+      "sha256": "e60ac97a1ac5ec2e29a10ff250eb39e82387f70070831b246ca7f6997740d6b7"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-shell-light-390.png",
+      "sha256": "0ccba0b9e99d38f572557620dd9a980d7308d8eba2e75e4d42313ea1cb97ac78"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-shell-mint-1440.png",
+      "sha256": "dbe13eaf842468579a41f086d70bf2139612db43d323309f8bba413ad2057c56"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-shell-mint-390.png",
+      "sha256": "40feaa4e9a2ce42e597e7486d0e281da1896837c796e3b1853912a73f330b902"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-shell-ocean-1440.png",
+      "sha256": "d3e96fc12ad63b0fca8764639fa73027da32887d8088e59a778c17c019b4bfaf"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-shell-ocean-390.png",
+      "sha256": "2f40ad857681c1b029ca199d413a56162f0c1e17ee2a1c46ff4e63fdddc5daa8"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-usage-coverage-ranking-dark-1440.png",
+      "sha256": "bbd569022e8e9e707bab34b577b597d6d92e6095ab3cb8265740c08b9f195c0f"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-usage-coverage-ranking-dark-390.png",
+      "sha256": "4f3f013af92a0f6292146cf6c150fd0e29cdcf10a65dcff99ae69a4e1a468c48"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-usage-coverage-ranking-light-1440.png",
+      "sha256": "f5be290222b3118281d99eb56572e86640b1f280720d28b0a72ffd8c0472dfda"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-usage-coverage-ranking-light-390.png",
+      "sha256": "967fd8f06f42c8d6e2d872f01ba6c5d24cbaae5df2d2e2700db5145a48194af1"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-usage-coverage-ranking-mint-1440.png",
+      "sha256": "fa6cf02767a9223d7d04b3828391355b6f2c1859651221ff7713f6e6c10c96ff"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-usage-coverage-ranking-mint-390.png",
+      "sha256": "47094d44cce94ecc94ab230c153c68463cc74dfff708fd1b1a3cff2d08097955"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-usage-coverage-ranking-ocean-1440.png",
+      "sha256": "cdb9ddd44bb9a03c939db8e095c56f555b35e31450f73f3fb7f5edbcecde257d"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-usage-coverage-ranking-ocean-390.png",
+      "sha256": "137b74c26b831e0c8ae9cad1a7b35ec2adc70f4e1c7b8d7e834ba096dffd2176"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-usage-coverage-trend-dark-1440.png",
+      "sha256": "c030d7e563c594727d2270cd0b3cfc738ed2276babd05b87e41d1f04d6d725ea"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-usage-coverage-trend-dark-390.png",
+      "sha256": "d5e8c8abff2e8156be840f2a2479ca235d8545779b205de24cc3ed12c0ea3bd2"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-usage-coverage-trend-light-1440.png",
+      "sha256": "228ad21de9156e64208ac6cdb230f78695c0604809101fb1bbb641d46d63a1b5"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-usage-coverage-trend-light-390.png",
+      "sha256": "bcec96980563ab89d3ca950c23d8c327e926abefb90e2750d5da181dcaecddc7"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-usage-coverage-trend-mint-1440.png",
+      "sha256": "75bd0faf88f5647b63b8b58454bab62985a99cfb0f09897f6d58966bb5c09012"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-usage-coverage-trend-mint-390.png",
+      "sha256": "63e358deba1af14bd7d4516378018fddd4f66506fffffd36946bd90bd30ef2d1"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-usage-coverage-trend-ocean-1440.png",
+      "sha256": "9438008d4e48366032f3b1e8819016c7b1e6f1e5c7d3ddbd3db9a30dfaff4d70"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/logs-usage-coverage-trend-ocean-390.png",
+      "sha256": "028ca80fcbc76a27f165671f0046fc0cee24e3ad5980ffd1eb02a7aedf6b997d"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-mobile-column-320.png",
+      "sha256": "8d47c6b7ba748d141a84b955380c38cb388c2b8e9eff067be2b1f10d92128cd6"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-mobile-column-dark-390.png",
+      "sha256": "4639ee8f24bbecce723edc333a8460ddca631e278d0e80265097ae1a1c9673ea"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-mobile-column-light-390.png",
+      "sha256": "37e58b4f4ba2962ec6e8cd137fa42464b2a4534d17403c0a725765fa2590e8f0"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-mobile-column-mint-390.png",
+      "sha256": "37e58b4f4ba2962ec6e8cd137fa42464b2a4534d17403c0a725765fa2590e8f0"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-mobile-column-ocean-390.png",
+      "sha256": "37e58b4f4ba2962ec6e8cd137fa42464b2a4534d17403c0a725765fa2590e8f0"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-model-chain-dark-1440.png",
+      "sha256": "6a2638ab3bb03895838c10f1865a556b838ef8e838bb9d29e541a24a35b3755e"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-model-chain-dark-390.png",
+      "sha256": "de9983e828c8580fb3adec5759ae05caf2586a31d6e81cc0a7c649786fd9e5d7"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-model-chain-light-1440.png",
+      "sha256": "71d2d3adb71b9da27ae157b864edac2911337839126fd98f3f44729d4e8ece9c"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-model-chain-light-390.png",
+      "sha256": "f593553f2d280e3581e7a4ad24fcab1cec6717e2d9b65d186888b645e5952932"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-model-chain-mint-1440.png",
+      "sha256": "71d2d3adb71b9da27ae157b864edac2911337839126fd98f3f44729d4e8ece9c"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-model-chain-mint-390.png",
+      "sha256": "f593553f2d280e3581e7a4ad24fcab1cec6717e2d9b65d186888b645e5952932"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-model-chain-ocean-1440.png",
+      "sha256": "71d2d3adb71b9da27ae157b864edac2911337839126fd98f3f44729d4e8ece9c"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-model-chain-ocean-390.png",
+      "sha256": "f593553f2d280e3581e7a4ad24fcab1cec6717e2d9b65d186888b645e5952932"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-no-header-attempt-dark-1440.png",
+      "sha256": "572e9c7deaf6fe5a15ffdf69ff40c6db41188ed414e34e39c04038959c7f8ea1"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-no-header-attempt-dark-390.png",
+      "sha256": "0b90b1db96db09137e07c01af25d082130634c5567c4a8faa627fcc65571ffe9"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-no-header-attempt-light-1440.png",
+      "sha256": "26cefdf6e6fee3fec3ffb6a8fd56dd22890362a53405d8e1a01e18388dd9333e"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-no-header-attempt-light-390.png",
+      "sha256": "6cf9a54ba9dfdaa09ee5e617265e9313507d6e25da40ceca3d93be869fde5487"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-no-header-attempt-mint-1440.png",
+      "sha256": "26cefdf6e6fee3fec3ffb6a8fd56dd22890362a53405d8e1a01e18388dd9333e"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-no-header-attempt-mint-390.png",
+      "sha256": "6cf9a54ba9dfdaa09ee5e617265e9313507d6e25da40ceca3d93be869fde5487"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-no-header-attempt-ocean-1440.png",
+      "sha256": "26cefdf6e6fee3fec3ffb6a8fd56dd22890362a53405d8e1a01e18388dd9333e"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-no-header-attempt-ocean-390.png",
+      "sha256": "6cf9a54ba9dfdaa09ee5e617265e9313507d6e25da40ceca3d93be869fde5487"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-schema-dark-1440.png",
+      "sha256": "30010f884a92bc9b3277ced30c8ccfff354962dd33cc661958d2ce17cfd79efa"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-schema-dark-390.png",
+      "sha256": "d419b0d9d34138b9d53466e3358d107ad05daf87c7ab825bc8e7f40b626d0a24"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-schema-light-1440.png",
+      "sha256": "ab410f6f5408dd48d9fa0f7a3df66eb34ba3357455edc8d8eea289c701e433fe"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-schema-light-390.png",
+      "sha256": "676187eeeea32e2fcccd879c3e42d8403c22737f52390abb75d53061f852d4e8"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-schema-mint-1440.png",
+      "sha256": "ab410f6f5408dd48d9fa0f7a3df66eb34ba3357455edc8d8eea289c701e433fe"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-schema-mint-390.png",
+      "sha256": "676187eeeea32e2fcccd879c3e42d8403c22737f52390abb75d53061f852d4e8"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-schema-ocean-1440.png",
+      "sha256": "ab410f6f5408dd48d9fa0f7a3df66eb34ba3357455edc8d8eea289c701e433fe"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-schema-ocean-390.png",
+      "sha256": "676187eeeea32e2fcccd879c3e42d8403c22737f52390abb75d53061f852d4e8"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-sent-distribution-dark-1440.png",
+      "sha256": "21f28532313d0785a8e5ffae8a3178fb5c855ccabbedfb088ae5c1d3240c0b98"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-sent-distribution-dark-390.png",
+      "sha256": "41716fe210f4e051e30f2380280906b661b50567180cf597d7ba20b4781764fd"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-sent-distribution-light-1440.png",
+      "sha256": "a83a0e6a4c66481c77cf3c4a922e714b9732ee5512aefc4493ddd8f3fe491e0b"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-sent-distribution-light-390.png",
+      "sha256": "7e820bb176e606cc48b25419b32e1d64a0c392356298b6eb8b9230d65b12ccd4"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-sent-distribution-mint-1440.png",
+      "sha256": "e6c09e50b85cb15f12445f2365d44f33ac1ea5d3203c731d407e5939d33103d6"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-sent-distribution-mint-390.png",
+      "sha256": "82fdcce09138453b9c90b413fe0841e8d6e2f75eb38a2e1f3e42475ed593f749"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-sent-distribution-ocean-1440.png",
+      "sha256": "393a614afa81788c44149804ee71cc83d72d52ee90727e7d8e90ad716be751a0"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-sent-distribution-ocean-390.png",
+      "sha256": "bdcf3cece3328eca1e740853fd64a73ee140238764e6fc7b87ccf248709da8e4"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-stage-coverage-dark-1440.png",
+      "sha256": "16df485b7103ef75106a0bddc1f5b6551772d292a76f98c3df407336db87b45c"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-stage-coverage-dark-390.png",
+      "sha256": "02940773b53fb25da42d4325a857ad71ff0fe948663b22b2d68291fa0de64379"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-stage-coverage-light-1440.png",
+      "sha256": "9229733174e753337648d77f7f54fe51fddcc344917e5ee9e8d1023dcdcb9587"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-stage-coverage-light-390.png",
+      "sha256": "a07c91f652cb7b50d5c1b10bba8e4b2898c227dde11d83cae8d136406b5af9ed"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-stage-coverage-mint-1440.png",
+      "sha256": "9229733174e753337648d77f7f54fe51fddcc344917e5ee9e8d1023dcdcb9587"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-stage-coverage-mint-390.png",
+      "sha256": "a07c91f652cb7b50d5c1b10bba8e4b2898c227dde11d83cae8d136406b5af9ed"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-stage-coverage-ocean-1440.png",
+      "sha256": "9229733174e753337648d77f7f54fe51fddcc344917e5ee9e8d1023dcdcb9587"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-stage-coverage-ocean-390.png",
+      "sha256": "a07c91f652cb7b50d5c1b10bba8e4b2898c227dde11d83cae8d136406b5af9ed"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-stage-times-dark-1440.png",
+      "sha256": "734e7f3f25d8282ef7669438b0466b3b1fc875991abd014952790367bfac63a9"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-stage-times-dark-390.png",
+      "sha256": "d404941f8b5867cbbd30498297cc8216deb49ac84f96209e0d4d065d5f45c08a"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-stage-times-light-1440.png",
+      "sha256": "0fe0b2eb6bcc7c85e369ca3b442231a0a96cb5830f5054a7467b2d85e7e6849a"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-stage-times-light-390.png",
+      "sha256": "84e8576e27c3c58482a047ae10343b49679dd29fa80fc6d6cfce2df9fb1ccd09"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-stage-times-mint-1440.png",
+      "sha256": "0fe0b2eb6bcc7c85e369ca3b442231a0a96cb5830f5054a7467b2d85e7e6849a"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-stage-times-mint-390.png",
+      "sha256": "84e8576e27c3c58482a047ae10343b49679dd29fa80fc6d6cfce2df9fb1ccd09"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-stage-times-ocean-1440.png",
+      "sha256": "0fe0b2eb6bcc7c85e369ca3b442231a0a96cb5830f5054a7467b2d85e7e6849a"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/observation-stage-times-ocean-390.png",
+      "sha256": "84e8576e27c3c58482a047ae10343b49679dd29fa80fc6d6cfce2df9fb1ccd09"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-browser/report.json",
+      "sha256": "cc8d866ac640da9da9cc9392b6d07c3a7a7c740c4b75c62c9355f8a381102b1f"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/logs-verification.json",
+      "sha256": "4a44165d81a09b61f2ba068d7e4f3d005f7f488fcbdec6cc1f1a8976fbd60b2d"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/go/source-manifest.json",
+      "sha256": "751b418a970219d028bf690bea5e078e00518ac1c6ed966fd8b593d02a34917b"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/go/report.json",
+      "sha256": "ade3e7fce2e3a06dad3f2eeba0b518aeb8ba591d90f91d2320fafaa19f450266"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/go/race.log",
+      "sha256": "970ee5020ae0b2e4f1b9fbac863bc764157e39d0f99d3627a9cf9962e7296fa9"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/go/local-verification.json",
+      "sha256": "d61fbe558d3429eb6e35742a72da335f79bdc42245ef28f241992a7548a57bed"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frozen-evidence-0e286edbfa6e/go/local-test.jsonl",
+      "sha256": "e978778ef69fe3ccee523f21006d3720e07b7dd62b05891132bd1bd8828d6980"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frontend-0e286edbfa6e.zip",
+      "sha256": "227904fe278e62c2568198b424df9dc7fb279f8120e2489e6ddf3dd057d39f41"
+    },
+    {
+      "path": ".local/management-parity/operational-fixes-20260918/frontend-source-0e286edbfa6e.tar.gz",
+      "sha256": "7780841d2771a3fb1ed6284f5a285dcda72bca21d73523b547cb26bf4d03ebe5"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t065425-d36576/source.tar.gz",
+      "sha256": "028415dc9bdb795dc532d8219fe486719423d0793d8375b0b7ca66b63918f820"
+    },
+    {
+      "path": "tools/freeze_operational_fixes.py",
+      "sha256": "20a8095c4e41234ddfef01b94d3a33ea972f5bbc7d709cc36b00271a03074160"
+    }
+  ]
+}

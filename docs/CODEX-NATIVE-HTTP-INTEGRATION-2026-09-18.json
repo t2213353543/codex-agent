@@ -1,0 +1,135 @@
+{
+  "schema": "codex-native-http-integration-v1",
+  "completed_at": "2026-09-18T03:29:41.717462+00:00",
+  "goal_complete": false,
+  "production_deployed": false,
+  "live_model_requests_this_phase": 0,
+  "go_source_sha256": "7c5d417bcc8d62a1faac86c28a04a2671d5c44238b5eeabee95d60840e2bdd53",
+  "helper_sha256": "253d88c2cd4bfa8c655ff7dfce6c2ed7b70dc7dc28567516269af9dc581b670f",
+  "go_race": {
+    "passed_top_level_tests": 176,
+    "passed_test_events": 404,
+    "failed_tests": [],
+    "skipped_tests": [],
+    "duration_seconds": 90.122,
+    "cleanup_complete": true
+  },
+  "rust_tests": {
+    "scope": "synthetic loopback HTTP IPC",
+    "live_accounts": false,
+    "tests": 24,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": true,
+    "seconds": 28.891
+  },
+  "actual_official_cli": {
+    "version": "0.154.0",
+    "synthetic_upstream": true,
+    "passed": true,
+    "assertions": {
+      "actual_tool_output_returned": true,
+      "child_only_us_locale": true,
+      "controlled_cli_completed": true,
+      "custom_ca_explicit": true,
+      "gateway_admission_released": true,
+      "gateway_usage_and_observation": true,
+      "native_application_headers": true,
+      "native_helper_configured": true,
+      "native_request_schema": true,
+      "no_go_upstream_fallback": true,
+      "rustls_h2_offered": true,
+      "synthetic_usage_totals_unchanged": true,
+      "tls13_and_h2_negotiated": true,
+      "tls_client_hello_observed": true,
+      "tool_result_in_followup_input": true,
+      "two_gateway_usage_records": true,
+      "two_upstream_requests_only": true
+    }
+  },
+  "tls_comparison": {
+    "passed": true,
+    "same_platform_only": true,
+    "default_full_handshake": false,
+    "custom_ca_handshake": true
+  },
+  "refill": {
+    "before_passed": false,
+    "after_passed": true,
+    "batches": 11,
+    "all_head_count": 352,
+    "no_wait_for_cancellation_before_refill": true
+  },
+  "scope": {
+    "native_http_go_integration": true,
+    "http_only_explicit_startup": true,
+    "linux_only": true,
+    "http_proxy": true,
+    "socks5": false,
+    "native_websocket": false,
+    "default_enabled": false
+  },
+  "remaining": [
+    "SOCKS5 route support without changing native TLS or bypassing configured egress.",
+    "Native WebSocket message IPC with official forks and explicit proxy selection.",
+    "HTTP2 settings and session resumption; real upstream CLI usage on final deployed candidate."
+  ],
+  "evidence": [
+    {
+      "kind": "go_manifest",
+      "path": ".local/source-20260918/gateway-overlay-20260918t031826-7744cf/source-manifest.json",
+      "sha256": "190ade7337b5d8194ba2bf1cba399134a61e199b5ce51669a001a7ca0490c9e3"
+    },
+    {
+      "kind": "go_overlay",
+      "path": ".local/source-20260918/gateway-overlay-20260918t031826-7744cf/overlay-manifest.json",
+      "sha256": "8ce5b648409dcfe8bfcfc0dd06c26028d98f26d9b98699afe99b781488656858"
+    },
+    {
+      "kind": "go_builds",
+      "path": ".local/source-20260918/gateway-overlay-20260918t031826-7744cf/build-verification.json",
+      "sha256": "142949001417aa9e540d44f72f32609b737acf5499177cb33670ef36157c465c"
+    },
+    {
+      "kind": "go_race",
+      "path": ".local/source-20260918/local-linux-race-20260918t031909-cae929/report.json",
+      "sha256": "e020c10a2d09da3cce4519cd0c11c501c03f68f9fccfa1044a85e9fc2ec7c9a2"
+    },
+    {
+      "kind": "rust_build",
+      "path": ".local/native-local-build/20260918T032505Z-1cbad96e/result.json",
+      "sha256": "cb41f56b8f2683ef8a6b2bcd7606341f85b090d5f27ce4f97401037dbaae3d6b"
+    },
+    {
+      "kind": "rust_loopback",
+      "path": ".local/native-local-build/20260918T032505Z-1cbad96e/test-results.json",
+      "sha256": "4da51b0954a0fb1f282a6c680c9a19434d39c8dbfea7ef9b07b879f58dc33f1d"
+    },
+    {
+      "kind": "actual_cli",
+      "path": ".local/native-transport-build/gateway-compare-20260918T032642-e11095/gateway-cli.json",
+      "sha256": "45f65c6ff05fcf5af4f31f9e5357a3669070d5d676813dc75aac6446baed3532"
+    },
+    {
+      "kind": "actual_gateway",
+      "path": ".local/native-transport-build/gateway-compare-20260918T032642-e11095/result.json",
+      "sha256": "1ec49d43efc4bb0fbe48727540c0adb263012b5fa342db92ed2489329a975dfb"
+    },
+    {
+      "kind": "tls",
+      "path": ".local/native-transport-build/tls-compare-20260918T032652-f69d53/result.json",
+      "sha256": "1898e455e1d2bedf90e9110a9fefc0438778c3b23852ee2acb354aa8beeec48d"
+    },
+    {
+      "kind": "refill_fixed",
+      "path": ".local/native-refill-probe/20260918T032703Z-e86be60b/report.json",
+      "sha256": "36a4a7cb5f66fce0db9931e2da685c04b4a122ab654db5cb2c35305a00205061"
+    },
+    {
+      "kind": "refill_failure",
+      "path": ".local/native-refill-probe/20260918T032201Z-3b44427b/report.json",
+      "sha256": "4704aa597a0f4e0840346ad10e6aabe0f8865df2c7fbd7e51ecd33c4774ed6d5"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schema": "codex-release-closeout-v1",
+  "completed_at": "2026-09-18T05:08:25.997656+00:00",
+  "user_direction": "Real-account and live-upstream testing canceled; no further account requests or preflight.",
+  "live_model_tests_canceled": true,
+  "live_requests_after_cancellation": 0,
+  "production_deployed": false,
+  "full_objective_completion_claimed": false,
+  "go_source_sha256": "648ca8b4314053416f34d2b94d1eceb27f81280c5bd983a754a87e07f1fed171",
+  "helper_binary_sha256": "ffbfae2a3af7a452e30df333f06908836fc9f55d4a0e168ed545fcd83d6a2d1c",
+  "release_package_sha256": "9611fac32443b44c68c4b9106e817ba10261a7c884e3ec734b34a2e7802673f7",
+  "release_bytes": 14290944,
+  "release_static_pie_verified": true,
+  "race": {
+    "passed_top_level_tests": 238,
+    "passed_test_events": 507,
+    "failed_tests": [],
+    "skipped_tests": [],
+    "missing_tests": [],
+    "duration_seconds": 109.006,
+    "cleanup_complete": true
+  },
+  "local_native_interop_tests": 15,
+  "ordinary_tests_vet_and_builds_passed": true,
+  "unknown_owner": {
+    "credential_changes_invalidate_old_thread": true,
+    "refresh_tokens_persist_before_conflict": true,
+    "known_owner_refresh_preserved": true,
+    "monotonic_owner_epoch_complete": false,
+    "aba_or_unrecorded_logout_gap_remaining": true
+  },
+  "evidence": [
+    {
+      "kind": "go_manifest",
+      "path": ".local/source-20260918/gateway-overlay-20260918t050352-1bd6d1/source-manifest.json",
+      "sha256": "ca243557859cb24cc85cae25d1ff4df86821b893087d20f724c95bf08cd3493e"
+    },
+    {
+      "kind": "go_build",
+      "path": ".local/source-20260918/gateway-overlay-20260918t050352-1bd6d1/build-verification.json",
+      "sha256": "390fb101f3660949af7d3ebcaf4bedc5b9dc6b2beb3a2c1b6728cb43261a8cd3"
+    },
+    {
+      "kind": "race",
+      "path": ".local/source-20260918/local-linux-race-20260918t050506-b701a9/report.json",
+      "sha256": "7e9e3c15da720437bd764664d15be6ed3b747a05dde33b9ee48dbd82123bcf3a"
+    },
+    {
+      "kind": "race_prior_fixture_failure",
+      "path": ".local/source-20260918/local-linux-race-20260918t045925-2aed87/report.json",
+      "sha256": "7f4a21ed307e19dadf3e265bf819f05285747a7142426afcb8f3650b84677f53"
+    },
+    {
+      "kind": "gateway",
+      "path": ".local/native-transport-build/gateway-compare-20260918T050436-92fce4/result.json",
+      "sha256": "f6ab641f2e5209eaf66ad7ec340c21812571054d32e65883a87299b9ab7eb06a"
+    },
+    {
+      "kind": "release_package",
+      "path": ".local/native-releases/0.155.0-linux-x86_64-ffbfae2a3af7/package-result.json",
+      "sha256": "be78a6b0f2c7e13b47b7144dd42c498cad2e0295707549afe27324717c1f8b2b"
+    },
+    {
+      "kind": "release_manifest",
+      "path": ".local/native-releases/0.155.0-linux-x86_64-ffbfae2a3af7/manifest.json",
+      "sha256": "ced8aa98672c206b12990b9d72f50f8b5cd21e0dae889220f965abbbf7014f5f"
+    },
+    {
+      "kind": "release_smoke",
+      "path": ".local/native-releases/0.155.0-linux-x86_64-ffbfae2a3af7/release-smoke.json",
+      "sha256": "0dcaf1ca3d2ab34282124b695200fbb03adaea28ffca038a7a72f78da08e3bfb"
+    },
+    {
+      "kind": "release_tests",
+      "path": ".local/native-local-build/20260918T045203Z-214aa719/test-results.json",
+      "sha256": "85378f683309306b64e624ffcc6a1feb05b5a353dc6ed6740f2a0579fd026dbe"
+    }
+  ]
+}

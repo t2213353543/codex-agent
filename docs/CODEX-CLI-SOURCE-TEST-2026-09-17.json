@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-17",
+  "passed": true,
+  "kind": "official_cli_local_protocol_integration",
+  "live_model_inference": false,
+  "client": {
+    "version": "codex-cli 0.154.0",
+    "platform": "win32-x64",
+    "install_command": "npm install --prefix .local/codex-cli-0.154.0 @openai/codex@0.154.0",
+    "package_url": "https://registry.npmjs.org/@openai/codex/-/codex-0.154.0.tgz",
+    "package_integrity": "sha512-FV/x1OHXYv/ifjf3mXj9ThTTAWcUZN6cGIRQRhRxkKNOPuImu1WW0c8ev1vUkE9XGH90dEnYG1tBjIkxRikg0w==",
+    "executable_sha256": "BE96B992178B1E467C225800DA0D65F2C86D5EBA1EF0B14632F65DB381CBDFDE",
+    "modified": false
+  },
+  "test": {
+    "file": "real_cli_test.go",
+    "binary_env": "CODEX_REAL_CLI_BIN",
+    "command": "go test -run '^TestRealCodexCLI$' -v -count=1 .",
+    "exit_code": 0,
+    "elapsed_seconds": 127.900,
+    "upstream": "local deterministic httptest fixture",
+    "gateway": "this checkout's actual Proxy via httptest"
+  },
+  "checks": [
+    {
+      "name": "http_tool_and_resume",
+      "passed": true,
+      "elapsed_seconds": 42.64,
+      "responses_requests": 3,
+      "compact_requests": 0,
+      "websocket_upgrade_attempts": 0,
+      "actual_shell_exit_code": 0,
+      "actual_shell_output_verified": true,
+      "function_call_output_reached_upstream": true,
+      "same_thread_resumed": true,
+      "prior_user_assistant_and_tool_history_retained": true
+    },
+    {
+      "name": "websocket_fallback_tool_and_resume",
+      "passed": true,
+      "elapsed_seconds": 42.57,
+      "responses_requests": 3,
+      "compact_requests": 0,
+      "websocket_upgrade_attempts": 2,
+      "official_http_fallback_verified": true,
+      "actual_shell_exit_code": 0,
+      "actual_shell_output_verified": true,
+      "function_call_output_reached_upstream": true,
+      "same_thread_resumed": true,
+      "prior_user_assistant_and_tool_history_retained": true
+    },
+    {
+      "name": "auto_compact_and_resume",
+      "passed": true,
+      "elapsed_seconds": 42.60,
+      "responses_requests": 3,
+      "compact_requests": 1,
+      "websocket_upgrade_attempts": 0,
+      "actual_shell_exit_code": 0,
+      "actual_shell_output_verified": true,
+      "function_call_output_reached_upstream": true,
+      "same_thread_resumed": true,
+      "compact_json_response_accepted": true,
+      "opaque_compaction_retained_after_resume": true,
+      "compact_has_no_store_or_stream_fields": true,
+      "remote_compaction_v2": false
+    }
+  ],
+  "isolation": {
+    "child_only_temporary_codex_home": true,
+    "temporary_workspaces_and_account_stores": true,
+    "global_cli_config_or_auth_modified": false,
+    "production_modified": false
+  },
+  "limits": [
+    "The official CLI is real; model responses are deterministic local fixtures, so this is not evidence of live model inference.",
+    "The custom API-key provider does not exercise the ChatGPT-auth-only native Zstd request compression branch.",
+    "The compact scenario explicitly selects the standalone responses/compact JSON route; remote_compaction_v2 is disabled.",
+    "Separate live model acceptance is retained in codex_cli_integration_test.go and docs/CODEX-CLI-LIVE-2026-09-17.json; its recorded result is failure, not a pass."
+  ]
+}

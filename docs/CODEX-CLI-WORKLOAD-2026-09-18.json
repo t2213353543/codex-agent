@@ -1,0 +1,99 @@
+{
+  "cache": {
+    "requests": 1,
+    "unscoped_requests": 0,
+    "comparable_pairs": 0,
+    "stable_configuration_pairs": 0,
+    "model_changed_pairs": 0,
+    "instructions_changed_pairs": 0,
+    "tools_changed_pairs": 0,
+    "controls_changed_pairs": 0,
+    "cache_key_changed_pairs": 0,
+    "missing_cache_key_requests": 0,
+    "input_comparable_pairs": 0,
+    "shared_input_items": 0,
+    "previous_input_items_compared": 0,
+    "input_history_extension_pairs": 0,
+    "input_history_changed_pairs": 0,
+    "input_comparison_limited_requests": 0,
+    "scope_evictions": 0,
+    "responses": 0,
+    "successful_responses": 0,
+    "failed_responses": 0,
+    "incomplete_responses": 0,
+    "unfinished_responses": 1,
+    "usage_responses": 0,
+    "cache_usage_responses": 0,
+    "cache_hit_responses": 0,
+    "invalid_usage_responses": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "cached_input_tokens": 0,
+    "cache_usage_input_tokens": 0,
+    "pending_requests": 0
+  },
+  "connections_observed": 1,
+  "connections_reused": 0,
+  "date": "2026-09-17T19:40:26Z",
+  "diagnostic_errors": 1,
+  "egress_observation": {
+    "colo": "LAX",
+    "http": "http/2",
+    "loc": "US",
+    "scope": "same Go client system-proxy route; upstream destination routing may differ",
+    "status": "observed",
+    "tls": "TLSv1.3"
+  },
+  "http_status_counts": {
+    "401": 1
+  },
+  "model": "gpt-5.6-luna",
+  "passed": false,
+  "schema_version": 1,
+  "scope": "real_cli_code_task_and_native_request_cache",
+  "timed_out": false,
+  "tls_handshakes": [
+    {
+      "alpn": "h2",
+      "cipher": "TLS_AES_128_GCM_SHA256",
+      "completed": true,
+      "version": "TLS 1.3"
+    }
+  ],
+  "transport": "Go net/http; application identity is preserved, native TLS parity is not claimed",
+  "transport_errors": 0,
+  "workload": {
+    "schema_version": 1,
+    "passed": false,
+    "checks": [
+      {
+        "name": "repair",
+        "passed": false,
+        "returncode": 1,
+        "timed_out": false,
+        "elapsed_seconds": 21.326,
+        "assertions": {
+          "process_exited_successfully": false,
+          "thread_started": true,
+          "turn_completed": false,
+          "no_error_events": false,
+          "successful_shell_execution": false,
+          "test_suite_executed": false,
+          "independent_money_oracle": false,
+          "source_changed": false,
+          "fixtures_unchanged": true,
+          "marker_not_saved_in_source": true
+        },
+        "completed_command_count": 0,
+        "item_counts": {}
+      }
+    ],
+    "scope": "real_cli_repair_feature_resume",
+    "locale_env": "en_US.UTF-8",
+    "timezone_env": "America/New_York",
+    "os_locale_or_geolocation_changed": false,
+    "cli_version": "codex-cli 0.154.0",
+    "failure": "workload_repair_failed",
+    "elapsed_seconds": 21.441
+  }
+}

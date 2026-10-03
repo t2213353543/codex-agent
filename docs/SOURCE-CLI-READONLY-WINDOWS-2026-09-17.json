@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-17",
+  "completed_at": "2026-09-17T20:43:17+08:00",
+  "passed": true,
+  "kind": "official_cli_windows_readonly_sandbox_protocol_integration",
+  "controlled_upstream": true,
+  "live_model_inference": false,
+  "client": {
+    "version": "codex-cli 0.154.0",
+    "platform": "win32-x64",
+    "binary_env": "CODEX_REAL_CLI_BIN",
+    "binary_path": ".local/codex-cli-0.154.0/node_modules/@openai/codex-win32-x64/vendor/x86_64-pc-windows-msvc/bin/codex.exe",
+    "modified": false
+  },
+  "test": {
+    "name": "TestRealCodexCLIReadOnlyWindowsSandbox",
+    "command": "go test -run '^TestRealCodexCLIReadOnlyWindowsSandbox$' -json -count=1 .",
+    "raw_evidence": ".local/source-readonly-cli.jsonl",
+    "exit_code": 0,
+    "elapsed_seconds": 42.769,
+    "upstream": "local deterministic protocol fixture",
+    "gateway": "current source checkout Proxy via httptest"
+  },
+  "temporary_cli_config": {
+    "sandbox_mode": "read-only",
+    "approval_policy": "never",
+    "windows.sandbox": "unelevated",
+    "supports_websockets": false
+  },
+  "shell": {
+    "command": "Get-Content -LiteralPath .\\gateway-readonly-marker.txt",
+    "login": false,
+    "working_directory": "isolated temporary directory containing the fixture marker file",
+    "exit_code": 0,
+    "command_execution_event_verified": true,
+    "aggregated_output_contains_file_marker": true,
+    "marker_file_unchanged": true
+  },
+  "checks": {
+    "responses_requests": 3,
+    "function_call_output_reached_upstream": true,
+    "same_thread_resumed": true,
+    "user_assistant_tool_history_retained": true,
+    "windows_restricted_backend_can_read_workspace_file": true
+  },
+  "isolation": {
+    "child_only_temporary_codex_home": true,
+    "temporary_workspaces_and_account_stores": true,
+    "production_credentials_used": false,
+    "production_modified": false,
+    "manual_acl_changes": false,
+    "elevated_setup_invoked": false,
+    "service_installation_requested": false,
+    "system_user_creation_requested": false,
+    "group_policy_changes_requested": false
+  },
+  "official_runtime_initialization": {
+    "source_reviewed": true,
+    "scope": "Official unelevated backend standard initialization is allowed; no custom setup was executed.",
+    "nul_device": "The official read-only capability path calls allow_null_device, which attempts SetSecurityInfo on the NUL kernel object's DACL. This is not a manual ACL change by the test.",
+    "desktop": "Official backend may prepare its own private desktop runtime object, depending on its runtime options.",
+    "actual_kernel_acl_changes_audited": false,
+    "source_references": [
+      "codex-rs/windows-sandbox-rs/src/unified_exec/backends/legacy.rs:359",
+      "codex-rs/windows-sandbox-rs/src/spawn_prep.rs:331",
+      "codex-rs/windows-sandbox-rs/src/acl.rs:759",
+      "codex-rs/windows-sandbox-rs/src/desktop.rs:151"
+    ]
+  },
+  "limits": [
+    "Real official CLI and local shell execution were verified; the upstream model was a deterministic fixture, not a live model.",
+    "This confirms the read-only/never/unelevated combination can read the working-directory marker on this machine; it does not assert every model-generated command will succeed.",
+    "Remaining live-model marker failures should inspect command_execution.command, exit_code, aggregated_output and the working directory without relaxing the acceptance assertions.",
+    "The test does not claim to have audited kernel object ACL changes or exhaustively verified all filesystem sandbox restrictions."
+  ]
+}

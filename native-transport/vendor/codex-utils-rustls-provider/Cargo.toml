@@ -1,0 +1,18 @@
+[package]
+autobins = false
+autotests = false
+autobenches = false
+name = "codex-utils-rustls-provider"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+rustls = { workspace = true }
+
+[lib]
+test = false
+doctest = false

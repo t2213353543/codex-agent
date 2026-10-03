@@ -1,0 +1,108 @@
+{
+  "schema": "codex-agent-transport-followup-v1",
+  "completed_at": "2026-09-18T02:48:51.874592+00:00",
+  "previous_goal_turn_classification": "progress",
+  "scope": "immutable gateway overlay plus standalone native HTTP prototype",
+  "gateway": {
+    "source_sha256": "956fc90be91a922ac1593b283102bc5149674dac337564e6023479ec8e60a6f9",
+    "management_base_sha256": "5a818844f613ad35602ac466c80d8949a2e7f7a180e96ae21c4cbd1573ce6d22",
+    "all_go_tests_passed": true,
+    "vet_passed": true,
+    "windows_linux_builds_passed": true,
+    "linux_race": {
+      "passed_top_level_tests": 159,
+      "passed_test_events": 379,
+      "failed_tests": [],
+      "skipped_tests": [],
+      "missing_tests": [],
+      "duration_seconds": 77.909,
+      "cleanup_complete": true,
+      "go_source_changed_after_freeze": false
+    },
+    "production_deployed": false
+  },
+  "native": {
+    "source_sha256": "c1a3b304202482e1c8cf6d93abfa64c44a08edd7003a1db411ed7dd5c27362da",
+    "compiled": true,
+    "loopback": {
+      "scope": "synthetic loopback HTTP IPC",
+      "live_accounts": false,
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "passed": true,
+      "seconds": 10.758
+    },
+    "same_platform_tls_comparison_passed": true,
+    "default_native_full_handshake_verified": false,
+    "custom_ca_negotiation_verified": true,
+    "tls_extension_order_ignored": true,
+    "first_comparison_detected_missing_prefer_post_quantum": true,
+    "production_go_transport_integrated": false,
+    "websocket_implemented": false,
+    "same_platform_only": true
+  },
+  "live_model_requests_this_followup": 0,
+  "goal_complete": false,
+  "remaining": [
+    "Integrate authenticated native IPC with Go request/body/cancellation lifecycle.",
+    "Validate proxy-generation pools, HTTP/2 SETTINGS, session resumption and platform-specific behavior.",
+    "Add native WebSocket using official forks and explicit proxy routing.",
+    "Final candidate real CLI inference and deployment require coordinated validation."
+  ],
+  "evidence": [
+    {
+      "path": ".local/source-20260918/local-linux-race-20260918t023552-c45439/report.json",
+      "sha256": "908523da90b2722734c452955c8113b5859714ec50e4b200ec1c2489f8f0b995"
+    },
+    {
+      "path": ".local/source-20260918/gateway-overlay-20260918t023414-8e3565/overlay-manifest.json",
+      "sha256": "ff230ee8a8d8ffd11b5ea9e05bcd33e50f5889bf96f7d5db0a6b80e1cce19eb7"
+    },
+    {
+      "path": ".local/source-20260918/gateway-overlay-20260918t023414-8e3565/source-manifest.json",
+      "sha256": "7097b8659655efb2b2c9e8a475f31f7a54ac7d4804c093e9bc71ca6723ea96fc"
+    },
+    {
+      "path": ".local/source-20260918/gateway-overlay-20260918t023414-8e3565/build-verification.json",
+      "sha256": "f0ab45c5a75f430c0564333ccc2d04a86ddab8c762e76cee0b087cff4bccd409"
+    },
+    {
+      "path": ".local/native-local-build/20260918T024358Z-f23140f1/result.json",
+      "sha256": "7d3f84105daf843402a982bcdee86bc7d0d8475748bc2f0c94cc94dd11fea105"
+    },
+    {
+      "path": ".local/native-local-build/20260918T024358Z-f23140f1/test-results.json",
+      "sha256": "1d674b8b54302b6396a78575bfdc8f4be7a54398e34f99ec367fec7b5905f598"
+    },
+    {
+      "path": ".local/native-local-build/20260918T024358Z-f23140f1/source-manifest.json",
+      "sha256": "4a7eb662f5b57ea8029a3128da7c9b8f4b323b7fd6dea641b5e6967b000717ac"
+    },
+    {
+      "path": ".local/native-transport-build/compare-20260918T024519-b551e0/result.json",
+      "sha256": "5facd96a3bae01a66d2dec560c26ba74703a1522d71e8d38fb8c1b8d7d0ea6af"
+    },
+    {
+      "path": ".local/native-transport-build/compare-20260918T024519-b551e0/comparison.json",
+      "sha256": "f737189f232037e036b3fc3c256987791312de99be601512a75b534dfa5fcfe4"
+    },
+    {
+      "path": ".local/native-transport-build/compare-20260918T023759-4accc8/comparison.json",
+      "sha256": "3d80d6cc5e6c75c7458c56fed1daf2db349de7b81cc415eac46a481a577b5264"
+    },
+    {
+      "path": "docs/GATEWAY-H1-TERMINAL-DIAGNOSTIC-2026-09-18.json",
+      "sha256": "293859f592021085033c242a2485b97e4e9423065332e4071ffc839cd4d74aad"
+    },
+    {
+      "path": "docs/CODEX-GATEWAY-OBSERVATION-HOOKS-2026-09-18.md",
+      "sha256": "ef5d5a8187d1c7157f4e7b13edd7ef90f9372d2f86bef631b70d6933ea867a73"
+    }
+  ],
+  "review": {
+    "read_only_review_completed": true,
+    "evidence_hashes_verified": 12,
+    "clarification": "Official lock comparison covers registry/git packages; three local packages use an explicit name/version list."
+  }
+}

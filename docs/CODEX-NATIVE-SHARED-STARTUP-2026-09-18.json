@@ -1,0 +1,89 @@
+{
+  "schema": "native-shared-startup-verification-v1",
+  "date": "2026-09-18",
+  "go_source_sha256": "d690b33f22b6417aec5edae72597a7e99ef9c6ca9f9cd689cc77c3ec018baf0e",
+  "management_baseline_sha256": "bdfbf92ba3102028440c00f75fb8d728f117fc5f4f3f227782429198b2147c82",
+  "linux_gateway_sha256": "406f089d76276d2b6cb50cc5fa40161189f4b46ed2c6ef8fd47fd4150bfdd579",
+  "helper_sha256": "6df426c0a8eb703929f888055192e09cec0d2f7eea9391f2ae891e1ca6213740",
+  "helper_changed_or_rebuilt": false,
+  "production_deployed": false,
+  "live_model_requests": 0,
+  "goal_complete": false,
+  "repair": {
+    "production_file": "gateway_native_http.go",
+    "startup_context_owned_by_pool_not_first_request": true,
+    "startup_waiters_registered_and_released_under_mutex": true,
+    "only_last_waiter_cancels_unready_shared_startup": true,
+    "close_and_retirement_still_cancel_startup": true,
+    "abandoned_reservation_retained_until_cleanup": true,
+    "late_waiter_waits_for_finished_before_fresh_start": true,
+    "ready_healthy_helper_not_abandoned_on_waiter_cancellation": true,
+    "own_request_cancellation_takes_precedence": true,
+    "shared_deadline_maps_to_helper_unavailable": true,
+    "upstream_request_replay_added": false
+  },
+  "validation": {
+    "pre_fix_creator_cancellation_failure_reproduced": true,
+    "new_waiter_top_level_tests": 5,
+    "ordinary_go_tests_passed": true,
+    "ordinary_go_tests_seconds": 22.226,
+    "vet_passed": true,
+    "windows_linux_builds_passed": true,
+    "race": {
+      "passed_top_level_tests": 314,
+      "passed_test_events": 764,
+      "failed_tests": [],
+      "skipped_tests": [],
+      "missing_tests": [],
+      "duration_seconds": 179.856,
+      "cleanup_complete": true
+    },
+    "native_top_level_tests": 24,
+    "go_cli_compatibility_top_level_tests": 1,
+    "go_cli_compatibility_subcases": 3,
+    "paired_total_top_level_tests": 25,
+    "all_required_scenario_reports_present_and_passed": 5,
+    "actual_shared_startup": {
+      "passed": true,
+      "helper_start_count": 1,
+      "upstream_request_count": 1,
+      "canceled_creator_sent_upstream": false,
+      "survivor_body_preserved": true,
+      "tls_http2": true,
+      "go_fallback_attempts": 0,
+      "pool_entries_process_and_ipc_cleanup_verified": true,
+      "duration_seconds": 0.08
+    }
+  },
+  "limits": [
+    "No real accounts, model upstream or production deployment.",
+    "Startup context deadline is not a strict bound on synchronous hash/filesystem/OS reap or a test-blocked command factory.",
+    "A replacement after abandoned startup occurs before request IPC; it is not retry of an accepted or ambiguously sent POST.",
+    "An already-ready idle healthy helper may remain until normal idle eviction.",
+    "Controlled startup barriers do not measure production startup latency distribution or success-rate improvement.",
+    "Existing proxy generation and capacity rules are preserved, not newly proved for every possible external mutation.",
+    "The candidate uses the verified bdfbf92 management baseline, not current in-progress management UI changes."
+  ],
+  "evidence": [
+    {
+      "kind": "build",
+      "path": ".local/source-20260918/gateway-overlay-20260918t080317-d156f9/build-verification.json",
+      "sha256": "e63ba28ffad48f71d35d7a66d2aa979733390e9dde47ee55af34e5504567fca6"
+    },
+    {
+      "kind": "source_manifest",
+      "path": ".local/source-20260918/gateway-overlay-20260918t080317-d156f9/source-manifest.json",
+      "sha256": "315e358a3bf54983f4f7ed049e855ed04fc831f358dfd360ae0f6acba9ee937f"
+    },
+    {
+      "kind": "race",
+      "path": ".local/source-20260918/local-linux-race-20260918t080546-d742eb/report.json",
+      "sha256": "54924de19a783b05e30c3d1c52bc36171021b0cf90db4dec88a3d7923773e589"
+    },
+    {
+      "kind": "native_and_go_cli",
+      "path": ".local/native-transport-build/gateway-compare-20260918T080329-e2be13/result.json",
+      "sha256": "c9ee94f62c3e9b0b7856a0cbe651393d2d2c7412febbccb6c48a16c121b46db3"
+    }
+  ]
+}

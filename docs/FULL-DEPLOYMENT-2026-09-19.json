@@ -1,0 +1,103 @@
+{
+  "schema": "codex-full-deployment-20260919-v1",
+  "deployed": true,
+  "release_id": "47c80b8ef9b99492df4187bf5ff235719c9531eac998d621b7e0f36261a34cd9",
+  "deployed_at": "2026-09-18T19:31:28.373117+00:00",
+  "url": "http://43.225.196.170:18879",
+  "source_sha256": "19c69c3af3c6bcc47c2c487f4de0633264332621da88bf735f0f595f17bbf42d",
+  "binary_sha256": "a673bc08c798d95b3a3af64320008a0418d01aa6753e4da21957634e65cab1c6",
+  "native_sha256": "6df426c0a8eb703929f888055192e09cec0d2f7eea9391f2ae891e1ca6213740",
+  "native_http": true,
+  "native_websocket": true,
+  "websocket_route_enabled": true,
+  "frontend_files": 54,
+  "billing": false,
+  "existing_data_unchanged_at_switch": true,
+  "counts_at_switch": {
+    "accounts": 90,
+    "credentials": 90,
+    "groups": 96,
+    "proxies": 89,
+    "events": 766,
+    "logs": 766,
+    "tokens": 11497919
+  },
+  "production_browser_checks": 21,
+  "production_browser_passed": true,
+  "runtime": {
+    "passed": true,
+    "runtime_sha256": "a673bc08c798d95b3a3af64320008a0418d01aa6753e4da21957634e65cab1c6",
+    "pid": 3279884,
+    "service": {
+      "Result": "success",
+      "NRestarts": "0",
+      "ActiveState": "active",
+      "SubState": "running"
+    },
+    "native_startup_logged": true,
+    "cli_request_lifecycle_logged": true,
+    "bridge_timer": "active",
+    "bridge": {
+      "Result": "success",
+      "ExecMainExitTimestamp": "Sat 2026-09-19 03:33:02 CST",
+      "ExecMainStatus": "0"
+    },
+    "real_account_tests": false,
+    "active_model_requests": 0,
+    "credentials_exported": false
+  },
+  "data_restored": false,
+  "active_model_requests": 0,
+  "initial_prestart_attempt": "Guarded baseline restoration before candidate startup; empty PG session aggregate corrected in a new immutable release.",
+  "rollback_boundary": "Do not downgrade to the original old writer against upgraded state; private recovery materials retained without restoring old data.",
+  "evidence": [
+    {
+      "path": ".local/full-release-20260919/acceptance.json",
+      "sha256": "7bd95b7d827996969b02338c7185722fa0af8b2b9d8094eb2d019d99262b9331"
+    },
+    {
+      "path": ".local/full-release-20260919/production-before.json",
+      "sha256": "e599c6a39d713182a4b9feedb82f781d1c461059f4eaa55b964210959b682e4c"
+    },
+    {
+      "path": ".local/full-release-20260919/preparation-facts.json",
+      "sha256": "a41390e1c5a2f8a561b3ce3bedf634479c0f70d19ad511cd42da7ffb2926d086"
+    },
+    {
+      "path": ".local/full-release-20260919/preflight.json",
+      "sha256": "f7222301f483d3e223f2ae35e2a3143943c03cb7c06a10494bfe3a58fa0335fc"
+    },
+    {
+      "path": ".local/full-release-20260919/activate.json",
+      "sha256": "5d51623fb54d186db9d093e153af34a8e354fa65cbb5b47a9f1c45353d00cfc2"
+    },
+    {
+      "path": ".local/full-release-20260919/verify.json",
+      "sha256": "54d1ed568d7e616dcc6a3669cb7b95fe03883d1315ae2d6780b5498d3cec871b"
+    },
+    {
+      "path": ".local/full-release-20260919/websocket-enabled.json",
+      "sha256": "269ec59dc7776e06017a6717e740513b1a7f5eaa8f25ba58beb07ffd2a04e624"
+    },
+    {
+      "path": ".local/full-release-20260919/browser-verification.json",
+      "sha256": "d773bf31ee1b3653851228bca8cd7f8851e431292cfba91e73f03fe68aa07d39"
+    },
+    {
+      "path": ".local/full-release-20260919/runtime-final.json",
+      "sha256": "dc4774d3f5beb99ac1c4ed62350fa977ecc9827cfbc8400dcc27acf28f2c8c0b"
+    },
+    {
+      "path": ".local/full-release-20260919/public-health.json",
+      "sha256": "a93c2551415fd917c9c3753662c5221e6a701ee35f537e307300206a9f94be28"
+    },
+    {
+      "path": ".local/full-release-20260919/package/full-release.json",
+      "sha256": "57f1a28f1a2792cef1fd26e2080c40788753cdeed0f2fb288b04092cf581a2ea"
+    },
+    {
+      "path": ".local/full-release-20260919/release.tar.gz",
+      "sha256": "cecee4a28982918b1c59e747b094597c2e512bd69165163d0656399ec9e07b14"
+    }
+  ]
+}

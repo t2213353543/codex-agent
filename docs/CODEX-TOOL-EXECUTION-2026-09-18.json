@@ -1,0 +1,105 @@
+{
+  "schema": "codex-tool-execution-verification-v1",
+  "date": "2026-09-18",
+  "go_source_sha256": "5a9eddb2d5b1ec882cfd83e62bd58576ed6de33a1fc6f7571a6631d37222ff4b",
+  "management_baseline_sha256": "bdfbf92ba3102028440c00f75fb8d728f117fc5f4f3f227782429198b2147c82",
+  "linux_gateway_sha256": "1ea1e92f9bd65c3fcbeb4b2a36981df0814c2834268aab9becd065279682cd5a",
+  "helper_sha256": "6df426c0a8eb703929f888055192e09cec0d2f7eea9391f2ae891e1ca6213740",
+  "helper_changed_or_rebuilt": false,
+  "production_deployed": false,
+  "live_model_requests": 0,
+  "goal_complete": false,
+  "repair": {
+    "scope": "non-streaming JSON response output accumulator",
+    "same_nonempty_item_id_different_index_rejected_before_mutation": true,
+    "same_id_same_index_update_preserved": true,
+    "json_conflict_status": 502,
+    "conflict_response_omits_tool_identity_and_content": true,
+    "upstream_replay_added": false,
+    "sse_bytes_changed": false,
+    "pre_fix_regression_failures_observed": 3,
+    "official_server_emits_conflicting_indices_claimed": false
+  },
+  "validation": {
+    "ordinary_go_tests_passed": true,
+    "ordinary_go_tests_seconds": 20.395,
+    "vet_passed": true,
+    "windows_linux_builds_passed": true,
+    "race": {
+      "passed_top_level_tests": 306,
+      "passed_test_events": 746,
+      "failed_tests": [],
+      "skipped_tests": [],
+      "missing_tests": [],
+      "duration_seconds": 159.781,
+      "cleanup_complete": true,
+      "custom_tool_tests": 5,
+      "existing_output_accumulator_tests": 11
+    },
+    "native_release_interop_top_level_tests": 22,
+    "actual_cli_edit_workflow": {
+      "version": "0.155.0",
+      "requests": 7,
+      "cli_processes": 2,
+      "actual_custom_apply_patch_calls": 2,
+      "actual_exec_command_calls": 3,
+      "verified_tool_outputs": 5,
+      "shell_exit_codes": [7, 0, 0],
+      "assertions_passed": 21,
+      "file_bytes": 41,
+      "file_sha256": "de812bc619265d3eb6422bf3270009fa14262822545f4b139458d2127be561aa",
+      "fresh_home_and_codex_home": true,
+      "resume_disk_read_verified": true,
+      "input_prefix_and_tools_preserved": true,
+      "prompt_cache_key_stable_across_resume": true,
+      "go_fallback_attempts": 0,
+      "custom_ca_tls13_http2": true,
+      "parallel_tool_execution_tested": false
+    },
+    "runner_unit_tests": 5,
+    "required_runtime_reports": ["comparison", "native_ws_cli", "native_compressed_cli", "native_edit_cli"],
+    "all_required_runtime_reports_present_and_passed": true,
+    "source_set_and_recomputed_hash_checked_before_and_after": true
+  },
+  "limits": [
+    "No real accounts, model upstream, desktop authentication reads or deployment.",
+    "Scripted upstream responses are synthetic; actual CLI executes tools and file changes.",
+    "Observed bounded workflow does not prove operating-system-level exactly-once tool execution under every failure.",
+    "Stable input prefixes and cache keys are not measured live cache-hit or model-quality improvements.",
+    "The collector conflict repair does not rewrite or deduplicate streaming SSE.",
+    "Custom CA loopback TLS is not evidence of production SNI, US egress or complete device fingerprint.",
+    "Verified non-billing management baseline is frozen separately from current in-progress UI and query work."
+  ],
+  "evidence": [
+    {
+      "kind": "source_manifest",
+      "path": ".local/source-20260918/gateway-overlay-20260918t072922-6e441b/source-manifest.json",
+      "sha256": "b2b802fb77f97485f20ce0d0ca886e2181e05bbbf3d3ff97335bbb02c244c4db"
+    },
+    {
+      "kind": "build",
+      "path": ".local/source-20260918/gateway-overlay-20260918t072922-6e441b/build-verification.json",
+      "sha256": "a4da158dfe62fca9d32c9dad0c2f853e903ea562f499b3dcb2c6923edecdf768"
+    },
+    {
+      "kind": "race",
+      "path": ".local/source-20260918/local-linux-race-20260918t073123-e4da73/report.json",
+      "sha256": "67c8a0df11cd237a8809fe85dba9ed8b89a52ef1abab3e66ea33ee05bc7506eb"
+    },
+    {
+      "kind": "native_gateway",
+      "path": ".local/native-transport-build/gateway-compare-20260918T072935-9c540a/result.json",
+      "sha256": "c54ca43e062465fe55f4f7beab68cdd38adb00572034ca64b641505229cc3758"
+    },
+    {
+      "kind": "official_cli_edit_workflow",
+      "path": ".local/native-transport-build/gateway-compare-20260918T072935-9c540a/gateway-edit-cli.json",
+      "sha256": "6008d0476a1efffaa40d39982206db4a7ee26ec9f7e8bb38833d11ba5e77e041"
+    },
+    {
+      "kind": "verification_runner",
+      "path": "tools/native_transport_compare.py",
+      "sha256": "7937fb887272900ab531aacbbb8a3a99002fb50177ab734dc0cd9f105a713259"
+    }
+  ]
+}

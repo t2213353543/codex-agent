@@ -1,0 +1,86 @@
+[package]
+name = "codex-native-transport"
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+publish = false
+
+[workspace]
+members = [".", "vendor/codex-http-client", "vendor/codex-utils-rustls-provider", "vendor/codex-websocket-client"]
+default-members = ["."]
+resolver = "3"
+
+[workspace.package]
+version = "0.155.0"
+edition = "2024"
+license = "Apache-2.0"
+
+[workspace.dependencies]
+bytes = "=1.12.1"
+codex-http-client = { path = "vendor/codex-http-client" }
+codex-utils-rustls-provider = { path = "vendor/codex-utils-rustls-provider" }
+codex-websocket-client = { path = "vendor/codex-websocket-client" }
+futures = { version = "=0.3.34", default-features = false }
+http = "=1.4.0"
+opentelemetry = "=0.31.0"
+reqwest = { version = "=0.12.28", features = ["cookies"] }
+# Official Linux 0.154.0 captures prefer X25519MLKEM768. The minimal crate
+# graph otherwise drops this feature unified by the complete CLI workspace.
+rustls = { version = "=0.23.36", default-features = false, features = ["aws_lc_rs", "std", "prefer-post-quantum"] }
+rustls-native-certs = "=0.8.3"
+rustls-pki-types = "=1.14.0"
+serde = { version = "=1.0.228", features = ["rc"] }
+serde_json = "=1.0.149"
+sha2 = "=0.10.9"
+system-configuration = "=0.7.0"
+thiserror = "=2.0.18"
+tokio = "=1.52.3"
+tokio-rustls = "=0.26.4"
+tokio-tungstenite = { version = "=0.28.0", features = ["proxy", "rustls-tls-native-roots"] }
+tungstenite = { version = "=0.27.0", features = ["deflate", "proxy"] }
+url = "=2.5.8"
+tracing = "=0.1.44"
+tracing-opentelemetry = "=0.32.1"
+zstd = "=0.13.3"
+
+[workspace.lints.rust]
+unsafe_code = "warn"
+
+[dependencies]
+base64 = "=0.22.1"
+bytes = { workspace = true }
+codex-http-client = { workspace = true }
+codex-websocket-client = { workspace = true }
+futures = { workspace = true, features = ["std", "async-await"] }
+http = { workspace = true }
+# Pin the upstream's direct, non-workspace native-tls declaration too.
+native-tls = "=0.2.14"
+reqwest = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true, features = ["raw_value"] }
+tokio = { workspace = true, features = ["macros", "rt-multi-thread", "net", "io-util", "sync", "time"] }
+tokio-tungstenite = { workspace = true }
+tungstenite = { workspace = true }
+
+[dev-dependencies]
+zstd = { workspace = true }
+
+[patch.crates-io]
+tokio-tungstenite = { git = "https://github.com/openai-oss-forks/tokio-tungstenite", rev = "0e5b2d73aa18dd9f0a50ee9ff199d5aef7594186" }
+tungstenite = { git = "https://github.com/openai-oss-forks/tungstenite-rs", rev = "4fffad30fe373adbdcffab9545e9e9bf4f2fc19f" }
+
+[patch."ssh://git@github.com/openai-oss-forks/tungstenite-rs.git"]
+tungstenite = { git = "https://github.com/openai-oss-forks/tungstenite-rs", rev = "4fffad30fe373adbdcffab9545e9e9bf4f2fc19f" }
+
+# These features are supplied by codex-core in official musl release builds.
+# The transport-only helper deliberately does not depend on codex-core.
+[target.x86_64-unknown-linux-musl.dependencies]
+openssl-sys = { version = "=0.9.111", features = ["vendored"] }
+
+[target.aarch64-unknown-linux-musl.dependencies]
+openssl-sys = { version = "=0.9.111", features = ["vendored"] }
+
+[profile.release]
+lto = "thin"
+codegen-units = 4
+strip = "symbols"

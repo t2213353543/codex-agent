@@ -1,0 +1,187 @@
+{
+  "completed_at": "2026-09-17T20:10:11.927127+00:00",
+  "passed": true,
+  "test_nodes": 22,
+  "top_level_tests": 11,
+  "controlled_upstream": true,
+  "live_model_inference": false,
+  "production_access": false,
+  "postgresql": {
+    "fixture": "dedicated integration database, unique temporary schema",
+    "credentials_reported": false
+  },
+  "redis": {
+    "fixture": "dedicated integration Redis, unique allowed test namespace",
+    "credentials_reported": false,
+    "actual_lua_executed": true
+  },
+  "tests": [
+    {
+      "name": "TestGatewayCooldownRoutesIndependentRequestsButKeepsSession",
+      "result": "pass",
+      "elapsed_seconds": 0.03,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestGatewayCooldownRetryAfterAndCredentialIdentity/seconds",
+      "result": "pass",
+      "elapsed_seconds": 0,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestGatewayCooldownRetryAfterAndCredentialIdentity/long_delay",
+      "result": "pass",
+      "elapsed_seconds": 0,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestGatewayCooldownRetryAfterAndCredentialIdentity/http_date",
+      "result": "pass",
+      "elapsed_seconds": 0,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestGatewayCooldownRetryAfterAndCredentialIdentity/missing",
+      "result": "pass",
+      "elapsed_seconds": 0,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestGatewayCooldownRetryAfterAndCredentialIdentity/invalid",
+      "result": "pass",
+      "elapsed_seconds": 0,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestGatewayCooldownRetryAfterAndCredentialIdentity/bounded",
+      "result": "pass",
+      "elapsed_seconds": 0,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestGatewayCooldownRetryAfterAndCredentialIdentity",
+      "result": "pass",
+      "elapsed_seconds": 0,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestGatewayCooldownBoundedStateDoesNotEvictActiveDeadline",
+      "result": "pass",
+      "elapsed_seconds": 0,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestGatewayCooldownModelsAndBusyUseTyped429",
+      "result": "pass",
+      "elapsed_seconds": 0.01,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestGatewayCooldownAfter401UsesRefreshedCredentials",
+      "result": "pass",
+      "elapsed_seconds": 0.01,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestGatewayCooldownHTTPAcceptedRateLimitEvents/stream_failed",
+      "result": "pass",
+      "elapsed_seconds": 0.01,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestGatewayCooldownHTTPAcceptedRateLimitEvents/collected_failed",
+      "result": "pass",
+      "elapsed_seconds": 0.01,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestGatewayCooldownHTTPAcceptedRateLimitEvents/refreshed_stream_failed",
+      "result": "pass",
+      "elapsed_seconds": 0.01,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestGatewayCooldownHTTPAcceptedRateLimitEvents/top_level_error",
+      "result": "pass",
+      "elapsed_seconds": 0.01,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestGatewayCooldownHTTPAcceptedRateLimitEvents/unrelated_failure",
+      "result": "pass",
+      "elapsed_seconds": 0.01,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestGatewayCooldownHTTPAcceptedRateLimitEvents",
+      "result": "pass",
+      "elapsed_seconds": 0.03,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestGatewayCooldownWebSocketChecksEveryTurnAndRecordsRateLimit",
+      "result": "pass",
+      "elapsed_seconds": 0.01,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestGatewayCooldownWebSocketRejectedUpgrade",
+      "result": "pass",
+      "elapsed_seconds": 0.01,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestGatewayCooldownSharedReadFailureIsTypedAndFailsClosed",
+      "result": "pass",
+      "elapsed_seconds": 0,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestGatewayCooldownRedisSharing",
+      "result": "pass",
+      "elapsed_seconds": 6.05,
+      "evidence_log": ".local/gateway-cooldown-test.jsonl"
+    },
+    {
+      "name": "TestPGGatewayCooldownSelectionBindingAndReplacement",
+      "result": "pass",
+      "elapsed_seconds": 36.2,
+      "evidence_log": ".local/gateway-cooldown-pg-test.jsonl"
+    }
+  ],
+  "validation_commands": [
+    "go test -run '^Test(PG)?GatewayCooldown' -json -count=1 -timeout 90s .",
+    "go test -run '^TestPGGatewayCooldownSelectionBindingAndReplacement$' -json -count=1 -timeout 2m ."
+  ],
+  "corrected_test_fixture": {
+    "test": "TestPGGatewayCooldownSelectionBindingAndReplacement",
+    "initial_result": "invalid gateway key because management fixture had not enabled the gateway AdminAPI",
+    "correction": "use existing adminKeyGatewayPGProxies with explicit gateway settings",
+    "production_changes_for_correction": false,
+    "final_result": "pass"
+  },
+  "policy": {
+    "default_seconds": 4,
+    "maximum_seconds": 3600,
+    "longer_retry_after_is_clamped": true,
+    "automatic_429_replay": false,
+    "existing_session_may_switch_accounts": false,
+    "local_entry_limit": 16384,
+    "redis_entry_limit_including_capacity_marker": 16385,
+    "redis_read_failure_http_status": 503,
+    "capacity_behavior": "conservative temporary namespace/process refusal, retaining active deadlines"
+  },
+  "boundaries": [
+    "No production model, account or Redis namespace was used.",
+    "Windows ordinary Go tests are not race-detector evidence; Linux race is run by the independent audit task.",
+    "Legacy JSON storage has no persisted CredentialVersion; cooldown identity uses its actual access token.",
+    "The initial upstream response is preserved; cooldown affects subsequent admission only."
+  ],
+  "source_sha256": {
+    "gateway_cooldown.go": "8860150874f0a46e389adabad6186e0819a1f4ff14223469360a3e8329b4ce23",
+    "gateway_cooldown_test.go": "733c9c3398365159e70ee65338df1b06178dda02993fc759365224ee83059271",
+    "gateway_upstream.go": "e8cae8d017b8c1f19ffe180b3f5876403267f3b220d3ebedfdf8fa3fe1245c2f",
+    "gateway_sessions.go": "428fc948f874d395c38976a86911a696117fb8692ea7fd1cf2acbdb7d4211b8d",
+    "gateway_websocket.go": "9ac57eca339a42da1e83466e2b969a29abd4d97eb6ea799e8f6225a50d8471a4"
+  }
+}

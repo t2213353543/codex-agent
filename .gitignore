@@ -1,0 +1,49 @@
+# Local state, credentials, and private verification evidence
+/.local/
+/data/
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Dependency caches (native-transport/vendor is required source)
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Build outputs and temporary release copies
+/dist/
+/build/
+/codex-agent
+/codex-agent-ingress
+/codex-agent-linux-*
+*.exe
+*.test
+/*-release-tree/
+/frontend/dist/
+/frontend/dist-*/
+/native-transport/target/
+
+# Generated test and browser reports
+/.playwright-mcp/
+.runtime/
+/frontend/artifacts/
+test-results/
+playwright-report/
+coverage/
+/integration/performance/results/
+/native-transport/ws-plan/generated/
+*.log
+*.prof
+coverage.out
+
+# Local editors and temporary files
+/.zcodeignore
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.swp
+*~

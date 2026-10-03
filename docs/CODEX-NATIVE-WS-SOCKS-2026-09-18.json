@@ -1,0 +1,174 @@
+{
+  "schema": "codex-native-ws-socks-0155-v1",
+  "completed_at": "2026-09-18T04:12:05.270972+00:00",
+  "cli_release": "0.155.0",
+  "go_source_sha256": "39347d9d6ad717f1df988c3be13b53dcefc846ae09ed5e07092f54d36a266357",
+  "helper_sha256": "fb535a5564e2125ad924ab79c9c487cf8307e1884fe960a13a0584f85f8aea29",
+  "management_base": "5a818844f613ad35602ac466c80d8949a2e7f7a180e96ae21c4cbd1573ce6d22",
+  "production_deployed": false,
+  "real_model_inference_requests_this_phase": 0,
+  "goal_complete": false,
+  "go_validation": {
+    "ordinary_tests_passed": true,
+    "vet_passed": true,
+    "windows_linux_builds_passed": true,
+    "race": {
+      "passed_top_level_tests": 204,
+      "passed_test_events": 442,
+      "failed_tests": [],
+      "skipped_tests": [],
+      "missing_tests": [],
+      "duration_seconds": 88.944,
+      "cleanup_complete": true
+    }
+  },
+  "rust_validation": {
+    "http_uds": {
+      "scope": "synthetic loopback HTTP IPC",
+      "live_accounts": false,
+      "tests": 24,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": true,
+      "seconds": 27.491
+    },
+    "websocket_socket_tests": {
+      "passed": 4,
+      "failed": 0,
+      "ignored": 0,
+      "source": "build.log cargo test output"
+    },
+    "locked_dependencies": {
+      "dependency_versions_match_official_lock": true,
+      "packages": 265,
+      "unchanged_upstream_rust_sources": 30,
+      "recorded_adapter_sources": 1,
+      "verified_tls_features_present": true,
+      "websocket_forks_match": true
+    }
+  },
+  "interop_top_level_tests": [
+    "--- PASS: TestGatewayNativeActualCLI (5.92s)",
+    "--- PASS: TestGatewayNativeActualInfrastructureCookieScope (0.54s)",
+    "--- PASS: TestGatewayNativeActualRoutesAndOAuth (1.16s)",
+    "--- PASS: TestGatewayNativeActualCancellationAndNoReplay (0.27s)",
+    "--- PASS: TestGatewayNativeActualProxyReuseAndRotation (0.27s)",
+    "--- PASS: TestGatewayNativeActualSOCKSTLSAndRemoteDNS (0.41s)",
+    "--- PASS: TestGatewayNativeActualSOCKSFailureDoesNotRefreshOrFallback (0.28s)",
+    "--- PASS: TestGatewayNativeActualWebSocketToolTurns (0.36s)",
+    "--- PASS: TestGatewayNativeActualWebSocket401Recovery (0.36s)",
+    "--- PASS: TestGatewayNativeActualWebSocket429Preserved (0.29s)",
+    "--- PASS: TestGatewayNativeActualWebSocketSOCKSAndProxyFailure (0.53s)",
+    "--- PASS: TestGatewayNativeActualWebSocketCLI (10.84s)"
+  ],
+  "native_ws_official_cli": {
+    "actual_shell_tool": true,
+    "cli_version": "codex-cli 0.155.0",
+    "connections": 2,
+    "generated_responses": 3,
+    "go_fallback_attempts": 0,
+    "incremental_continuations": 3,
+    "live_model_inference": false,
+    "passed": true,
+    "resume_context_verified": true,
+    "schema": "official-cli-native-websocket-v1",
+    "tls_scope": "plaintext in this test; separate TLS and proxy tests",
+    "tool_output_requests": 2,
+    "upstream": "synthetic loopback WebSocket",
+    "warmups": 2
+  },
+  "tls_comparison": {
+    "passed": true,
+    "default_handshake_observed_only": true,
+    "custom_ca_tls_and_http_negotiation_observed": true,
+    "production_sni_verified": false,
+    "tls_resumption_verified": false,
+    "http2_settings_verified": false
+  },
+  "ownership": {
+    "known_user_and_workspace_checked": true,
+    "same_owner_refresh_keeps_affinity": true,
+    "old_unqualified_known_user_bindings_fail_closed": true,
+    "unknown_owner_conservative_generation_complete": false
+  },
+  "boundaries": [
+    "Synthetic upstream and genuine CLI/tool execution, not real model inference.",
+    "Locale variables and platform headers do not establish a US device or model egress location.",
+    "Native HTTP/WS require explicit startup enablement; no production changes made.",
+    "Go WS buffers 16 messages with 32MiB queued payload limit, plus in-progress frames and library/kernel buffers.",
+    "SOCKS HTTPS/WSS is a raw tunnel; plain HTTP uses Go reverse-proxy serialization.",
+    "Infrastructure cookie fixture exercises HTTPS replay, scope and expiry; it does not test an HTTP downgrade Secure negative case."
+  ],
+  "evidence": [
+    {
+      "kind": "go_manifest",
+      "path": ".local/source-20260918/gateway-overlay-20260918t040658-95b49d/source-manifest.json",
+      "sha256": "44953a002f5f7bb8220b39c4540371eafc4de9f76d11b0d43c4719ba4e9ffcf0"
+    },
+    {
+      "kind": "go_overlay",
+      "path": ".local/source-20260918/gateway-overlay-20260918t040658-95b49d/overlay-manifest.json",
+      "sha256": "ba3664b240af1fb7643f61b8aa785934e33e13e7212dd0e8404ad70170fbc791"
+    },
+    {
+      "kind": "go_builds",
+      "path": ".local/source-20260918/gateway-overlay-20260918t040658-95b49d/build-verification.json",
+      "sha256": "f86e211d369132b85d7afa2dc49887c9460d5af9289e35da696e5a9df8cb07d3"
+    },
+    {
+      "kind": "race",
+      "path": ".local/source-20260918/local-linux-race-20260918t040758-ec531c/report.json",
+      "sha256": "439c52db0bbf7e10495bb956fd6123a7af348aacb00f0722ce7013dbbc96885a"
+    },
+    {
+      "kind": "rust",
+      "path": ".local/native-local-build/20260918T035634Z-80cf0e2a/result.json",
+      "sha256": "ff0dd7ca35cd222a47126acc0a6ec1c6c647a4ff5bcfc74131e4a4ec00060521"
+    },
+    {
+      "kind": "rust_tests",
+      "path": ".local/native-local-build/20260918T035634Z-80cf0e2a/test-results.json",
+      "sha256": "5e41f8718921014533619fd1056899172a2ff696bb1cda32fb5d90ebe8bbb7dd"
+    },
+    {
+      "kind": "rust_lock",
+      "path": ".local/native-local-build/20260918T035634Z-80cf0e2a/lock-check.json",
+      "sha256": "66a11e428b66c84ce053838a23ccdaf65622479fa020eba9ffb9b64133fd4c1b"
+    },
+    {
+      "kind": "gateway",
+      "path": ".local/native-transport-build/gateway-compare-20260918T040733-37ccbf/result.json",
+      "sha256": "98a04f741143b57ffa90c8d8188659e9585114537f5f2b41a54014602fe22a23"
+    },
+    {
+      "kind": "http_cli",
+      "path": ".local/native-transport-build/gateway-compare-20260918T040733-37ccbf/gateway-cli.json",
+      "sha256": "1be121545806a9b53048a36576713657d15a6c1641609471c8e5533fd4d4c62c"
+    },
+    {
+      "kind": "ws_cli",
+      "path": ".local/native-transport-build/gateway-compare-20260918T040733-37ccbf/gateway-ws-cli.json",
+      "sha256": "62ed77f9d770c34599ddad73695689dde67a4400f437d7543e3c1760f5ab8c4a"
+    },
+    {
+      "kind": "tls",
+      "path": ".local/native-transport-build/tls-compare-20260918T040913-74fb1f/result.json",
+      "sha256": "e26f547d6602702973e266123815dffa78b3965fde89489f11ce69cebe1b9125"
+    },
+    {
+      "kind": "official",
+      "path": ".local/native-transport-build/official-cli-0.155.0-source.json",
+      "sha256": "8c07b99c08153eee9e10ee2d02f01f3ec04a6628c49481a8227bc706c6595d4f"
+    },
+    {
+      "kind": "rust_actual_build_and_websocket_test_log",
+      "path": ".local/native-local-build/20260918T035634Z-80cf0e2a/build.log",
+      "sha256": "a049c2c98e5e88526c242f992cf35e9a84a495970bbd1d354a872c9baa8bd44a"
+    }
+  ],
+  "read_only_review": {
+    "artifact_hashes_verified": true,
+    "cookie_secure_claim_narrowed_to_observed_https_behavior": true
+  }
+}

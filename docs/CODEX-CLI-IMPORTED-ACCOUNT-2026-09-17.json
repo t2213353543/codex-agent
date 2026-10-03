@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "acceptance_scope": "conversation_and_shell",
+  "imported_account": true,
+  "passed": true,
+  "cli_version": "codex-cli 0.154.0",
+  "elapsed_seconds": 63.9426352,
+  "process_exit_code": 0,
+  "timed_out": false,
+  "checks": [
+    {
+      "name": "initial_session",
+      "passed": true,
+      "assertions": {
+        "final_reply_matches": true,
+        "no_commands_for_memory_check": true,
+        "no_error_events": true,
+        "process_exited_successfully": true,
+        "thread_started": true,
+        "turn_completed": true,
+        "turn_started": true
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "completed_command_count": 0
+    },
+    {
+      "name": "resume_memory",
+      "passed": true,
+      "assertions": {
+        "final_reply_matches": true,
+        "no_commands_for_memory_check": true,
+        "no_error_events": true,
+        "process_exited_successfully": true,
+        "same_thread_resumed": true,
+        "thread_started": true,
+        "turn_completed": true,
+        "turn_started": true
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "completed_command_count": 0
+    },
+    {
+      "name": "shell_tool",
+      "passed": true,
+      "assertions": {
+        "final_reply_matches": true,
+        "marker_file_unchanged": true,
+        "no_error_events": true,
+        "process_exited_successfully": true,
+        "same_thread_resumed": true,
+        "shell_read_marker": true,
+        "thread_started": true,
+        "turn_completed": true,
+        "turn_started": true
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "completed_command_count": 1
+    }
+  ],
+  "inference_requests": 4,
+  "http_status_counts": {
+    "200": 4
+  },
+  "failed_inference_requests": 0,
+  "requests_without_usage": 0,
+  "input_tokens": 31074,
+  "output_tokens": 262,
+  "cached_tokens": 25600,
+  "failures": []
+}

@@ -1,0 +1,300 @@
+{
+  "schema": "codex-agent-source-optimization-v1",
+  "completed_at": "2026-09-17T20:15:32.256481+00:00",
+  "scope": "gateway verification snapshot, not joint management release or production deployment",
+  "source_sha256": "dc955ff5fab902b6aef42e8dafe9ac8b8906e5139028e277c120bad5fe561316",
+  "archive_sha256": "af95664b2ed2ce15236632a8da91ceb2beec6d5a7a297b0c9a6b680555e53085",
+  "cli_source": {
+    "release": "rust-v0.154.0",
+    "commit": "6b9826e3aa83b1a5947db50f4332cb9c65f1b340",
+    "release_url": "https://github.com/openai/codex/releases/tag/rust-v0.154.0",
+    "desktop_comparison_version": "0.154.0-alpha.6.2"
+  },
+  "live_cli": {
+    "passed": true,
+    "execution_path": "official CLI -> local candidate Proxy -> dedicated-group deployed gateway -> assigned WARP proxy -> upstream",
+    "candidate_boundary": "compiled before final OAuth-failure cooldown and 429 cooldown additions; those changes require their separate regressions",
+    "model": "gpt-5.6-luna",
+    "http_status_counts": {
+      "200": 12
+    },
+    "cache": {
+      "requests": 12,
+      "unscoped_requests": 0,
+      "comparable_pairs": 11,
+      "stable_configuration_pairs": 11,
+      "model_changed_pairs": 0,
+      "instructions_changed_pairs": 0,
+      "tools_changed_pairs": 0,
+      "controls_changed_pairs": 0,
+      "cache_key_changed_pairs": 0,
+      "missing_cache_key_requests": 0,
+      "input_comparable_pairs": 11,
+      "shared_input_items": 209,
+      "previous_input_items_compared": 238,
+      "input_history_extension_pairs": 9,
+      "input_history_changed_pairs": 2,
+      "input_comparison_limited_requests": 0,
+      "scope_evictions": 0,
+      "responses": 12,
+      "successful_responses": 12,
+      "failed_responses": 0,
+      "incomplete_responses": 0,
+      "unfinished_responses": 0,
+      "usage_responses": 12,
+      "cache_usage_responses": 12,
+      "cache_hit_responses": 11,
+      "invalid_usage_responses": 0,
+      "input_tokens": 124319,
+      "output_tokens": 3102,
+      "cached_input_tokens": 104704,
+      "cache_usage_input_tokens": 124319,
+      "cache_hit_ratio": 0.8422204168308948,
+      "pending_requests": 0
+    },
+    "connection_scope": "Connection counters describe local candidate to deployed HTTP gateway, not its TLS connection to the model upstream.",
+    "connections_observed": 12,
+    "connections_reused": 0,
+    "connection_nonreuse_cause": "not established",
+    "causal_cache_improvement_claimed": false,
+    "task_checks": [
+      {
+        "name": "repair",
+        "passed": true,
+        "assertions": {
+          "process_exited_successfully": true,
+          "thread_started": true,
+          "turn_completed": true,
+          "no_error_events": true,
+          "successful_shell_execution": true,
+          "test_suite_executed": true,
+          "independent_money_oracle": true,
+          "source_changed": true,
+          "fixtures_unchanged": true,
+          "marker_not_saved_in_source": true
+        }
+      },
+      {
+        "name": "feature",
+        "passed": true,
+        "assertions": {
+          "process_exited_successfully": true,
+          "thread_started": true,
+          "turn_completed": true,
+          "no_error_events": true,
+          "same_thread_resumed": true,
+          "successful_shell_execution": true,
+          "test_suite_executed": true,
+          "independent_money_oracle": true,
+          "independent_utc_month_oracle": true,
+          "source_changed": true,
+          "fixtures_unchanged": true,
+          "marker_not_saved_in_source": true
+        }
+      },
+      {
+        "name": "resume_memory",
+        "passed": true,
+        "assertions": {
+          "process_exited_successfully": true,
+          "thread_started": true,
+          "turn_completed": true,
+          "no_error_events": true,
+          "same_thread_resumed": true,
+          "history_marker_recalled": true,
+          "memory_without_tools": true
+        }
+      }
+    ]
+  },
+  "frozen_snapshot_validation": {
+    "ordinary_go_tests": {
+      "command": "go test ./... -count=1 -json",
+      "passed_test_events": 764,
+      "passed_top_level_tests": 289,
+      "skipped_tests": [
+        "TestPGSub2APIImportMetadataAndPartialValidation",
+        "TestPGAccountCredentialsAndMetadataIsolation",
+        "TestPGAccountConcurrentVersionAndForeignKeyRollback",
+        "TestPGAccountRefreshSerializesOnlySameAccount",
+        "TestPGEnsureReadyRefreshesDifferentAccountsConcurrently",
+        "TestPGAccountRefreshCASAndRestartRecovery",
+        "TestPGAccountRefreshFailureSurvivesRestartAndDoesNotMarkReplacement",
+        "TestPGAccountImportConflictAndDryRun",
+        "TestPGShutdownPersistsRefreshAfterClientDisconnectAndSIGTERM",
+        "TestPGManagedAccountControls",
+        "TestPGManagedOAuthFlows",
+        "TestPGManagedUpstreamChecks",
+        "TestPGManagedAccountsContract/filters_sort_total_and_selection",
+        "TestPGManagedAccountsContract/batch_partial_results_and_versions",
+        "TestPGManagedAccountsContract/reauthorize_preserves_identity_and_management",
+        "TestPGManagedAccountsContract/refresh_uses_fake_upstream_and_preconditions",
+        "TestPGManagedAccountsContract/metadata_credentials_export_and_native_restore",
+        "TestAdminKeyPGRevalidationAndCookiePrecedence",
+        "TestPGAdminGatewayRotationImmediatelyRevokesOtherInstance",
+        "TestPGAdminGatewayDisabledKeepsManagementAccess",
+        "TestPGAdminGatewayDatabaseFailureDoesNotTrustCachedKey",
+        "TestPGManagementState",
+        "TestPGAdminObservabilityAuditPagination",
+        "TestPGAdminObservabilityDiagnosticsAndStorageFailure",
+        "TestPGAdminGroupDeletionRollsBackOnAuditFailure",
+        "TestPGAdminStableAccountLogsSurviveRenameAndRestart",
+        "TestPGManagedCleanupLifecycle",
+        "TestPGManagedUsageQueryStatsExport",
+        "TestCodexCLIIntegration",
+        "TestCodexFingerprintCLIConversation",
+        "TestCodexCLIWorkloadFixture",
+        "TestCodexCLIWorkload",
+        "TestGatewayRedisConfigurableSessionRenewal",
+        "TestGatewayRedisSessionSharing",
+        "TestGatewayCooldownRedisSharing",
+        "TestPGGatewayCooldownSelectionBindingAndReplacement",
+        "TestGatewayLiveSettings",
+        "TestPGGatewayRefreshCooldownSharesFailureAndReimportClears",
+        "TestPGGatewaySettingsRefreshAcrossInstances",
+        "TestRealCodexCLIReadOnlyWindowsSandbox",
+        "TestRealCodexCLI",
+        "TestRealCodexCLIWebSocket",
+        "TestPGSettingsCustomizationPersistenceAndAdminAPI",
+        "TestSourceNativeCLITransport",
+        "TestPGMetricsIdempotentConcurrentEventsRestartAndDelete",
+        "TestPGMetricsTransactionFailureRetryAndHealth",
+        "TestPGMetricsCursorStableDescendingAndNoCount",
+        "TestPGMetricsRebuildPruneAndLegacyExport",
+        "TestPGMetricsLegacyBaselinePreservesMissingLogsAndRebuild",
+        "TestPGGroupAndProxyDeleteRollback",
+        "TestPGProxyMetadataAndVersion",
+        "TestPGAdminRotationFailureAndLostResponseReplay",
+        "TestPGRedisSessionsFailClosed",
+        "TestPGLegacyImportExportRoundTrip"
+      ],
+      "failed_tests": [],
+      "passed": true,
+      "skipped_test_events": 54,
+      "skipped_top_level_tests": 49
+    },
+    "vet": {
+      "command": "go vet ./...",
+      "passed": true
+    },
+    "builds": {
+      "windows_amd64": true,
+      "linux_amd64_cgo_disabled": true
+    },
+    "artifacts": [
+      {
+        "path": ".local/source-20260918/codex-agent-dc955ff5fab9.exe",
+        "sha256": "771a1cc454b7db2ecc63113da98d40a8faa353d517679c0cb0d791bdaaf2088a",
+        "bytes": 20251136
+      },
+      {
+        "path": ".local/source-20260918/codex-agent-dc955ff5fab9-linux-amd64",
+        "sha256": "aa77dbb97189d3438fc23666c9f74b44ceb10757469c790099a2668ae2c01d8f",
+        "bytes": 19934126
+      }
+    ],
+    "linux_race": {
+      "status": "pass",
+      "go_source_sha256": "dc955ff5fab902b6aef42e8dafe9ac8b8906e5139028e277c120bad5fe561316",
+      "passed_test_events": 299,
+      "passed_top_level_tests": 141,
+      "failed_tests": [],
+      "skipped_tests": [],
+      "missing_tests": [],
+      "duration_seconds": 75.166,
+      "temporary_container_removed": true,
+      "temporary_credentials_removed": true,
+      "go_source_changed_after_freeze": false
+    }
+  },
+  "native_transport": {
+    "controlled_probe_passed": true,
+    "default_trust_hello_is_not_successful_tls_handshake": true,
+    "custom_ca_uses_different_tls_backend": true,
+    "go_native_tls_parity": false,
+    "rust_adapter_compiled": false,
+    "rust_adapter_integrated": false,
+    "candidate_boundary": "Independent observations on earlier candidates, not rerun against the final dc955ff5 frozen gateway."
+  },
+  "production_deployed_by_this_task": false,
+  "production_pressure_test_performed_by_this_task": false,
+  "private_request_content_recorded": false,
+  "remaining_boundaries": [
+    "Native TLS implementation and platform comparison remain incomplete.",
+    "Live workload predates final cooldown additions, which have separate synthetic PG/Redis/race verification.",
+    "Nondefault custom timeouts are not pooled yet.",
+    "Admission counters are per process, not a distributed global maximum.",
+    "Model-upstream egress geolocation is not established by the separate Cloudflare trace.",
+    "Management functionality and additive migration require joint release validation.",
+    "Existing configured built-in instruction policy remains independent; byte-preserving instructions forwarding requires disabling it."
+  ],
+  "evidence": [
+    {
+      "path": ".local/source-20260918/linux-race-20260917T200854-a301b3/report.json",
+      "sha256": "3b2d20060adebc9cdbeffdef5b0d118a7e72d3da2e366e610ed625269698367c"
+    },
+    {
+      "path": ".local/source-20260918/linux-race-20260917T200854-a301b3/source-manifest.json",
+      "sha256": "2a468959a65126a528a8c40c72ac9149a8be79b6402fdb1f50532e6ce50203d0"
+    },
+    {
+      "path": ".local/source-20260918/linux-race-20260917T200854-a301b3/source.tar.gz",
+      "sha256": "af95664b2ed2ce15236632a8da91ceb2beec6d5a7a297b0c9a6b680555e53085"
+    },
+    {
+      "path": ".local/source-20260918/local-build-verification-dc955ff5fab9.json",
+      "sha256": "2903523602a29e0b67e4774c5856ad84714c1194ed5f08665dec42434e1cac25"
+    },
+    {
+      "path": "docs/CODEX-CLI-WORKLOAD-DEDICATED-2026-09-18.json",
+      "sha256": "4c9c3937d8c2f069922ee04d9cb55da8de0804a294d78d47d7e4dbace4f961b9"
+    },
+    {
+      "path": "docs/CODEX-CLI-WORKLOAD-2026-09-18.json",
+      "sha256": "6e3c1dccf6aa8fc33c3147ceb0c1b4316cf1dcd59d38ce2edf691b87a00256f8"
+    },
+    {
+      "path": "docs/GATEWAY-COOLDOWN-2026-09-18.json",
+      "sha256": "e0743e56114f75f27f2eb75d70d709f8f0ef6ece7638df6c8244a9dfc4c80bbc"
+    },
+    {
+      "path": "docs/CODEX-NATIVE-TRANSPORT-2026-09-18.json",
+      "sha256": "50cdaa902c89c56e95902dd21be7bbde90d61ca8e73a282235df0922980ee29c"
+    },
+    {
+      "path": "docs/CODEX-NATIVE-TRANSPORT-ADAPTER.md",
+      "sha256": "782907542d4cda34590525cc37a859046a2bc53e898cc8ff0b5172ac89d2a5d8"
+    },
+    {
+      "path": "tools/codex_cli_workload.py",
+      "sha256": "f1ce92738ad9588082a92313981f4f98736b6fdce12004880409c0fada25c151"
+    },
+    {
+      "path": "tools/gateway_source_race.py",
+      "sha256": "ca48edec826966d1905617b5f7a5554bffdce9725a891c6dff02e7876f3d5cd0"
+    }
+  ],
+  "shared_tree_after_freeze": {
+    "observed_at": "2026-09-17T20:17:43.480778+00:00",
+    "changed_preexisting_files": [
+      "admin.go",
+      "admin_usage_cleanup.go",
+      "admin_usage_pricing.go",
+      "admin_usage_query.go",
+      "admin_usage_store.go",
+      "stats.go"
+    ],
+    "later_management_changes_covered_by_snapshot_validation": false
+  },
+  "review": {
+    "performed": true,
+    "method": "read-only source and evidence review",
+    "resolved_documentation_corrections": [
+      "Separate final frozen checks from earlier CLI/live/native observations.",
+      "Count skips as 54 events, including 49 top-level and 5 subtests.",
+      "State idle100 is per transport, not a process-wide total.",
+      "Limit instructions preservation claim to the cache canonicalization change; configured prompt policy remains active."
+    ],
+    "additional_tests_run_for_documentation_review": false
+  }
+}

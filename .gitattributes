@@ -1,0 +1,9 @@
+# Preserve exact bytes for vendored source and recorded provenance hashes.
+* -text
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary

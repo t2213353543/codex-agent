@@ -1,0 +1,117 @@
+{
+  "schema": "codex-native-fallback-verification-v1",
+  "date": "2026-09-18",
+  "go_source_sha256": "834800a86730e17c663763f9ffb3a489d4254d4a5d6ea6a6d73b1624652378b6",
+  "verified_gateway_baseline_sha256": "d690b33f22b6417aec5edae72597a7e99ef9c6ca9f9cd689cc77c3ec018baf0e",
+  "management_baseline_sha256": "bdfbf92ba3102028440c00f75fb8d728f117fc5f4f3f227782429198b2147c82",
+  "linux_gateway_sha256": "406f089d76276d2b6cb50cc5fa40161189f4b46ed2c6ef8fd47fd4150bfdd579",
+  "production_source_and_binary_identical_to_verified_baseline": true,
+  "helper_sha256": "6df426c0a8eb703929f888055192e09cec0d2f7eea9391f2ae891e1ca6213740",
+  "helper_changed_or_rebuilt": false,
+  "production_deployed": false,
+  "live_model_requests": 0,
+  "goal_complete": false,
+  "validation": {
+    "ordinary_go_tests_passed": true,
+    "ordinary_go_tests_seconds": 23.268,
+    "vet_passed": true,
+    "windows_linux_builds_passed": true,
+    "race": {
+      "passed_top_level_tests": 315,
+      "passed_test_events": 768,
+      "failed_tests": [],
+      "skipped_tests": [],
+      "missing_tests": [],
+      "duration_seconds": 170.15,
+      "cleanup_complete": true
+    },
+    "native_top_level_tests": 26,
+    "go_cli_compatibility_top_level_tests": 1,
+    "go_cli_compatibility_subcases": 3,
+    "paired_total_top_level_tests": 27,
+    "required_scenario_reports_present_and_passed": 6,
+    "actual_cli_fallback": {
+      "version": "0.155.0",
+      "assertions_passed": 20,
+      "rejected_ws_handshakes": 2,
+      "http_responses_requests": 3,
+      "verified_real_tool_outputs": 1,
+      "cli_processes": 2,
+      "rejected_ws_request_body_bytes": 0,
+      "rejected_ws_post_header_data_bytes": 0,
+      "rejected_connection_eofs": 2,
+      "higher_priority_competing_account_introduced": true,
+      "unbound_control_selected_competing_account": true,
+      "fallback_and_resume_kept_original_account": true,
+      "go_upstream_fallback_attempts": 0,
+      "request_order": ["websocket_rejected", "http_response", "http_response", "websocket_rejected", "http_response"]
+    },
+    "handshake_rejections": {
+      "tested_target_statuses": [200, 426, 407],
+      "header_session_target_200_returns_503": true,
+      "target_426_and_407_preserved": true,
+      "body_session_accepted_then_error_frame_distinguished": true,
+      "oauth_refreshes": 0,
+      "model_posts_by_rejection_fixture": 0,
+      "connect_proxy_407_tested_here": false
+    },
+    "runner_unit_tests": 5,
+    "explicit_delta_freezer_unit_tests": 2
+  },
+  "preliminary_failure": {
+    "go_source_sha256": "fee45fd97f5dc038a6ea44abaadec3d98b866c17a52820e4e023c0da4b527512",
+    "full_suite_passed": false,
+    "failed_test": "TestManagedPassiveClientIDQuery",
+    "reason": "Broad shared-tree overlay included another task's in-progress passive code without its matching management query implementation.",
+    "failure_evidence_retained": true,
+    "other_task_changes_reverted": false,
+    "final_candidate_from_verified_baseline_and_only_two_explicit_test_files": true
+  },
+  "limits": [
+    "No real accounts, model upstream, desktop authentication reads or deployment.",
+    "This exercises explicit CLI connection-phase 426 fallback, not universal fallback for all errors.",
+    "Both WS and HTTP gateway upstream transports remain native Rust; protocol fallback is not Go transport fallback.",
+    "Body-only session routing returns an error after downstream 101 and is not equivalent to pre-upgrade HTTP 426.",
+    "407 rejection here is a target HTTP status, not an HTTP CONNECT proxy rejection.",
+    "Exact bounded call counts and output identity do not prove OS-wide exactly-once under all failures.",
+    "Stable cache identity is not a live cache-hit or production-performance measurement.",
+    "The final immutable delta excludes concurrent shared-tree passive-management work without deleting or reverting it."
+  ],
+  "evidence": [
+    {
+      "kind": "build",
+      "path": ".local/source-20260918/gateway-delta-20260918t083313-9480c0/build-verification.json",
+      "sha256": "e4d4282221b9497bfd72271d1dc91cbd9bf95c720f4c2a4c9b06297293547c60"
+    },
+    {
+      "kind": "source_manifest",
+      "path": ".local/source-20260918/gateway-delta-20260918t083313-9480c0/source-manifest.json",
+      "sha256": "e3a284ec2160f610f43322f8abed5295f1873d2885723809bccb0f3ecfe7b368"
+    },
+    {
+      "kind": "explicit_delta",
+      "path": ".local/source-20260918/gateway-delta-20260918t083313-9480c0/overlay-manifest.json",
+      "sha256": "e26c7b2439fda5a56cc76684ecb8cfaf97594af50b9c679eaa32d796664d2d45"
+    },
+    {
+      "kind": "race",
+      "path": ".local/source-20260918/local-linux-race-20260918t083612-19bc46/report.json",
+      "sha256": "6712745ba9ccedd00750c0d273af23ffea926098fb7a1a3bcc9bc059f432bf43"
+    },
+    {
+      "kind": "native_and_go_cli",
+      "path": ".local/native-transport-build/gateway-compare-20260918T083336-817149/result.json",
+      "sha256": "989ce0fedf951fef7a497ceb89964569c080a1da2294db923906da85c49c3379"
+    },
+    {
+      "kind": "official_cli_fallback",
+      "path": ".local/native-transport-build/gateway-compare-20260918T083336-817149/gateway-fallback-cli.json",
+      "sha256": "51fb6be720bbae2debfe0ce7fbff61e4833dd3d8aefd1bfb64e5c3fbf4f55687"
+    },
+    {
+      "kind": "preliminary_failure",
+      "path": ".local/source-20260918/gateway-overlay-20260918t081950-5e5ac4/build-verification.json",
+      "sha256": "fa08f178a96efe4435e552486d4fcde3d6830c3c7db03eaff6bd8a3b3e234fbc"
+    }
+  ]
+}

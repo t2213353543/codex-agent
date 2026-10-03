@@ -1,0 +1,96 @@
+{
+  "schema": "native-proxy-dispatch-verification-v1",
+  "date": "2026-09-18",
+  "go_source_sha256": "278e0051354026814af8b8e67756b860756e26e85e8610f5f9c3b1074e0827e6",
+  "verified_gateway_baseline_sha256": "834800a86730e17c663763f9ffb3a489d4254d4a5d6ea6a6d73b1624652378b6",
+  "linux_gateway_sha256": "798ba3b21f389689d404ce84a847655dad360323ad5e79e9389caadfba795b3f",
+  "helper_sha256": "6df426c0a8eb703929f888055192e09cec0d2f7eea9391f2ae891e1ca6213740",
+  "helper_changed_or_rebuilt": false,
+  "production_deployed": false,
+  "live_model_requests": 0,
+  "goal_complete": false,
+  "repair": {
+    "production_files": ["gateway_native_factory.go", "gateway_native_http.go"],
+    "single_guard_store_id_fingerprint_source": true,
+    "existing_roundtrip_entry_check_preserved": true,
+    "post_helper_acquire_check": true,
+    "post_ipc_connect_pre_request_header_check": true,
+    "typed_stale_snapshot_error": "errGatewayProxyUnavailable",
+    "request_automatically_migrated_to_new_proxy": false,
+    "automatic_replay_added": false,
+    "request_body_and_active_slot_released_once": true,
+    "pre_fix_password_disable_delete_failures_reproduced": 3,
+    "configuration_update_and_socket_write_atomicity_claimed": false
+  },
+  "validation": {
+    "ordinary_go_tests_passed": true,
+    "ordinary_go_tests_seconds": 20.688,
+    "vet_passed": true,
+    "windows_linux_builds_passed": true,
+    "race": {
+      "passed_top_level_tests": 317,
+      "passed_test_events": 774,
+      "failed_tests": [],
+      "skipped_tests": [],
+      "missing_tests": [],
+      "duration_seconds": 169.771,
+      "cleanup_complete": true,
+      "new_dispatch_top_level_tests": 2
+    },
+    "native_top_level_tests": 27,
+    "go_cli_compatibility_top_level_tests": 1,
+    "go_cli_compatibility_subcases": 3,
+    "paired_total_top_level_tests": 28,
+    "required_scenario_reports_present_and_passed": 6,
+    "actual_rust_proxy_dispatch": {
+      "passed": true,
+      "rejected_stale_request_old_proxy_requests": 0,
+      "rejected_stale_request_new_proxy_requests": 0,
+      "rejected_stale_request_direct_requests": 0,
+      "rejected_stale_request_proxy_tcp_connections": 0,
+      "later_independent_new_proxy_requests": 1,
+      "later_independent_new_proxy_connections": 1,
+      "current_credentials_absolute_uri_body_and_response_verified": true,
+      "go_fallback_attempts": 0,
+      "pool_empty_after_close": true,
+      "transport": "plaintext loopback HTTP proxy",
+      "duration_seconds": 0.10
+    }
+  },
+  "limits": [
+    "No real accounts, model upstream or production deployment.",
+    "The final check is a dispatch checkpoint, not an atomic transaction spanning concurrent configuration changes and all socket writes.",
+    "Already-sent streams are not replayed or forcibly migrated by this fix.",
+    "The actual proxy test is plaintext loopback HTTP, not additional TLS, SOCKS or geographic evidence.",
+    "A new independent request selecting current configuration is not automatic replay of the rejected request.",
+    "No quantified production success-rate or cache-hit improvement is claimed.",
+    "Only four explicitly named files overlay the verified gateway baseline; other tasks' in-progress passive and management changes remain untouched."
+  ],
+  "evidence": [
+    {
+      "kind": "source_manifest",
+      "path": ".local/source-20260918/gateway-delta-20260918t084948-9b6ef5/source-manifest.json",
+      "sha256": "93b01b83f7b911875061d9fdc7a4f16bf64378f56eca82a2906c3b617fc219b5"
+    },
+    {
+      "kind": "explicit_delta",
+      "path": ".local/source-20260918/gateway-delta-20260918t084948-9b6ef5/overlay-manifest.json",
+      "sha256": "d4c27bd6011467f39e2647f7cda300bc9bee920ccb1439fcbb182b957a0c0d96"
+    },
+    {
+      "kind": "build",
+      "path": ".local/source-20260918/gateway-delta-20260918t084948-9b6ef5/build-verification.json",
+      "sha256": "0cc6332a4aea2386366d05e1e520ab0a8592a96f5c644aca81cec21c58469d63"
+    },
+    {
+      "kind": "race",
+      "path": ".local/source-20260918/local-linux-race-20260918t085236-3c92c3/report.json",
+      "sha256": "4d62d52c634c1740db90b8489b22a60a944772e791b17967755fad6110eaf50d"
+    },
+    {
+      "kind": "native_and_go_cli",
+      "path": ".local/native-transport-build/gateway-compare-20260918T085005-1e041a/result.json",
+      "sha256": "8247ceeb98fe909142ed84b686426069a5eea29a0da8e99d76eb5250c0587dac"
+    }
+  ]
+}

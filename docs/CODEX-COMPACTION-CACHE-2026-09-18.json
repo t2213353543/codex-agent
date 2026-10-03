@@ -1,0 +1,111 @@
+{
+  "schema": "codex-compaction-cache-verification-v1",
+  "date": "2026-09-18",
+  "go_source_sha256": "863040e0e9b18ab1ad0007ee2c5396804abcf4e6c868c30fa6620f30d5897e69",
+  "management_baseline_sha256": "bdfbf92ba3102028440c00f75fb8d728f117fc5f4f3f227782429198b2147c82",
+  "linux_gateway_sha256": "1ea1e92f9bd65c3fcbeb4b2a36981df0814c2834268aab9becd065279682cd5a",
+  "production_binary_unchanged_from_previous_round": true,
+  "production_forwarding_changed": false,
+  "helper_sha256": "6df426c0a8eb703929f888055192e09cec0d2f7eea9391f2ae891e1ca6213740",
+  "helper_changed_or_rebuilt": false,
+  "production_deployed": false,
+  "live_model_requests": 0,
+  "goal_complete": false,
+  "diagnostic_fix": {
+    "scope": "opt-in test workload observer only",
+    "method": "POST",
+    "allowed_paths": ["/responses", "/v1/responses", "/backend-api/codex/responses"],
+    "compact_oauth_json_excluded_from_cache_history_and_sse_observer": true,
+    "all_transport_status_counts_preserved": true,
+    "request_response_bytes_preserved": true,
+    "pre_fix_failures_observed": 2,
+    "new_regression_top_level_tests": 3,
+    "historical_live_cache_report_modified": false
+  },
+  "validation": {
+    "ordinary_go_tests_passed": true,
+    "ordinary_go_tests_seconds": 22.348,
+    "vet_passed": true,
+    "windows_linux_builds_passed": true,
+    "race": {
+      "passed_top_level_tests": 309,
+      "passed_test_events": 759,
+      "failed_tests": [],
+      "skipped_tests": [],
+      "missing_tests": [],
+      "duration_seconds": 169.647,
+      "cleanup_complete": true
+    },
+    "paired_tests": {
+      "native_top_level_tests": 23,
+      "go_cli_compatibility_top_level_tests": 1,
+      "go_cli_compatibility_subcases": 3,
+      "total_top_level_tests": 24,
+      "skipped_tests": [],
+      "required_reports_present_and_passed": 5,
+      "container_removed": true
+    },
+    "official_cli_compaction": {
+      "version": "0.155.0",
+      "requests": 5,
+      "compaction_requests": 1,
+      "compaction_endpoint": "/responses",
+      "legacy_compact_requests": 0,
+      "actual_tool_outputs": 2,
+      "post_compaction_opaque_requests": 3,
+      "cli_processes": 2,
+      "assertions_passed": 18,
+      "native_compaction_true_records": 1,
+      "native_compaction_false_records": 4,
+      "configured_auto_compact_token_limit": 25000,
+      "initial_synthetic_input_usage": 50000,
+      "synthetic_input_tokens_total": 50400,
+      "synthetic_output_tokens_total": 5,
+      "opaque_is_synthetic_not_real_ciphertext": true,
+      "go_fallback_attempts": 0
+    },
+    "runner_unit_tests": 5
+  },
+  "limits": [
+    "No real accounts, model upstream, desktop authentication reads or production deployment.",
+    "Provider capability, not the removed remote_compaction_v2 feature flag, selects CLI 0.155 V2 behavior.",
+    "Legacy fixture support remains, but no older CLI version was rerun in this round.",
+    "Synthetic usage triggers real CLI compaction; it is not live token demand or a cache-hit measurement.",
+    "Opaque fixture strings are preserved, not decrypted or authenticated as real upstream ciphertext.",
+    "The cache observer remains an HTTP SSE experiment, not a WebSocket incremental-history observer.",
+    "Production binaries match the preceding round; this round improves verification and diagnostic scope only.",
+    "Current management UI/query work is outside the verified bdfbf92 baseline used for this snapshot."
+  ],
+  "evidence": [
+    {
+      "kind": "build",
+      "path": ".local/source-20260918/gateway-overlay-20260918t074709-4b8a17/build-verification.json",
+      "sha256": "cad31e94d3a46128857e1dc01f71ea3bb8dea7927d248f135c7600d6cd75e5f3"
+    },
+    {
+      "kind": "source_manifest",
+      "path": ".local/source-20260918/gateway-overlay-20260918t074709-4b8a17/source-manifest.json",
+      "sha256": "2e9b82a2dc038a903bc89cae78dc000e6b6a4e3c0378b03389a9d57ecbb29b66"
+    },
+    {
+      "kind": "race",
+      "path": ".local/source-20260918/local-linux-race-20260918t074946-a53d96/report.json",
+      "sha256": "c6a7589ed1271b21c72b7fe7aef9cc28aa7256a9cdcbe89c35c02cd9af220472"
+    },
+    {
+      "kind": "native_and_go_cli",
+      "path": ".local/native-transport-build/gateway-compare-20260918T074720-c718f3/result.json",
+      "sha256": "a71438bee936a8804ac318d3774e41228dbb78a053d284c374cceb41a2206b99"
+    },
+    {
+      "kind": "official_cli_compaction",
+      "path": ".local/native-transport-build/gateway-compare-20260918T074720-c718f3/gateway-compact-cli.json",
+      "sha256": "754d5121984ab59fbfe4f33959b8c4aa1ee6392baff6ad57ccf74acf1f17c805"
+    },
+    {
+      "kind": "verification_runner",
+      "path": "tools/native_transport_compare.py",
+      "sha256": "6fff4deb7022acd0418bdba456c5117f30a145e2f8be7b17cb4c0572c64056cd"
+    }
+  ]
+}

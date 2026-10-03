@@ -1,0 +1,287 @@
+{
+  "schema": "codex-agent-ui-restore-v1",
+  "restored": true,
+  "restored_at": "2026-09-17T14:32:18.549423+00:00",
+  "verified_at": "2026-09-17T14:36:32.741304+00:00",
+  "url": "http://43.225.196.170:18879",
+  "restored_ui_release_id": "7ca36331d1089e9a039f0949526dcb1a65fc28b2985a0f0521620646442f207b",
+  "replaced_ui_release_id": "d2b3b78936d031cc127c004f8c9ad1519bf919276a9fdf456b6bfafd786a9b9a",
+  "backend_binary_sha256": "ec340e64246c47e50fca074eadcbfc7e7b8ed797c60189800c42ce6532b64cf0",
+  "backend_unchanged": true,
+  "runtime_configuration_unchanged": true,
+  "database_restored": false,
+  "only_web_argument_changed": true,
+  "backup_directory": "/opt/codex-agent/.ui-restore/7ca36331d1089e9a039f0949526dcb1a65fc28b2985a0f0521620646442f207b",
+  "health": {
+    "checked_at": "2026-09-17T14:32:18.548986+00:00",
+    "main_pid": 1110677,
+    "status_codes": {
+      "/health/live": 200,
+      "/health/ready": 200,
+      "/": 200
+    },
+    "runtime_binary_sha256": "ec340e64246c47e50fca074eadcbfc7e7b8ed797c60189800c42ce6532b64cf0",
+    "root_sha256": "9ba921aba0d82113673793367fbf3e52b9449bdd8a2b89bb8a14aed270246880",
+    "entry_assets_verified": 2
+  },
+  "production_http": {
+    "status": "pass",
+    "phase": "after",
+    "verified_at": "2026-09-17T14:32:49.548612+00:00",
+    "checks": [
+      {
+        "path": "/api/session",
+        "status": 200
+      },
+      {
+        "path": "/api/settings",
+        "status": 200
+      },
+      {
+        "path": "/api/accounts",
+        "status": 200
+      },
+      {
+        "path": "/api/groups",
+        "status": 200
+      },
+      {
+        "path": "/api/keys",
+        "status": 200
+      },
+      {
+        "path": "/api/proxies",
+        "status": 200
+      },
+      {
+        "path": "/api/logs",
+        "status": 200
+      },
+      {
+        "path": "/api/overview",
+        "status": 200
+      },
+      {
+        "path": "/api/diagnostics",
+        "status": 200
+      },
+      {
+        "path": "/api/audit-logs",
+        "status": 200
+      },
+      {
+        "path": "/health/live",
+        "status": 200
+      },
+      {
+        "path": "/health/ready",
+        "status": 200
+      },
+      {
+        "path": "/",
+        "status": 200
+      }
+    ],
+    "anonymous_management_status": 401,
+    "settings": {
+      "admin_api": true,
+      "websocket_enabled": false,
+      "builtin_prompt_enabled": true,
+      "sticky_sessions_enabled": true,
+      "sticky_session_ttl_seconds": 604800,
+      "prompt_cache_key_enabled": true,
+      "codex_fingerprint_enabled": false,
+      "codex_fingerprint_profile": "linux",
+      "settings_version": 1
+    },
+    "accounts_on_first_page": 0,
+    "dependencies": {
+      "postgres": "ok",
+      "redis": "ok"
+    },
+    "static_files_hash_verified": 45,
+    "asset_paths": [
+      "assets/Accounts-BRxcn-oC.css",
+      "assets/Accounts-CO5sQjFD.js",
+      "assets/CopyTextDialog-CovXyzeP.js",
+      "assets/Dashboard-BDD8KaPQ.css",
+      "assets/Dashboard-nCTrGF-S.js",
+      "assets/Groups-BWwRSc1k.css",
+      "assets/Groups-DMyTXErn.js",
+      "assets/Keys-BisuMSef.css",
+      "assets/Keys-DVxGQBSL.js",
+      "assets/Login-Ctw5rcI8.js",
+      "assets/Logs-Dqd92hLM.css",
+      "assets/Logs-ZPqLUryO.js",
+      "assets/Proxies-B2aYB1Fq.js",
+      "assets/Proxies-D3FOzflK.css",
+      "assets/Settings-CU7oOkU4.js",
+      "assets/Settings-fNr57587.css",
+      "assets/_baseClone-CkzI86vf.js",
+      "assets/_plugin-vue_export-helper-B6UgayC7.css",
+      "assets/_plugin-vue_export-helper-D_ariHHy.js",
+      "assets/chart-renderer-CzH6Bj_K.js",
+      "assets/echarts-BWEC13sA.css",
+      "assets/echarts-qaEpvw0Y.js",
+      "assets/el-dialog-CgOVebwF.js",
+      "assets/el-dialog-DdHdkgt4.css",
+      "assets/el-form-item-CvvzSLKj.js",
+      "assets/el-form-item-exjLSfBI.css",
+      "assets/el-input-number-Bl1QIfpX.js",
+      "assets/el-input-number-DExoAqKP.css",
+      "assets/el-radio-button-D3AjP-eC.js",
+      "assets/el-radio-button-mUGqmzuy.css",
+      "assets/el-select-DfbR1ndP.js",
+      "assets/el-select-caR2Yem-.css",
+      "assets/el-switch-C8o5Pt5s.js",
+      "assets/el-switch-DpR9-s4E.css",
+      "assets/el-table-column-C9BPYNvZ.js",
+      "assets/el-table-column-Cjp01oVn.css",
+      "assets/fonts/OFL.txt",
+      "assets/fonts/codex-admin-sans-0058e27ebaf7d129.woff2",
+      "assets/fonts/font-metadata.json",
+      "assets/format-DEq3-SCQ.js",
+      "assets/index-D--MHP3C.js",
+      "assets/index-qGAqOSLn.css",
+      "assets/index-vzV297iI.js",
+      "assets/management-DbTmSyZn.js",
+      "index.html"
+    ],
+    "management_settings_modified_by_verification": false,
+    "real_model_requests": false
+  },
+  "production_browser": {
+    "status": "pass",
+    "expected_ui_release": "7ca36331d1089e9a039f0949526dcb1a65fc28b2985a0f0521620646442f207b",
+    "verified_at": "2026-09-17T14:34:59.905Z",
+    "readonly_business_data": true,
+    "viewport_widths": [
+      1440,
+      390
+    ],
+    "pages": [
+      {
+        "path": "/",
+        "width": 1440,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/accounts",
+        "width": 1440,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/groups",
+        "width": 1440,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/keys",
+        "width": 1440,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/proxies",
+        "width": 1440,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/logs",
+        "width": 1440,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/settings",
+        "width": 1440,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/",
+        "width": 390,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/accounts",
+        "width": 390,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/groups",
+        "width": 390,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/keys",
+        "width": 390,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/proxies",
+        "width": 390,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/logs",
+        "width": 390,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/settings",
+        "width": 390,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      }
+    ],
+    "screenshots": [
+      "login-1440.png",
+      "login-390.png",
+      "settings-1440.png",
+      "settings-390.png"
+    ],
+    "session_login": true,
+    "session_logout": true,
+    "session_expired_after_logout": true,
+    "font_loaded": true,
+    "js_errors": [],
+    "console_errors": [],
+    "failed_http": [],
+    "failed_requests": [],
+    "blocked_requests": [],
+    "request_counts": {
+      "business_get": 15,
+      "session_post": 1,
+      "session_delete": 1
+    },
+    "restored_index_hash_verified": true,
+    "completed_at": "2026-09-17T14:35:15.830Z"
+  },
+  "source_note": "The preserved old static artifact is verified. No complete old frontend source snapshot was found; current frontend/src still contains the rejected redesign and must not be automatically republished.",
+  "ui_scope": "The exact 19:33 UI: seven management pages plus login. Later diagnostic/audit/connection pages and new settings controls are absent from this old UI; backend APIs and stored settings remain intact."
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-17",
+  "completed_at": "2026-09-17T20:34:09+08:00",
+  "passed": true,
+  "kind": "official_cli_controlled_upstream_followup",
+  "controlled_upstream": true,
+  "live_model_inference": false,
+  "client": {
+    "version": "codex-cli 0.154.0",
+    "platform": "win32-x64",
+    "binary_env": "CODEX_REAL_CLI_BIN",
+    "binary_path": ".local/codex-cli-0.154.0/node_modules/@openai/codex-win32-x64/vendor/x86_64-pc-windows-msvc/bin/codex.exe",
+    "binary_sha256": "BE96B992178B1E467C225800DA0D65F2C86D5EBA1EF0B14632F65DB381CBDFDE",
+    "modified": false
+  },
+  "test": {
+    "name": "TestRealCodexCLI",
+    "command": "go test -run '^TestRealCodexCLI$' -json -count=1 .",
+    "raw_evidence": ".local/source-followup-real-cli.jsonl",
+    "exit_code": 0,
+    "elapsed_seconds": 127.991,
+    "gateway": "current source checkout Proxy via httptest",
+    "upstream": "local deterministic protocol fixture",
+    "scope": "Regression rerun after follow-up gateway terminal handling, HTTP status accounting, 401 retry and compact timeout changes; these CLI scenarios exercise successful conversations, not every individual error branch."
+  },
+  "checks": [
+    {
+      "name": "http_tool_and_resume",
+      "passed": true,
+      "elapsed_seconds": 42.68,
+      "responses_requests": 3,
+      "compact_requests": 0,
+      "websocket_upgrade_attempts": 0,
+      "actual_shell_exit_code": 0,
+      "actual_shell_output_verified": true,
+      "function_call_output_reached_upstream": true,
+      "same_thread_resumed": true,
+      "prior_conversation_and_tool_history_retained": true
+    },
+    {
+      "name": "websocket_fallback_tool_and_resume",
+      "passed": true,
+      "elapsed_seconds": 42.62,
+      "responses_requests": 3,
+      "compact_requests": 0,
+      "websocket_upgrade_attempts": 2,
+      "official_http_fallback_verified": true,
+      "actual_shell_exit_code": 0,
+      "actual_shell_output_verified": true,
+      "function_call_output_reached_upstream": true,
+      "same_thread_resumed": true,
+      "prior_conversation_and_tool_history_retained": true
+    },
+    {
+      "name": "auto_compact_and_resume",
+      "passed": true,
+      "elapsed_seconds": 42.60,
+      "responses_requests": 3,
+      "compact_requests": 1,
+      "websocket_upgrade_attempts": 0,
+      "actual_shell_exit_code": 0,
+      "actual_shell_output_verified": true,
+      "function_call_output_reached_upstream": true,
+      "same_thread_resumed": true,
+      "compact_json_response_accepted": true,
+      "opaque_compaction_retained_after_resume": true,
+      "compact_has_no_store_or_stream_fields": true,
+      "remote_compaction_v2": false
+    }
+  ],
+  "totals": {
+    "passed_scenarios": 3,
+    "responses_requests": 9,
+    "compact_requests": 1,
+    "websocket_upgrade_attempts": 2
+  },
+  "isolation": {
+    "child_only_temporary_codex_home": true,
+    "temporary_workspaces_and_account_stores": true,
+    "production_credentials_used": false,
+    "production_modified": false,
+    "user_config_or_auth_modified": false,
+    "existing_evidence_overwritten": false
+  },
+  "limits": [
+    "The client is the real official CLI, but upstream responses are controlled local fixtures; this is not live-model acceptance evidence.",
+    "WebSocket coverage here is the official HTTP fallback path; successful WebSocket proxy transport is tested separately.",
+    "The compact scenario uses the standalone responses/compact JSON route with remote_compaction_v2 disabled.",
+    "This API-key provider fixture does not exercise the ChatGPT-auth-only native Zstd request compression branch."
+  ]
+}

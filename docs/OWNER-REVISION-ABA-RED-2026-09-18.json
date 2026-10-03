@@ -1,0 +1,28 @@
+{
+  "schema": "owner-revision-aba-red-v1",
+  "scope": "synthetic JSON Store.ImportDetailed Replace and fresh Store reads; no production access",
+  "command": "go test . -run '^TestGatewayOwnerRevisionImportABASurvivesJSONStoreReopen$' -count=1",
+  "test_file": "gateway_owner_revision_test.go",
+  "exit_code": 1,
+  "baseline_reproduced": true,
+  "cases": [
+    {
+      "known_owner": false,
+      "original_credentials_restored_through_store_api": true,
+      "persisted_owner_reference_returned_to_original": true,
+      "old_thread_revived": true,
+      "old_websocket_authorization_revived": true
+    },
+    {
+      "known_owner": true,
+      "original_credentials_restored_through_store_api": true,
+      "same_owner_rotation_positive_passed": true,
+      "metadata_edit_positive_passed": true,
+      "persisted_owner_reference_returned_to_original": true,
+      "old_thread_revived": true,
+      "old_websocket_authorization_revived": true
+    }
+  ],
+  "pg_cas_test_written_but_not_executed_by_this_agent": "TestPGGatewayOwnerRevisionReauthorizeABASurvivesFreshGateway",
+  "production_code_modified_by_this_agent": false
+}

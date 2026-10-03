@@ -1,0 +1,26 @@
+    /// Gateway adapter: use only a caller-selected immutable route. Never read
+    /// environment/system proxy settings or apply a NO_PROXY direct fallback.
+    pub async fn connect_with_explicit_route(
+        &self,
+        request: Request,
+        config: WebSocketConfig,
+        proxy: Option<&str>,
+    ) -> Result<(WebSocketConnection, Response), WebSocketError> {
+        let route = match proxy {
+            None => OutboundProxyRoute::Direct,
+            Some(value) => {
+                let parsed = url::Url::parse(value).map_err(|_| {
+                    WebSocketError::Io(io::Error::new(io::ErrorKind::InvalidInput, "invalid explicit proxy"))
+                })?;
+                if !matches!(parsed.scheme(), "http" | "https" | "socks5" | "socks5h")
+                    || parsed.host_str().is_none() || parsed.path() != "/"
+                    || parsed.query().is_some() || parsed.fragment().is_some()
+                {
+                    return Err(WebSocketError::Io(io::Error::new(io::ErrorKind::InvalidInput, "invalid explicit proxy")));
+                }
+                OutboundProxyRoute::Proxy { url: value.to_owned(), no_proxy: None }
+            }
+        };
+        self.connect_with_route(request, config, route, false).await
+    }
+

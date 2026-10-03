@@ -1,0 +1,46 @@
+{
+  "provenance": {
+    "run": "20260927T102700.613738Z",
+    "scope": "actual native first-generation canonical metadata; volatile identities/timestamps normalized by field name",
+    "removed_fields": []
+  },
+  "routes": {
+    "native_app_server": {
+      "installation_id": "fixture-installation_id",
+      "session_id": "fixture-session_id",
+      "thread_id": "fixture-thread_id",
+      "agent_name": "/root",
+      "turn_id": "fixture-turn_id",
+      "window_id": "fixture-thread_id:0",
+      "window_number": 0,
+      "context_window_id": "fixture-context_window_id",
+      "request_kind": "turn",
+      "root_turn_id": "fixture-root_turn_id",
+      "sandbox": "seccomp",
+      "sandbox_mode": "read-only",
+      "auto_review_enabled": false,
+      "node_repl_auto_review_required": true,
+      "node_repl_disabled": false,
+      "turn_started_at_unix_ms": 1700000000000
+    },
+    "native_codex_exec": {
+      "installation_id": "fixture-installation_id",
+      "session_id": "fixture-session_id",
+      "thread_id": "fixture-thread_id",
+      "agent_name": "/root",
+      "turn_id": "fixture-turn_id",
+      "window_id": "fixture-thread_id:0",
+      "window_number": 0,
+      "context_window_id": "fixture-context_window_id",
+      "request_kind": "turn",
+      "root_turn_id": "fixture-root_turn_id",
+      "thread_source": "user",
+      "sandbox": "seccomp",
+      "sandbox_mode": "read-only",
+      "auto_review_enabled": false,
+      "node_repl_auto_review_required": true,
+      "node_repl_disabled": false,
+      "turn_started_at_unix_ms": 1700000000000
+    }
+  }
+}

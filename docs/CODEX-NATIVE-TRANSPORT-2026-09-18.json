@@ -1,0 +1,2532 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "controlled_upstream": true,
+  "live_model_inference": false,
+  "host_os": "windows",
+  "host_arch": "amd64",
+  "go_version": "go1.26.7",
+  "completed_at": "2026-09-17T19:46:13Z",
+  "scenarios": [
+    {
+      "name": "default_trust_client_hello",
+      "client": {
+        "origin": "official_npm_release",
+        "version": "codex-cli 0.154.0",
+        "binary_sha256": "be96b992178b1e467c225800da0d65f2c86d5eba1ef0b14632f65db381cbdfde"
+      },
+      "passed": true,
+      "cli_exit_code": 1,
+      "elapsed_seconds": 21.2406833,
+      "ssl_cert_file_in_child": false,
+      "child_locale_overrides": {},
+      "transport_observed": "official CLI default trust; handshake only; intentionally terminated after first ClientHello",
+      "function_call_output_observed": false,
+      "probe_stopped_after_client_hello": true,
+      "cli_completed_fixture_reply": false,
+      "client_hellos": [
+        {
+          "legacy_version": "0x0303",
+          "cipher_suites_in_wire_order": [
+            "0xc02c",
+            "0xc02b",
+            "0xc030",
+            "0xc02f",
+            "0xc024",
+            "0xc023",
+            "0xc028",
+            "0xc027",
+            "0xc00a",
+            "0xc009",
+            "0xc014",
+            "0xc013",
+            "0x009d",
+            "0x009c",
+            "0x003d",
+            "0x003c",
+            "0x0035",
+            "0x002f"
+          ],
+          "extension_ids_in_wire_order": [
+            10,
+            11,
+            13,
+            35,
+            23,
+            65281
+          ],
+          "supported_versions": [],
+          "supported_group_ids": [
+            29,
+            23,
+            24
+          ],
+          "signature_algorithm_ids": [
+            "0x0804",
+            "0x0805",
+            "0x0806",
+            "0x0401",
+            "0x0501",
+            "0x0201",
+            "0x0403",
+            "0x0503",
+            "0x0203",
+            "0x0202",
+            "0x0601",
+            "0x0603"
+          ],
+          "alpn_offered": [],
+          "server_name_present": false,
+          "client_hello_bytes": 142
+        }
+      ],
+      "requests": []
+    },
+    {
+      "name": "plain_http_direct_us_env",
+      "client": {
+        "origin": "official_npm_release",
+        "version": "codex-cli 0.154.0",
+        "binary_sha256": "be96b992178b1e467c225800da0d65f2c86d5eba1ef0b14632f65db381cbdfde"
+      },
+      "passed": true,
+      "cli_exit_code": 0,
+      "elapsed_seconds": 21.2551017,
+      "ssl_cert_file_in_child": false,
+      "child_locale_overrides": {
+        "LANG": "en_US.UTF-8",
+        "LC_ALL": "en_US.UTF-8",
+        "TZ": "America/New_York"
+      },
+      "transport_observed": "official CLI default configuration HTTP transport to loopback; no custom CA and no TLS",
+      "function_call_output_observed": true,
+      "probe_stopped_after_client_hello": false,
+      "cli_completed_fixture_reply": true,
+      "client_hellos": [],
+      "requests": [
+        {
+          "method": "POST",
+          "http_protocol": "HTTP/1.1",
+          "negotiated_tls_version": "",
+          "negotiated_tls_cipher": "",
+          "negotiated_alpn": "",
+          "whitelisted_application_headers": {
+            "accept": [
+              "text/event-stream"
+            ],
+            "content-type": [
+              "application/json"
+            ],
+            "originator": [
+              "codex_exec"
+            ],
+            "user-agent": [
+              "codex_exec/0.154.0 (Windows 10.0.26200; x86_64) unknown (codex_exec; 0.154.0)"
+            ],
+            "x-codex-beta-features": [
+              "remote_compaction_v2"
+            ]
+          },
+          "identity_header_presence_only": {
+            "conversation_id": false,
+            "session-id": true,
+            "session_id": false,
+            "thread-id": true,
+            "traceparent": false,
+            "x-client-request-id": true,
+            "x-codex-turn-metadata": true,
+            "x-codex-turn-state": false,
+            "x-request-id": false
+          },
+          "request_schema_keys": [
+            "client_metadata",
+            "include",
+            "input",
+            "instructions",
+            "model",
+            "parallel_tool_calls",
+            "prompt_cache_key",
+            "reasoning",
+            "store",
+            "stream",
+            "text",
+            "tool_choice",
+            "tools"
+          ],
+          "client_metadata_keys_only": [
+            "root_turn_id",
+            "session_id",
+            "thread_id",
+            "turn_id",
+            "x-codex-installation-id",
+            "x-codex-turn-metadata",
+            "x-codex-window-id"
+          ],
+          "input_type_counts": {
+            "message": 3
+          },
+          "tool_type_counts": {
+            "custom": 1,
+            "function": 7,
+            "tool_search": 1
+          },
+          "cache_options_redacted": {
+            "prompt_cache_key_length": 36,
+            "prompt_cache_key_present": true,
+            "prompt_cache_retention_present": false
+          },
+          "stream": true,
+          "store": false,
+          "turn_metadata_keys_only": [
+            "agent_name",
+            "auto_review_enabled",
+            "context_window_id",
+            "installation_id",
+            "node_repl_auto_review_required",
+            "node_repl_disabled",
+            "request_kind",
+            "root_turn_id",
+            "sandbox",
+            "sandbox_mode",
+            "session_id",
+            "thread_id",
+            "thread_source",
+            "turn_id",
+            "turn_started_at_unix_ms",
+            "window_id",
+            "window_number"
+          ]
+        },
+        {
+          "method": "POST",
+          "http_protocol": "HTTP/1.1",
+          "negotiated_tls_version": "",
+          "negotiated_tls_cipher": "",
+          "negotiated_alpn": "",
+          "whitelisted_application_headers": {
+            "accept": [
+              "text/event-stream"
+            ],
+            "content-type": [
+              "application/json"
+            ],
+            "originator": [
+              "codex_exec"
+            ],
+            "user-agent": [
+              "codex_exec/0.154.0 (Windows 10.0.26200; x86_64) unknown (codex_exec; 0.154.0)"
+            ],
+            "x-codex-beta-features": [
+              "remote_compaction_v2"
+            ]
+          },
+          "identity_header_presence_only": {
+            "conversation_id": false,
+            "session-id": true,
+            "session_id": false,
+            "thread-id": true,
+            "traceparent": false,
+            "x-client-request-id": true,
+            "x-codex-turn-metadata": true,
+            "x-codex-turn-state": false,
+            "x-request-id": false
+          },
+          "request_schema_keys": [
+            "client_metadata",
+            "include",
+            "input",
+            "instructions",
+            "model",
+            "parallel_tool_calls",
+            "prompt_cache_key",
+            "reasoning",
+            "store",
+            "stream",
+            "text",
+            "tool_choice",
+            "tools"
+          ],
+          "client_metadata_keys_only": [
+            "root_turn_id",
+            "session_id",
+            "thread_id",
+            "turn_id",
+            "x-codex-installation-id",
+            "x-codex-turn-metadata",
+            "x-codex-window-id"
+          ],
+          "input_type_counts": {
+            "function_call": 1,
+            "function_call_output": 1,
+            "message": 3
+          },
+          "tool_type_counts": {
+            "custom": 1,
+            "function": 7,
+            "tool_search": 1
+          },
+          "cache_options_redacted": {
+            "prompt_cache_key_length": 36,
+            "prompt_cache_key_present": true,
+            "prompt_cache_retention_present": false
+          },
+          "stream": true,
+          "store": false,
+          "turn_metadata_keys_only": [
+            "agent_name",
+            "auto_review_enabled",
+            "context_window_id",
+            "installation_id",
+            "node_repl_auto_review_required",
+            "node_repl_disabled",
+            "request_kind",
+            "root_turn_id",
+            "sandbox",
+            "sandbox_mode",
+            "session_id",
+            "thread_id",
+            "thread_source",
+            "turn_id",
+            "turn_started_at_unix_ms",
+            "window_id",
+            "window_number"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "custom_ca_direct_default_env",
+      "client": {
+        "origin": "official_npm_release",
+        "version": "codex-cli 0.154.0",
+        "binary_sha256": "be96b992178b1e467c225800da0d65f2c86d5eba1ef0b14632f65db381cbdfde"
+      },
+      "passed": true,
+      "cli_exit_code": 0,
+      "elapsed_seconds": 21.2983607,
+      "ssl_cert_file_in_child": true,
+      "child_locale_overrides": {},
+      "transport_observed": "official CLI custom-CA rustls transport to local TLS server",
+      "function_call_output_observed": true,
+      "probe_stopped_after_client_hello": false,
+      "cli_completed_fixture_reply": true,
+      "client_hellos": [
+        {
+          "legacy_version": "0x0303",
+          "cipher_suites_in_wire_order": [
+            "0x1302",
+            "0x1301",
+            "0x1303",
+            "0xc02c",
+            "0xc02b",
+            "0xcca9",
+            "0xc030",
+            "0xc02f",
+            "0xcca8",
+            "0x00ff"
+          ],
+          "extension_ids_in_wire_order": [
+            23,
+            45,
+            43,
+            35,
+            16,
+            11,
+            13,
+            10,
+            51,
+            5
+          ],
+          "supported_versions": [
+            "0x0304",
+            "0x0303"
+          ],
+          "supported_group_ids": [
+            4588,
+            29,
+            23,
+            24
+          ],
+          "signature_algorithm_ids": [
+            "0x0503",
+            "0x0403",
+            "0x0603",
+            "0x0807",
+            "0x0806",
+            "0x0805",
+            "0x0804",
+            "0x0601",
+            "0x0501",
+            "0x0401"
+          ],
+          "alpn_offered": [
+            "h2",
+            "http/1.1"
+          ],
+          "server_name_present": false,
+          "client_hello_bytes": 1455
+        },
+        {
+          "legacy_version": "0x0303",
+          "cipher_suites_in_wire_order": [
+            "0x1302",
+            "0x1301",
+            "0x1303",
+            "0xc02c",
+            "0xc02b",
+            "0xcca9",
+            "0xc030",
+            "0xc02f",
+            "0xcca8",
+            "0x00ff"
+          ],
+          "extension_ids_in_wire_order": [
+            43,
+            5,
+            16,
+            35,
+            13,
+            10,
+            51,
+            11,
+            23,
+            45
+          ],
+          "supported_versions": [
+            "0x0304",
+            "0x0303"
+          ],
+          "supported_group_ids": [
+            4588,
+            29,
+            23,
+            24
+          ],
+          "signature_algorithm_ids": [
+            "0x0503",
+            "0x0403",
+            "0x0603",
+            "0x0807",
+            "0x0806",
+            "0x0805",
+            "0x0804",
+            "0x0601",
+            "0x0501",
+            "0x0401"
+          ],
+          "alpn_offered": [
+            "h2",
+            "http/1.1"
+          ],
+          "server_name_present": false,
+          "client_hello_bytes": 1455
+        }
+      ],
+      "requests": [
+        {
+          "method": "POST",
+          "http_protocol": "HTTP/2.0",
+          "negotiated_tls_version": "TLS 1.3",
+          "negotiated_tls_cipher": "TLS_AES_128_GCM_SHA256",
+          "negotiated_alpn": "h2",
+          "whitelisted_application_headers": {
+            "accept": [
+              "text/event-stream"
+            ],
+            "content-type": [
+              "application/json"
+            ],
+            "originator": [
+              "codex_exec"
+            ],
+            "user-agent": [
+              "codex_exec/0.154.0 (Windows 10.0.26200; x86_64) unknown (codex_exec; 0.154.0)"
+            ],
+            "x-codex-beta-features": [
+              "remote_compaction_v2"
+            ]
+          },
+          "identity_header_presence_only": {
+            "conversation_id": false,
+            "session-id": true,
+            "session_id": false,
+            "thread-id": true,
+            "traceparent": false,
+            "x-client-request-id": true,
+            "x-codex-turn-metadata": true,
+            "x-codex-turn-state": false,
+            "x-request-id": false
+          },
+          "request_schema_keys": [
+            "client_metadata",
+            "include",
+            "input",
+            "instructions",
+            "model",
+            "parallel_tool_calls",
+            "prompt_cache_key",
+            "reasoning",
+            "store",
+            "stream",
+            "text",
+            "tool_choice",
+            "tools"
+          ],
+          "client_metadata_keys_only": [
+            "root_turn_id",
+            "session_id",
+            "thread_id",
+            "turn_id",
+            "x-codex-installation-id",
+            "x-codex-turn-metadata",
+            "x-codex-window-id"
+          ],
+          "input_type_counts": {
+            "message": 3
+          },
+          "tool_type_counts": {
+            "custom": 1,
+            "function": 7,
+            "tool_search": 1
+          },
+          "cache_options_redacted": {
+            "prompt_cache_key_length": 36,
+            "prompt_cache_key_present": true,
+            "prompt_cache_retention_present": false
+          },
+          "stream": true,
+          "store": false,
+          "turn_metadata_keys_only": [
+            "agent_name",
+            "auto_review_enabled",
+            "context_window_id",
+            "installation_id",
+            "node_repl_auto_review_required",
+            "node_repl_disabled",
+            "request_kind",
+            "root_turn_id",
+            "sandbox",
+            "sandbox_mode",
+            "session_id",
+            "thread_id",
+            "thread_source",
+            "turn_id",
+            "turn_started_at_unix_ms",
+            "window_id",
+            "window_number"
+          ]
+        },
+        {
+          "method": "POST",
+          "http_protocol": "HTTP/2.0",
+          "negotiated_tls_version": "TLS 1.3",
+          "negotiated_tls_cipher": "TLS_AES_128_GCM_SHA256",
+          "negotiated_alpn": "h2",
+          "whitelisted_application_headers": {
+            "accept": [
+              "text/event-stream"
+            ],
+            "content-type": [
+              "application/json"
+            ],
+            "originator": [
+              "codex_exec"
+            ],
+            "user-agent": [
+              "codex_exec/0.154.0 (Windows 10.0.26200; x86_64) unknown (codex_exec; 0.154.0)"
+            ],
+            "x-codex-beta-features": [
+              "remote_compaction_v2"
+            ]
+          },
+          "identity_header_presence_only": {
+            "conversation_id": false,
+            "session-id": true,
+            "session_id": false,
+            "thread-id": true,
+            "traceparent": false,
+            "x-client-request-id": true,
+            "x-codex-turn-metadata": true,
+            "x-codex-turn-state": false,
+            "x-request-id": false
+          },
+          "request_schema_keys": [
+            "client_metadata",
+            "include",
+            "input",
+            "instructions",
+            "model",
+            "parallel_tool_calls",
+            "prompt_cache_key",
+            "reasoning",
+            "store",
+            "stream",
+            "text",
+            "tool_choice",
+            "tools"
+          ],
+          "client_metadata_keys_only": [
+            "root_turn_id",
+            "session_id",
+            "thread_id",
+            "turn_id",
+            "x-codex-installation-id",
+            "x-codex-turn-metadata",
+            "x-codex-window-id"
+          ],
+          "input_type_counts": {
+            "function_call": 1,
+            "function_call_output": 1,
+            "message": 3
+          },
+          "tool_type_counts": {
+            "custom": 1,
+            "function": 7,
+            "tool_search": 1
+          },
+          "cache_options_redacted": {
+            "prompt_cache_key_length": 36,
+            "prompt_cache_key_present": true,
+            "prompt_cache_retention_present": false
+          },
+          "stream": true,
+          "store": false,
+          "turn_metadata_keys_only": [
+            "agent_name",
+            "auto_review_enabled",
+            "context_window_id",
+            "installation_id",
+            "node_repl_auto_review_required",
+            "node_repl_disabled",
+            "request_kind",
+            "root_turn_id",
+            "sandbox",
+            "sandbox_mode",
+            "session_id",
+            "thread_id",
+            "thread_source",
+            "turn_id",
+            "turn_started_at_unix_ms",
+            "window_id",
+            "window_number"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "custom_ca_direct_us_env",
+      "client": {
+        "origin": "official_npm_release",
+        "version": "codex-cli 0.154.0",
+        "binary_sha256": "be96b992178b1e467c225800da0d65f2c86d5eba1ef0b14632f65db381cbdfde"
+      },
+      "passed": true,
+      "cli_exit_code": 0,
+      "elapsed_seconds": 21.3339949,
+      "ssl_cert_file_in_child": true,
+      "child_locale_overrides": {
+        "LANG": "en_US.UTF-8",
+        "LC_ALL": "en_US.UTF-8",
+        "TZ": "America/New_York"
+      },
+      "transport_observed": "official CLI custom-CA rustls transport to local TLS server",
+      "function_call_output_observed": true,
+      "probe_stopped_after_client_hello": false,
+      "cli_completed_fixture_reply": true,
+      "client_hellos": [
+        {
+          "legacy_version": "0x0303",
+          "cipher_suites_in_wire_order": [
+            "0x1302",
+            "0x1301",
+            "0x1303",
+            "0xc02c",
+            "0xc02b",
+            "0xcca9",
+            "0xc030",
+            "0xc02f",
+            "0xcca8",
+            "0x00ff"
+          ],
+          "extension_ids_in_wire_order": [
+            5,
+            16,
+            35,
+            43,
+            45,
+            51,
+            23,
+            10,
+            13,
+            11
+          ],
+          "supported_versions": [
+            "0x0304",
+            "0x0303"
+          ],
+          "supported_group_ids": [
+            4588,
+            29,
+            23,
+            24
+          ],
+          "signature_algorithm_ids": [
+            "0x0503",
+            "0x0403",
+            "0x0603",
+            "0x0807",
+            "0x0806",
+            "0x0805",
+            "0x0804",
+            "0x0601",
+            "0x0501",
+            "0x0401"
+          ],
+          "alpn_offered": [
+            "h2",
+            "http/1.1"
+          ],
+          "server_name_present": false,
+          "client_hello_bytes": 1455
+        },
+        {
+          "legacy_version": "0x0303",
+          "cipher_suites_in_wire_order": [
+            "0x1302",
+            "0x1301",
+            "0x1303",
+            "0xc02c",
+            "0xc02b",
+            "0xcca9",
+            "0xc030",
+            "0xc02f",
+            "0xcca8",
+            "0x00ff"
+          ],
+          "extension_ids_in_wire_order": [
+            43,
+            10,
+            45,
+            51,
+            13,
+            5,
+            16,
+            35,
+            11,
+            23
+          ],
+          "supported_versions": [
+            "0x0304",
+            "0x0303"
+          ],
+          "supported_group_ids": [
+            4588,
+            29,
+            23,
+            24
+          ],
+          "signature_algorithm_ids": [
+            "0x0503",
+            "0x0403",
+            "0x0603",
+            "0x0807",
+            "0x0806",
+            "0x0805",
+            "0x0804",
+            "0x0601",
+            "0x0501",
+            "0x0401"
+          ],
+          "alpn_offered": [
+            "h2",
+            "http/1.1"
+          ],
+          "server_name_present": false,
+          "client_hello_bytes": 1455
+        }
+      ],
+      "requests": [
+        {
+          "method": "POST",
+          "http_protocol": "HTTP/2.0",
+          "negotiated_tls_version": "TLS 1.3",
+          "negotiated_tls_cipher": "TLS_AES_128_GCM_SHA256",
+          "negotiated_alpn": "h2",
+          "whitelisted_application_headers": {
+            "accept": [
+              "text/event-stream"
+            ],
+            "content-type": [
+              "application/json"
+            ],
+            "originator": [
+              "codex_exec"
+            ],
+            "user-agent": [
+              "codex_exec/0.154.0 (Windows 10.0.26200; x86_64) unknown (codex_exec; 0.154.0)"
+            ],
+            "x-codex-beta-features": [
+              "remote_compaction_v2"
+            ]
+          },
+          "identity_header_presence_only": {
+            "conversation_id": false,
+            "session-id": true,
+            "session_id": false,
+            "thread-id": true,
+            "traceparent": false,
+            "x-client-request-id": true,
+            "x-codex-turn-metadata": true,
+            "x-codex-turn-state": false,
+            "x-request-id": false
+          },
+          "request_schema_keys": [
+            "client_metadata",
+            "include",
+            "input",
+            "instructions",
+            "model",
+            "parallel_tool_calls",
+            "prompt_cache_key",
+            "reasoning",
+            "store",
+            "stream",
+            "text",
+            "tool_choice",
+            "tools"
+          ],
+          "client_metadata_keys_only": [
+            "root_turn_id",
+            "session_id",
+            "thread_id",
+            "turn_id",
+            "x-codex-installation-id",
+            "x-codex-turn-metadata",
+            "x-codex-window-id"
+          ],
+          "input_type_counts": {
+            "message": 3
+          },
+          "tool_type_counts": {
+            "custom": 1,
+            "function": 7,
+            "tool_search": 1
+          },
+          "cache_options_redacted": {
+            "prompt_cache_key_length": 36,
+            "prompt_cache_key_present": true,
+            "prompt_cache_retention_present": false
+          },
+          "stream": true,
+          "store": false,
+          "turn_metadata_keys_only": [
+            "agent_name",
+            "auto_review_enabled",
+            "context_window_id",
+            "installation_id",
+            "node_repl_auto_review_required",
+            "node_repl_disabled",
+            "request_kind",
+            "root_turn_id",
+            "sandbox",
+            "sandbox_mode",
+            "session_id",
+            "thread_id",
+            "thread_source",
+            "turn_id",
+            "turn_started_at_unix_ms",
+            "window_id",
+            "window_number"
+          ]
+        },
+        {
+          "method": "POST",
+          "http_protocol": "HTTP/2.0",
+          "negotiated_tls_version": "TLS 1.3",
+          "negotiated_tls_cipher": "TLS_AES_128_GCM_SHA256",
+          "negotiated_alpn": "h2",
+          "whitelisted_application_headers": {
+            "accept": [
+              "text/event-stream"
+            ],
+            "content-type": [
+              "application/json"
+            ],
+            "originator": [
+              "codex_exec"
+            ],
+            "user-agent": [
+              "codex_exec/0.154.0 (Windows 10.0.26200; x86_64) unknown (codex_exec; 0.154.0)"
+            ],
+            "x-codex-beta-features": [
+              "remote_compaction_v2"
+            ]
+          },
+          "identity_header_presence_only": {
+            "conversation_id": false,
+            "session-id": true,
+            "session_id": false,
+            "thread-id": true,
+            "traceparent": false,
+            "x-client-request-id": true,
+            "x-codex-turn-metadata": true,
+            "x-codex-turn-state": false,
+            "x-request-id": false
+          },
+          "request_schema_keys": [
+            "client_metadata",
+            "include",
+            "input",
+            "instructions",
+            "model",
+            "parallel_tool_calls",
+            "prompt_cache_key",
+            "reasoning",
+            "store",
+            "stream",
+            "text",
+            "tool_choice",
+            "tools"
+          ],
+          "client_metadata_keys_only": [
+            "root_turn_id",
+            "session_id",
+            "thread_id",
+            "turn_id",
+            "x-codex-installation-id",
+            "x-codex-turn-metadata",
+            "x-codex-window-id"
+          ],
+          "input_type_counts": {
+            "function_call": 1,
+            "function_call_output": 1,
+            "message": 3
+          },
+          "tool_type_counts": {
+            "custom": 1,
+            "function": 7,
+            "tool_search": 1
+          },
+          "cache_options_redacted": {
+            "prompt_cache_key_length": 36,
+            "prompt_cache_key_present": true,
+            "prompt_cache_retention_present": false
+          },
+          "stream": true,
+          "store": false,
+          "turn_metadata_keys_only": [
+            "agent_name",
+            "auto_review_enabled",
+            "context_window_id",
+            "installation_id",
+            "node_repl_auto_review_required",
+            "node_repl_disabled",
+            "request_kind",
+            "root_turn_id",
+            "sandbox",
+            "sandbox_mode",
+            "session_id",
+            "thread_id",
+            "thread_source",
+            "turn_id",
+            "turn_started_at_unix_ms",
+            "window_id",
+            "window_number"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "custom_ca_via_go_gateway_us_env",
+      "client": {
+        "origin": "official_npm_release",
+        "version": "codex-cli 0.154.0",
+        "binary_sha256": "be96b992178b1e467c225800da0d65f2c86d5eba1ef0b14632f65db381cbdfde"
+      },
+      "passed": true,
+      "cli_exit_code": 0,
+      "elapsed_seconds": 21.3979002,
+      "ssl_cert_file_in_child": true,
+      "child_locale_overrides": {
+        "LANG": "en_US.UTF-8",
+        "LC_ALL": "en_US.UTF-8",
+        "TZ": "America/New_York"
+      },
+      "transport_observed": "gateway default Go net/http TLS transport to local TLS server; in-memory fixture CA only",
+      "cli_to_gateway_protocol": "HTTP/1.1 over loopback without TLS",
+      "gateway_identity_policy": "fixture default settings; optional fingerprint profiles disabled",
+      "function_call_output_observed": true,
+      "probe_stopped_after_client_hello": false,
+      "cli_completed_fixture_reply": true,
+      "client_hellos": [
+        {
+          "legacy_version": "0x0303",
+          "cipher_suites_in_wire_order": [
+            "0xc02b",
+            "0xc02f",
+            "0xc02c",
+            "0xc030",
+            "0xcca9",
+            "0xcca8",
+            "0xc009",
+            "0xc013",
+            "0xc00a",
+            "0xc014",
+            "0x1301",
+            "0x1302",
+            "0x1303"
+          ],
+          "extension_ids_in_wire_order": [
+            11,
+            65281,
+            23,
+            18,
+            5,
+            10,
+            13,
+            50,
+            16,
+            43,
+            51
+          ],
+          "supported_versions": [
+            "0x0304",
+            "0x0303"
+          ],
+          "supported_group_ids": [
+            4588,
+            4587,
+            4589,
+            29,
+            23,
+            24,
+            25
+          ],
+          "signature_algorithm_ids": [
+            "0x0804",
+            "0x0403",
+            "0x0807",
+            "0x0805",
+            "0x0806",
+            "0x0401",
+            "0x0501",
+            "0x0601",
+            "0x0503",
+            "0x0603"
+          ],
+          "alpn_offered": [
+            "h2",
+            "http/1.1"
+          ],
+          "server_name_present": false,
+          "client_hello_bytes": 1496
+        }
+      ],
+      "requests": [
+        {
+          "method": "POST",
+          "http_protocol": "HTTP/2.0",
+          "negotiated_tls_version": "TLS 1.3",
+          "negotiated_tls_cipher": "TLS_AES_128_GCM_SHA256",
+          "negotiated_alpn": "h2",
+          "whitelisted_application_headers": {
+            "accept": [
+              "text/event-stream"
+            ],
+            "content-type": [
+              "application/json"
+            ],
+            "originator": [
+              "codex_exec"
+            ],
+            "user-agent": [
+              "codex_exec/0.154.0 (Windows 10.0.26200; x86_64) unknown (codex_exec; 0.154.0)"
+            ],
+            "x-codex-beta-features": [
+              "remote_compaction_v2"
+            ]
+          },
+          "identity_header_presence_only": {
+            "conversation_id": false,
+            "session-id": true,
+            "session_id": false,
+            "thread-id": true,
+            "traceparent": false,
+            "x-client-request-id": true,
+            "x-codex-turn-metadata": true,
+            "x-codex-turn-state": false,
+            "x-request-id": false
+          },
+          "request_schema_keys": [
+            "client_metadata",
+            "include",
+            "input",
+            "instructions",
+            "model",
+            "parallel_tool_calls",
+            "prompt_cache_key",
+            "reasoning",
+            "store",
+            "stream",
+            "text",
+            "tool_choice",
+            "tools"
+          ],
+          "client_metadata_keys_only": [
+            "root_turn_id",
+            "session_id",
+            "thread_id",
+            "turn_id",
+            "x-codex-installation-id",
+            "x-codex-turn-metadata",
+            "x-codex-window-id"
+          ],
+          "input_type_counts": {
+            "message": 3
+          },
+          "tool_type_counts": {
+            "custom": 1,
+            "function": 7,
+            "tool_search": 1
+          },
+          "cache_options_redacted": {
+            "prompt_cache_key_length": 36,
+            "prompt_cache_key_present": true,
+            "prompt_cache_retention_present": false
+          },
+          "stream": true,
+          "store": false,
+          "turn_metadata_keys_only": [
+            "agent_name",
+            "auto_review_enabled",
+            "context_window_id",
+            "installation_id",
+            "node_repl_auto_review_required",
+            "node_repl_disabled",
+            "request_kind",
+            "root_turn_id",
+            "sandbox",
+            "sandbox_mode",
+            "session_id",
+            "thread_id",
+            "thread_source",
+            "turn_id",
+            "turn_started_at_unix_ms",
+            "window_id",
+            "window_number"
+          ]
+        },
+        {
+          "method": "POST",
+          "http_protocol": "HTTP/2.0",
+          "negotiated_tls_version": "TLS 1.3",
+          "negotiated_tls_cipher": "TLS_AES_128_GCM_SHA256",
+          "negotiated_alpn": "h2",
+          "whitelisted_application_headers": {
+            "accept": [
+              "text/event-stream"
+            ],
+            "content-type": [
+              "application/json"
+            ],
+            "originator": [
+              "codex_exec"
+            ],
+            "user-agent": [
+              "codex_exec/0.154.0 (Windows 10.0.26200; x86_64) unknown (codex_exec; 0.154.0)"
+            ],
+            "x-codex-beta-features": [
+              "remote_compaction_v2"
+            ]
+          },
+          "identity_header_presence_only": {
+            "conversation_id": false,
+            "session-id": true,
+            "session_id": false,
+            "thread-id": true,
+            "traceparent": false,
+            "x-client-request-id": true,
+            "x-codex-turn-metadata": true,
+            "x-codex-turn-state": false,
+            "x-request-id": false
+          },
+          "request_schema_keys": [
+            "client_metadata",
+            "include",
+            "input",
+            "instructions",
+            "model",
+            "parallel_tool_calls",
+            "prompt_cache_key",
+            "reasoning",
+            "store",
+            "stream",
+            "text",
+            "tool_choice",
+            "tools"
+          ],
+          "client_metadata_keys_only": [
+            "root_turn_id",
+            "session_id",
+            "thread_id",
+            "turn_id",
+            "x-codex-installation-id",
+            "x-codex-turn-metadata",
+            "x-codex-window-id"
+          ],
+          "input_type_counts": {
+            "function_call": 1,
+            "function_call_output": 1,
+            "message": 3
+          },
+          "tool_type_counts": {
+            "custom": 1,
+            "function": 7,
+            "tool_search": 1
+          },
+          "cache_options_redacted": {
+            "prompt_cache_key_length": 36,
+            "prompt_cache_key_present": true,
+            "prompt_cache_retention_present": false
+          },
+          "stream": true,
+          "store": false,
+          "turn_metadata_keys_only": [
+            "agent_name",
+            "auto_review_enabled",
+            "context_window_id",
+            "installation_id",
+            "node_repl_auto_review_required",
+            "node_repl_disabled",
+            "request_kind",
+            "root_turn_id",
+            "sandbox",
+            "sandbox_mode",
+            "session_id",
+            "thread_id",
+            "thread_source",
+            "turn_id",
+            "turn_started_at_unix_ms",
+            "window_id",
+            "window_number"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "default_trust_client_hello",
+      "client": {
+        "origin": "desktop_bundled_binary_fresh_exec",
+        "version": "codex-cli 0.154.0-alpha.6.2",
+        "binary_sha256": "960c111d47afd61669954b9df9e56083e302edbfa3ef6962d81dcc14a30051dc"
+      },
+      "passed": true,
+      "cli_exit_code": 1,
+      "elapsed_seconds": 21.3309082,
+      "ssl_cert_file_in_child": false,
+      "child_locale_overrides": {},
+      "transport_observed": "official CLI default trust; handshake only; intentionally terminated after first ClientHello",
+      "function_call_output_observed": false,
+      "probe_stopped_after_client_hello": true,
+      "cli_completed_fixture_reply": false,
+      "client_hellos": [
+        {
+          "legacy_version": "0x0303",
+          "cipher_suites_in_wire_order": [
+            "0xc02c",
+            "0xc02b",
+            "0xc030",
+            "0xc02f",
+            "0xc024",
+            "0xc023",
+            "0xc028",
+            "0xc027",
+            "0xc00a",
+            "0xc009",
+            "0xc014",
+            "0xc013",
+            "0x009d",
+            "0x009c",
+            "0x003d",
+            "0x003c",
+            "0x0035",
+            "0x002f"
+          ],
+          "extension_ids_in_wire_order": [
+            10,
+            11,
+            13,
+            35,
+            23,
+            65281
+          ],
+          "supported_versions": [],
+          "supported_group_ids": [
+            29,
+            23,
+            24
+          ],
+          "signature_algorithm_ids": [
+            "0x0804",
+            "0x0805",
+            "0x0806",
+            "0x0401",
+            "0x0501",
+            "0x0201",
+            "0x0403",
+            "0x0503",
+            "0x0203",
+            "0x0202",
+            "0x0601",
+            "0x0603"
+          ],
+          "alpn_offered": [],
+          "server_name_present": false,
+          "client_hello_bytes": 142
+        }
+      ],
+      "requests": []
+    },
+    {
+      "name": "plain_http_direct_us_env",
+      "client": {
+        "origin": "desktop_bundled_binary_fresh_exec",
+        "version": "codex-cli 0.154.0-alpha.6.2",
+        "binary_sha256": "960c111d47afd61669954b9df9e56083e302edbfa3ef6962d81dcc14a30051dc"
+      },
+      "passed": true,
+      "cli_exit_code": 0,
+      "elapsed_seconds": 21.3230995,
+      "ssl_cert_file_in_child": false,
+      "child_locale_overrides": {
+        "LANG": "en_US.UTF-8",
+        "LC_ALL": "en_US.UTF-8",
+        "TZ": "America/New_York"
+      },
+      "transport_observed": "official CLI default configuration HTTP transport to loopback; no custom CA and no TLS",
+      "function_call_output_observed": true,
+      "probe_stopped_after_client_hello": false,
+      "cli_completed_fixture_reply": true,
+      "client_hellos": [],
+      "requests": [
+        {
+          "method": "POST",
+          "http_protocol": "HTTP/1.1",
+          "negotiated_tls_version": "",
+          "negotiated_tls_cipher": "",
+          "negotiated_alpn": "",
+          "whitelisted_application_headers": {
+            "accept": [
+              "text/event-stream"
+            ],
+            "content-type": [
+              "application/json"
+            ],
+            "originator": [
+              "codex_exec"
+            ],
+            "user-agent": [
+              "codex_exec/0.154.0-alpha.6.2 (Windows 10.0.26200; x86_64) unknown (codex_exec; 0.154.0-alpha.6.2)"
+            ],
+            "x-codex-beta-features": [
+              "remote_compaction_v2"
+            ]
+          },
+          "identity_header_presence_only": {
+            "conversation_id": false,
+            "session-id": true,
+            "session_id": false,
+            "thread-id": true,
+            "traceparent": false,
+            "x-client-request-id": true,
+            "x-codex-turn-metadata": true,
+            "x-codex-turn-state": false,
+            "x-request-id": false
+          },
+          "request_schema_keys": [
+            "client_metadata",
+            "include",
+            "input",
+            "instructions",
+            "model",
+            "parallel_tool_calls",
+            "prompt_cache_key",
+            "reasoning",
+            "store",
+            "stream",
+            "text",
+            "tool_choice",
+            "tools"
+          ],
+          "client_metadata_keys_only": [
+            "root_turn_id",
+            "session_id",
+            "thread_id",
+            "turn_id",
+            "x-codex-installation-id",
+            "x-codex-turn-metadata",
+            "x-codex-window-id"
+          ],
+          "input_type_counts": {
+            "message": 3
+          },
+          "tool_type_counts": {
+            "custom": 1,
+            "function": 7,
+            "tool_search": 1
+          },
+          "cache_options_redacted": {
+            "prompt_cache_key_length": 36,
+            "prompt_cache_key_present": true,
+            "prompt_cache_retention_present": false
+          },
+          "stream": true,
+          "store": false,
+          "turn_metadata_keys_only": [
+            "agent_name",
+            "auto_review_enabled",
+            "context_window_id",
+            "installation_id",
+            "node_repl_auto_review_required",
+            "node_repl_disabled",
+            "request_kind",
+            "root_turn_id",
+            "sandbox",
+            "sandbox_mode",
+            "session_id",
+            "thread_id",
+            "thread_source",
+            "turn_id",
+            "turn_started_at_unix_ms",
+            "window_id",
+            "window_number"
+          ]
+        },
+        {
+          "method": "POST",
+          "http_protocol": "HTTP/1.1",
+          "negotiated_tls_version": "",
+          "negotiated_tls_cipher": "",
+          "negotiated_alpn": "",
+          "whitelisted_application_headers": {
+            "accept": [
+              "text/event-stream"
+            ],
+            "content-type": [
+              "application/json"
+            ],
+            "originator": [
+              "codex_exec"
+            ],
+            "user-agent": [
+              "codex_exec/0.154.0-alpha.6.2 (Windows 10.0.26200; x86_64) unknown (codex_exec; 0.154.0-alpha.6.2)"
+            ],
+            "x-codex-beta-features": [
+              "remote_compaction_v2"
+            ]
+          },
+          "identity_header_presence_only": {
+            "conversation_id": false,
+            "session-id": true,
+            "session_id": false,
+            "thread-id": true,
+            "traceparent": false,
+            "x-client-request-id": true,
+            "x-codex-turn-metadata": true,
+            "x-codex-turn-state": false,
+            "x-request-id": false
+          },
+          "request_schema_keys": [
+            "client_metadata",
+            "include",
+            "input",
+            "instructions",
+            "model",
+            "parallel_tool_calls",
+            "prompt_cache_key",
+            "reasoning",
+            "store",
+            "stream",
+            "text",
+            "tool_choice",
+            "tools"
+          ],
+          "client_metadata_keys_only": [
+            "root_turn_id",
+            "session_id",
+            "thread_id",
+            "turn_id",
+            "x-codex-installation-id",
+            "x-codex-turn-metadata",
+            "x-codex-window-id"
+          ],
+          "input_type_counts": {
+            "function_call": 1,
+            "function_call_output": 1,
+            "message": 3
+          },
+          "tool_type_counts": {
+            "custom": 1,
+            "function": 7,
+            "tool_search": 1
+          },
+          "cache_options_redacted": {
+            "prompt_cache_key_length": 36,
+            "prompt_cache_key_present": true,
+            "prompt_cache_retention_present": false
+          },
+          "stream": true,
+          "store": false,
+          "turn_metadata_keys_only": [
+            "agent_name",
+            "auto_review_enabled",
+            "context_window_id",
+            "installation_id",
+            "node_repl_auto_review_required",
+            "node_repl_disabled",
+            "request_kind",
+            "root_turn_id",
+            "sandbox",
+            "sandbox_mode",
+            "session_id",
+            "thread_id",
+            "thread_source",
+            "turn_id",
+            "turn_started_at_unix_ms",
+            "window_id",
+            "window_number"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "custom_ca_direct_default_env",
+      "client": {
+        "origin": "desktop_bundled_binary_fresh_exec",
+        "version": "codex-cli 0.154.0-alpha.6.2",
+        "binary_sha256": "960c111d47afd61669954b9df9e56083e302edbfa3ef6962d81dcc14a30051dc"
+      },
+      "passed": true,
+      "cli_exit_code": 0,
+      "elapsed_seconds": 21.2736001,
+      "ssl_cert_file_in_child": true,
+      "child_locale_overrides": {},
+      "transport_observed": "official CLI custom-CA rustls transport to local TLS server",
+      "function_call_output_observed": true,
+      "probe_stopped_after_client_hello": false,
+      "cli_completed_fixture_reply": true,
+      "client_hellos": [
+        {
+          "legacy_version": "0x0303",
+          "cipher_suites_in_wire_order": [
+            "0x1302",
+            "0x1301",
+            "0x1303",
+            "0xc02c",
+            "0xc02b",
+            "0xcca9",
+            "0xc030",
+            "0xc02f",
+            "0xcca8",
+            "0x00ff"
+          ],
+          "extension_ids_in_wire_order": [
+            13,
+            45,
+            11,
+            16,
+            5,
+            10,
+            51,
+            23,
+            35,
+            43
+          ],
+          "supported_versions": [
+            "0x0304",
+            "0x0303"
+          ],
+          "supported_group_ids": [
+            4588,
+            29,
+            23,
+            24
+          ],
+          "signature_algorithm_ids": [
+            "0x0503",
+            "0x0403",
+            "0x0603",
+            "0x0807",
+            "0x0806",
+            "0x0805",
+            "0x0804",
+            "0x0601",
+            "0x0501",
+            "0x0401"
+          ],
+          "alpn_offered": [
+            "h2",
+            "http/1.1"
+          ],
+          "server_name_present": false,
+          "client_hello_bytes": 1455
+        },
+        {
+          "legacy_version": "0x0303",
+          "cipher_suites_in_wire_order": [
+            "0x1302",
+            "0x1301",
+            "0x1303",
+            "0xc02c",
+            "0xc02b",
+            "0xcca9",
+            "0xc030",
+            "0xc02f",
+            "0xcca8",
+            "0x00ff"
+          ],
+          "extension_ids_in_wire_order": [
+            5,
+            51,
+            35,
+            16,
+            23,
+            13,
+            11,
+            45,
+            43,
+            10
+          ],
+          "supported_versions": [
+            "0x0304",
+            "0x0303"
+          ],
+          "supported_group_ids": [
+            4588,
+            29,
+            23,
+            24
+          ],
+          "signature_algorithm_ids": [
+            "0x0503",
+            "0x0403",
+            "0x0603",
+            "0x0807",
+            "0x0806",
+            "0x0805",
+            "0x0804",
+            "0x0601",
+            "0x0501",
+            "0x0401"
+          ],
+          "alpn_offered": [
+            "h2",
+            "http/1.1"
+          ],
+          "server_name_present": false,
+          "client_hello_bytes": 1455
+        }
+      ],
+      "requests": [
+        {
+          "method": "POST",
+          "http_protocol": "HTTP/2.0",
+          "negotiated_tls_version": "TLS 1.3",
+          "negotiated_tls_cipher": "TLS_AES_128_GCM_SHA256",
+          "negotiated_alpn": "h2",
+          "whitelisted_application_headers": {
+            "accept": [
+              "text/event-stream"
+            ],
+            "content-type": [
+              "application/json"
+            ],
+            "originator": [
+              "codex_exec"
+            ],
+            "user-agent": [
+              "codex_exec/0.154.0-alpha.6.2 (Windows 10.0.26200; x86_64) unknown (codex_exec; 0.154.0-alpha.6.2)"
+            ],
+            "x-codex-beta-features": [
+              "remote_compaction_v2"
+            ]
+          },
+          "identity_header_presence_only": {
+            "conversation_id": false,
+            "session-id": true,
+            "session_id": false,
+            "thread-id": true,
+            "traceparent": false,
+            "x-client-request-id": true,
+            "x-codex-turn-metadata": true,
+            "x-codex-turn-state": false,
+            "x-request-id": false
+          },
+          "request_schema_keys": [
+            "client_metadata",
+            "include",
+            "input",
+            "instructions",
+            "model",
+            "parallel_tool_calls",
+            "prompt_cache_key",
+            "reasoning",
+            "store",
+            "stream",
+            "text",
+            "tool_choice",
+            "tools"
+          ],
+          "client_metadata_keys_only": [
+            "root_turn_id",
+            "session_id",
+            "thread_id",
+            "turn_id",
+            "x-codex-installation-id",
+            "x-codex-turn-metadata",
+            "x-codex-window-id"
+          ],
+          "input_type_counts": {
+            "message": 3
+          },
+          "tool_type_counts": {
+            "custom": 1,
+            "function": 7,
+            "tool_search": 1
+          },
+          "cache_options_redacted": {
+            "prompt_cache_key_length": 36,
+            "prompt_cache_key_present": true,
+            "prompt_cache_retention_present": false
+          },
+          "stream": true,
+          "store": false,
+          "turn_metadata_keys_only": [
+            "agent_name",
+            "auto_review_enabled",
+            "context_window_id",
+            "installation_id",
+            "node_repl_auto_review_required",
+            "node_repl_disabled",
+            "request_kind",
+            "root_turn_id",
+            "sandbox",
+            "sandbox_mode",
+            "session_id",
+            "thread_id",
+            "thread_source",
+            "turn_id",
+            "turn_started_at_unix_ms",
+            "window_id",
+            "window_number"
+          ]
+        },
+        {
+          "method": "POST",
+          "http_protocol": "HTTP/2.0",
+          "negotiated_tls_version": "TLS 1.3",
+          "negotiated_tls_cipher": "TLS_AES_128_GCM_SHA256",
+          "negotiated_alpn": "h2",
+          "whitelisted_application_headers": {
+            "accept": [
+              "text/event-stream"
+            ],
+            "content-type": [
+              "application/json"
+            ],
+            "originator": [
+              "codex_exec"
+            ],
+            "user-agent": [
+              "codex_exec/0.154.0-alpha.6.2 (Windows 10.0.26200; x86_64) unknown (codex_exec; 0.154.0-alpha.6.2)"
+            ],
+            "x-codex-beta-features": [
+              "remote_compaction_v2"
+            ]
+          },
+          "identity_header_presence_only": {
+            "conversation_id": false,
+            "session-id": true,
+            "session_id": false,
+            "thread-id": true,
+            "traceparent": false,
+            "x-client-request-id": true,
+            "x-codex-turn-metadata": true,
+            "x-codex-turn-state": false,
+            "x-request-id": false
+          },
+          "request_schema_keys": [
+            "client_metadata",
+            "include",
+            "input",
+            "instructions",
+            "model",
+            "parallel_tool_calls",
+            "prompt_cache_key",
+            "reasoning",
+            "store",
+            "stream",
+            "text",
+            "tool_choice",
+            "tools"
+          ],
+          "client_metadata_keys_only": [
+            "root_turn_id",
+            "session_id",
+            "thread_id",
+            "turn_id",
+            "x-codex-installation-id",
+            "x-codex-turn-metadata",
+            "x-codex-window-id"
+          ],
+          "input_type_counts": {
+            "function_call": 1,
+            "function_call_output": 1,
+            "message": 3
+          },
+          "tool_type_counts": {
+            "custom": 1,
+            "function": 7,
+            "tool_search": 1
+          },
+          "cache_options_redacted": {
+            "prompt_cache_key_length": 36,
+            "prompt_cache_key_present": true,
+            "prompt_cache_retention_present": false
+          },
+          "stream": true,
+          "store": false,
+          "turn_metadata_keys_only": [
+            "agent_name",
+            "auto_review_enabled",
+            "context_window_id",
+            "installation_id",
+            "node_repl_auto_review_required",
+            "node_repl_disabled",
+            "request_kind",
+            "root_turn_id",
+            "sandbox",
+            "sandbox_mode",
+            "session_id",
+            "thread_id",
+            "thread_source",
+            "turn_id",
+            "turn_started_at_unix_ms",
+            "window_id",
+            "window_number"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "custom_ca_direct_us_env",
+      "client": {
+        "origin": "desktop_bundled_binary_fresh_exec",
+        "version": "codex-cli 0.154.0-alpha.6.2",
+        "binary_sha256": "960c111d47afd61669954b9df9e56083e302edbfa3ef6962d81dcc14a30051dc"
+      },
+      "passed": true,
+      "cli_exit_code": 0,
+      "elapsed_seconds": 21.3422105,
+      "ssl_cert_file_in_child": true,
+      "child_locale_overrides": {
+        "LANG": "en_US.UTF-8",
+        "LC_ALL": "en_US.UTF-8",
+        "TZ": "America/New_York"
+      },
+      "transport_observed": "official CLI custom-CA rustls transport to local TLS server",
+      "function_call_output_observed": true,
+      "probe_stopped_after_client_hello": false,
+      "cli_completed_fixture_reply": true,
+      "client_hellos": [
+        {
+          "legacy_version": "0x0303",
+          "cipher_suites_in_wire_order": [
+            "0x1302",
+            "0x1301",
+            "0x1303",
+            "0xc02c",
+            "0xc02b",
+            "0xcca9",
+            "0xc030",
+            "0xc02f",
+            "0xcca8",
+            "0x00ff"
+          ],
+          "extension_ids_in_wire_order": [
+            10,
+            5,
+            13,
+            23,
+            11,
+            51,
+            35,
+            45,
+            16,
+            43
+          ],
+          "supported_versions": [
+            "0x0304",
+            "0x0303"
+          ],
+          "supported_group_ids": [
+            4588,
+            29,
+            23,
+            24
+          ],
+          "signature_algorithm_ids": [
+            "0x0503",
+            "0x0403",
+            "0x0603",
+            "0x0807",
+            "0x0806",
+            "0x0805",
+            "0x0804",
+            "0x0601",
+            "0x0501",
+            "0x0401"
+          ],
+          "alpn_offered": [
+            "h2",
+            "http/1.1"
+          ],
+          "server_name_present": false,
+          "client_hello_bytes": 1455
+        },
+        {
+          "legacy_version": "0x0303",
+          "cipher_suites_in_wire_order": [
+            "0x1302",
+            "0x1301",
+            "0x1303",
+            "0xc02c",
+            "0xc02b",
+            "0xcca9",
+            "0xc030",
+            "0xc02f",
+            "0xcca8",
+            "0x00ff"
+          ],
+          "extension_ids_in_wire_order": [
+            43,
+            16,
+            10,
+            51,
+            23,
+            13,
+            5,
+            45,
+            11,
+            35
+          ],
+          "supported_versions": [
+            "0x0304",
+            "0x0303"
+          ],
+          "supported_group_ids": [
+            4588,
+            29,
+            23,
+            24
+          ],
+          "signature_algorithm_ids": [
+            "0x0503",
+            "0x0403",
+            "0x0603",
+            "0x0807",
+            "0x0806",
+            "0x0805",
+            "0x0804",
+            "0x0601",
+            "0x0501",
+            "0x0401"
+          ],
+          "alpn_offered": [
+            "h2",
+            "http/1.1"
+          ],
+          "server_name_present": false,
+          "client_hello_bytes": 1455
+        }
+      ],
+      "requests": [
+        {
+          "method": "POST",
+          "http_protocol": "HTTP/2.0",
+          "negotiated_tls_version": "TLS 1.3",
+          "negotiated_tls_cipher": "TLS_AES_128_GCM_SHA256",
+          "negotiated_alpn": "h2",
+          "whitelisted_application_headers": {
+            "accept": [
+              "text/event-stream"
+            ],
+            "content-type": [
+              "application/json"
+            ],
+            "originator": [
+              "codex_exec"
+            ],
+            "user-agent": [
+              "codex_exec/0.154.0-alpha.6.2 (Windows 10.0.26200; x86_64) unknown (codex_exec; 0.154.0-alpha.6.2)"
+            ],
+            "x-codex-beta-features": [
+              "remote_compaction_v2"
+            ]
+          },
+          "identity_header_presence_only": {
+            "conversation_id": false,
+            "session-id": true,
+            "session_id": false,
+            "thread-id": true,
+            "traceparent": false,
+            "x-client-request-id": true,
+            "x-codex-turn-metadata": true,
+            "x-codex-turn-state": false,
+            "x-request-id": false
+          },
+          "request_schema_keys": [
+            "client_metadata",
+            "include",
+            "input",
+            "instructions",
+            "model",
+            "parallel_tool_calls",
+            "prompt_cache_key",
+            "reasoning",
+            "store",
+            "stream",
+            "text",
+            "tool_choice",
+            "tools"
+          ],
+          "client_metadata_keys_only": [
+            "root_turn_id",
+            "session_id",
+            "thread_id",
+            "turn_id",
+            "x-codex-installation-id",
+            "x-codex-turn-metadata",
+            "x-codex-window-id"
+          ],
+          "input_type_counts": {
+            "message": 3
+          },
+          "tool_type_counts": {
+            "custom": 1,
+            "function": 7,
+            "tool_search": 1
+          },
+          "cache_options_redacted": {
+            "prompt_cache_key_length": 36,
+            "prompt_cache_key_present": true,
+            "prompt_cache_retention_present": false
+          },
+          "stream": true,
+          "store": false,
+          "turn_metadata_keys_only": [
+            "agent_name",
+            "auto_review_enabled",
+            "context_window_id",
+            "installation_id",
+            "node_repl_auto_review_required",
+            "node_repl_disabled",
+            "request_kind",
+            "root_turn_id",
+            "sandbox",
+            "sandbox_mode",
+            "session_id",
+            "thread_id",
+            "thread_source",
+            "turn_id",
+            "turn_started_at_unix_ms",
+            "window_id",
+            "window_number"
+          ]
+        },
+        {
+          "method": "POST",
+          "http_protocol": "HTTP/2.0",
+          "negotiated_tls_version": "TLS 1.3",
+          "negotiated_tls_cipher": "TLS_AES_128_GCM_SHA256",
+          "negotiated_alpn": "h2",
+          "whitelisted_application_headers": {
+            "accept": [
+              "text/event-stream"
+            ],
+            "content-type": [
+              "application/json"
+            ],
+            "originator": [
+              "codex_exec"
+            ],
+            "user-agent": [
+              "codex_exec/0.154.0-alpha.6.2 (Windows 10.0.26200; x86_64) unknown (codex_exec; 0.154.0-alpha.6.2)"
+            ],
+            "x-codex-beta-features": [
+              "remote_compaction_v2"
+            ]
+          },
+          "identity_header_presence_only": {
+            "conversation_id": false,
+            "session-id": true,
+            "session_id": false,
+            "thread-id": true,
+            "traceparent": false,
+            "x-client-request-id": true,
+            "x-codex-turn-metadata": true,
+            "x-codex-turn-state": false,
+            "x-request-id": false
+          },
+          "request_schema_keys": [
+            "client_metadata",
+            "include",
+            "input",
+            "instructions",
+            "model",
+            "parallel_tool_calls",
+            "prompt_cache_key",
+            "reasoning",
+            "store",
+            "stream",
+            "text",
+            "tool_choice",
+            "tools"
+          ],
+          "client_metadata_keys_only": [
+            "root_turn_id",
+            "session_id",
+            "thread_id",
+            "turn_id",
+            "x-codex-installation-id",
+            "x-codex-turn-metadata",
+            "x-codex-window-id"
+          ],
+          "input_type_counts": {
+            "function_call": 1,
+            "function_call_output": 1,
+            "message": 3
+          },
+          "tool_type_counts": {
+            "custom": 1,
+            "function": 7,
+            "tool_search": 1
+          },
+          "cache_options_redacted": {
+            "prompt_cache_key_length": 36,
+            "prompt_cache_key_present": true,
+            "prompt_cache_retention_present": false
+          },
+          "stream": true,
+          "store": false,
+          "turn_metadata_keys_only": [
+            "agent_name",
+            "auto_review_enabled",
+            "context_window_id",
+            "installation_id",
+            "node_repl_auto_review_required",
+            "node_repl_disabled",
+            "request_kind",
+            "root_turn_id",
+            "sandbox",
+            "sandbox_mode",
+            "session_id",
+            "thread_id",
+            "thread_source",
+            "turn_id",
+            "turn_started_at_unix_ms",
+            "window_id",
+            "window_number"
+          ]
+        }
+      ]
+    }
+  ],
+  "comparisons": {
+    "desktop_bundled_binary_fresh_exec_locale_env": {
+      "conclusion_scope": "comparison of one fresh exec per environment using the same binary and controlled TLS server",
+      "same_request_schema_keys": true,
+      "same_whitelisted_application_headers": true
+    },
+    "desktop_bundled_binary_fresh_exec_plain_http_vs_custom_ca_tls": {
+      "custom_ca_tls_http_protocol": "HTTP/2.0",
+      "plain_http_protocol": "HTTP/1.1",
+      "same_request_schema_keys": true,
+      "same_whitelisted_application_headers": true
+    },
+    "official_npm_release_gateway": {
+      "direct_http_protocol": "HTTP/2.0",
+      "gateway_http_protocol": "HTTP/2.0",
+      "same_request_schema_keys": true,
+      "same_user_agent": true,
+      "same_whitelisted_application_headers": true,
+      "same_whitelisted_application_headers_all_tool_rounds": true
+    },
+    "official_npm_release_locale_env": {
+      "conclusion_scope": "comparison of one fresh exec per environment using the same binary and controlled TLS server",
+      "same_request_schema_keys": true,
+      "same_whitelisted_application_headers": true
+    },
+    "official_npm_release_plain_http_vs_custom_ca_tls": {
+      "custom_ca_tls_http_protocol": "HTTP/2.0",
+      "plain_http_protocol": "HTTP/1.1",
+      "same_request_schema_keys": true,
+      "same_whitelisted_application_headers": true
+    }
+  },
+  "source_findings": [
+    "0.154.0 http-client/src/custom_ca.rs:168: CODEX_CA_CERTIFICATE takes precedence over SSL_CERT_FILE.",
+    "0.154.0 http-client/src/custom_ca.rs:307: a custom CA explicitly selects rustls; successful custom-CA captures are not the default Windows native TLS stack.",
+    "0.154.0 http-client/src/tls_backend_fallback.rs:1: native TLS remains default; recognized negotiation failures may select rustls for one destination.",
+    "0.154.0 login/src/auth/default_client.rs:335-348 adds originator, User-Agent and an optional configured residency requirement; it does not synthesize a separate version header or a device-country identity.",
+    "Gateway proxy.go:28-32 now disables automatic Go response-gzip negotiation; proxy.go:135-152 preserves an absent version header for native CLI identities while retaining explicitly supplied versions.",
+    "The baseline observed gateway-only version=0.154.0 and accept-encoding=gzip. Recompiled followup observes neither header, matching both native CLI application request rounds."
+  ],
+  "limits": [
+    "Only new CLI exec processes were observed; no existing desktop conversation, process environment, command line or account was captured.",
+    "Servers listen only on loopback. No public model endpoint, production gateway, geolocation service or proxy exit was used.",
+    "LANG/LC_ALL=en_US.UTF-8 and TZ=America/New_York are child process variables only; they do not change Windows regional settings, IP location, native device identity or establish a US device.",
+    "The default-trust handshake-only probe is terminated after its first ClientHello to avoid trust failures and retry delays. It measures offered metadata, not a completed native TLS connection or HTTP headers.",
+    "Custom-CA successful TLS requests exercise the official client's rustls path. The custom API-key provider does not exercise ChatGPT OAuth, authenticated Zstd request compression, production routing or WebSocket transport.",
+    "TLS extension order is one observed sample per connection and may be randomized; no claim of a stable device fingerprint or byte-for-byte production fingerprint is made.",
+    "The target is a loopback IP rather than a production hostname; SNI and server negotiation can therefore differ. HTTP header names are canonicalized, and raw wire header order is not captured.",
+    "Only the first ClientHello per TCP connection is decoded; later retries, HelloRetryRequest responses, HTTP/2 frame settings and TCP/IP packet fingerprints are not captured.",
+    "Raw TLS bytes are transient parser input only. Raw HTTP bodies, authorization, cookies, account IDs, session IDs, prompts and filesystem paths are not persisted or printed."
+  ],
+  "gateway_header_correction": {
+    "baseline_completed_at": "2026-09-17T19:43:18Z",
+    "followup_completed_at": "2026-09-17T19:46:13Z",
+    "before_gateway_scenario": {
+      "name": "custom_ca_via_go_gateway_us_env",
+      "client": {
+        "origin": "official_npm_release",
+        "version": "codex-cli 0.154.0",
+        "binary_sha256": "be96b992178b1e467c225800da0d65f2c86d5eba1ef0b14632f65db381cbdfde"
+      },
+      "passed": true,
+      "cli_exit_code": 0,
+      "elapsed_seconds": 21.3360631,
+      "ssl_cert_file_in_child": true,
+      "child_locale_overrides": {
+        "LANG": "en_US.UTF-8",
+        "LC_ALL": "en_US.UTF-8",
+        "TZ": "America/New_York"
+      },
+      "transport_observed": "gateway default Go net/http TLS transport to local TLS server; in-memory fixture CA only",
+      "cli_to_gateway_protocol": "HTTP/1.1 over loopback without TLS",
+      "gateway_identity_policy": "fixture default settings; optional fingerprint profiles disabled",
+      "function_call_output_observed": true,
+      "probe_stopped_after_client_hello": false,
+      "cli_completed_fixture_reply": true,
+      "client_hellos": [
+        {
+          "legacy_version": "0x0303",
+          "cipher_suites_in_wire_order": [
+            "0xc02b",
+            "0xc02f",
+            "0xc02c",
+            "0xc030",
+            "0xcca9",
+            "0xcca8",
+            "0xc009",
+            "0xc013",
+            "0xc00a",
+            "0xc014",
+            "0x1301",
+            "0x1302",
+            "0x1303"
+          ],
+          "extension_ids_in_wire_order": [
+            11,
+            65281,
+            23,
+            18,
+            5,
+            10,
+            13,
+            50,
+            16,
+            43,
+            51
+          ],
+          "supported_versions": [
+            "0x0304",
+            "0x0303"
+          ],
+          "supported_group_ids": [
+            4588,
+            4587,
+            4589,
+            29,
+            23,
+            24,
+            25
+          ],
+          "signature_algorithm_ids": [
+            "0x0804",
+            "0x0403",
+            "0x0807",
+            "0x0805",
+            "0x0806",
+            "0x0401",
+            "0x0501",
+            "0x0601",
+            "0x0503",
+            "0x0603"
+          ],
+          "alpn_offered": [
+            "h2",
+            "http/1.1"
+          ],
+          "server_name_present": false,
+          "client_hello_bytes": 1496
+        }
+      ],
+      "requests": [
+        {
+          "method": "POST",
+          "http_protocol": "HTTP/2.0",
+          "negotiated_tls_version": "TLS 1.3",
+          "negotiated_tls_cipher": "TLS_AES_128_GCM_SHA256",
+          "negotiated_alpn": "h2",
+          "whitelisted_application_headers": {
+            "accept": [
+              "text/event-stream"
+            ],
+            "accept-encoding": [
+              "gzip"
+            ],
+            "content-type": [
+              "application/json"
+            ],
+            "originator": [
+              "codex_exec"
+            ],
+            "user-agent": [
+              "codex_exec/0.154.0 (Windows 10.0.26200; x86_64) unknown (codex_exec; 0.154.0)"
+            ],
+            "version": [
+              "0.154.0"
+            ],
+            "x-codex-beta-features": [
+              "remote_compaction_v2"
+            ]
+          },
+          "identity_header_presence_only": {
+            "conversation_id": false,
+            "session-id": true,
+            "session_id": false,
+            "thread-id": true,
+            "traceparent": false,
+            "x-client-request-id": true,
+            "x-codex-turn-metadata": true,
+            "x-codex-turn-state": false,
+            "x-request-id": false
+          },
+          "request_schema_keys": [
+            "client_metadata",
+            "include",
+            "input",
+            "instructions",
+            "model",
+            "parallel_tool_calls",
+            "prompt_cache_key",
+            "reasoning",
+            "store",
+            "stream",
+            "text",
+            "tool_choice",
+            "tools"
+          ],
+          "client_metadata_keys_only": [
+            "root_turn_id",
+            "session_id",
+            "thread_id",
+            "turn_id",
+            "x-codex-installation-id",
+            "x-codex-turn-metadata",
+            "x-codex-window-id"
+          ],
+          "input_type_counts": {
+            "message": 3
+          },
+          "tool_type_counts": {
+            "custom": 1,
+            "function": 7,
+            "tool_search": 1
+          },
+          "cache_options_redacted": {
+            "prompt_cache_key_length": 36,
+            "prompt_cache_key_present": true,
+            "prompt_cache_retention_present": false
+          },
+          "stream": true,
+          "store": false,
+          "turn_metadata_keys_only": [
+            "agent_name",
+            "auto_review_enabled",
+            "context_window_id",
+            "installation_id",
+            "node_repl_auto_review_required",
+            "node_repl_disabled",
+            "request_kind",
+            "root_turn_id",
+            "sandbox",
+            "sandbox_mode",
+            "session_id",
+            "thread_id",
+            "thread_source",
+            "turn_id",
+            "turn_started_at_unix_ms",
+            "window_id",
+            "window_number"
+          ]
+        },
+        {
+          "method": "POST",
+          "http_protocol": "HTTP/2.0",
+          "negotiated_tls_version": "TLS 1.3",
+          "negotiated_tls_cipher": "TLS_AES_128_GCM_SHA256",
+          "negotiated_alpn": "h2",
+          "whitelisted_application_headers": {
+            "accept": [
+              "text/event-stream"
+            ],
+            "accept-encoding": [
+              "gzip"
+            ],
+            "content-type": [
+              "application/json"
+            ],
+            "originator": [
+              "codex_exec"
+            ],
+            "user-agent": [
+              "codex_exec/0.154.0 (Windows 10.0.26200; x86_64) unknown (codex_exec; 0.154.0)"
+            ],
+            "version": [
+              "0.154.0"
+            ],
+            "x-codex-beta-features": [
+              "remote_compaction_v2"
+            ]
+          },
+          "identity_header_presence_only": {
+            "conversation_id": false,
+            "session-id": true,
+            "session_id": false,
+            "thread-id": true,
+            "traceparent": false,
+            "x-client-request-id": true,
+            "x-codex-turn-metadata": true,
+            "x-codex-turn-state": false,
+            "x-request-id": false
+          },
+          "request_schema_keys": [
+            "client_metadata",
+            "include",
+            "input",
+            "instructions",
+            "model",
+            "parallel_tool_calls",
+            "prompt_cache_key",
+            "reasoning",
+            "store",
+            "stream",
+            "text",
+            "tool_choice",
+            "tools"
+          ],
+          "client_metadata_keys_only": [
+            "root_turn_id",
+            "session_id",
+            "thread_id",
+            "turn_id",
+            "x-codex-installation-id",
+            "x-codex-turn-metadata",
+            "x-codex-window-id"
+          ],
+          "input_type_counts": {
+            "function_call": 1,
+            "function_call_output": 1,
+            "message": 3
+          },
+          "tool_type_counts": {
+            "custom": 1,
+            "function": 7,
+            "tool_search": 1
+          },
+          "cache_options_redacted": {
+            "prompt_cache_key_length": 36,
+            "prompt_cache_key_present": true,
+            "prompt_cache_retention_present": false
+          },
+          "stream": true,
+          "store": false,
+          "turn_metadata_keys_only": [
+            "agent_name",
+            "auto_review_enabled",
+            "context_window_id",
+            "installation_id",
+            "node_repl_auto_review_required",
+            "node_repl_disabled",
+            "request_kind",
+            "root_turn_id",
+            "sandbox",
+            "sandbox_mode",
+            "session_id",
+            "thread_id",
+            "thread_source",
+            "turn_id",
+            "turn_started_at_unix_ms",
+            "window_id",
+            "window_number"
+          ]
+        }
+      ]
+    },
+    "before_comparison": {
+      "direct_http_protocol": "HTTP/2.0",
+      "gateway_http_protocol": "HTTP/2.0",
+      "same_request_schema_keys": true,
+      "same_user_agent": true,
+      "same_whitelisted_application_headers": false
+    },
+    "after_scenario_name": "custom_ca_via_go_gateway_us_env",
+    "removed_synthetic_headers": [
+      "accept-encoding",
+      "version"
+    ],
+    "after_matches_native_headers_in_both_tool_rounds": true,
+    "conclusion_scope": "Application header whitelist equality only; Go TLS remains different from official native and rustls transports."
+  },
+  "verification": {
+    "baseline_passed_scenarios": 9,
+    "followup_passed_scenarios": 1,
+    "application_requests_observed_total": 16,
+    "baseline_go_test_command": "go test -run '^TestSourceNativeCLITransport$' -json -count=1 -timeout 6m .",
+    "followup_go_test_command": "go test -run '^TestSourceNativeCLITransport$/official_npm_release/custom_ca_via_go_gateway_us_env$' -json -count=1 -timeout 2m .",
+    "baseline_raw_test_log": ".local/native-transport-capture.jsonl",
+    "followup_raw_test_log": ".local/native-transport-after-header-fix.jsonl",
+    "baseline_sanitized_capture": ".local/native-transport-before-header-fix.json",
+    "followup_sanitized_capture": ".local/native-transport-after-header-fix.json",
+    "default_native_client_hello_complete": true,
+    "client_hello_completeness_basis": "The listener buffers all TLS records until the complete 4-byte handshake header plus its declared body length is available, then parses all vectors and rejects truncation. Certificate rejection or deliberate probe cancellation occurs after this complete ClientHello has been received.",
+    "default_native_client_hello_bytes": [
+      {
+        "origin": "official_npm_release",
+        "lengths": [
+          142
+        ]
+      },
+      {
+        "origin": "desktop_bundled_binary_fresh_exec",
+        "lengths": [
+          142
+        ]
+      }
+    ],
+    "default_native_probe_exit_code_explanation": "Exit 1 is expected after intentional cancellation following ClientHello; it is not a successful native TLS handshake or a model execution result."
+  },
+  "provider_header_scope": "Capture uses a custom provider. Built-in OpenAI provider explicitly adds version in model-provider-info/src/lib.rs:398. Gateway preserves both explicit values and absence."
+}

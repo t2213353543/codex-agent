@@ -1,0 +1,65 @@
+{
+  "schema": "codex-agent-deployed-ui-release-v1",
+  "release_id": "3cc0f99d2c87ae09aa6888a83bc94eddfba257bd9e9341328da23c78caa84203",
+  "address": "http://43.225.196.170:18879",
+  "tests_passed": true,
+  "deployed": true,
+  "database_migrated_by_ui_release": false,
+  "database_migrated_by_baseline": true,
+  "baseline_pg_release": "07d3784ae9502b4260b6e9c0c6b413fca439ee80b13bf682f156595d4922bf06",
+  "deployed_at": "2026-09-17T11:15:40.282461+00:00",
+  "frontend_source_sha256": "6e682957f039a33cd570d3718132dd2174db6d3c0b7fab32f98f8a5e4af09d9f",
+  "frontend_dist_sha256": "14991d6802d1fe2832c0a305a739aa72e16e0fad215b26bd6ec932d6fbd3a311",
+  "backend_binary_sha256": "07f958e065f8473e5a21c037d8527943cf71652e8b089f245a2c8aa91f673894",
+  "backend_source_sha256": "0283e76c219e418b1c0d89f10562b705f28423fdf48d367ba0ebe2de403b45b7",
+  "only_web_unit_argument_changed": true,
+  "runtime_environment_unchanged": true,
+  "identity_and_credential_counts_preserved": true,
+  "health": {
+    "/": 200,
+    "/health/live": 200,
+    "/health/ready": 200
+  },
+  "ui_path": "/opt/codex-agent/ui-releases/3cc0f99d2c87ae09aa6888a83bc94eddfba257bd9e9341328da23c78caa84203/frontend/dist",
+  "rollback_command": "python tools/ui_release.py rollback --release .local/ui-releases/3cc0f99d2c87ae09aa6888a83bc94eddfba257bd9e9341328da23c78caa84203/ui-manifest.json",
+  "acceptance_command": "python tools/ui_acceptance.py",
+  "evidence": [
+    {
+      "path": ".local/ui/runs/20260917T111153Z/report.json",
+      "sha256": "77f107ce6afe0effd6e0a631d29830a2494ab3b9ca85f9234b2be47bf3378f73"
+    },
+    {
+      "path": ".local/ui/rehearsal-report.json",
+      "sha256": "e03034efdeffd229535ed752979aefeb1078afbd32f6c3c213a9f12503602d52"
+    },
+    {
+      "path": ".local/ui/permissions-report.json",
+      "sha256": "bc4314676efcfcb451a14158398a5fec89e8cde3e5352d03597645cf8e111e4f"
+    },
+    {
+      "path": ".local/ui/production/activation-report.json",
+      "sha256": "8e45875126c263c67bd35534130e80b01f4806ad822d429dff65a687501c9318"
+    },
+    {
+      "path": ".local/ui/production/browser-report.json",
+      "sha256": "5980c68d8545ed4b20ecb5a68d2e43273bbe8d53a189aec444ded223623d757d"
+    },
+    {
+      "path": ".local/ui/production/final-health.json",
+      "sha256": "4867edae6b7fe82bd8ba643651f40bdaf3cf3b7af37288f14a75c6ef443bb0de"
+    },
+    {
+      "path": ".local/ui/bundle-comparison.json",
+      "sha256": "e6a2de23a41e49e190f755fca8ecccafba4564ac07de0a27b4c93b26af5af297"
+    },
+    {
+      "path": ".local/ui-releases/3cc0f99d2c87ae09aa6888a83bc94eddfba257bd9e9341328da23c78caa84203/ui-manifest.json",
+      "sha256": "897e06e2c1dc6432dde37faeab80d9b011c753997b49dce98a81a0c9e293bd3b"
+    }
+  ],
+  "known_limits": [
+    "Existing HTTP entry retained",
+    "Account sorting applies to current page",
+    "No invented API for independent verification, asynchronous refresh progress or full log export"
+  ]
+}

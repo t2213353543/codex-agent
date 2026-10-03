@@ -1,0 +1,152 @@
+{
+  "schema": "codex-agent-management-parity-followup-v1",
+  "completed_at": "2026-09-17T21:50:41.519393+00:00",
+  "status": "verified_management_candidate",
+  "full_reference_parity": false,
+  "deployed": false,
+  "previous_candidate_preserved": true,
+  "go_source_sha256": "5a818844f613ad35602ac466c80d8949a2e7f7a180e96ae21c4cbd1573ce6d22",
+  "source_archive": ".local/management-parity/linux-race-20260917T214152-2d29dc/source.tar.gz",
+  "source_archive_sha256": "52b8e1be2c67a85a787387fef156267d9e43e58b145a5c884f53137dad45cd11",
+  "linux_binary": ".local/management-parity/linux-race-20260917T214152-2d29dc/codex-agent-linux-amd64",
+  "linux_binary_sha256": "6ea3efc086d510399fe149def6b3e56941462f5531f8875967a7ed0c43e28918",
+  "go_changes_from_previous_candidate": {
+    "added": [
+      "admin_account_runtime.go",
+      "admin_account_runtime_test.go",
+      "admin_observation_contract_test.go",
+      "admin_usage_export_tiers_test.go",
+      "admin_usage_geo.go",
+      "admin_usage_geo_test.go",
+      "admin_usage_pricing_long_context_test.go",
+      "admin_usage_review.go",
+      "admin_usage_review_test.go"
+    ],
+    "modified": [
+      "admin.go",
+      "admin_usage_management.go",
+      "admin_usage_options.go",
+      "admin_usage_pricing.go",
+      "admin_usage_query.go",
+      "admin_usage_stats_pg.go"
+    ],
+    "removed": [],
+    "gateway_files_changed": false,
+    "migrations_changed": false
+  },
+  "checks": {
+    "management_linux_race": {
+      "passed_top_level": 73,
+      "passed_events": 124,
+      "failed": 0,
+      "skipped": 0,
+      "actual_isolated_postgres_redis": true
+    },
+    "full_go_test": {
+      "pass": 333,
+      "skip": 65,
+      "fail": 0
+    },
+    "full_go_test_events": {
+      "pass": 862,
+      "skip": 70,
+      "fail": 0
+    },
+    "go_vet": "pass",
+    "windows_amd64_build": "pass",
+    "linux_amd64_build": "pass",
+    "frontend_unit": {
+      "tests": 114,
+      "pass": 114,
+      "fail": 0,
+      "skipped": 0
+    },
+    "accounts_browser": {
+      "passed_groups": 33,
+      "errors": 0,
+      "synthetic_api": true
+    },
+    "logs_browser": {
+      "passed_groups": 32,
+      "errors": 0,
+      "synthetic_api": true
+    }
+  },
+  "frontend": {
+    "file_count": 54,
+    "build_manifest_sha256": "8d9faa86fca4f023c939cc6a38fda26741bc35b44b717897822ae9a29e1eb5db",
+    "source_matches_build": true,
+    "entries": {
+      "Accounts": "accounts-managed-DeD8Vq7Q.js",
+      "Logs": "logs-managed-CyzmCKOe.js"
+    },
+    "unchanged_baseline_resources": 48,
+    "archive": ".local/management-parity/followup-20260918/frontend-8d9faa86fca4.zip",
+    "archive_sha256": "2edde0f344e825646dc7602ee209e26a59a7d4e61486507f80fd0ce457c970df",
+    "source_archive": ".local/management-parity/followup-20260918/frontend-source-8d9faa86fca4.tar.gz",
+    "source_archive_sha256": "daf5312fb3b195cdb5f560764b8a5e4c377d9444d1f1037d0269b504234d403c"
+  },
+  "implemented_followup": [
+    "Persistent error review, reopening, notes, bounded version history, CAS and atomic audit, filtered error workspace.",
+    "Long-context reference-pricing threshold and per-input/output multipliers, full-request pricing and five additive CSV evidence columns.",
+    "Read-only account concurrency, scoped cooldowns and effective global policy; stable-ID last-used from durable usage events.",
+    "Explicit GeoJS lookup for one IP or deduplicated current-page batches; non-public exclusion, cache, bounded requests and cancellation."
+  ],
+  "remaining": [
+    "Per-account fingerprint/model mapping, quota-driven scheduling, Spark parent-child and private-key gateway authentication remain unimplemented under the preserved gateway-behavior constraint.",
+    "Separate sent/returned model and endpoint chains, stage timings, complete passive error hooks, bounded retry history, truncation and multimodal usage evidence remain incomplete.",
+    "Configured account/group rates, channel cost and time-of-use pricing require a further actual management model; current long-context pricing does not complete every reference billing feature.",
+    "No subscription debit, user balance or missing historical metric is fabricated.",
+    "This is a synthetic-management-verified candidate. Joint gateway acceptance and coordinated additive migration 003 deployment are separate and have not been performed by this task."
+  ],
+  "evidence": [
+    {
+      "path": ".local/management-parity/linux-race-20260917T214152-2d29dc/frontend-build-manifest.json",
+      "sha256": "8d9faa86fca4f023c939cc6a38fda26741bc35b44b717897822ae9a29e1eb5db"
+    },
+    {
+      "path": ".local/management-parity/linux-race-20260917T214152-2d29dc/frontend-unit-report.json",
+      "sha256": "07487c1b2efb35460ee2faf3c21436a523da12434c96fada4f1b7d44cb789a04"
+    },
+    {
+      "path": ".local/management-parity/linux-race-20260917T214152-2d29dc/frontend-unit-tests.log",
+      "sha256": "d443320ecea5afd6bf629f8de719a2a697d57f6467587e13a9adb5637138d6ad"
+    },
+    {
+      "path": ".local/management-parity/linux-race-20260917T214152-2d29dc/accounts-verification.json",
+      "sha256": "a93e29f1d87d8f0e849e28dedaaa178ca1f114e083881404add121d808fca16b"
+    },
+    {
+      "path": ".local/management-parity/linux-race-20260917T214152-2d29dc/accounts-runtime-browser.json",
+      "sha256": "999c0294ca3f56da412916ef094c508525d2c512b4eea87df2241f1f06d6975d"
+    },
+    {
+      "path": ".local/management-parity/linux-race-20260917T214152-2d29dc/accounts-regression-browser.json",
+      "sha256": "aac7c664318b44782e6cef3c3c1875bd96ba798af6f180279e404e0cb6f74a38"
+    },
+    {
+      "path": ".local/management-parity/linux-race-20260917T214152-2d29dc/logs-browser-report.json",
+      "sha256": "4abac75d798d08e950b78837a44e7e09321f7c049ef56d6b8f25ec5480f783f7"
+    },
+    {
+      "path": ".local/management-parity/linux-race-20260917T214152-2d29dc/source-manifest.json",
+      "sha256": "5806cd64f3ef40eb3b0068a2b001d039c75872fc79dddddcc17a817c485b0242"
+    },
+    {
+      "path": ".local/management-parity/linux-race-20260917T214152-2d29dc/report.json",
+      "sha256": "0f64bbdff85bd6e3d653d9d74813442647a853b024bf726026a0a5b84e1d722b"
+    },
+    {
+      "path": ".local/management-parity/linux-race-20260917T214152-2d29dc/local-verification.json",
+      "sha256": "deaa1e35015678e7774e560cf70db3b2eb28e1b855b8e89422597fa2f5a94f19"
+    },
+    {
+      "path": ".local/management-parity/followup-20260918/frontend-8d9faa86fca4.zip",
+      "sha256": "2edde0f344e825646dc7602ee209e26a59a7d4e61486507f80fd0ce457c970df"
+    },
+    {
+      "path": ".local/management-parity/followup-20260918/frontend-source-8d9faa86fca4.tar.gz",
+      "sha256": "daf5312fb3b195cdb5f560764b8a5e4c377d9444d1f1037d0269b504234d403c"
+    }
+  ]
+}

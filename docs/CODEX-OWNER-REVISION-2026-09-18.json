@@ -1,0 +1,73 @@
+{
+  "schema": "gateway-persisted-owner-revision-v1",
+  "completed_at": "2026-09-18T05:33:14.865692+00:00",
+  "go_source_sha256": "57a7ded3c036485f44d7b96d8e659d2579cb05c15f49db10dc73ac6afe67ae90",
+  "production_deployed": false,
+  "real_account_testing_canceled": true,
+  "live_model_requests": 0,
+  "full_objective_complete": false,
+  "owner_revision": {
+    "storage": "PG encrypted accountSecret; JSON internal per-ID map",
+    "random_bits": 128,
+    "client_controlled": false,
+    "public_account_json": false,
+    "known_owner_refresh_preserves_revision": true,
+    "known_unknown_aba_prevented": true,
+    "same_id_recreation_new_incarnation": true,
+    "read_cache_is_not_authoritative_for_bound_owner": true,
+    "mixed_old_new_writers_supported": false,
+    "unrecorded_external_logout_observed": false
+  },
+  "validation": {
+    "ordinary_go_tests_passed": true,
+    "vet_passed": true,
+    "windows_linux_builds_passed": true,
+    "race": {
+      "passed_top_level_tests": 263,
+      "passed_test_events": 560,
+      "failed_tests": [],
+      "skipped_tests": [],
+      "missing_tests": [],
+      "duration_seconds": 108.847,
+      "cleanup_complete": true
+    },
+    "release_helper_local_interop_tests": 15
+  },
+  "deployment_gate": [
+    "All account writers must understand and preserve OwnerRevision.",
+    "Old PostgreSQL credential writes and all old JSON account writes can strip new ownership state.",
+    "Coordinated rollback must invalidate affected sessions; swapping binaries alone is not sufficient."
+  ],
+  "evidence": [
+    {
+      "kind": "manifest",
+      "path": ".local/source-20260918/gateway-overlay-20260918t052835-6936e4/source-manifest.json",
+      "sha256": "3816450881ab4fe992728a93151bc3ff74ba15ad9f9d5a8b5a4449d181f0e20c"
+    },
+    {
+      "kind": "overlay",
+      "path": ".local/source-20260918/gateway-overlay-20260918t052835-6936e4/overlay-manifest.json",
+      "sha256": "2e17c7db15b672bab2017cc7d70b1336e897a65fd0c3c9729dc623486235a184"
+    },
+    {
+      "kind": "build",
+      "path": ".local/source-20260918/gateway-overlay-20260918t052835-6936e4/build-verification.json",
+      "sha256": "c28dd0fb5e2a665acf100a996163e2fa2faf48fa6e880351cd87b4221718a610"
+    },
+    {
+      "kind": "race",
+      "path": ".local/source-20260918/local-linux-race-20260918t053013-22aee3/report.json",
+      "sha256": "53927b8a0a6d9f79f1f07497846c888db85e283c622955736af5bd2bebb3063c"
+    },
+    {
+      "kind": "gateway",
+      "path": ".local/native-transport-build/gateway-compare-20260918T052939-238a87/result.json",
+      "sha256": "05784231f28f1eca9d863eb16dd0f37b2990309a9d4b6a22a6ff01b9fbc99658"
+    },
+    {
+      "kind": "red",
+      "path": "docs/OWNER-REVISION-ABA-RED-2026-09-18.json",
+      "sha256": "da36140eaa742db632ac62002d03a4ee3f9ebb1f6728f8152398758bc95b9805"
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "release_id": "07d3784ae9502b4260b6e9c0c6b413fca439ee80b13bf682f156595d4922bf06",
+  "prepared_at": "2026-09-17T10:40:21.189111+00:00",
+  "source_sha256": "f54e9150b48d3e4503b16921d23955aca16ba7cbacdfabaf8eec6a8f5bf50369",
+  "binary_sha256": "07f958e065f8473e5a21c037d8527943cf71652e8b089f245a2c8aa91f673894",
+  "frontend": {
+    "assets/_baseClone-DZ5W0JOx.js": "0f9928732c7dfd998191480212a180d3a48f6d7be9d50d8263ada4b3dc930940",
+    "assets/_plugin-vue_export-helper-B6UgayC7.css": "2809bd9f303ebb408b8453aaca3852ed8830ee32469c5b5436dc01c6e9dc361f",
+    "assets/_plugin-vue_export-helper-CZ8icgp7.js": "4e589bddecaa4714868618721c3400d78e80c07d1a2b351d480493a539d47c2b",
+    "assets/Accounts-BkxfJP_C.css": "95f9a93f7d25a729e23d151dea764d9757b55b3fa83140335d5cfaa4457ff4d4",
+    "assets/Accounts-VUqE7L9E.js": "b3317aafcb546ec15b9d1d682411a101a9fbef07f2a26a7c64f468c5bafbc51d",
+    "assets/chart-renderer-CzH6Bj_K.js": "228132a616555d37c612f91cf2cabc3e5ceb742db6b2619f75ebfeac1033ce94",
+    "assets/CopyTextDialog-Bkzm0bGn.js": "c910f445f2a31a7d18bfafc95cb061353676a4feef2bacd01f03eb538a1cab67",
+    "assets/Dashboard-DJv9cs4D.js": "cb46802463a58574b02797fd03b7e351b5c50eea211caaf2ffec7401f654244a",
+    "assets/Dashboard-tf9tHfo4.css": "f0469c454486297bf990bfaf5a88049a2a53ee244b41da96b6991865bdde7d95",
+    "assets/echarts-C7gS3yIk.js": "1e5f888f8ba3942d28b956a41844ed46fb7cac1ad13c270af450db82acda11a1",
+    "assets/el-dialog-B3sVws3w.js": "2d1958f00e98c522d633d835ffd9551f057b497caebeb93bde1d84377ed54b4b",
+    "assets/el-dialog-DdHdkgt4.css": "9558516e85842dc1c55b3bb51529878da6b436cf520580577d13201c92c7a8c2",
+    "assets/el-form-item-BrsKyWmp.js": "0e64ce4470f7fbb6537bfae2b5949d95adfd6c8b21e269cc2f92a9303b0158e9",
+    "assets/el-form-item-exjLSfBI.css": "56b810ecc6a4962a26b0d1c3049b8953bef919472c27e4cda6f830f0179ae0ef",
+    "assets/el-select-caR2Yem-.css": "f276b47ea12972c380eb99229bf76f2a43e90a4251d5b7cf9e1c2b66244db4d5",
+    "assets/el-select-DsC0J-eO.js": "60d7f4810348e504cec51be8fb1fd34ea977bc8f5a37a8bd3ca6f0e3ef527446",
+    "assets/el-switch-DgXTzbfh.js": "150ba80e61b65058d1fbf9f5192f821d6bc16e2b66508228a108122cf73c974a",
+    "assets/el-switch-DpR9-s4E.css": "0675796f81b3e8496a489f1cf8e4888ee81a01630102b451d446e56f62cb7831",
+    "assets/el-table-column-Cjp01oVn.css": "73fda8a9ccc28918707df356a9041578e7a705d54cca80541c7816a53d5f712b",
+    "assets/el-table-column-DPDLoX_0.js": "6668c6ee690219ec21321d25581eb04d75a69d8b58c3b4ff3e8fa1a5fe5172ff",
+    "assets/format-DEq3-SCQ.js": "661560d1d857fbca6f0d62a4a96f51c4e8bd5e2e15aef613cda637e7c30b0684",
+    "assets/Groups-B2wYUwdK.js": "68243674c9940cd66a67297bcb75b111617980a607b1c20e691de248bbf499c8",
+    "assets/Groups-BWwRSc1k.css": "c4df7cda20e17dd23ed9789a4ef02a4080bbbd786e5d29fcc38f3957d112219f",
+    "assets/index-Bt3DNh1R.js": "62b3286e01b038c9c05871545853cee4fb94171708491f09ed9a2e0207b7abb3",
+    "assets/index-BwlNU3z7.css": "7615c2a258429441a00526b42e4a6d3d9612f2c0498700761b35a50aea09a3b1",
+    "assets/index-fJd7TrkR.js": "7fbd80477e8b8a5ebabaaa21f8933b4365e5cacd33076c18d60e41d86c052d6d",
+    "assets/Keys-BisuMSef.css": "649d896f932fa8482ab3cf509a781763225800c5e122861bf11272a1b918d9fd",
+    "assets/Keys-DSEYN07s.js": "db267f25e11335aee7c9bc2856294d5018d1c744b079aee0fc7c50c0697fdf7d",
+    "assets/Login-Bjv50eMI.js": "7595a42e1b3f422f9de2117e44fcb58150106a4b70dea78d3e94fc01297fa6e4",
+    "assets/Logs-DortBaH8.js": "f7243727735ca904638d34b38c7ec287457c49931a9c7868c4f3e1fc6f76dbdc",
+    "assets/Logs-Dqd92hLM.css": "38f0eb4d9bbca8d13b31174cc5791f31fb8fdc6c2aa0c4453d26f9cc598e31d2",
+    "assets/management-Bnzw8Ps-.js": "6223ba8e620e7976c1c2b72660111181b51c6d11480bf26a4d6b161db3811ce4",
+    "assets/Proxies-BOi_n8Ah.js": "a4b6158c36e97ac00762193109dd722082d0f1ec906bf443ede0499b3343cd6d",
+    "assets/Proxies-CPeyf_yg.css": "528d101bef9e2e18493b3cdea1d4c55c9f2009632420b2a368dd0273e414bf34",
+    "assets/Settings-fNr57587.css": "acee4a11525b7b5e2c4be6ce9969449af095a05f9610a402e8f1b46cb3dc40d9",
+    "assets/Settings-YBJtqhSz.js": "78a9d37cc1bd4984b8de387f2c6cdd88efaca053c53ad9d0f90c8e5276835e30",
+    "index.html": "76071d4e912c580aea5d4e57df8ee8cc7e12683f2e8bc25ed53a3601f3c9bc68"
+  },
+  "readiness_path": "/health/ready",
+  "tests_passed": true,
+  "migrated": true,
+  "deployed": true,
+  "acceptance_report_sha256": "80d676ce61b2a88a17ad8025ca5e8da2cb522b785e84762c2d96579cd0dc1f45",
+  "versions": {
+    "docs/BACKEND-HANDOFF.md": "3c8fe16cf3ae69d4c8b7e73f8bf8699fc5c6d754e3b0393e98147d5526b18d75",
+    "frontend/FRONTEND-HANDOFF.md": "55222c324573d754b8b4346da55502f88530f932adba14438cb8694623093c6c"
+  },
+  "migrated_at": "2026-09-17T10:42:53.170161+00:00",
+  "deployed_at": "2026-09-17T10:42:53.649453+00:00",
+  "health_checked_at": "2026-09-17T10:45:07.959215+00:00",
+  "address": "http://43.225.196.170:18879",
+  "acceptance_counts": {
+    "pass": 46,
+    "fail": 0,
+    "blocked": 0
+  },
+  "migration_verification_sha256": "3cb64888399b78a3c40dce54ab118336a7aa2d3fd5552824598ecb2329d2a420",
+  "write_freeze_seconds": 0.692,
+  "release_directory": "/opt/codex-agent/releases/07d3784ae9502b4260b6e9c0c6b413fca439ee80b13bf682f156595d4922bf06",
+  "database": "codex_agent",
+  "database_roles": [
+    "codex_agent_migrator",
+    "codex_agent_runtime"
+  ],
+  "pg_endpoint": "127.0.0.1:25433",
+  "redis_endpoint": "127.0.0.1:26380",
+  "redis_namespace": "codex-agent:production:",
+  "encryption_key_id": "production-v1",
+  "health": {
+    "/": {
+      "status": 200
+    },
+    "/health/live": {
+      "status": 200
+    },
+    "/health/ready": {
+      "status": 200
+    }
+  },
+  "old_binary_preserved": true,
+  "rollback_command": "python tools/deploy.py rollback --release .local/releases/07d3784ae9502b4260b6e9c0c6b413fca439ee80b13bf682f156595d4922bf06/release-manifest.json",
+  "artifacts": [
+    {
+      "path": ".local/acceptance/20260917T103822-15128/report.json",
+      "sha256": "80d676ce61b2a88a17ad8025ca5e8da2cb522b785e84762c2d96579cd0dc1f45"
+    },
+    {
+      "path": ".local/integration/evidence.json",
+      "sha256": "2a65a496f741f3d7c4a6feea2f5cd23c1ecaa16f43de583ebef03d6e8f236e16"
+    },
+    {
+      "path": ".local/integration/linux-checks/20260917T103122/report.json",
+      "sha256": "118b94a3478e3ae40368d37b9f17874ec2423847fd65c8e1a5200492642c84c4"
+    },
+    {
+      "path": ".local/integration/remote-migration/20260917T103155/report.json",
+      "sha256": "67f20f072ca40aa5aba49bd19ff067bfe68b51d78a7c9002c0bbe2c70390a437"
+    },
+    {
+      "path": ".local/integration/rehearsal/final-report.json",
+      "sha256": "3ac13a63f754dc2132ba8758d0a7f41a1352c5ee9e443d363fda4d5687f09221"
+    },
+    {
+      "path": "integration/performance/results/final-evidence.json",
+      "sha256": "e802937b325d5509c4029754b3574c01ab1bf82d0013457ac910659c24e5b2da"
+    },
+    {
+      "path": ".local/production/postdeployment-report.json",
+      "sha256": "e110b620c7c2588e0ca73f0d9932a6e385c31fbf582e1a854ac7730378ee8b2f"
+    },
+    {
+      "path": ".local/production/browser-report.json",
+      "sha256": "ef45b3061cb319fd17aded77d20c6d5b22fe85d199f0298945bb618a92f543d3"
+    },
+    {
+      "path": ".local/production/final-health.json",
+      "sha256": "bd16b4910341338f1192de872e018083dcba34f23298d8e6b407c0218e4edcee"
+    },
+    {
+      "path": ".local/production/state.json",
+      "sha256": "370e48448c192f7c377234a64a50148849fdeccfe0475be869da7e8b8fbf0170"
+    },
+    {
+      "path": ".local/production/journal.jsonl",
+      "sha256": "469c7a33f45b8e3a9c36666b047ac0114db461f1438df3bc5461af7e644031d5"
+    }
+  ],
+  "known_limits": [
+    "Public address uses existing HTTP; ADMIN_COOKIE_SECURE=false, HttpOnly and SameSite=Strict remain enabled",
+    "Key usage list has N+1 queries; overview enumerates account metadata",
+    "Legacy page compatibility may issue up to 100 cursor queries; prefer cursor navigation",
+    "Pruning requires explicit operator scheduling; durable usage events and aggregates continue growing",
+    "No Git metadata; versions bound to source/binary/frontend hashes",
+    "Same upstream identity under different names is not automatically merged"
+  ]
+}

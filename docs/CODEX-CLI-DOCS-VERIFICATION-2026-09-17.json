@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-09-17T12:14:39.577159+00:00",
+  "scope": "Codex CLI documentation-side gateway compatibility",
+  "local_checks_passed": true,
+  "go_tests": {
+    "checked_at": "2026-09-17T12:13:32.514940+00:00",
+    "command": "go test -json -count=1 ./...",
+    "exit_code": 0,
+    "top_level_passed": 110,
+    "top_level_skipped": 24,
+    "failed_tests": [],
+    "log": ".local/codex-cli-docs/go-tests.jsonl"
+  },
+  "go_vet": {
+    "command": "go vet ./...",
+    "exit_code": 0
+  },
+  "python_checks": {
+    "command": "python -m unittest discover -s tools -p test_codex_cli_smoke.py -v",
+    "passed": 7,
+    "failed": 0
+  },
+  "official_cli_protocol_evidence": "CODEX-CLI-SOURCE-TEST-2026-09-17.json",
+  "live_model_evidence": "CODEX-CLI-LIVE-2026-09-17.json",
+  "live_model_passed": false,
+  "live_model_blocker": {
+    "http_status": 401,
+    "code": "upstream_authentication_failed",
+    "observed_diagnostic": "Encountered invalidated oauth token for user, failing request",
+    "required_next_step": "Restore valid upstream OAuth credentials and rerun the opt-in live test."
+  },
+  "files_sha256": {
+    "response_events.go": "c74b59ceec1b60062831aa9c51c01e68d9c25897ce6d3117acf2aca0d1f1bd46",
+    "response_events_test.go": "cce2dbb2558a4650aed15b2f558eba1db3b5fa823e6de09d9fa276606ac5dd67",
+    "tools/codex_cli_smoke.py": "1ff704a9cf067a0d3d1bf9db455d65d68e42511d2eb887a1c1cb06725cb1cfdc",
+    "tools/test_codex_cli_smoke.py": "3ba74258df1759722b946ae99222a28af2ea5ef7d51141d25f0d7a8923f63450",
+    "codex_cli_integration_test.go": "3eff8714a4f1625bffb750489f7327d3a9d6bfb559d17a70cea17adb092aaaeb"
+  },
+  "limits": [
+    "Database and Redis integration tests requiring external environment are skipped in the local suite.",
+    "Ordinary Go tests skip the explicitly enabled real CLI tests; their evidence is linked separately.",
+    "The official CLI protocol test uses a local deterministic upstream and does not establish live model success.",
+    "No production deployment or credential change was performed."
+  ]
+}

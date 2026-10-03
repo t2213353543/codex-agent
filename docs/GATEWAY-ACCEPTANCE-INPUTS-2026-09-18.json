@@ -1,0 +1,8 @@
+{
+  "candidate": ".local/joint-candidate/20260918T024841.878837Z/joint-candidate.json",
+  "rollback": ".local/migration-003-local/20260918T024916-72594cd8d7/report.json",
+  "candidate-browser": ".local/legacy-candidate-browser/20260918T025248-5f0e36/report.json",
+  "storage-race": ".local/source-20260918/local-linux-race-20260918t025151-713ac5/report.json",
+  "performance": ".local/performance-local-joint/20260918T030229-6a9ed7ff53/report.json",
+  "shutdown-addendum": "docs/SHUTDOWN-RELEASE-ADDENDUM-2026-09-18.json"
+}

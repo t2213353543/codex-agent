@@ -1,0 +1,276 @@
+{
+  "schema": "appserver-auxiliary-writer-vectors-v1",
+  "official_binary_sha256": "660e159a49e823ac8e5986cb238f73158ce4b957d40d9292f8de90862644b501",
+  "capture_run": "20260927T112529.284995Z",
+  "network_namespace": "isolated",
+  "source_files_sha256": {
+    "codex-api/src/endpoint/images.rs": "75970d27563733011cfe0225c1e243ed126dce432964bcfaf65aed9db4dc54e9",
+    "codex-api/src/images.rs": "6b295ae55f4169f96e5634b6c18b6ed03924d2301275f87686a02a2a2798f893",
+    "codex-api/src/endpoint/memories.rs": "45e9c9b3163f68aa4fe1fd7318afed95927c4c1b6ab73efabec31595504f89e7",
+    "codex-api/src/common.rs": "376fe98c3ddad62debfe5751cb9c415f8119aefee88ddc0f85ea4be59e6a2df0",
+    "codex-api/src/endpoint/responses.rs": "95a744b3ddaae824ae5773a1409f72ed2de4d6fe98188f5ddacba12bcbbcff90",
+    "codex-api/src/endpoint/session.rs": "355cc0f030ab32d21b3e6fcce569a15a59958fecdda85423bf05642497bdb1eb",
+    "core/src/client.rs": "26d1d704a578534fe840e4e6d3df502e44a7bdc4a89e69961740d47f2245da2a",
+    "ext/image-generation/src/backend.rs": "e63c1a96ae3e2379b6f5ce2605c5f0a560cd947c6c787007ae852c661618e80c",
+    "ext/image-generation/src/tool.rs": "ad7ab95dcca8ca38fdab987557df9d084afd7d2efd00f07928de0b24f0e4eb37",
+    "ext/guardian-v2/src/async_scorer/sampler.rs": "b3262780472d9a7bcf33fe5b65e080a03dea50474c2328b1bf396b371afac916",
+    "ext/guardian-v2/src/async_scorer/sampler/connection_pool.rs": "50ec3d02ea155576cd8db9b44a71819f2812ce0a46fc260d80353479aeb0f722"
+  },
+  "vectors": [
+    {
+      "name": "app-images-generations",
+      "route": "app",
+      "provider_relative_path": "images/generations",
+      "evidence": "official_binary_loopback_capture",
+      "real_upstream": false,
+      "network_namespace": "isolated",
+      "method": "POST",
+      "transport": "http_json",
+      "headers": {
+        "x-codex-image-turn-id": "43232659-9795-527d-b79f-11b7d9f1b930",
+        "authorization": "Bearer SYNTHETIC_FIXTURE_ACCESS_TOKEN",
+        "chatgpt-account-id": "fixture-account",
+        "content-type": "application/json",
+        "accept": "*/*",
+        "originator": "conditional-fixture",
+        "user-agent": "conditional-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (conditional-fixture; 1.0)"
+      },
+      "body": {
+        "prompt": "SYNTHETIC_PROVIDER_IMAGE_MARKER",
+        "background": "auto",
+        "model": "gpt-image-2",
+        "quality": "auto",
+        "size": "auto"
+      },
+      "original_body_sha256": "7203b4a7899c795e612cec470efbcbb045b300d1f9e6add63fde669113b8244e",
+      "captured_case": "images-generation",
+      "sanitization": [
+        "synthetic authorization placeholder",
+        "consistent UUID renaming",
+        "isolated workspace paths replaced"
+      ],
+      "expected_response": {
+        "created": 1,
+        "background": "opaque",
+        "data": [
+          {
+            "b64_json": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4nGP4z8DwHwAFAAH/iZk9HQAAAABJRU5ErkJggg==",
+            "generation_id": "fixture-image"
+          }
+        ]
+      },
+      "response_status": 200,
+      "response_content_type": "application/json",
+      "optional_response_header": "x-codex-imagegen-request-id",
+      "request_body_contract": "Opaque provider-relative JSON; preserve all fields and nested arrays, and do not reinterpret tool execution.",
+      "expected_response_evidence": "local_fixture_response_not_real_upstream"
+    },
+    {
+      "name": "app-images-edits",
+      "route": "app",
+      "provider_relative_path": "images/edits",
+      "evidence": "official_binary_loopback_capture",
+      "real_upstream": false,
+      "network_namespace": "isolated",
+      "method": "POST",
+      "transport": "http_json",
+      "headers": {
+        "x-codex-image-turn-id": "45d51e29-3db7-50c3-82dd-89827f844468",
+        "authorization": "Bearer SYNTHETIC_FIXTURE_ACCESS_TOKEN",
+        "chatgpt-account-id": "fixture-account",
+        "content-type": "application/json",
+        "accept": "*/*",
+        "originator": "conditional-fixture",
+        "user-agent": "conditional-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (conditional-fixture; 1.0)"
+      },
+      "body": {
+        "images": [
+          {
+            "image_url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4nGP4z8DwHwAFAAH/iZk9HQAAAABJRU5ErkJggg=="
+          }
+        ],
+        "prompt": "SYNTHETIC_PROVIDER_IMAGE_MARKER",
+        "background": "auto",
+        "model": "gpt-image-2",
+        "quality": "auto",
+        "size": "auto"
+      },
+      "original_body_sha256": "2526db38dd5f2b3a8e5dd12cba15fa2c761bc46b956ae0300f35fe0aa7492cd7",
+      "captured_case": "images-edit",
+      "sanitization": [
+        "synthetic authorization placeholder",
+        "consistent UUID renaming",
+        "isolated workspace paths replaced"
+      ],
+      "expected_response": {
+        "created": 1,
+        "background": "opaque",
+        "data": [
+          {
+            "b64_json": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4nGP4z8DwHwAFAAH/iZk9HQAAAABJRU5ErkJggg==",
+            "generation_id": "fixture-image"
+          }
+        ]
+      },
+      "response_status": 200,
+      "response_content_type": "application/json",
+      "optional_response_header": "x-codex-imagegen-request-id",
+      "request_body_contract": "Opaque provider-relative JSON; preserve all fields and nested arrays, and do not reinterpret tool execution.",
+      "expected_response_evidence": "local_fixture_response_not_real_upstream"
+    },
+    {
+      "name": "exec-images-generations",
+      "route": "exec",
+      "provider_relative_path": "images/generations",
+      "evidence": "official_binary_loopback_capture",
+      "real_upstream": false,
+      "network_namespace": "isolated",
+      "method": "POST",
+      "transport": "http_json",
+      "headers": {
+        "x-codex-image-turn-id": "29317f27-0cb0-56c9-8cbf-65009c5dcabf",
+        "authorization": "Bearer SYNTHETIC_FIXTURE_ACCESS_TOKEN",
+        "chatgpt-account-id": "fixture-account",
+        "content-type": "application/json",
+        "accept": "*/*",
+        "originator": "codex_exec",
+        "user-agent": "codex_exec/0.155.0 (CentOS 9.0.0; x86_64) unknown (codex_exec; 0.155.0)"
+      },
+      "body": {
+        "prompt": "SYNTHETIC_PROVIDER_IMAGE_MARKER",
+        "background": "auto",
+        "model": "gpt-image-2",
+        "quality": "auto",
+        "size": "auto"
+      },
+      "original_body_sha256": "7203b4a7899c795e612cec470efbcbb045b300d1f9e6add63fde669113b8244e",
+      "captured_case": "images-generation",
+      "sanitization": [
+        "synthetic authorization placeholder",
+        "consistent UUID renaming",
+        "isolated workspace paths replaced"
+      ],
+      "expected_response": {
+        "created": 1,
+        "background": "opaque",
+        "data": [
+          {
+            "b64_json": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4nGP4z8DwHwAFAAH/iZk9HQAAAABJRU5ErkJggg==",
+            "generation_id": "fixture-image"
+          }
+        ]
+      },
+      "response_status": 200,
+      "response_content_type": "application/json",
+      "optional_response_header": "x-codex-imagegen-request-id",
+      "request_body_contract": "Opaque provider-relative JSON; preserve all fields and nested arrays, and do not reinterpret tool execution.",
+      "expected_response_evidence": "local_fixture_response_not_real_upstream"
+    },
+    {
+      "name": "exec-images-edits",
+      "route": "exec",
+      "provider_relative_path": "images/edits",
+      "evidence": "official_binary_loopback_capture",
+      "real_upstream": false,
+      "network_namespace": "isolated",
+      "method": "POST",
+      "transport": "http_json",
+      "headers": {
+        "x-codex-image-turn-id": "e547d092-e9b3-5072-9b92-7235026bca95",
+        "authorization": "Bearer SYNTHETIC_FIXTURE_ACCESS_TOKEN",
+        "chatgpt-account-id": "fixture-account",
+        "content-type": "application/json",
+        "accept": "*/*",
+        "originator": "codex_exec",
+        "user-agent": "codex_exec/0.155.0 (CentOS 9.0.0; x86_64) unknown (codex_exec; 0.155.0)"
+      },
+      "body": {
+        "images": [
+          {
+            "image_url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4nGP4z8DwHwAFAAH/iZk9HQAAAABJRU5ErkJggg=="
+          }
+        ],
+        "prompt": "SYNTHETIC_PROVIDER_IMAGE_MARKER",
+        "background": "auto",
+        "model": "gpt-image-2",
+        "quality": "auto",
+        "size": "auto"
+      },
+      "original_body_sha256": "2526db38dd5f2b3a8e5dd12cba15fa2c761bc46b956ae0300f35fe0aa7492cd7",
+      "captured_case": "images-edit",
+      "sanitization": [
+        "synthetic authorization placeholder",
+        "consistent UUID renaming",
+        "isolated workspace paths replaced"
+      ],
+      "expected_response": {
+        "created": 1,
+        "background": "opaque",
+        "data": [
+          {
+            "b64_json": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4nGP4z8DwHwAFAAH/iZk9HQAAAABJRU5ErkJggg==",
+            "generation_id": "fixture-image"
+          }
+        ]
+      },
+      "response_status": 200,
+      "response_content_type": "application/json",
+      "optional_response_header": "x-codex-imagegen-request-id",
+      "request_body_contract": "Opaque provider-relative JSON; preserve all fields and nested arrays, and do not reinterpret tool execution.",
+      "expected_response_evidence": "local_fixture_response_not_real_upstream"
+    },
+    {
+      "name": "source-only-memories-trace-summarize",
+      "route": "shared_source",
+      "provider_relative_path": "memories/trace_summarize",
+      "evidence": "official_source_unit_fixture_not_executed",
+      "real_upstream": false,
+      "runtime_capture": false,
+      "method": "POST",
+      "transport": "http_json",
+      "headers_source": [
+        "EndpointSession auth.apply_auth",
+        "ModelClient.build_subagent_headers originator",
+        "x-openai-subagent when a subagent",
+        "x-openai-memgen-request=true for MemoryConsolidation"
+      ],
+      "body": {
+        "model": "gpt-test",
+        "traces": [
+          {
+            "id": "trace-1",
+            "metadata": {
+              "source_path": "/fixture/trace.json"
+            },
+            "items": [
+              {
+                "type": "message",
+                "role": "user",
+                "content": []
+              }
+            ]
+          }
+        ]
+      },
+      "optional_body_fields": {
+        "reasoning": {
+          "effort": "high"
+        }
+      },
+      "expected_response": {
+        "output": [
+          {
+            "trace_summary": "raw summary",
+            "memory_summary": "memory summary"
+          }
+        ]
+      },
+      "source_unit_test": "codex-api/src/endpoint/memories.rs:summarize_input_posts_expected_payload_and_parses_output",
+      "source_unit_test_executed": false,
+      "limitation": "No public AppServer or exec trigger established for this unary writer; source existence does not prove current runtime invocation.",
+      "response_status": 200,
+      "response_content_type": "application/json",
+      "request_body_contract": "Opaque provider-relative JSON; preserve all fields and nested arrays, and do not reinterpret tool execution."
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "checked_at": "2026-09-17T12:16:03.992870+00:00",
+  "checks": [
+    {
+      "command": [
+        "go",
+        "test",
+        "-json",
+        "./...",
+        "-count=1"
+      ],
+      "exit_code": 0,
+      "passed_test_entries": 263,
+      "skipped_tests": [
+        "TestPGAccountCredentialsAndMetadataIsolation",
+        "TestPGAccountConcurrentVersionAndForeignKeyRollback",
+        "TestPGAccountRefreshSerializesOnlySameAccount",
+        "TestPGEnsureReadyRefreshesDifferentAccountsConcurrently",
+        "TestPGAccountRefreshCASAndRestartRecovery",
+        "TestPGAccountRefreshFailureSurvivesRestartAndDoesNotMarkReplacement",
+        "TestPGAccountImportConflictAndDryRun",
+        "TestPGShutdownPersistsRefreshAfterClientDisconnectAndSIGTERM",
+        "TestPGAdminGroupDeletionRollsBackOnAuditFailure",
+        "TestPGAdminStableAccountLogsSurviveRenameAndRestart",
+        "TestCodexCLIIntegration",
+        "TestGatewayRedisSessionSharing",
+        "TestPGGatewaySettingsRefreshAcrossInstances",
+        "TestRealCodexCLI",
+        "TestPGMetricsIdempotentConcurrentEventsRestartAndDelete",
+        "TestPGMetricsTransactionFailureRetryAndHealth",
+        "TestPGMetricsCursorStableDescendingAndNoCount",
+        "TestPGMetricsRebuildPruneAndLegacyExport",
+        "TestPGMetricsLegacyBaselinePreservesMissingLogsAndRebuild",
+        "TestPGGroupAndProxyDeleteRollback",
+        "TestPGProxyMetadataAndVersion",
+        "TestPGAdminRotationFailureAndLostResponseReplay",
+        "TestPGRedisSessionsFailClosed",
+        "TestPGLegacyImportExportRoundTrip"
+      ]
+    },
+    {
+      "command": [
+        "go",
+        "vet",
+        "./..."
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "go",
+        "build",
+        "-o",
+        ".local/codex-agent-cli-compat.exe",
+        "."
+      ],
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "source_hashes": {
+    "gateway.go": "aa3f323f3f82cda7cea4292cb3aba10d7840c89d545d62397a5d1b49fd1a464d",
+    "proxy.go": "e8e9465d514e99bda708009ac0641e0c316dfc8ee20ba59f3c657e9586c5a364",
+    "gateway_sessions.go": "c1052676c353c40ff73d06d4146e2d2b68d86255f423a9caa1424184a7171eb2",
+    "gateway_timeout.go": "b3711fdc8878b8b6b8afd624a1c006b15fe3649972dd5c2b465401f896486a60",
+    "socks5.go": "e883a6f19ed21ed6cf75b0756475dda9986dc2b9e4fa1414961085fa067df76f",
+    "stats.go": "c435c1dcd73c91cbf46f9a7f477deac02aefe63ef8798ade1ee2eab50f9bec12",
+    "response_events.go": "c74b59ceec1b60062831aa9c51c01e68d9c25897ce6d3117acf2aca0d1f1bd46",
+    "go.mod": "ec397b1952ab936e75a68e4c5899ec99617ecbc58ffb273ca2057f129e1ad502",
+    "go.sum": "c953931186856c9a4fc07b616753db8f2875929998d1f12c58d76f7f6eb70a6c",
+    "web.go": "c7df62ec23d8dbda41e6f2468e677a4f4f74c84ad1e9b14eb30a7193e5a6249e",
+    "gateway_policy.go": "1f01206cbcadadcdfa21b0c4e380c65e40f8d2189778cecb1c46be954f5d9d9b",
+    "gateway_websocket.go": "889cf54f16b31f3a64b26016b1d2d0e55bd87c8aee3b099b498f20bae02cdaeb"
+  },
+  "binary": ".local/codex-agent-cli-compat.exe",
+  "binary_sha256": "06bc2943f676ddeee07f8a5f80c60a45aa345c49b4d39cedee575e157f080411",
+  "cli_recheck": {
+    "version": "codex-cli 0.154.0",
+    "passed": true,
+    "seconds": 127.811,
+    "scenarios": [
+      "http_tool_and_resume",
+      "websocket_fallback_tool_and_resume",
+      "auto_compact_and_resume"
+    ],
+    "live_model": false
+  },
+  "limitations": [
+    "PostgreSQL and Redis integration tests were skipped: no local services, and direct SSH to the isolated integration host timed out.",
+    "Race detector was not run: CGO is disabled and no C compiler is installed.",
+    "Live inference failed with upstream HTTP 401 token_revoked; no production credentials or services were changed.",
+    "The independent settings conversation owns ongoing native WebSocket and configurable active-session TTL work."
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "schema": "codex-agent-settings-admin-release-v1",
+  "release_id": "1244c39ae6cd413c42b8d5deeaa42c738be4160eb6a936607f5b88bbc077dbc1",
+  "deployed": true,
+  "verified_at": "2026-09-17T13:39:21.677Z",
+  "url": "http://43.225.196.170:18879",
+  "source_sha256": "e39645184680766c2330b969e95ae9ec4863a4b367f8df4474c77d2162a43dc2",
+  "binary_sha256": "ec340e64246c47e50fca074eadcbfc7e7b8ed797c60189800c42ce6532b64cf0",
+  "frontend": {
+    "assets/_baseClone-Heq-sn8i.js": "0e05d4d7619c94422b7fca9faf3bdaf7a80229c1093baa5040a44cf40b8c7d70",
+    "assets/Accounts-BXZUdams.css": "d9fbf3300b10608457a1cde3c3510ff6018da013bdd60dc074f9278b53fa8556",
+    "assets/Accounts-COcaa5Ot.js": "d6a26e5f5e9b433bdc7940d1b0c9785b04fcfce05b0d1b1a5d3564a51fde650b",
+    "assets/AuditLogs-CTq90wAT.css": "69b7c687850ef878b322c7e934f439e5b72e1fbde0e3008674c3ee469f0b6593",
+    "assets/AuditLogs-frkHNkc6.js": "93e103e3c422d3d3c90b3ab9c82eb9651a0e7305f8cd3a05eea8daf59154c8d4",
+    "assets/chart-renderer-CzH6Bj_K.js": "228132a616555d37c612f91cf2cabc3e5ceb742db6b2619f75ebfeac1033ce94",
+    "assets/ConnectionGuide-CbZX8Rh1.css": "3a03e56245ff441c48327a77f1ec3a48ca5e99c124bfc70f2d0fd65fa3382383",
+    "assets/ConnectionGuide-DT_DW6LZ.js": "1cf32056e3bd0bc6bd2d7eb7f97c34e130402261a9fce9fc11c93684c10415ea",
+    "assets/CopyTextDialog-BE5dJmJZ.js": "a044993444586be700d8d16b0f8c2033b27362cfd9b9fa53c21d89e25bbcc230",
+    "assets/Dashboard-Br9xiB5o.js": "c6bde38f61c6cedecb6d8c03ce9dd2fd3d916ac2bdec209a79463e49b49b3c39",
+    "assets/Dashboard-LhVzapBM.css": "d7ec5a52fa118f5238e4ef8b602a01bd176f93bba96b3495eb91f78cf6f28aae",
+    "assets/Diagnostics-BCVKT_4C.css": "5fb8088a3f52d67dc139be4d32810454785640a106c8832b6c4e19c32246f236",
+    "assets/Diagnostics-C0G72Tun.js": "91013f5a36a8070ca18d53071594cd27b6f316367a66262f5f71226a6c26fa33",
+    "assets/directive-CQm1_BPJ.js": "c8c51e1103340e09360f0307ebcb81bf352ebfa18c69d831674912c2ae3b72bb",
+    "assets/echarts-BWEC13sA.css": "76b1f7c525034e53915b3a98190b679f65316842e3543b9938da4b00441bf13d",
+    "assets/echarts-CGuS8Xe1.js": "0406ad2b218c3085e907d6ecd3a38093bbb23be402441169243bff4d9858117e",
+    "assets/el-date-picker-CFns1mtU.css": "85c57f64ded692823550d6a9b2311c8025d500e1916da862da8019cdd79e4eb9",
+    "assets/el-date-picker-Ds4uAL1k.js": "eaf7a33094f4c9a3d0a8cb76c3eddea06fe2127a043bd61076e19154ca52157f",
+    "assets/el-table-column-DiNjbMva.js": "84e9cf75ab5c95fbee07dec6d99be40515151d89558335287186e49bab22a7dd",
+    "assets/el-table-column-Dp73S2HR.css": "44e956ea9d84ceac5c64f63ba0e11743b84ee356a8655e3343f8e4193b53ddcd",
+    "assets/fonts/codex-admin-sans-0058e27ebaf7d129.woff2": "0058e27ebaf7d129c1eb9880ab09622e3eb75911ba26e0e595762ea453185eff",
+    "assets/fonts/font-metadata.json": "93c996d4550f7ba4937cc5e6bf4f160a77b23beb2445bde32b2369a0de032998",
+    "assets/fonts/OFL.txt": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+    "assets/format-BirG-DuY.js": "6019982a3a7ad1d30a4568e6a42c23293849644e3f9c4c642e66b1dc07b3349d",
+    "assets/Groups-CeR9M8k8.css": "cfe22e484fe362c674be8839a70ebdd76538a4abc68cda7fd053ae8c6e0d7122",
+    "assets/Groups-D0Ht6gwZ.js": "05bd063cd7f0d79a6c3c5c4e6502e75a09b3e2b5ea640d0526081942798d8f9f",
+    "assets/index-BPbXA83T.js": "7796ca768a52f769fa20f3ff4494d95305c39e13fcebcc1b089bd018eee4ef98",
+    "assets/index-C3vmC8Qt.js": "93cf2bd6921e5ca03e9e515968206e8f56692d8139b84d710b80b5139506a39e",
+    "assets/index-CDxPG6BJ.js": "233b635d449fc5db34f5122f3d40380f8b1e3f11bd4f21c16804ea844819fde1",
+    "assets/index-CYDbJ0Ay.js": "ee3179eebf73fd316d5c6535f809140a773d6e65e159a858aa2e8b269b461789",
+    "assets/index-DYdjgKOq.js": "5e2f5fe9037b8c604837d1383a385fb45030988ccbb86d16a51673cadeba7dc2",
+    "assets/index-Dz0MW-cH.css": "b15a586ef75a05f1d3d200528984a4c95525edf118dbce4b3f22621be3799943",
+    "assets/index-DZjLUtCs.js": "43f49011381abe5a79725eae1e061812f8bcf38687c85199a8d92b082e6bb13e",
+    "assets/index-lF9Akl-s.js": "1e8e4bbe3835d7acf2489decb201a02152e3add65e6ed9fda36cbcd6f3140595",
+    "assets/index-TxsWYC54.js": "a74e127ea6904ceeb90ec2df9f77503a97cf09e9c4b39b13d581208c75a2227b",
+    "assets/Keys-DIe_eaZw.js": "832260c26e624ddf5a973173753cabe47b6aefe7ec6338b36390c053630343b5",
+    "assets/Keys-DYMG69sA.css": "0542da3931288158475b6f390a9915e601ed9bed48ac8a478220c0f834fb8a3e",
+    "assets/Login-Ddj-AnJV.css": "0d88360a9adb79e90dd84e3e5459124e19ca61eab1648f3ff9326e51f72b8f27",
+    "assets/Login-no1w6haP.js": "b582a055d708145a83a55e756b2f620b46401ed38307766fbd86f664f86e91ea",
+    "assets/Logs-OSfaeIv5.css": "923df03c2b8860327d6369a8c11b155520555ed9aec6e3f34c522476e8ae38c9",
+    "assets/Logs-s996l2V4.js": "e65ac151405aab168fe23dacfdc0be43da5cfec06bbecfa2b209a260f2f70a2e",
+    "assets/management-Cn-ZmLYn.js": "2c0a6262a973e043ebaf01f254bbb9eb83a433a5bb33a0e29fdcf40a8b84c13c",
+    "assets/observability-B7eKfEKy.js": "6508adac1cc081b2ebfe4f797f9baf300341fcb1c96f411df2402b00e630b154",
+    "assets/observability-S7fQQ3B8.css": "691fbbed21e9c4279f70c333db58305fa2fb0f6aa36b070c21f85b7b2d316dc0",
+    "assets/omit-hFsAJLXr.js": "99be937761141b1549b656b7bd5eaf8253f7eaecc7e28cec1905878be046afc8",
+    "assets/PageHeader-7QcG5tnG.js": "6dc1510894f21de7f43cc7fae737b96b1a57d7ad54e79e43a345dac4cf73f5f3",
+    "assets/Proxies-DtWeVUPZ.js": "30509f31032ca5a9bfccc9152a255ea26371218c92791e7dded3136391b188af",
+    "assets/Proxies-DzEDBtFW.css": "2ddc7bbcf2ca0f34cc20ad9fbdc4a34f92c968c45c0170afe79dea1206c56fa1",
+    "assets/ResourceBulkStatusDialog-B_DOB8n4.js": "18d7753483ecdf5ba498c66dd7a5075c734f21a1f099880c8025fbb8c34a450f",
+    "assets/ResourceBulkStatusDialog-DxyRoT38.css": "b2fb3037f56deecafa915d1c6060c030cdd2f236f24f06042e0751ecb8b5c726",
+    "assets/resourceManagement-8B6CQDaw.js": "16cc7d647320292eb3b705b305a8d28f77e7f967fa8c18fb30c4d2c18f978365",
+    "assets/resourceManagement-DQEdArB9.css": "6f38ae0c0ab0629ee0f7953f91701fdf75973098cc2f3b844dcd8dffe4c68787",
+    "assets/Settings-D8FVNZYZ.css": "2244b940c1d5a33a45f1a5ee14c16f16d167861ebacdb85966485e363ff5abee",
+    "assets/Settings-D91V326R.js": "4ad6bd32bd131a53aac4773f966314bcbe4d770fcf9855d07a1f7d378bca2ce7",
+    "index.html": "9255758c54e7c253e2ec3d739a0cdced9df288a4025be550ed9989e32970dff9"
+  },
+  "tests_passed": true,
+  "schema_migrated": false,
+  "legacy_imported": false,
+  "backup_directory": "/opt/codex-agent/releases/1244c39ae6cd413c42b8d5deeaa42c738be4160eb6a936607f5b88bbc077dbc1/.upgrade-private",
+  "database_backup_sha256": "369c64de374c7886eb18026c7b63077379e172a928862b98c449ec7b8c8a32d1",
+  "database_backup_bytes": 41659,
+  "health": {
+    "checked_at": "2026-09-17T13:38:54.926783+00:00",
+    "main_pid": 888135,
+    "status_codes": {
+      "/health/live": 200,
+      "/health/ready": 200,
+      "/": 200
+    },
+    "runtime_binary_sha256": "ec340e64246c47e50fca074eadcbfc7e7b8ed797c60189800c42ce6532b64cf0",
+    "root_sha256": "9255758c54e7c253e2ec3d739a0cdced9df288a4025be550ed9989e32970dff9",
+    "entry_assets_verified": 2
+  },
+  "production_api": {
+    "status": "pass",
+    "checked_at": "2026-09-17T13:39:18.898170+00:00",
+    "checks": [
+      {
+        "method": "GET",
+        "path": "/api/session",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/settings",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/accounts",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/groups",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/keys",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/proxies",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/logs",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/overview",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/diagnostics",
+        "status": 200
+      },
+      {
+        "method": "GET",
+        "path": "/api/audit-logs",
+        "status": 200
+      },
+      {
+        "path": "/api/settings",
+        "invalid_auth": true,
+        "status": 401
+      },
+      {
+        "path": "/api/settings",
+        "invalid_auth": true,
+        "status": 401
+      },
+      {
+        "method": "GET",
+        "path": "/api/not-a-route",
+        "status": 404,
+        "code": "not_found"
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/settings",
+        "status": 405,
+        "code": "method_not_allowed"
+      },
+      {
+        "method": "POST",
+        "path": "/api/settings",
+        "status": 400,
+        "code": "invalid_request"
+      }
+    ],
+    "settings": {
+      "admin_api": true,
+      "websocket_enabled": false,
+      "builtin_prompt_enabled": true,
+      "sticky_sessions_enabled": true,
+      "sticky_session_ttl_seconds": 604800,
+      "prompt_cache_key_enabled": true,
+      "codex_fingerprint_enabled": false,
+      "settings_version": 1
+    },
+    "account_count_on_first_page": 0,
+    "production_key_rotated": false,
+    "production_settings_modified": false
+  },
+  "production_browser": {
+    "status": "pass",
+    "pages": [
+      "settings",
+      "accounts",
+      "groups",
+      "keys",
+      "proxies",
+      "logs",
+      "diagnostics",
+      "audit-logs",
+      "connection"
+    ],
+    "errors": [],
+    "failed": [],
+    "login_and_logout": true,
+    "verified_at": "2026-09-17T13:39:21.677Z"
+  },
+  "acceptance_report_sha256": "13b2a9895759e1e9e8637acc8df82f1394c6f726ea89d6b8b60a626973159e9d",
+  "acceptance": "./.local/settings-deploy/upgrade-acceptance-static-fix.json",
+  "rollback_manifest": ".local/settings-deploy/release-source/.local/upgrades/1244c39ae6cd413c42b8d5deeaa42c738be4160eb6a936607f5b88bbc077dbc1/upgrade-manifest.json",
+  "previous_preupgrade_manifest": ".local/settings-deploy/final-source/.local/upgrades/517648464959cf7acf2211bd8ff55eb5b66855430b5e07e7e4c402368ef60986/upgrade-manifest.json",
+  "notes": [
+    "Admin Key unchanged; production inference account list remains empty.",
+    "HTTP verification from this workstation uses its existing loopback system proxy; direct workstation TCP timed out. Server-loopback health checks passed.",
+    "Release copied immutable tested application snapshot; later concurrent source edits are not automatically included.",
+    "Font and OFL license included; source_manifest now hashes all frontend/public assets."
+  ]
+}

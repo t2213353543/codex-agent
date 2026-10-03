@@ -1,0 +1,134 @@
+{
+  "upstream": "https://github.com/openai/codex/tree/rust-v0.155.0",
+  "tag": "rust-v0.155.0",
+  "upstream_lock_sha256": "81eb29f6276d5b3d1b39f1588a26059dadfbba717952247efeb8a575f271f569",
+  "upstream_workspace_sha256": "ef622a916ae57de62cf3adb1ab985047c31b05cf2691a91dc357df0d9863f437",
+  "source_modifications": "websocket-client/src/lib.rs has the explicit immutable-route adapter recorded in WEBSOCKET-ADAPTER.patch; all other Rust sources are byte-identical. Vendor Cargo manifests omit dev dependencies and auto target discovery; workspace dependencies retain official locked versions.",
+  "sources": {
+    "vendor/codex-http-client/src/chatgpt_cloudflare_cookies.rs": {
+      "upstream": "codex-rs/http-client/src/chatgpt_cloudflare_cookies.rs",
+      "sha256": "070912085118365df3a9944f8b595527110c4113b34b3a3e6e7e35d80c9a8011"
+    },
+    "vendor/codex-http-client/src/chatgpt_hosts.rs": {
+      "upstream": "codex-rs/http-client/src/chatgpt_hosts.rs",
+      "sha256": "cd3698ee37101a7ece82fce4e8d9ee11b9900c16747713a6a7f156651d668a01"
+    },
+    "vendor/codex-http-client/src/client.rs": {
+      "upstream": "codex-rs/http-client/src/client.rs",
+      "sha256": "4f131ac2b826a0bd7b38331e1235619350e4e619587a7aa7a25ac9e53b5fcb20"
+    },
+    "vendor/codex-http-client/src/client_builder.rs": {
+      "upstream": "codex-rs/http-client/src/client_builder.rs",
+      "sha256": "a135ed62bb9e55a8bf091a57d0c5760e3ad453776825d86b2a40300a3303667d"
+    },
+    "vendor/codex-http-client/src/client_builder_tests.rs": {
+      "upstream": "codex-rs/http-client/src/client_builder_tests.rs",
+      "sha256": "7a1cb2cc161f295db1c57d7ef840eb3762746304255b8d368949f493750ca463"
+    },
+    "vendor/codex-http-client/src/custom_ca.rs": {
+      "upstream": "codex-rs/http-client/src/custom_ca.rs",
+      "sha256": "c796e150be2d0f93f4ac6620eac4324cfc5168f3eae1d80146a4690acd6fc776"
+    },
+    "vendor/codex-http-client/src/error.rs": {
+      "upstream": "codex-rs/http-client/src/error.rs",
+      "sha256": "497536c5714c8da2ac3379e4a9cf4877018ab16432d381f958994ea006977480"
+    },
+    "vendor/codex-http-client/src/lib.rs": {
+      "upstream": "codex-rs/http-client/src/lib.rs",
+      "sha256": "71acfb139b0e32dc0d9da286f48812162f69f532ab4bfdf3e5c351379c15f25a"
+    },
+    "vendor/codex-http-client/src/outbound_proxy.rs": {
+      "upstream": "codex-rs/http-client/src/outbound_proxy.rs",
+      "sha256": "0486978806a9cd5c8f552e985ed9b0c987392cdcdae35ec8b0a555539221aa52"
+    },
+    "vendor/codex-http-client/src/outbound_proxy_redirect_coverage_tests.rs": {
+      "upstream": "codex-rs/http-client/src/outbound_proxy_redirect_coverage_tests.rs",
+      "sha256": "148f4e1bc3a115fe8c6b6bb2fe60cc2b8b7e0dae77e4b209eb96c62a8f348315"
+    },
+    "vendor/codex-http-client/src/outbound_proxy_tests.rs": {
+      "upstream": "codex-rs/http-client/src/outbound_proxy_tests.rs",
+      "sha256": "cc7cb681ed730a188cbc94d66c052e29a34891494cddfe8651ba520364a947e9"
+    },
+    "vendor/codex-http-client/src/request.rs": {
+      "upstream": "codex-rs/http-client/src/request.rs",
+      "sha256": "31ff5c821eca9606e184fcc829a4faa6ec5bf535ec610cae73cd93abc3361412"
+    },
+    "vendor/codex-http-client/src/route_aware_client_pool.rs": {
+      "upstream": "codex-rs/http-client/src/route_aware_client_pool.rs",
+      "sha256": "84c359cf3a279eed92fec966bf500826fd8d1d3b40366aa7e00ffc18b8b6ef55"
+    },
+    "vendor/codex-http-client/src/route_aware_client_pool_tests.rs": {
+      "upstream": "codex-rs/http-client/src/route_aware_client_pool_tests.rs",
+      "sha256": "7775de61490e53ea00eca2d8888b2f4e2047b6dcf7a44bf3bed6a6efdae36cd7"
+    },
+    "vendor/codex-http-client/src/route_aware_redirect.rs": {
+      "upstream": "codex-rs/http-client/src/route_aware_redirect.rs",
+      "sha256": "7fe69a2f824ba8ee8c2ca2ecdac8b1ae7afaa3c4c3a26700b26cb311c779d01c"
+    },
+    "vendor/codex-http-client/src/route_aware_redirect_integration_tests.rs": {
+      "upstream": "codex-rs/http-client/src/route_aware_redirect_integration_tests.rs",
+      "sha256": "4bbc1a4064f74e22e29ee8a53d67b5582a8a65ada30987e636777f2ae95fe68a"
+    },
+    "vendor/codex-http-client/src/route_aware_redirect_tests.rs": {
+      "upstream": "codex-rs/http-client/src/route_aware_redirect_tests.rs",
+      "sha256": "9cdaf75727264266e50569db46f6fc7bc7911370b836dac934df9c1c580fe734"
+    },
+    "vendor/codex-http-client/src/route_aware_tls_fallback_tests.rs": {
+      "upstream": "codex-rs/http-client/src/route_aware_tls_fallback_tests.rs",
+      "sha256": "41c1caf8ea03ac2b1a350cf8d03ae0ce91e4723f7ad043d723a7ae9ea788782f"
+    },
+    "vendor/codex-http-client/src/tls_backend_fallback.rs": {
+      "upstream": "codex-rs/http-client/src/tls_backend_fallback.rs",
+      "sha256": "8a5e498a970be6971ac8525d875c7da20315ed5398c201e1b3545cf225439df2"
+    },
+    "vendor/codex-http-client/src/tls_backend_fallback_tests.rs": {
+      "upstream": "codex-rs/http-client/src/tls_backend_fallback_tests.rs",
+      "sha256": "891e934c893d59c067118a86f6fb94f281fc0d7e095f1b41f1a62c4f5125f4c7"
+    },
+    "vendor/codex-http-client/src/transport.rs": {
+      "upstream": "codex-rs/http-client/src/transport.rs",
+      "sha256": "77a3179491dbb8a1d8cd47b09396284cbd7fc27b6d3473ac8ca6ba996c77b74b"
+    },
+    "vendor/codex-http-client/src/transport_tests.rs": {
+      "upstream": "codex-rs/http-client/src/transport_tests.rs",
+      "sha256": "6f872834625b029a04bbdf56a0bed425f99010a8e91b37537a16ec157c590695"
+    },
+    "vendor/codex-http-client/src/bin/custom_ca_probe.rs": {
+      "upstream": "codex-rs/http-client/src/bin/custom_ca_probe.rs",
+      "sha256": "4e8bb415cb816fd460e264b4f10e2df8d6da473d302c4a2316f758f40cfc3cae"
+    },
+    "vendor/codex-http-client/src/outbound_proxy/macos.rs": {
+      "upstream": "codex-rs/http-client/src/outbound_proxy/macos.rs",
+      "sha256": "b8d4c57317342aa1f134be3f72f6d035d478d29affd71781645ab9377c781db5"
+    },
+    "vendor/codex-http-client/src/outbound_proxy/windows.rs": {
+      "upstream": "codex-rs/http-client/src/outbound_proxy/windows.rs",
+      "sha256": "3a3cf365c0a22fb14b35ae620865349a204b79dd8c0aaf20fb01e4e7284f7136"
+    },
+    "vendor/codex-http-client/src/outbound_proxy/windows_tests.rs": {
+      "upstream": "codex-rs/http-client/src/outbound_proxy/windows_tests.rs",
+      "sha256": "04b281d32e7a744153636b48f9032baa31dc49e0310a48069d1f57f409d867fe"
+    },
+    "vendor/codex-utils-rustls-provider/src/lib.rs": {
+      "upstream": "codex-rs/utils/rustls-provider/src/lib.rs",
+      "sha256": "f24353b3cf4e649a01c6f05aa4d067cc46e7fe71952f3185b7571d8fbf54e11e"
+    },
+    "vendor/codex-websocket-client/src/dialer.rs": {
+      "upstream": "codex-rs/websocket-client/src/dialer.rs",
+      "sha256": "85f90895a52963c41776108a351aac3fd52b5705df8e14b8fe5877cc4bee162b"
+    },
+    "vendor/codex-websocket-client/src/dialer_tests.rs": {
+      "upstream": "codex-rs/websocket-client/src/dialer_tests.rs",
+      "sha256": "b1db555ea7c914e3ac391bbff744f08b43fd07d255e01954436bf3417eea5408"
+    },
+    "vendor/codex-websocket-client/src/lib.rs": {
+      "upstream": "codex-rs/websocket-client/src/lib.rs",
+      "sha256": "e1f935573b3b17e5474f5e9e56de6645b1573fce169f66990fbb3c37c77e38d6",
+      "patched_sha256": "ffa34a2ed2b39b0005f32886740fb5cad129338b219342676137b6c84591d05a"
+    },
+    "vendor/codex-websocket-client/src/lib_tests.rs": {
+      "upstream": "codex-rs/websocket-client/src/lib_tests.rs",
+      "sha256": "5501c5fbf8bd87fdcf657f16df3463c77bfd303a65d4138257733f10bab4048a"
+    }
+  }
+}

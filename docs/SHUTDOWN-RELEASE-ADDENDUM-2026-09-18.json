@@ -1,0 +1,164 @@
+{
+  "schema": "codex-agent-shutdown-release-addendum-v1",
+  "status": "pass",
+  "scope": "evidence_composition_not_deployment",
+  "verified_at": "2026-09-18",
+  "candidate_go_sha256": "956fc90be91a922ac1593b283102bc5149674dac337564e6023479ec8e60a6f9",
+  "candidate_binary_sha256": "a66c7be3de344221d6433a6bc7140523d95a6a068fd2312757c80f2dc50c073d",
+  "fixture_go_sha256": "17731bed22af18ee5426f625e4e04ea08bf9f9a778cffd3554bd9973a6e437d9",
+  "fixture_v2_default_json_sha256": "53787ccd36de22893ec7501ea6bdfb6ef8cafa7895f1903eb9523c3e41678d50",
+  "formal_test_sha256": "88df21f151a9cdce3e6967d85d41463731d03ea38f42af172f700bed2937a9a3",
+  "production_input_sha256": "4aa2148b8a16f72149ed3ac06c35c77c02eb5a2fc152b1889c02edbe034cd33d",
+  "production_input_digest_policy": "Remove *_test.go from the frozen Go/mod/sum/migrations map, then SHA256 of json.dumps(map,sort_keys=True,separators=(',',':'))",
+  "checks": {
+    "source_manifest_digests_verified": true,
+    "baseline_and_fixture_disk_files_verified": true,
+    "all_four_archives_member_hashes_verified": true,
+    "only_test_file_changed": true,
+    "production_go_unchanged": true,
+    "test_assertions_unchanged": true,
+    "candidate_binary_unchanged": true,
+    "formal_linux_race_pass": true,
+    "formal_no_skips_or_missing": true,
+    "formal_cleanup_complete": true,
+    "formal_source_unchanged": true,
+    "old_16_passes_verified": true,
+    "combined_17_coverage_complete": true,
+    "original_failure_preserved": true
+  },
+  "source_comparison": {
+    "all_input_count": 174,
+    "non_test_input_count": 79,
+    "changed_files": ["accounts_shutdown_test.go"],
+    "added_files": [],
+    "removed_files": [],
+    "exact_change": "Persist the synthetic PG admin key, start settings from defaultSettings(), set AdminAPI=true, and save settings; every remaining byte is identical to baseline test",
+    "fixture_archive_sha256": "f9c521797cb837dac85ce0da0ac62c490cf871a584309a48dee9df845b46114f",
+    "formal_race_archive_sha256": "74626cd4543ed087f69f423ea2db31e827fbd3639185cccbf36e3c3cadcaa53c",
+    "archive_note": "The fixture and runner tar.gz byte hashes differ, but every extracted source member and the complete member set match the same 17731bed manifest"
+  },
+  "formal_race": {
+    "source_sha256": "17731bed22af18ee5426f625e4e04ea08bf9f9a778cffd3554bd9973a6e437d9",
+    "test": "TestPGShutdownPersistsRefreshAfterClientDisconnectAndSIGTERM",
+    "status": "pass",
+    "exit_code": 0,
+    "passed_top_level_tests": 1,
+    "passed_test_events": 1,
+    "failed_tests": [],
+    "skipped_tests": [],
+    "missing_tests": [],
+    "test_elapsed_seconds": 1.5,
+    "run_duration_seconds": 68.028,
+    "toolchain": "go1.26.7 linux/amd64; CGO_ENABLED=1; gcc",
+    "postgres_non_superuser_verified": true,
+    "redis_acl_boundary_verified": true,
+    "data_race_reported": false,
+    "oom_killed": false,
+    "cleanup_complete": true,
+    "source_changed_after_freeze": false,
+    "unchanged_assertions_exercised": [
+      "OAuth exchange begins before the client is disconnected",
+      "SIGTERM stops accepting new connections while the rotating exchange drains",
+      "Client cancellation and SIGTERM do not cancel the rotating OAuth exchange",
+      "Reopened PostgreSQL account contains both rotated synthetic AT and RT",
+      "Exactly one usage event, one request log and one cumulative request remain"
+    ]
+  },
+  "prior_storage_run": {
+    "source_sha256": "956fc90be91a922ac1593b283102bc5149674dac337564e6023479ec8e60a6f9",
+    "original_status": "fail",
+    "original_exit_code": 1,
+    "passed_top_level_tests": 16,
+    "failed_tests": ["TestPGShutdownPersistsRefreshAfterClientDisconnectAndSIGTERM"],
+    "failure_phase": "HTTP 401 before OAuth refresh started; no disconnect or SIGTERM assertion reached",
+    "report_rewritten": false
+  },
+  "combined_coverage": {
+    "status": "pass",
+    "composition": "16 observed passing tests from the unchanged 956 storage run plus one formally repaired fixture on identical non-test inputs",
+    "selected_count": 17,
+    "passed_count": 17,
+    "uncovered_tests": [],
+    "prior_passing_tests": [
+      "TestAdminKeyPGRevalidationAndCookiePrecedence",
+      "TestPGAdminGatewayDatabaseFailureDoesNotTrustCachedKey",
+      "TestPGAdminGatewayDisabledKeepsManagementAccess",
+      "TestPGAdminGatewayRotationImmediatelyRevokesOtherInstance",
+      "TestPGAdminGroupDeletionRollsBackOnAuditFailure",
+      "TestPGAdminObservabilityAuditPagination",
+      "TestPGAdminObservabilityDiagnosticsAndStorageFailure",
+      "TestPGAdminStableAccountLogsSurviveRenameAndRestart",
+      "TestPGGatewaySettingsRefreshAcrossInstances",
+      "TestPGMetricsCursorStableDescendingAndNoCount",
+      "TestPGMetricsIdempotentConcurrentEventsRestartAndDelete",
+      "TestPGMetricsLegacyBaselinePreservesMissingLogsAndRebuild",
+      "TestPGMetricsRebuildPruneAndLegacyExport",
+      "TestPGMetricsTransactionFailureRetryAndHealth",
+      "TestPGSettingsCustomizationPersistenceAndAdminAPI",
+      "TestPGSub2APIImportMetadataAndPartialValidation"
+    ],
+    "formal_repaired_tests": ["TestPGShutdownPersistsRefreshAfterClientDisconnectAndSIGTERM"],
+    "not_a_single_17_test_green_run": true
+  },
+  "evidence_roles": {
+    "joint_manifest": {
+      "path": ".local/joint-candidate/20260918T024841.878837Z/joint-candidate.json",
+      "sha256": "acd1ac686a9818f50d884b6e980c0593c847366b8029536fb6adbf2ed69c7066"
+    },
+    "baseline_source_manifest": {
+      "path": ".local/joint-candidate/20260918T024841.878837Z/source-manifest.json",
+      "sha256": "5c718e871e6abad993e27ef5962f4d7499c976093106643a7d74ab05f2178c4b"
+    },
+    "fixture_manifest": {
+      "path": ".local/source-20260918/shutdown-fixture-fixed-20260918t033414-18971e/fixture-manifest.json",
+      "sha256": "5cecc57319129b7966e00cfe60176132e4a063adb8cf2992559b1224212301a4"
+    },
+    "fixture_source_manifest": {
+      "path": ".local/source-20260918/shutdown-fixture-fixed-20260918t033414-18971e/source-manifest.json",
+      "sha256": "40d4049e40ab3eed0541a8bc6fdd4978008813a65b0bc6ab6d87ec89b42d56a7"
+    },
+    "formal_race_report": {
+      "path": ".local/source-20260918/local-linux-race-20260918t033415-2f8e87/report.json",
+      "sha256": "313566e95899d47c3109ec5967b2a4a831be74056f112cf3bf3fb8d08f359b67"
+    },
+    "formal_race_log": {
+      "path": ".local/source-20260918/local-linux-race-20260918t033415-2f8e87/race.log",
+      "sha256": "0a3b3aca1d0a1fe574ea658854fc3a03ef1eaf5c9b16835d354c689de0eb407c"
+    },
+    "formal_race_source_manifest": {
+      "path": ".local/source-20260918/local-linux-race-20260918t033415-2f8e87/source-manifest.json",
+      "sha256": "ee069b882c220f2aeb80800234e84bee013d5ffecc8cadef6d415ec5cb2a29fb"
+    },
+    "prior_storage_report": {
+      "path": ".local/source-20260918/local-linux-race-20260918t025151-713ac5/report.json",
+      "sha256": "385d51a77327d0e936baed9d614d51c593d875028caa02ff607b86700e0615af"
+    },
+    "prior_storage_log": {
+      "path": ".local/source-20260918/local-linux-race-20260918t025151-713ac5/race.log",
+      "sha256": "d34f620f38cd99c2e80b44302f0063a41a275a2e35d40e667675fe190c9bec70"
+    },
+    "candidate_binary": {
+      "path": ".local/joint-candidate/20260918T024841.878837Z/codex-agent-linux-amd64",
+      "sha256": "a66c7be3de344221d6433a6bc7140523d95a6a068fd2312757c80f2dc50c073d"
+    }
+  },
+  "release_gate_contract": {
+    "require_candidate_source_and_binary_match": true,
+    "require_all_evidence_role_hashes_match": true,
+    "require_manifest_delta_exactly_formal_test": true,
+    "require_exact_initializer_substitution_with_other_test_bytes_identical": true,
+    "require_raw_log_terminal_outcomes": true,
+    "permit_composition_only_for_named_17_test_set": true,
+    "do_not_reclassify_old_run_as_pass": true
+  },
+  "publish_eligible": false,
+  "production_requests": 0,
+  "production_migrated": false,
+  "production_deployed": false,
+  "limits": [
+    "This is an evidence addendum for the named test-only repair, not a new production binary or complete release acceptance.",
+    "The prior 17-test report remains failed; only its 16 observed passes are reused.",
+    "No evidence supports describing the old pre-refresh authentication failure as lost refreshed credentials.",
+    "Unrelated skipped tests, frontend acceptance, production health and deployment gates are not changed by this addendum."
+  ]
+}

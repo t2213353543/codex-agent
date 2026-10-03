@@ -1,0 +1,147 @@
+{
+  "cache": {
+    "requests": 12,
+    "unscoped_requests": 0,
+    "comparable_pairs": 11,
+    "stable_configuration_pairs": 11,
+    "model_changed_pairs": 0,
+    "instructions_changed_pairs": 0,
+    "tools_changed_pairs": 0,
+    "controls_changed_pairs": 0,
+    "cache_key_changed_pairs": 0,
+    "missing_cache_key_requests": 0,
+    "input_comparable_pairs": 11,
+    "shared_input_items": 209,
+    "previous_input_items_compared": 238,
+    "input_history_extension_pairs": 9,
+    "input_history_changed_pairs": 2,
+    "input_comparison_limited_requests": 0,
+    "scope_evictions": 0,
+    "responses": 12,
+    "successful_responses": 12,
+    "failed_responses": 0,
+    "incomplete_responses": 0,
+    "unfinished_responses": 0,
+    "usage_responses": 12,
+    "cache_usage_responses": 12,
+    "cache_hit_responses": 11,
+    "invalid_usage_responses": 0,
+    "input_tokens": 124319,
+    "output_tokens": 3102,
+    "cached_input_tokens": 104704,
+    "cache_usage_input_tokens": 124319,
+    "cache_hit_ratio": 0.8422204168308948,
+    "pending_requests": 0
+  },
+  "connections_observed": 12,
+  "connections_reused": 0,
+  "date": "2026-09-17T19:57:41Z",
+  "diagnostic_errors": 0,
+  "egress_observation": {
+    "colo": "LAX",
+    "http": "http/2",
+    "loc": "US",
+    "scope": "same Go client system-proxy route; upstream destination routing may differ",
+    "status": "observed",
+    "tls": "TLSv1.3"
+  },
+  "http_status_counts": {
+    "200": 12
+  },
+  "model": "gpt-5.6-luna",
+  "passed": true,
+  "schema_version": 1,
+  "scope": "real_cli_code_task_and_native_request_cache",
+  "timed_out": false,
+  "tls_handshakes": null,
+  "transport": "Go net/http; application identity is preserved, native TLS parity is not claimed",
+  "transport_errors": 0,
+  "workload": {
+    "schema_version": 1,
+    "passed": true,
+    "checks": [
+      {
+        "name": "repair",
+        "passed": true,
+        "returncode": 0,
+        "timed_out": false,
+        "elapsed_seconds": 34.582,
+        "assertions": {
+          "process_exited_successfully": true,
+          "thread_started": true,
+          "turn_completed": true,
+          "no_error_events": true,
+          "successful_shell_execution": true,
+          "test_suite_executed": true,
+          "independent_money_oracle": true,
+          "source_changed": true,
+          "fixtures_unchanged": true,
+          "marker_not_saved_in_source": true
+        },
+        "completed_command_count": 2,
+        "item_counts": {
+          "agent_message": 3,
+          "command_execution": 2,
+          "file_change": 1
+        }
+      },
+      {
+        "name": "feature",
+        "passed": true,
+        "returncode": 0,
+        "timed_out": false,
+        "elapsed_seconds": 68.427,
+        "assertions": {
+          "process_exited_successfully": true,
+          "thread_started": true,
+          "turn_completed": true,
+          "no_error_events": true,
+          "same_thread_resumed": true,
+          "successful_shell_execution": true,
+          "test_suite_executed": true,
+          "independent_money_oracle": true,
+          "independent_utc_month_oracle": true,
+          "source_changed": true,
+          "fixtures_unchanged": true,
+          "marker_not_saved_in_source": true
+        },
+        "completed_command_count": 3,
+        "item_counts": {
+          "agent_message": 3,
+          "command_execution": 3,
+          "file_change": 3
+        }
+      },
+      {
+        "name": "resume_memory",
+        "passed": true,
+        "returncode": 0,
+        "timed_out": false,
+        "elapsed_seconds": 21.299,
+        "assertions": {
+          "process_exited_successfully": true,
+          "thread_started": true,
+          "turn_completed": true,
+          "no_error_events": true,
+          "same_thread_resumed": true,
+          "history_marker_recalled": true,
+          "memory_without_tools": true
+        },
+        "completed_command_count": 0,
+        "item_counts": {
+          "agent_message": 1
+        }
+      }
+    ],
+    "scope": "real_cli_repair_feature_resume",
+    "locale_env": "en_US.UTF-8",
+    "timezone_env": "America/New_York",
+    "os_locale_or_geolocation_changed": false,
+    "cli_version": "codex-cli 0.154.0",
+    "elapsed_seconds": 124.517
+  },
+  "execution_path": "official CLI -> local candidate Proxy -> dedicated-group deployed gateway -> assigned WARP proxy -> upstream",
+  "candidate_boundary": "compiled before final OAuth-failure cooldown and 429 cooldown additions; those changes require their separate regressions",
+  "connection_scope": "Connection counters describe local candidate to deployed HTTP gateway, not its TLS connection to the model upstream.",
+  "causal_cache_improvement_claimed": false
+}

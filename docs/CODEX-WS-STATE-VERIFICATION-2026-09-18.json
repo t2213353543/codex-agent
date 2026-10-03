@@ -1,0 +1,99 @@
+{
+  "schema": "codex-ws-state-verification-v1",
+  "date": "2026-09-18",
+  "go_source_sha256": "eb242227dfba5a377d83cbaf8b6caed8432b5acdb5424beaad4b3fe39d037d87",
+  "management_baseline_sha256": "bdfbf92ba3102028440c00f75fb8d728f117fc5f4f3f227782429198b2147c82",
+  "management_billing_scope": "retired; disabled-route tests pass",
+  "linux_gateway_sha256": "9f7e29e7eec1e075160b3e1605661fd3ad5e7ecd887a7cac766e06857c11abb9",
+  "helper_sha256": "6df426c0a8eb703929f888055192e09cec0d2f7eea9391f2ae891e1ca6213740",
+  "helper_changed_or_rebuilt": false,
+  "production_deployed": false,
+  "live_model_requests": 0,
+  "goal_complete": false,
+  "implementation": {
+    "optional_observation_field": "websocket_warmup",
+    "warmup_explicit_false_generate": true,
+    "ordinary_absent_or_true_generate": false,
+    "null_invalid_http_old_record_unknown": true,
+    "request_type_preserved": "websocket",
+    "admission_request_counts_tokens_unchanged": true,
+    "reported_warmup_tokens_preserved": true,
+    "new_database_migration": false,
+    "runtime_policy_reconnect_rules_changed": false
+  },
+  "validation": {
+    "ordinary_go_tests_passed": true,
+    "ordinary_go_tests_seconds": 20.490,
+    "vet_passed": true,
+    "windows_linux_builds_passed": true,
+    "race": {
+      "passed_top_level_tests": 290,
+      "passed_test_events": 722,
+      "failed_tests": [],
+      "skipped_tests": [],
+      "missing_tests": [],
+      "duration_seconds": 159.826,
+      "cleanup_complete": true,
+      "pg_warmup_restart_and_rebuild_passed": true,
+      "file_and_pg_billing_disabled_passed": true
+    },
+    "native_release_interop_top_level_tests": 21,
+    "official_cli_websocket": {
+      "version": "0.155.0",
+      "connections": 4,
+      "warmups": 4,
+      "generated_responses": 6,
+      "exact_previous_response_links": 6,
+      "actual_echo_tool_calls": 2,
+      "exact_tool_output_only_deltas": 2,
+      "requests_containing_tool_output_including_resume_history": 4,
+      "empty_input_deltas_observed": 0,
+      "metadata_first_hint_retained": true,
+      "resumed_state_isolated": true,
+      "handshake_hint_forwarded_not_consumed_by_this_cli_path": true,
+      "go_fallback_attempts": 0
+    },
+    "separate_handwritten_native_tls_fixture": {
+      "passed": true,
+      "request_frames": 3,
+      "empty_delta_preserved": true,
+      "opaque_tool_large_integer_null_unknown_fields_exact_bytes": true,
+      "official_cli_generated_these_frames": false
+    }
+  },
+  "limits": [
+    "All upstream model responses and cache usage are synthetic; no production cache-rate or model-quality claim.",
+    "Real CLI scenarios observed no empty deltas; a separate handwritten native TLS fixture covers that case.",
+    "PG warmup provenance lives in retained request_logs JSON and is not recoverable from usage_events alone after detail pruning.",
+    "Existing aggregate requests, success rates and latency still include warmups; they are not inference-only statistics.",
+    "The frozen candidate uses verified non-billing management baseline bdfbf92, not current in-progress management UI/query changes.",
+    "No full American-device environment or complete fingerprint equivalence is claimed."
+  ],
+  "evidence": [
+    {
+      "kind": "source_manifest",
+      "path": ".local/source-20260918/gateway-overlay-20260918t071245-10fe84/source-manifest.json",
+      "sha256": "f93ebc433c74179b3463d273647d6e4e176761e5297734d332b9aa32a5f42145"
+    },
+    {
+      "kind": "build",
+      "path": ".local/source-20260918/gateway-overlay-20260918t071245-10fe84/build-verification.json",
+      "sha256": "837758fea507a28aa30b73ef1ac0b9083e421b814ed9becb8f9269daef8c8334"
+    },
+    {
+      "kind": "race",
+      "path": ".local/source-20260918/local-linux-race-20260918t071417-79f57f/report.json",
+      "sha256": "2c75db71c3f43b20f12701e0e924c599c4cbf081f5150a4d87aa4d93000154e9"
+    },
+    {
+      "kind": "native_gateway",
+      "path": ".local/native-transport-build/gateway-compare-20260918T071306-c8f465/result.json",
+      "sha256": "db3e5ba4423e72112bab88244058686ca5bca404eabac65e2f74afb779dcac40"
+    },
+    {
+      "kind": "official_cli_state_chain",
+      "path": ".local/native-transport-build/gateway-compare-20260918T071306-c8f465/gateway-ws-cli.json",
+      "sha256": "44241c629e66c4fe323272cd8ecdd935a7282a2f574e16d1437316dbabd4b167"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema": "codex-agent-deployed-ui-release-v1",
+  "release_id": "7ca36331d1089e9a039f0949526dcb1a65fc28b2985a0f0521620646442f207b",
+  "address": "http://43.225.196.170:18879",
+  "tests_passed": true,
+  "deployed": true,
+  "database_migrated_by_ui_release": false,
+  "deployed_at": "2026-09-17T11:33:57.730683+00:00",
+  "previous_ui_release": "3cc0f99d2c87ae09aa6888a83bc94eddfba257bd9e9341328da23c78caa84203",
+  "frontend_source_sha256": "02f0b7fab7ee3f1e1e1c79308c78fca5e05bd30491c5e55ba5c3783e2bfbca9d",
+  "dist_sha256": "f6e214c8cabb72bb238f565fc3bc68e053f04309402b87352396870a107bb161",
+  "backend_binary_sha256": "07f958e065f8473e5a21c037d8527943cf71652e8b089f245a2c8aa91f673894",
+  "health": {
+    "/": 200,
+    "/health/live": 200,
+    "/health/ready": 200
+  },
+  "only_web_argument_changed": true,
+  "runtime_environment_unchanged": true,
+  "public_browser": "pass",
+  "font_actual_render_verified": true,
+  "font_bytes": 136812,
+  "rollback_command": "python tools/ui_release.py rollback --release .local/ui-releases/7ca36331d1089e9a039f0949526dcb1a65fc28b2985a0f0521620646442f207b/ui-manifest.json",
+  "acceptance_command": "python tools/ui_acceptance.py",
+  "evidence": [
+    {
+      "path": ".local/ui/runs/20260917T113103Z/report.json",
+      "sha256": "1d551f3e1b733e4315a09d535ba6f73631f40895cb15dd83cea7eda0b111a1e2"
+    },
+    {
+      "path": ".local/ui-refinement/rehearsal-check-report.json",
+      "sha256": "4080a7c4ffff820163ae21316084744414ef52ba8a3de53633c51a0cbffb0875"
+    },
+    {
+      "path": ".local/ui-refinement/permissions-report.json",
+      "sha256": "ca2854249ea65d3c6e1e4ce7693a7b8757bef270c3e02c6be2e819c02cd73535"
+    },
+    {
+      "path": ".local/ui-refinement/production/activate-report.json",
+      "sha256": "3fc67c2a29971d55bd76507c1d2ec96cce3796553647fd51634b4b13ba70d7e9"
+    },
+    {
+      "path": ".local/ui-refinement/production/browser-report.json",
+      "sha256": "52f843012f94a5256970d86680c6eb782ed106a355113dc3fa2facfe395c94ac"
+    },
+    {
+      "path": ".local/ui-refinement/production/health-report.json",
+      "sha256": "cb02e966cccd7d85f360134926186047612608e013d9b787922c809efdc63c59"
+    },
+    {
+      "path": ".local/ui-refinement/bundle-comparison.json",
+      "sha256": "0dce95b1663e84ed346d1fd1832c3b6383a6f0ac6916b2a4af73ad8fff517d02"
+    }
+  ]
+}

@@ -1,0 +1,422 @@
+{
+  "schema": "codex-agent-management-ui-release-v1",
+  "release_id": "d2b3b78936d031cc127c004f8c9ad1519bf919276a9fdf456b6bfafd786a9b9a",
+  "deployed": true,
+  "deployed_at": "2026-09-17T13:59:27.736778+00:00",
+  "verified_at": "2026-09-17T14:06:00.773740+00:00",
+  "url": "http://43.225.196.170:18879",
+  "source_sha256": "8ddd28695a9db786ae25e13a0d1bc8411d6a7be5c221ab354b8d4a838b385431",
+  "binary_sha256": "ec340e64246c47e50fca074eadcbfc7e7b8ed797c60189800c42ce6532b64cf0",
+  "backend_identical_to_previous_release": true,
+  "frontend": {
+    "assets/_baseClone-BiCXQEvK.js": "4188eb16aee9925056664394f6d5d6963b7ed69859ca13ea201c04e4c96f77ca",
+    "assets/Accounts-BXZUdams.css": "d9fbf3300b10608457a1cde3c3510ff6018da013bdd60dc074f9278b53fa8556",
+    "assets/Accounts-lUUN6M-h.js": "940d6cebd24362d56c591c2eaa937aab904764d5ce06fcab91c755ce350a9ea3",
+    "assets/AuditLogs-Bm8F8lvG.js": "4e6cc3d64051db717319af2fdfacaac16a4fa67e77c9ad96789539a7fa49cd69",
+    "assets/AuditLogs-oSOIbCvM.css": "27472581f8fae6b0f5c616d8cacb5e52114eeb0291b157616b1188074782025d",
+    "assets/chart-renderer-CzH6Bj_K.js": "228132a616555d37c612f91cf2cabc3e5ceb742db6b2619f75ebfeac1033ce94",
+    "assets/ConnectionGuide-CbZX8Rh1.css": "3a03e56245ff441c48327a77f1ec3a48ca5e99c124bfc70f2d0fd65fa3382383",
+    "assets/ConnectionGuide-CMOnolgb.js": "7bb8114ecd3c77b675bdf66f6452a581140f86beb596cc2d782f6338e8a43339",
+    "assets/CopyTextDialog-BcoVhLqY.js": "e4446cd4d74839e773b655f6859544c44dc6a85054f55345b11116b18eb1d2cc",
+    "assets/Dashboard-CCaKvjNe.js": "2afff9dd25daa9303df67f08d47347c27ed365368bc081798ea963d937963bf7",
+    "assets/Dashboard-LhVzapBM.css": "d7ec5a52fa118f5238e4ef8b602a01bd176f93bba96b3495eb91f78cf6f28aae",
+    "assets/Diagnostics-BCVKT_4C.css": "5fb8088a3f52d67dc139be4d32810454785640a106c8832b6c4e19c32246f236",
+    "assets/Diagnostics-BHgDycnQ.js": "5f534f467a1a6f9d5a630b920e1be095d2a8dfdf5dc047d74d77e9257d1bb549",
+    "assets/directive-CNDU_FF1.js": "cfdda4525d4c9e61134894f1b1924ac0bbb66b3dcb57444ec1c3bad2a786788e",
+    "assets/echarts-BWEC13sA.css": "76b1f7c525034e53915b3a98190b679f65316842e3543b9938da4b00441bf13d",
+    "assets/echarts-CiZ5Flpp.js": "2edb40be39a7ec076af5891f7f75e074712037ee96a1ca97159948932ca671aa",
+    "assets/el-date-picker-CFns1mtU.css": "85c57f64ded692823550d6a9b2311c8025d500e1916da862da8019cdd79e4eb9",
+    "assets/el-date-picker-ChMaWN6f.js": "9feb3b0256cd22e61cbc948187ecce53f47bd20e7398a5d08c87c2bb1211a01c",
+    "assets/el-table-column-Dp73S2HR.css": "44e956ea9d84ceac5c64f63ba0e11743b84ee356a8655e3343f8e4193b53ddcd",
+    "assets/el-table-column-l5GUiAqW.js": "f679acdb8b379e2e1437262e5aba9e63b167ab979b507d9f6e4b87f99d7041b1",
+    "assets/fonts/codex-admin-sans-0058e27ebaf7d129.woff2": "0058e27ebaf7d129c1eb9880ab09622e3eb75911ba26e0e595762ea453185eff",
+    "assets/fonts/font-metadata.json": "93c996d4550f7ba4937cc5e6bf4f160a77b23beb2445bde32b2369a0de032998",
+    "assets/fonts/OFL.txt": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9",
+    "assets/format-BirG-DuY.js": "6019982a3a7ad1d30a4568e6a42c23293849644e3f9c4c642e66b1dc07b3349d",
+    "assets/Groups-C0f-PjXr.js": "3e7eee03fdee9553367d91409769816ce3d7c204cbee7432ac8572e2051e0615",
+    "assets/Groups-CeR9M8k8.css": "cfe22e484fe362c674be8839a70ebdd76538a4abc68cda7fd053ae8c6e0d7122",
+    "assets/index-38UXJAhk.js": "98b77c7f0e1b80b254f6b4383afaa9466b3dfaf9624eab6bc569dbf923102a4d",
+    "assets/index-5jKF-xjA.js": "9bba63da60a96e315139b411e2de58d8842f1f7159d6b5d1da5fce68dc9d3f25",
+    "assets/index-BnUdZ3LD.js": "408a12421ba5e7949620abde64b654d8fed8de40a5eee8f28ee5d3a51af036b7",
+    "assets/index-C1JxgbXD.js": "47fc63b73fa0b4c499a4d4fc5833b59d7647e11b449689abb77f4b3b680a1b09",
+    "assets/index-D0IE685l.js": "cb583dabe4170b80c1dc30ae3dc96bae136815f0d6f27f4312695ce17200074b",
+    "assets/index-D_ITFZ3-.js": "c3c52e56ef61bc01cf0421aab4000baae3dc6e4acb01a1ce2365b1b0ca21e66f",
+    "assets/index-DbaKUbx3.css": "13988a5c78620af55ec761b46bff173094558765abe55577134c9d766b40fd55",
+    "assets/index-IHQyk2LD.js": "28a7d16621f330312a12775df91cfdb11ffb799eb448f7b681d0e2d62430595a",
+    "assets/index-JiT0gCH0.js": "63d2e511c2d796a0e0b9eee4d36c83d5009f3d085f4cad5354c5cf6dc6540419",
+    "assets/Keys-Ca8qv578.js": "099746f4e81825da8e3a6c1ce5b94258665c613ffb816de0837b7f8b51f128be",
+    "assets/Keys-DYMG69sA.css": "0542da3931288158475b6f390a9915e601ed9bed48ac8a478220c0f834fb8a3e",
+    "assets/Login-Ddj-AnJV.css": "0d88360a9adb79e90dd84e3e5459124e19ca61eab1648f3ff9326e51f72b8f27",
+    "assets/Login-ZL_6dkWT.js": "bbe00d1af85ea268da62056ca2ea42b86cde53d8ad47ed59e06ebc37a43fe4b8",
+    "assets/Logs-CGe-1L5z.js": "0d9c4a00b8f5fa379a98e84c53a5e0ee81a5073472e592ccd15d7cd369426dd8",
+    "assets/Logs-OSfaeIv5.css": "923df03c2b8860327d6369a8c11b155520555ed9aec6e3f34c522476e8ae38c9",
+    "assets/management-gaVgJPHw.js": "7e28d5e98c49c0933166b6b479d11e59f861fbb82181dc90fda16df19b10d21d",
+    "assets/observability-D3at8MQL.js": "e351e4a6caba6867a772c9e36bbfd9f16e85ed78de63953fb5c49db05198825c",
+    "assets/observability-S7fQQ3B8.css": "691fbbed21e9c4279f70c333db58305fa2fb0f6aa36b070c21f85b7b2d316dc0",
+    "assets/omit-DBwHfOHK.js": "517d43804774267f3e02d6b6ae98a4bd1167580a8657740ba48d4351722deb4f",
+    "assets/PageHeader-BeCOTGCJ.js": "aecbd53c171aec4ea59e9272c278974d04b0af4b045028d20ee8719d2c079494",
+    "assets/Proxies-BZNklniJ.js": "7b266ed58313c848be47b14d3a3ae4641414857f6a62768b9b89bfe30b6cfee8",
+    "assets/Proxies-DzEDBtFW.css": "2ddc7bbcf2ca0f34cc20ad9fbdc4a34f92c968c45c0170afe79dea1206c56fa1",
+    "assets/ResourceBulkStatusDialog-DfSM2osp.js": "ab6f97ad36d6ca5e9b74a45ae0c04212c63b32d5db52e5da3bad71a4e1a62088",
+    "assets/ResourceBulkStatusDialog-DxyRoT38.css": "b2fb3037f56deecafa915d1c6060c030cdd2f236f24f06042e0751ecb8b5c726",
+    "assets/resourceManagement-CIguvwAM.js": "ad144156413b050229007299268ed7bf3b4a9411fa3b7feba11176abe553ba42",
+    "assets/resourceManagement-DQEdArB9.css": "6f38ae0c0ab0629ee0f7953f91701fdf75973098cc2f3b844dcd8dffe4c68787",
+    "assets/Settings-DNZhhsn5.css": "25473fcd9a34115e0e505bb45ddec6b5b8e8408787c375d951c753b318eaf23f",
+    "assets/Settings-l1-tTgPD.js": "fbbee86101a389f505b0cc473cdf5dc1f4ea3ba31def273c05b7d13c825b3236",
+    "index.html": "9686985cd1e221ed7f95b24c92fe7fcf886887467fadf0763cb5ffbf66e0e929"
+  },
+  "tests_passed": true,
+  "schema_migrated": false,
+  "legacy_imported": false,
+  "accounts_imported": false,
+  "management_settings_changed": false,
+  "gateway_binary_changed": false,
+  "real_model_requests": false,
+  "previous_release_id": "1244c39ae6cd413c42b8d5deeaa42c738be4160eb6a936607f5b88bbc077dbc1",
+  "backup_directory": "/opt/codex-agent/releases/d2b3b78936d031cc127c004f8c9ad1519bf919276a9fdf456b6bfafd786a9b9a/.upgrade-private",
+  "database_backup_sha256": "237e710b3bcca42e1bff8a2c14d6b55024caae9867a0dc84d26566fcfa68d464",
+  "database_backup_bytes": 41659,
+  "health": {
+    "checked_at": "2026-09-17T13:59:27.736712+00:00",
+    "main_pid": 979853,
+    "status_codes": {
+      "/health/live": 200,
+      "/health/ready": 200,
+      "/": 200
+    },
+    "runtime_binary_sha256": "ec340e64246c47e50fca074eadcbfc7e7b8ed797c60189800c42ce6532b64cf0",
+    "root_sha256": "9686985cd1e221ed7f95b24c92fe7fcf886887467fadf0763cb5ffbf66e0e929",
+    "entry_assets_verified": 2
+  },
+  "production_http": {
+    "status": "pass",
+    "phase": "after",
+    "verified_at": "2026-09-17T14:00:47.292091+00:00",
+    "checks": [
+      {
+        "path": "/api/session",
+        "status": 200
+      },
+      {
+        "path": "/api/settings",
+        "status": 200
+      },
+      {
+        "path": "/api/accounts",
+        "status": 200
+      },
+      {
+        "path": "/api/groups",
+        "status": 200
+      },
+      {
+        "path": "/api/keys",
+        "status": 200
+      },
+      {
+        "path": "/api/proxies",
+        "status": 200
+      },
+      {
+        "path": "/api/logs",
+        "status": 200
+      },
+      {
+        "path": "/api/overview",
+        "status": 200
+      },
+      {
+        "path": "/api/diagnostics",
+        "status": 200
+      },
+      {
+        "path": "/api/audit-logs",
+        "status": 200
+      },
+      {
+        "path": "/health/live",
+        "status": 200
+      },
+      {
+        "path": "/health/ready",
+        "status": 200
+      },
+      {
+        "path": "/",
+        "status": 200
+      }
+    ],
+    "anonymous_management_status": 401,
+    "settings": {
+      "admin_api": true,
+      "websocket_enabled": false,
+      "builtin_prompt_enabled": true,
+      "sticky_sessions_enabled": true,
+      "sticky_session_ttl_seconds": 604800,
+      "prompt_cache_key_enabled": true,
+      "codex_fingerprint_enabled": false,
+      "codex_fingerprint_profile": "linux",
+      "settings_version": 1
+    },
+    "accounts_on_first_page": 0,
+    "dependencies": {
+      "postgres": "ok",
+      "redis": "ok"
+    },
+    "static_files_hash_verified": 55,
+    "asset_paths": [
+      "assets/_baseClone-BiCXQEvK.js",
+      "assets/Accounts-BXZUdams.css",
+      "assets/Accounts-lUUN6M-h.js",
+      "assets/AuditLogs-Bm8F8lvG.js",
+      "assets/AuditLogs-oSOIbCvM.css",
+      "assets/chart-renderer-CzH6Bj_K.js",
+      "assets/ConnectionGuide-CbZX8Rh1.css",
+      "assets/ConnectionGuide-CMOnolgb.js",
+      "assets/CopyTextDialog-BcoVhLqY.js",
+      "assets/Dashboard-CCaKvjNe.js",
+      "assets/Dashboard-LhVzapBM.css",
+      "assets/Diagnostics-BCVKT_4C.css",
+      "assets/Diagnostics-BHgDycnQ.js",
+      "assets/directive-CNDU_FF1.js",
+      "assets/echarts-BWEC13sA.css",
+      "assets/echarts-CiZ5Flpp.js",
+      "assets/el-date-picker-CFns1mtU.css",
+      "assets/el-date-picker-ChMaWN6f.js",
+      "assets/el-table-column-Dp73S2HR.css",
+      "assets/el-table-column-l5GUiAqW.js",
+      "assets/fonts/codex-admin-sans-0058e27ebaf7d129.woff2",
+      "assets/fonts/font-metadata.json",
+      "assets/fonts/OFL.txt",
+      "assets/format-BirG-DuY.js",
+      "assets/Groups-C0f-PjXr.js",
+      "assets/Groups-CeR9M8k8.css",
+      "assets/index-38UXJAhk.js",
+      "assets/index-5jKF-xjA.js",
+      "assets/index-BnUdZ3LD.js",
+      "assets/index-C1JxgbXD.js",
+      "assets/index-D0IE685l.js",
+      "assets/index-D_ITFZ3-.js",
+      "assets/index-DbaKUbx3.css",
+      "assets/index-IHQyk2LD.js",
+      "assets/index-JiT0gCH0.js",
+      "assets/Keys-Ca8qv578.js",
+      "assets/Keys-DYMG69sA.css",
+      "assets/Login-Ddj-AnJV.css",
+      "assets/Login-ZL_6dkWT.js",
+      "assets/Logs-CGe-1L5z.js",
+      "assets/Logs-OSfaeIv5.css",
+      "assets/management-gaVgJPHw.js",
+      "assets/observability-D3at8MQL.js",
+      "assets/observability-S7fQQ3B8.css",
+      "assets/omit-DBwHfOHK.js",
+      "assets/PageHeader-BeCOTGCJ.js",
+      "assets/Proxies-BZNklniJ.js",
+      "assets/Proxies-DzEDBtFW.css",
+      "assets/ResourceBulkStatusDialog-DfSM2osp.js",
+      "assets/ResourceBulkStatusDialog-DxyRoT38.css",
+      "assets/resourceManagement-CIguvwAM.js",
+      "assets/resourceManagement-DQEdArB9.css",
+      "assets/Settings-DNZhhsn5.css",
+      "assets/Settings-l1-tTgPD.js",
+      "index.html"
+    ],
+    "management_settings_modified_by_verification": false,
+    "real_model_requests": false
+  },
+  "production_browser": {
+    "status": "pass",
+    "verified_at": "2026-09-17T14:05:24.088Z",
+    "readonly_business_data": true,
+    "viewport_widths": [
+      1440,
+      390
+    ],
+    "pages": [
+      {
+        "path": "/",
+        "width": 1440,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/accounts",
+        "width": 1440,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/groups",
+        "width": 1440,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/keys",
+        "width": 1440,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/proxies",
+        "width": 1440,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/logs",
+        "width": 1440,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/audit-logs",
+        "width": 1440,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/connection",
+        "width": 1440,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/diagnostics",
+        "width": 1440,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/settings",
+        "width": 1440,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/",
+        "width": 390,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/accounts",
+        "width": 390,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/groups",
+        "width": 390,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/keys",
+        "width": 390,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/proxies",
+        "width": 390,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/logs",
+        "width": 390,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/audit-logs",
+        "width": 390,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/connection",
+        "width": 390,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/diagnostics",
+        "width": 390,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      },
+      {
+        "path": "/settings",
+        "width": 390,
+        "heading": true,
+        "font_loaded": true,
+        "no_overflow": true
+      }
+    ],
+    "screenshots": [
+      "login-1440.png",
+      "login-390.png",
+      "diagnostics-1440.png",
+      "settings-1440.png",
+      "audit-mobile-390.png",
+      "diagnostics-390.png",
+      "settings-390.png"
+    ],
+    "session_login": true,
+    "session_logout": true,
+    "session_expired_after_logout": true,
+    "command_palette": true,
+    "font_loaded": true,
+    "js_errors": [],
+    "console_errors": [],
+    "failed_http": [],
+    "failed_requests": [],
+    "blocked_requests": [],
+    "request_counts": {
+      "business_get": 36,
+      "session_post": 1,
+      "session_delete": 1
+    },
+    "audit_supported": true,
+    "audit_storage_mode": "postgres",
+    "completed_at": "2026-09-17T14:05:44.399Z"
+  },
+  "local_acceptance": {
+    "frontend_unit_pass": 53,
+    "management_groups": 21,
+    "visual_combinations": 132,
+    "resource_groups": 8,
+    "settings_groups": 7,
+    "fingerprint_groups": 6,
+    "charts_and_logs_groups": 10,
+    "inherited_backend_checks": "All 82 Go/dependency/migration files and rebuilt binary match the already validated production version; backend tests were not rerun for this UI-only publication.",
+    "evidence": "docs/MANAGEMENT-EXPERIENCE-VERIFICATION-2026-09-17.json",
+    "upgrade_acceptance_sha256": "b386d9482ba9e8498d860b20f8a3548e5f9895b34c4b30d6b8cbd33ff77eaffd"
+  },
+  "rollback_manifest": ".local/management-deploy/source/.local/upgrades/d2b3b78936d031cc127c004f8c9ad1519bf919276a9fdf456b6bfafd786a9b9a/upgrade-manifest.json",
+  "rollback_preserves_current_database": true,
+  "transport": "Existing authorized project loopback SSH proxy and system HTTP proxy; service-side health checks used direct localhost.",
+  "currently_active": false,
+  "superseded_by_ui_restore": "docs/UI-RESTORE-2026-09-17.json"
+}

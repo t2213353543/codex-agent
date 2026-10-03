@@ -1,0 +1,97 @@
+{
+  "schema": "bound-group-authorization-verification-v1",
+  "date": "2026-09-18",
+  "go_source_sha256": "0a77f8c09cc7dd05e680097694728c963fd8dd190ac4d02e273ed52d76196618",
+  "verified_management_baseline_sha256": "d52eda2accb3af36ea09269c7385b1875b4c50e709d19a132995dc24c76aad2d",
+  "linux_gateway_sha256": "7716c92c884ca2fc94ce8f0872aa566ec63454d89bcd4742914df423cba720a2",
+  "helper_sha256": "6df426c0a8eb703929f888055192e09cec0d2f7eea9391f2ae891e1ca6213740",
+  "helper_changed_or_rebuilt": false,
+  "production_deployed": false,
+  "live_model_requests": 0,
+  "goal_complete": false,
+  "repair": {
+    "new_production_files": ["gateway_session_authorization.go"],
+    "changed_production_files_for_this_fix": ["gateway_sessions.go", "gateway_websocket.go"],
+    "previous_native_proxy_guard_changes_integrated": true,
+    "fresh_account_groups_checked_against_current_instance_key_groups": true,
+    "http_after_reload_and_after_ensure_ready_checks": true,
+    "websocket_next_turn_after_reload_check": true,
+    "admin_group_exception_preserved": true,
+    "account_disable_and_owner_checks_preserved": true,
+    "owner_revision_changed_for_group_metadata": false,
+    "old_session_binding_migrated_on_rejection": false,
+    "http_group_denial_status": 503,
+    "websocket_group_denial_status": 403,
+    "refreshed_credentials_persist_despite_post_refresh_key_revocation": true,
+    "passive_observation_hooks_preserved": true
+  },
+  "validation": {
+    "pre_fix_http_and_ws_group_revocation_failures_reproduced": true,
+    "ordinary_go_tests_passed": true,
+    "ordinary_go_tests_seconds": 24.692,
+    "vet_passed": true,
+    "windows_linux_builds_passed": true,
+    "joint_linux_race": {
+      "gateway_selected": 322,
+      "management_selected": 131,
+      "overlap": 6,
+      "passed_top_level_tests": 447,
+      "passed_test_events": 1077,
+      "failed_tests": [],
+      "skipped_tests": [],
+      "missing_tests": [],
+      "duration_seconds": 165.205,
+      "authorization_top_level_tests": 5,
+      "pg_redis_account_group_revocation_passed": true,
+      "temporary_resources_independently_verified_removed": true
+    },
+    "native_top_level_tests": 27,
+    "go_cli_compatibility_top_level_tests": 1,
+    "go_cli_compatibility_subcases": 3,
+    "paired_total_top_level_tests": 28,
+    "required_runtime_reports_present_and_passed": 6,
+    "baseline_freezer_unit_tests": 8
+  },
+  "limits": [
+    "No real accounts, model upstream or production deployment; existing management previews are untouched.",
+    "This fix covers already-bound HTTP sessions and WS next-turn authorization, not unbound pickAccount scheduling-cache behavior.",
+    "Ordinary key lookup is still this instance's index; no cross-instance key revocation broadcast is claimed.",
+    "A rejected WS connection must be reopened after group restoration; the same binding is retained, not the same closed socket.",
+    "Authorization checks are discrete checkpoints, not atomic transactions covering all concurrent storage changes and network writes.",
+    "PG fixture keeps the original account snapshot warm while mutating stored account groups; it does not mutate keys across instances.",
+    "New management/passive source baseline is included, but this round does not rebuild or redeploy frontend assets.",
+    "No measured live cache-hit, production success-rate or complete US-device environment improvement is claimed."
+  ],
+  "evidence": [
+    {
+      "kind": "source_manifest",
+      "path": ".local/source-20260918/gateway-delta-20260918t091004-6eb373/source-manifest.json",
+      "sha256": "2b8f6d008cf7c8d0e4e6189af61e5a2504c7d313f54ea4bcabdd17fc00c78b8a"
+    },
+    {
+      "kind": "explicit_management_delta",
+      "path": ".local/source-20260918/gateway-delta-20260918t091004-6eb373/overlay-manifest.json",
+      "sha256": "b98e59fd778ce589c075d168c93423f426509f1898a7606c124d372c5e5a1968"
+    },
+    {
+      "kind": "build",
+      "path": ".local/source-20260918/gateway-delta-20260918t091004-6eb373/build-verification.json",
+      "sha256": "2bd02f7cf1eda7438d1f6e2d850f2276fcd0393d6c62ff604bf0207b378d8253"
+    },
+    {
+      "kind": "joint_race",
+      "path": ".local/management-parity/local-race-20260918t091244-370d95/report.json",
+      "sha256": "2a5c63d035f5b788b321d779c72e3047f0afb538e41c20ed55552ae580b160e2"
+    },
+    {
+      "kind": "native_and_go_cli",
+      "path": ".local/native-transport-build/gateway-compare-20260918T091019-5f515e/result.json",
+      "sha256": "8a747b92a8f04611b930bfd0556ec7512895f9c65bdba19da94f97f511753e82"
+    },
+    {
+      "kind": "baseline_freezer",
+      "path": "tools/gateway_freeze_delta.py",
+      "sha256": "27d273922733725f1bbedfbbea77e8a34e23771af70659077cc2fe2f37cefde2"
+    }
+  ]
+}

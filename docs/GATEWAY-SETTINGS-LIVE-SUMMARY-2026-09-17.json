@@ -1,0 +1,64 @@
+{
+  "created_at": "2026-09-17T20:56:01+08:00",
+  "model": "gpt-5.6-luna",
+  "backend": "ChatGPT Codex",
+  "isolated_import": true,
+  "credential_refresh_enabled": false,
+  "deployed": false,
+  "requests_in_this_followup": 14,
+  "pre_fix_diagnostic_requests": 2,
+  "post_fix_successful_requests": 12,
+  "protocols_passed": [
+    "http_json",
+    "http_sse",
+    "websocket"
+  ],
+  "http_tls_version": "TLS 1.3",
+  "http_negotiated_alpn": "h2",
+  "websocket_handshake_status": 101,
+  "standard_prefix": {
+    "passed": true,
+    "requests": 6,
+    "input_tokens": 8150,
+    "output_tokens": 70,
+    "cached_tokens": 0,
+    "weighted_cache_rate": 0.0,
+    "after_first_request_weighted_cache_rate": 0.0
+  },
+  "long_reference_prefix": {
+    "passed": true,
+    "requests": 6,
+    "input_tokens": 29648,
+    "output_tokens": 70,
+    "cached_tokens": 19200,
+    "weighted_cache_rate": 0.6475984889368591,
+    "after_first_request_weighted_cache_rate": 0.7764477515367195
+  },
+  "same_load_before_after_cache_improvement_measured": false,
+  "fix": "Aggregate complete output_item.done items into non-streaming JSON when terminal output is absent, null or empty; preserve opaque items, errors and usage.",
+  "full_go_tests_including_subtests": {
+    "pass": 431,
+    "skip": 30,
+    "fail": 0
+  },
+  "go_vet": "passed",
+  "windows_build": "passed",
+  "candidate": ".local/settings-verification/codex-agent-settings-live.exe",
+  "candidate_sha256": "3dddb7764fdd32fa11c202a81e605276ae19c6e027d956fd2467db2e234abd49",
+  "stable_reference_sha256": "45ae46b4f5faf5be8c5f8d5d8817c44b951e6c7e5b2722b715091ca53775287c",
+  "reports": [
+    "GATEWAY-SETTINGS-LIVE-2026-09-17.json",
+    "GATEWAY-SETTINGS-LIVE-2026-09-17-short-prefix.json",
+    "GATEWAY-SETTINGS-LIVE-2026-09-17-attempt1.json",
+    "GATEWAY-SETTINGS-LIVE-2026-09-17-attempt2.json"
+  ],
+  "source_sha256": {
+    "gateway_live_settings_test.go": "8ba8e0b40813c894308cba3cff4916c816092e122b384630d1ed156196fee514",
+    "response_output.go": "0f2bd4cc47d9d0fbbe4c5643e3cc85b87595047df200f3d972ee224498cb52f5",
+    "response_output_test.go": "666e30667eceb13a71d71ae597b83dfef9674125db951712fbc4883bf3d4569c",
+    "proxy.go": "3b1a6b2094c6ec6099b786ba3186fc4d5ebcd23757d160ddb3dfdf0cd51f716d",
+    "gateway_policy.go": "1f01206cbcadadcdfa21b0c4e380c65e40f8d2189778cecb1c46be954f5d9d9b",
+    "gateway_websocket.go": "b435a7a1ac2f0a586f43a4a11e9c8b69fe5492ff1143f29a89831f579e42773a",
+    "gateway_sessions.go": "c1052676c353c40ff73d06d4146e2d2b68d86255f423a9caa1424184a7171eb2"
+  }
+}

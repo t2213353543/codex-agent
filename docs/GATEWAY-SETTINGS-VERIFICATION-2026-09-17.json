@@ -1,0 +1,79 @@
+{
+  "created_at": "2026-09-17T20:29:27+08:00",
+  "scope": "gateway system settings, websocket, builtin prompt, session affinity and cache stability",
+  "full_go_tests": {
+    "passed": 336,
+    "skipped": 26,
+    "failed": [],
+    "exit_code": 0
+  },
+  "go_vet": "passed",
+  "windows_candidate_build": "passed",
+  "candidate_path": ".local/settings-verification/codex-agent-settings.exe",
+  "candidate_sha256": "d8624d34415205a63ea40369d29c6b40d7d4a0e88717a172ae9e07fa1b2e8857",
+  "frontend": {
+    "unit_tests_passed": 32,
+    "production_build": "passed",
+    "existing_browser_assertion_groups": 19,
+    "settings_browser": {
+      "passed": true,
+      "assertions": [
+        "首次读取失败及读取中禁止编辑和轮换密钥，刷新成功才启用",
+        "开关保存失败不更改状态、不报成功；双击仅一次提交且携带版本",
+        "提示词只显式保存，中文按 UTF-8 字节限制；409 不自动重试，保留草稿并使用新版本重存",
+        "提示词允许明确清空；TTL 空值不提交，整数秒独立保存并沿用最新版本",
+        "内置提示词、粘性会话、缓存键开关逐字段提交，不覆盖其他配置",
+        "未返回新版本不假报保存成功；刷新失败锁定编辑，再刷新仍保留草稿",
+        "320、768、1440px 无整页横向溢出并生成截图"
+      ],
+      "errors": [],
+      "leakedApi": []
+    }
+  },
+  "isolated_storage": {
+    "postgres_cross_instance_settings": "passed",
+    "redis_cross_instance_binding": "passed",
+    "redis_configurable_ttl_renewal": "passed",
+    "log": ".local/settings-verification/storage-tests.log"
+  },
+  "official_cli": {
+    "version": "0.154.0",
+    "unmodified": true,
+    "local_protocol_fixture": true,
+    "http_tool_resume": "passed",
+    "websocket_disabled_http_fallback": "passed",
+    "auto_compact_resume": "passed",
+    "websocket_enabled_tool_resume": {
+      "passed": true,
+      "connections": 2,
+      "generation_requests": 3,
+      "warmup_requests": 2,
+      "previous_response_id_requests": 3,
+      "http_fallback_requests": 0
+    }
+  },
+  "race_detector": {
+    "executed": false,
+    "reason": "CGO disabled and no C compiler in current Windows environment"
+  },
+  "production_cache_before_after_measured": false,
+  "deployed_by_this_task": false,
+  "source_sha256": {
+    "gateway.go": "bb8dbf1290cab7e8b24097c8201bb575abd04b0c1960ed1b3bdd4f505444b191",
+    "gateway_policy.go": "1f01206cbcadadcdfa21b0c4e380c65e40f8d2189778cecb1c46be954f5d9d9b",
+    "gateway_sessions.go": "c1052676c353c40ff73d06d4146e2d2b68d86255f423a9caa1424184a7171eb2",
+    "gateway_session_lease.go": "4215bcee5f04eab054bed3703b3b061a212706f15913d95c030ddbc3be89b104",
+    "gateway_websocket.go": "b435a7a1ac2f0a586f43a4a11e9c8b69fe5492ff1143f29a89831f579e42773a",
+    "store.go": "b6e0bb154cf1869971b6cd3cffd0741f3fc4017ac959fc8e156e3d3668d83eb1",
+    "admin.go": "d85288d9139e1baa8abda3a4aa4374b6a1ef79f55061d577eb22db55c81752f0",
+    "main.go": "9ae4b463c378abf2eb98405db46d1fa7278fcaf54bf1d9a5113627969140f5da",
+    "frontend/src/views/Settings.vue": "91a36aa5a15f17ac2cd86a4aaa931d6019320983356af5392413ff8c4ea27f81",
+    "go.mod": "12e51a0506c9e06e93526a7d818a0bdc7c5609850774b973b51c9a1e20a9e079",
+    "go.sum": "c953931186856c9a4fc07b616753db8f2875929998d1f12c58d76f7f6eb70a6c"
+  },
+  "references": [
+    "https://developers.openai.com/api/docs/guides/prompt-caching",
+    "https://developers.openai.com/api/docs/guides/websocket-mode",
+    ".local/codex-source-0.154.0"
+  ]
+}

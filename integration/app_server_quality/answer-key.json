@@ -1,0 +1,571 @@
+{
+  "schema_version": 1,
+  "private_evaluation_only": true,
+  "send_to_model": false,
+  "grading": {
+    "answer_extraction": "Take the last standalone line matching ^ANSWER=([0-9]+)$; other answers are formatting errors until manually reviewed.",
+    "scored_core_ids": [
+      "candy_explicit_shape",
+      "candy_variant",
+      "dice_conditional"
+    ],
+    "diagnostic_only_ids": [
+      "candy_original"
+    ],
+    "core_numeric_score": "One point per exact numeric answer, maximum 3. Report explanation validation separately; correct number alone does not establish valid reasoning.",
+    "explanation_requirement": "Candy: a valid guaranteed-success shape split AND a valid argument excluding every smaller split. Dice: conditional sample-space denominator and favorable numerator must be correct.",
+    "ambiguity_boundary": "The original wording says shapes are distinguishable by touch but does not explicitly say one may reject a candy without counting it as drawn. Under selective shape quotas the answer is 21; if shape cannot be controlled, or every touched/rejected candy counts, blind-draw worst case is 29. A reasoned 29 on the original alone is not evidence of lower model intelligence.",
+    "original_classification": {
+      "21": "Matches intended shape-selection interpretation; validate round=9 and star=12 or equivalent proof.",
+      "29": "Valid for uncontrolled-shape interpretation if stated; record interpretation mismatch, not unequivocal reasoning failure.",
+      "21_and_29": "Recognizes ambiguity; use final ANSWER for intended interpretation and preserve explanation in report.",
+      "other": "Incorrect under the two evaluated interpretations unless a different stated rule is independently justified."
+    },
+    "inference_limit": "These four small tasks are a paired smoke test, not an estimate of broad intelligence or proof of backend model identity. Compare same account, model, effort and fresh sessions, retaining full text and model metadata."
+  },
+  "answers": [
+    {
+      "id": "candy_original",
+      "expected_answer": 21,
+      "conditional_alternative_answer": 29,
+      "scored_core": false,
+      "enumeration": {
+        "capacity_order": [
+          "round.apple",
+          "round.peach",
+          "round.watermelon",
+          "star.apple",
+          "star.peach",
+          "star.watermelon"
+        ],
+        "capacities": [
+          7,
+          9,
+          8,
+          7,
+          6,
+          4
+        ],
+        "compositions_examined": 201600,
+        "shape_strategy_minimum": 21,
+        "optimal_shape_splits": [
+          {
+            "round": 9,
+            "star": 12
+          }
+        ],
+        "every_split_below_minimum_has_failure_witness": true,
+        "one_below_minimum_failure_witnesses": [
+          {
+            "round": 3,
+            "star": 17,
+            "composition": [
+              0,
+              0,
+              3,
+              7,
+              6,
+              4
+            ]
+          },
+          {
+            "round": 4,
+            "star": 16,
+            "composition": [
+              0,
+              0,
+              4,
+              6,
+              6,
+              4
+            ]
+          },
+          {
+            "round": 5,
+            "star": 15,
+            "composition": [
+              0,
+              0,
+              5,
+              5,
+              6,
+              4
+            ]
+          },
+          {
+            "round": 6,
+            "star": 14,
+            "composition": [
+              0,
+              0,
+              6,
+              4,
+              6,
+              4
+            ]
+          },
+          {
+            "round": 7,
+            "star": 13,
+            "composition": [
+              0,
+              0,
+              7,
+              3,
+              6,
+              4
+            ]
+          },
+          {
+            "round": 8,
+            "star": 12,
+            "composition": [
+              0,
+              0,
+              8,
+              2,
+              6,
+              4
+            ]
+          },
+          {
+            "round": 9,
+            "star": 11,
+            "composition": [
+              1,
+              0,
+              8,
+              7,
+              0,
+              4
+            ]
+          },
+          {
+            "round": 10,
+            "star": 10,
+            "composition": [
+              0,
+              2,
+              8,
+              0,
+              6,
+              4
+            ]
+          },
+          {
+            "round": 11,
+            "star": 9,
+            "composition": [
+              0,
+              3,
+              8,
+              0,
+              5,
+              4
+            ]
+          },
+          {
+            "round": 12,
+            "star": 8,
+            "composition": [
+              0,
+              4,
+              8,
+              0,
+              4,
+              4
+            ]
+          },
+          {
+            "round": 13,
+            "star": 7,
+            "composition": [
+              0,
+              5,
+              8,
+              0,
+              3,
+              4
+            ]
+          },
+          {
+            "round": 14,
+            "star": 6,
+            "composition": [
+              0,
+              6,
+              8,
+              0,
+              2,
+              4
+            ]
+          },
+          {
+            "round": 15,
+            "star": 5,
+            "composition": [
+              0,
+              7,
+              8,
+              0,
+              1,
+              4
+            ]
+          },
+          {
+            "round": 16,
+            "star": 4,
+            "composition": [
+              0,
+              8,
+              8,
+              0,
+              0,
+              4
+            ]
+          },
+          {
+            "round": 17,
+            "star": 3,
+            "composition": [
+              0,
+              9,
+              8,
+              0,
+              0,
+              3
+            ]
+          },
+          {
+            "round": 18,
+            "star": 2,
+            "composition": [
+              1,
+              9,
+              8,
+              0,
+              0,
+              2
+            ]
+          },
+          {
+            "round": 19,
+            "star": 1,
+            "composition": [
+              2,
+              9,
+              8,
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "round": 20,
+            "star": 0,
+            "composition": [
+              3,
+              9,
+              8,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "blind_draw_minimum": 29,
+        "blind_max_failure_composition": [
+          7,
+          9,
+          8,
+          0,
+          0,
+          4
+        ]
+      },
+      "upper_bound": "Take 9 round and 12 star candies. The 9 rounds include apple or peach. The 12 stars include both apple and peach. Hence the required cross-shape opposite-flavor pair exists.",
+      "lower_bound": "Failure regions in (r,s) are r<=8 OR (r<=17 AND s<=10) OR (r<=15 AND s<=11) OR s<=4. Every feasible r+s<=20 is inside their union. Exhaustive compositions verify this without relying on that algebraic derivation."
+    },
+    {
+      "id": "candy_explicit_shape",
+      "expected_answer": 21,
+      "scored_core": true,
+      "optimal_shape_splits": [
+        {
+          "round": 9,
+          "star": 12
+        }
+      ],
+      "explanation_reference": "Same upper and lower bounds as candy_original, with shape selection explicitly permitted. ANSWER=29 is incorrect for this prompt."
+    },
+    {
+      "id": "candy_variant",
+      "expected_answer": 20,
+      "scored_core": true,
+      "enumeration": {
+        "capacity_order": [
+          "round.apple",
+          "round.peach",
+          "round.watermelon",
+          "star.apple",
+          "star.peach",
+          "star.watermelon"
+        ],
+        "capacities": [
+          4,
+          8,
+          6,
+          9,
+          3,
+          5
+        ],
+        "compositions_examined": 75600,
+        "shape_strategy_minimum": 20,
+        "optimal_shape_splits": [
+          {
+            "round": 11,
+            "star": 9
+          }
+        ],
+        "every_split_below_minimum_has_failure_witness": true,
+        "one_below_minimum_failure_witnesses": [
+          {
+            "round": 2,
+            "star": 17,
+            "composition": [
+              0,
+              0,
+              2,
+              9,
+              3,
+              5
+            ]
+          },
+          {
+            "round": 3,
+            "star": 16,
+            "composition": [
+              0,
+              0,
+              3,
+              8,
+              3,
+              5
+            ]
+          },
+          {
+            "round": 4,
+            "star": 15,
+            "composition": [
+              0,
+              0,
+              4,
+              7,
+              3,
+              5
+            ]
+          },
+          {
+            "round": 5,
+            "star": 14,
+            "composition": [
+              0,
+              0,
+              5,
+              6,
+              3,
+              5
+            ]
+          },
+          {
+            "round": 6,
+            "star": 13,
+            "composition": [
+              0,
+              0,
+              6,
+              5,
+              3,
+              5
+            ]
+          },
+          {
+            "round": 7,
+            "star": 12,
+            "composition": [
+              1,
+              0,
+              6,
+              7,
+              0,
+              5
+            ]
+          },
+          {
+            "round": 8,
+            "star": 11,
+            "composition": [
+              2,
+              0,
+              6,
+              6,
+              0,
+              5
+            ]
+          },
+          {
+            "round": 9,
+            "star": 10,
+            "composition": [
+              3,
+              0,
+              6,
+              5,
+              0,
+              5
+            ]
+          },
+          {
+            "round": 10,
+            "star": 9,
+            "composition": [
+              4,
+              0,
+              6,
+              4,
+              0,
+              5
+            ]
+          },
+          {
+            "round": 11,
+            "star": 8,
+            "composition": [
+              0,
+              5,
+              6,
+              0,
+              3,
+              5
+            ]
+          },
+          {
+            "round": 12,
+            "star": 7,
+            "composition": [
+              0,
+              6,
+              6,
+              0,
+              2,
+              5
+            ]
+          },
+          {
+            "round": 13,
+            "star": 6,
+            "composition": [
+              0,
+              7,
+              6,
+              0,
+              1,
+              5
+            ]
+          },
+          {
+            "round": 14,
+            "star": 5,
+            "composition": [
+              0,
+              8,
+              6,
+              0,
+              0,
+              5
+            ]
+          },
+          {
+            "round": 15,
+            "star": 4,
+            "composition": [
+              1,
+              8,
+              6,
+              0,
+              0,
+              4
+            ]
+          },
+          {
+            "round": 16,
+            "star": 3,
+            "composition": [
+              2,
+              8,
+              6,
+              0,
+              0,
+              3
+            ]
+          },
+          {
+            "round": 17,
+            "star": 2,
+            "composition": [
+              3,
+              8,
+              6,
+              0,
+              0,
+              2
+            ]
+          },
+          {
+            "round": 18,
+            "star": 1,
+            "composition": [
+              4,
+              8,
+              6,
+              0,
+              0,
+              1
+            ]
+          }
+        ],
+        "blind_draw_minimum": 25,
+        "blind_max_failure_composition": [
+          4,
+          0,
+          6,
+          9,
+          0,
+          5
+        ]
+      },
+      "upper_bound": "Take 11 rounds and 9 stars. The rounds include peach because apple+watermelon rounds total 10; the stars include apple because peach+watermelon stars total 8. These form the required pair.",
+      "lower_bound": "Failure regions are r<=6 OR (r<=14 AND s<=8) OR (r<=10 AND s<=14) OR s<=5. If r+s<=19: r<=6 fails; 7<=r<=10 implies s<=12 and the third region; 11<=r<=14 implies s<=8 and the second; r>=15 implies s<=4 and the fourth."
+    },
+    {
+      "id": "dice_conditional",
+      "expected_answer": 166,
+      "scored_core": true,
+      "total_equiprobable_outcomes": 216,
+      "conditioned_outcomes": 91,
+      "favorable_outcomes": 75,
+      "probability": "75/91",
+      "proof": "At least one 6: 6^3-5^3=91. Exactly one 6: 3*5^2=75. The reduced fraction is 75/91, so a+b=166."
+    }
+  ],
+  "source_cases": "cases-fixed.json",
+  "correction_record": {
+    "original_files_preserved": true,
+    "changed_case_id": "candy_variant",
+    "old_prompt_issue": "可预定 did not require fixed quotas. Adaptive selection is allowed by that wording and has minimum 17. Original answer-key.json assumed fixed quotas and is not a valid numeric-only key for that old case.",
+    "corrected_rule": "The two shape quotas must be fixed before drawing and cannot be changed based on observed flavors.",
+    "old_prompt_adaptive_answer": 17,
+    "fixed_prompt_answer": 20,
+    "independent_minimax_evidence": "adaptive-verification.json"
+  }
+}

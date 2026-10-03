@@ -1,0 +1,54 @@
+{
+  "date": "2026-09-17",
+  "scope": "account_import_and_dialog_ui",
+  "production_deployed": false,
+  "provided_account_import": {
+    "frontend_parsed": true,
+    "preview_did_not_persist": true,
+    "admin_api_imported": true,
+    "credentials_preserved": true,
+    "concurrency": 50,
+    "priority": 1
+  },
+  "go_top_level": {
+    "pass": 169,
+    "skip": 28
+  },
+  "go_vet_passed": true,
+  "postgres_import_tests": {
+    "passed": 2,
+    "isolated": true,
+    "synthetic_credentials": true
+  },
+  "frontend_unit_tests": {
+    "passed": 40
+  },
+  "frontend_build_passed": true,
+  "browser": {
+    "passed": true,
+    "assertion_groups": 20,
+    "screenshots": 80
+  },
+  "modals": {
+    "passed": true,
+    "combinations": 96,
+    "screenshots": 96
+  },
+  "python_smoke_tests": {
+    "passed": 8
+  },
+  "real_cli": {
+    "passed": true,
+    "model": "gpt-5.6-luna",
+    "cli_version": "codex-cli 0.154.0",
+    "scope": "conversation_and_shell",
+    "http_status_counts": {
+      "200": 4
+    },
+    "report": "CODEX-CLI-IMPORTED-ACCOUNT-2026-09-17.json"
+  },
+  "credential_leak_scan": {
+    "checked_files": 141,
+    "leaks": 0
+  }
+}

@@ -1,0 +1,20 @@
+# 非限流错误修复
+
+用户截图时间范围为最近1小时，主类别为rate_limit、unknown、server_error。只读实测确认当前仍有错误，不把旧累计或流量减少当修复效果。
+
+用户明确“不增加等待，限流错误不用管”。本轮没有上线短冷却等待补丁，没有变更429、并发、重试或账号启用策略。早期bps-await.patch仅为已取消候选，禁止当成本次发布内容。
+
+修复了两个可复现问题：
+
+1. previous_response与session的账号归属冲突原先有分支只返回409，内部日志却落为upstream request rejected。现在记录具体冲突原因和gateway/session_binding，不改变owner校验。
+2. 完成阶段账号被管理操作禁用、删除或改变授权时，本地校验失败原先会成为JSON502或普通流直接断开，并错记为upstream/bps_protocol。现在JSON按实际本地403/503返回；已发HTTP200的SSE/WS保留真实HTTP状态并发送明确的response.failed终态，code=response_access_changed，日志gateway/authorization。不会伪造上游成功、放宽权限、跨账号迁移opaque历史或重发生成请求。
+
+回归覆盖HTTP JSON、SSE、structured输出、真实WebSocket和compact；上游原始用量仍持久化，失败结果不保存为成功历史。真实PostgreSQL从实际producer到新reader、detail、CSV/export均验证状态、来源和用量一致。首次PG回归发现一个旧测试仍期望response_validation，更新为真实authorization后精确候选复验通过。
+
+仍可能出现的503：会话绑定的原账号已停用或不再属于当前Key允许的组。只携带原账号加密状态时不能转移给另一账号；应恢复原账号或客户端发起新会话/完整可移植上下文。不能通过清空所有绑定或放宽授权把此类失败伪装成功。
+
+剩余两类400通过本地错误文案MD5精确匹配：990f08e5e56c9106281cf4c4abb1eed8是不支持的service_tier（当前允许auto/default/null）；ebe1f8ca3cf12feaaf8d67801f4f94e1是store:true永久保存请求。BPS不支持这些明确能力，未发现JSON解析缺陷。调用方使用store:false和service_tier:auto/default；本轮没有静默降低指定服务等级或虚假承诺永久保存。
+
+最终错误release：4bc30e5f802fb038304b97f4b7caf7f0abdbfa3ae650284245d2409072b7367a，binary814ea54328a9aa411820f78ffdd7417017b6f4636fce0d6a9ecfb34f15bcc60b。缓存率功能与有限Redis缓存保持。
+
+证据：.local/error-repair-20260930/bps-local-failure-validation.json、.local/redis-history-storage-test/20260930T113401.651216Z/report.json。只读重跑：python .local/error-repair-20260930/read_capacity.py。

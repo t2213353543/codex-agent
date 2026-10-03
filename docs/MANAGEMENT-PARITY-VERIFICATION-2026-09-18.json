@@ -1,0 +1,111 @@
+{
+  "schema": "codex-agent-management-parity-verification-v1",
+  "completed_at": "2026-09-17T21:12:51.781658+00:00",
+  "status": "verified_management_candidate",
+  "full_reference_parity": false,
+  "deployed": false,
+  "scope": "Codex accounts and usage-log management, preserving the restored blue shell; gateway behavior owned by separate workstream",
+  "go_source_sha256": "8878b6da648605146d9e6c3929b132e2fd46cdc88209c18ed0ad157f537cd60f",
+  "source_archive": ".local/management-parity/linux-race-20260917T210738-48b22e/source.tar.gz",
+  "source_archive_sha256": "7e23483bd07345bf1ed5912100af2a76171b29460639dbb5d789e9d54553af05",
+  "linux_binary": ".local/management-parity/linux-race-20260917T210738-48b22e/codex-agent-linux-amd64",
+  "linux_binary_sha256": "c6d171d23e2523627b8a1f9c16475535d62fd3c9130bd12cccfe8b7b980ae863",
+  "checks": {
+    "management_linux_race": {
+      "passed_top_level": 54,
+      "passed_events": 70,
+      "failed": 0,
+      "skipped": 0,
+      "actual_isolated_postgres_redis": true
+    },
+    "full_go_test": {
+      "pass": 318,
+      "skip": 61,
+      "fail": 0
+    },
+    "full_go_test_events": {
+      "pass": 812,
+      "skip": 66,
+      "fail": 0
+    },
+    "go_vet": "pass",
+    "windows_amd64_build": "pass",
+    "linux_amd64_build": "pass",
+    "frontend_unit": {
+      "passed": 102,
+      "failed": 0,
+      "skipped": 0
+    },
+    "accounts_browser": {
+      "passed_groups": 26,
+      "errors": 0,
+      "synthetic_api": true
+    },
+    "logs_browser": {
+      "passed_groups": 20,
+      "errors": 0,
+      "synthetic_api": true
+    }
+  },
+  "frontend": {
+    "file_count": 54,
+    "build_manifest_sha256": "d7e2fd3de502ac63aeaa9f994a5d6293f3000a101009be4caad0325145aa948d",
+    "source_matches_build": true,
+    "entries": {
+      "Accounts": "accounts-managed-AJ1IN3_r.js",
+      "Logs": "logs-managed-CQbXepWE.js"
+    },
+    "unchanged_baseline_resources": 48,
+    "archive": ".local\\management-parity\\frontend-d7e2fd3de502.zip",
+    "archive_sha256": "737e30fbc657cbb2a867db8e139082bd4a531b53d5d890658683f6d5778bf64a",
+    "deployed": false,
+    "archive_contains": "Exactly 54 static files; build/source evidence is provided separately."
+  },
+  "limits": [
+    "Management Linux race used synthetic records and fake upstreams in isolated PostgreSQL/Redis; no production inference or credit consumption.",
+    "Full local Go suite intentionally omitted external test environments; 61 top-level/66 event skips remain visible. Management PG coverage passed separately on the same archive.",
+    "The frozen Go archive includes separate gateway/settings owners' shared changes. Management race and full tests are not a replacement for those owners' final gateway acceptance.",
+    "Account runtime parity gaps include per-account fingerprint/model mapping, quota-based scheduling, Spark parent-child semantics and agent private-key request authentication; see account matrix.",
+    "Usage observation gaps include separate sent/returned model chain, endpoint chain, phase timings, bounded retry history, truncation markers and trusted GeoIP/multimodal sources; see usage matrix.",
+    "Pricing is explicit reference USD pricing, not subscription debit or user balance; unavailable historical fields remain unknown.",
+    "Deployment requires reviewed additive migration 003 and coordinated release; current production was not changed."
+  ],
+  "evidence": [
+    {
+      "path": ".local/management-parity/linux-race-20260917T210738-48b22e/source-manifest.json",
+      "sha256": "a8ac78a0829e1589ee4ebd0775f3c5b4b96de5119729608b6fb6422d4779f903"
+    },
+    {
+      "path": ".local/management-parity/linux-race-20260917T210738-48b22e/source.tar.gz",
+      "sha256": "7e23483bd07345bf1ed5912100af2a76171b29460639dbb5d789e9d54553af05"
+    },
+    {
+      "path": ".local/management-parity/linux-race-20260917T210738-48b22e/report.json",
+      "sha256": "027ec6c9115deb9de62c406b45968af9446021df412649c170b6001d8eaf3e05"
+    },
+    {
+      "path": ".local/management-parity/linux-race-20260917T210738-48b22e/local-verification.json",
+      "sha256": "09bc9808058d2d3ac47b89093adafbefeb68a5557ff4294aa38508faa8bd50aa"
+    },
+    {
+      "path": ".local/management-parity/linux-race-20260917T210738-48b22e/frontend-build-manifest.json",
+      "sha256": "d7e2fd3de502ac63aeaa9f994a5d6293f3000a101009be4caad0325145aa948d"
+    },
+    {
+      "path": ".local/management-parity/linux-race-20260917T210738-48b22e/frontend-release.json",
+      "sha256": "3874195c306c43f30e6c838c75a88ffa6f08ac400b6c0a5c78aacf2eff818f28"
+    },
+    {
+      "path": ".local/management-parity/linux-race-20260917T210738-48b22e/accounts-browser-report.json",
+      "sha256": "d401eabf51c82c17b2e4788bbe9da5be1eae8b76beed5ca7d5f70b597931275f"
+    },
+    {
+      "path": ".local/management-parity/linux-race-20260917T210738-48b22e/logs-browser-report.json",
+      "sha256": "a21ee49f7fab27389b166548697dffaf5c061805d839b2bdeae082a100963f8a"
+    },
+    {
+      "path": ".local/management-parity/linux-race-20260917T210738-48b22e/frontend-unit-tests.log",
+      "sha256": "0b2eb654328fb5bd3ab9956ac6e599a2b98fa7debe455a96d2f93c308c3bd23f"
+    }
+  ]
+}

@@ -1,0 +1,937 @@
+{
+  "schema": "codex-management-candidate-v2",
+  "status": "verified_management_candidate",
+  "completed_at": "2026-09-18T07:21:00.104538+00:00",
+  "iteration": "account-status-20260918",
+  "deployed": false,
+  "full_reference_parity": false,
+  "previous_candidates_unchanged": true,
+  "billing_enabled": false,
+  "retired_suites_counted_as_passed": false,
+  "separate_owner_changes": [
+    "The frozen Go snapshot includes independently owned native startup/transport/WebSocket changes, not certified here for their external runtime release."
+  ],
+  "go_source_sha256": "3b8d4b0ed15c677469fa69deb907d2ecd3a7f4de910cd2a1d615d5f578c3a29a",
+  "go_source_files": 234,
+  "source_archive": ".local/management-parity/local-race-20260918t071407-edcbb1/source.tar.gz",
+  "source_archive_sha256": "40d56f2b123136d987c2f121a5a8bd870d2118fb19b3368a6f50b12040dffe12",
+  "binaries": {
+    "codex-agent-windows-amd64.exe": {
+      "path": ".local/management-parity/local-race-20260918t071407-edcbb1/codex-agent-windows-amd64.exe",
+      "sha256": "885f97cda2d9dcb594e935570b06a221c0b80c098b5ab25eb06115cd74d5f330",
+      "size": 15745024
+    },
+    "codex-agent-linux-amd64": {
+      "path": ".local/management-parity/local-race-20260918t071407-edcbb1/codex-agent-linux-amd64",
+      "sha256": "8ac55898eb667c9479e7135ba2d13756226cc788c1835cbde63869198363eb0b",
+      "size": 15311010
+    }
+  },
+  "frontend": {
+    "manifest_sha256": "4a29cbad22816256db72146b5cf2674b14114afbda8708ac9aeb91b6c29adf11",
+    "frontend_sha256": "6c035d6bbf0662bacdfdc6e5d3793383cc708eb70df1780e61224f2caa861528",
+    "source_aggregate_sha256": "ff7cd73258d8e58cde2e5e20e3b0a52f9f541013fe811d19aa6fa814ccad4eae",
+    "entries": {
+      "Accounts": "accounts-managed-CpksNcOR.js",
+      "Logs": "logs-managed-bq7eOFdN.js"
+    },
+    "file_count": 54,
+    "source_file_count": 65,
+    "unchanged_baseline_resources": 48,
+    "archive": ".local/management-parity/account-status-20260918/frontend-4a29cbad2281.zip",
+    "archive_sha256": "e04d2736039c1148bc00cccfaabd1e8b78d3072940157703d47c114becde77c6",
+    "source_archive": ".local/management-parity/account-status-20260918/frontend-source-4a29cbad2281.tar.gz",
+    "source_archive_sha256": "70d243fb08ea16279998c308734cf1df6645ef9f81015d157de6870beebde2f8"
+  },
+  "checks": {
+    "management_linux_race": {
+      "pass": 104,
+      "skip": 0,
+      "fail": 0
+    },
+    "management_linux_race_events": {
+      "pass": 311,
+      "skip": 0,
+      "fail": 0
+    },
+    "full_go_test": {
+      "pass": 463,
+      "skip": 110,
+      "fail": 0
+    },
+    "full_go_test_events": {
+      "pass": 1213,
+      "skip": 123,
+      "fail": 0
+    },
+    "vet": "pass",
+    "windows_build": "pass",
+    "linux_build": "pass",
+    "frontend_node": {
+      "tests": 150,
+      "pass": 150,
+      "fail": 0,
+      "skipped": 0
+    },
+    "accounts_browser_groups": 55,
+    "logs_browser_groups": 42,
+    "browser_network": "isolated synthetic API",
+    "screenshots": {
+      "accounts": 48,
+      "logs": 146
+    }
+  },
+  "preview_evidence": "Published separately by the local preview owner; no preview directories or credentials read by this packager.",
+  "limits": [
+    "Environment-dependent Go skips remain separate from passes.",
+    "Historical missing observations remain unknown.",
+    "Error severity is not implemented and is not counted as completed.",
+    "No deployment, rebuild, service change, upstream request or user data deletion performed."
+  ],
+  "evidence": [
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-batch-reauthorize-1440.png",
+      "sha256": "53c17602fc875446778fbcdbc9ddedfc576556f3efbcd52178daab715c481ce6"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-controls-1440.png",
+      "sha256": "99200b14189f4adc8d01fd1940e26c4d6f75fb5334feb745aa9c9f0817ad9317"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-controls-320.png",
+      "sha256": "eaf426bcf93d9a8e3fd58273e124f46947862fda12f9af424b2d94abed4cacab"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-crs-1440.png",
+      "sha256": "b2e86b36f4f8b4f800926aceaf340b5962ef2c6174431a28e40059555e38cc8c"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-resource-restore-1440.png",
+      "sha256": "c4a67027e9f0e0e5e46752d0f8b1c1fc4abd69ce76482f61dd70444d75a4b30e"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-resource-restore-320.png",
+      "sha256": "d2c4cf0e559219345df2fa3acf3b03e7da62e6c582bff25f1fb0598ddad4b549"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-runtime-1440.png",
+      "sha256": "45496d4ddb289a8a9356cb10569bb82236f1c7459ea7339c5ef1cffdbae88969"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-runtime-320.png",
+      "sha256": "118d561795809f68b859d261a5cc0639b8e3e63a3de69c20e7a8a8d0fd7c718f"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-runtime-policy-1440.png",
+      "sha256": "bc25f3ce2fc18e6f1f293557d21a83bd1442f0b7b85430aaadb3cb50e06c3c85"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-runtime-policy-320.png",
+      "sha256": "b4778df49df3605b20e3cc2846c6b83d5a01f4c10c3258ca952b47a87c8db25c"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-schedules-1440.png",
+      "sha256": "ae5ca2e69418c515f4e9f37a9d6e53c61f76f36948447dd409ab8bf00c624ec0"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-schedules-320.png",
+      "sha256": "02d0e898720f8f4cf388bcc9d266c0da787620da632079628e6b2d0abf36afbe"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-statistics-1440.png",
+      "sha256": "84cc26281e1be4553755ce229343c121e0a4c31fc8417d3c3ce4a36f6ee25df3"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-usage-summary-dark-1440.png",
+      "sha256": "7e1335245017034e7f030230f53efd6d1d01e36f31fdb95d52506dbd31d5fa38"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-usage-summary-dark-390.png",
+      "sha256": "52f3a682090f7c150994831c7cb8e3f561a830e5d5ee1059e49c48a15b05cd06"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-usage-summary-light-1440.png",
+      "sha256": "96fa12b5d7246da679f9bea0c0f6332f8874f869dd26045f24a95c72caa2baa6"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-usage-summary-light-390.png",
+      "sha256": "d474350fe53fb9d93f4f989734eb162047dac0000558b938c7bbb384bf7bb23c"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-usage-summary-mint-1440.png",
+      "sha256": "96fa12b5d7246da679f9bea0c0f6332f8874f869dd26045f24a95c72caa2baa6"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-usage-summary-mint-390.png",
+      "sha256": "d474350fe53fb9d93f4f989734eb162047dac0000558b938c7bbb384bf7bb23c"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-usage-summary-ocean-1440.png",
+      "sha256": "96fa12b5d7246da679f9bea0c0f6332f8874f869dd26045f24a95c72caa2baa6"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-usage-summary-ocean-390.png",
+      "sha256": "d474350fe53fb9d93f4f989734eb162047dac0000558b938c7bbb384bf7bb23c"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-usage-trend-dark-1440.png",
+      "sha256": "e0a117880f27e72b2da33e4f12447bf2944ac6603b6378c424768e543faf6c32"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-usage-trend-dark-390.png",
+      "sha256": "40617061d65bda8e42f4ea73ddcaf153f45a46af8efb4bbc9b3fa9ca9fdde5ba"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-usage-trend-light-1440.png",
+      "sha256": "0df0a252ac5c6b27891b6f98b158d49ab7432543d4fb8d1e757c1117bf319579"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-usage-trend-light-390.png",
+      "sha256": "1000f649be359f0ba358ee7175f557d0c7594d64efb06b2ed22610cf853ef5ab"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-usage-trend-mint-1440.png",
+      "sha256": "0df0a252ac5c6b27891b6f98b158d49ab7432543d4fb8d1e757c1117bf319579"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-usage-trend-mint-390.png",
+      "sha256": "1000f649be359f0ba358ee7175f557d0c7594d64efb06b2ed22610cf853ef5ab"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-usage-trend-ocean-1440.png",
+      "sha256": "0df0a252ac5c6b27891b6f98b158d49ab7432543d4fb8d1e757c1117bf319579"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/account-usage-trend-ocean-390.png",
+      "sha256": "1000f649be359f0ba358ee7175f557d0c7594d64efb06b2ed22610cf853ef5ab"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/external-lease-expired-confirm-320.png",
+      "sha256": "9a4ff480f16d9ff134abab89573b4e17b9429674562258a51d42e1470bc26260"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/external-lease-independent-receipt-dark-1440.png",
+      "sha256": "e1641437d16c80674dede31833a713e9816658a6642c0b4885d8700515754e7a"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/external-lease-independent-receipt-dark-390.png",
+      "sha256": "79c712849845f716313c067244a0972a66f92e3e3a248c960f8e213aba215aec"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/external-lease-independent-receipt-light-1440.png",
+      "sha256": "95d71ed4ec03c03e19779023f5e20adf3cd0160bc3ecc475004a1f72362a188f"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/external-lease-independent-receipt-light-390.png",
+      "sha256": "203b247d145349857bfdfb4391a7caf82df78bf79257a44b566645b5305629b0"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/external-lease-independent-receipt-mint-1440.png",
+      "sha256": "54ae8ff4e65d63afc7703c594611bb9bc49b92ddc7bc2438475b0f1ff2a61948"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/external-lease-independent-receipt-mint-390.png",
+      "sha256": "52ff26cc015e191797112f43fc68a7e10ef51ef7d78157cce3eafe984595b26b"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/external-lease-independent-receipt-ocean-1440.png",
+      "sha256": "722a4caa035b8cba85e99fb05ffe5b0bdfab2e6ee733b9cbcc0cb0577306f9ff"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/external-lease-independent-receipt-ocean-390.png",
+      "sha256": "bc7e394840df9c8307e87b84e73ce2f85ce6a25d583124dd17343afb9733d2e2"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/external-lease-preview-dark-1440.png",
+      "sha256": "b8d1c58fa21240f92332ac030b7279d2ae3d375611596935332b958012cfde11"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/external-lease-preview-dark-390.png",
+      "sha256": "ab4bf16d929d379cc23781e64d6a1754c88b38868a4f14c2f5e864d9af584a0c"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/external-lease-preview-light-1440.png",
+      "sha256": "fd4db1763389b44791c2cdabc7adceaaf015d6094e674299e9a4ea665ec92128"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/external-lease-preview-light-390.png",
+      "sha256": "db68588270a847a6b34bfb2847db03c22c18fc9c854f8938cebf1bfa03cec52e"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/external-lease-preview-mint-1440.png",
+      "sha256": "fd4db1763389b44791c2cdabc7adceaaf015d6094e674299e9a4ea665ec92128"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/external-lease-preview-mint-390.png",
+      "sha256": "db68588270a847a6b34bfb2847db03c22c18fc9c854f8938cebf1bfa03cec52e"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/external-lease-preview-ocean-1440.png",
+      "sha256": "fd4db1763389b44791c2cdabc7adceaaf015d6094e674299e9a4ea665ec92128"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/external-lease-preview-ocean-390.png",
+      "sha256": "db68588270a847a6b34bfb2847db03c22c18fc9c854f8938cebf1bfa03cec52e"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/lease-backup-ready-1440.png",
+      "sha256": "0ecf04b4ba41f4ad5963405bf51713d2b28291b32af27666337e8c2f609fa102"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/lease-backup-ready-320.png",
+      "sha256": "99ac0d44b1ad492b03646788338202facf35f65329a95d8d3e7c273a88b1159e"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/account-browser/report.json",
+      "sha256": "910767c56f50c8f7c067f70337bc6f0df8f3b1103f63b996b307c35e12cfb294"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/accounts-no-billing-verification.json",
+      "sha256": "b0af2225640b225499e01644c73c6554f4ec04e97ef171a1273c3262d3cb5c6d"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/build-manifest.json",
+      "sha256": "4a29cbad22816256db72146b5cf2674b14114afbda8708ac9aeb91b6c29adf11"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/frontend-unit-report.json",
+      "sha256": "2a10f73477f94055d06ea782ee4f4a89a85b768ea4f662f732d038bc658bff4b"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/frontend-unit.tap",
+      "sha256": "4d4220c8803cdc096cb5b83a98586290a4f23fbbf2a7bb4b0fc153ba9d52fab7"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/error-review-list-dark-1440.png",
+      "sha256": "e672b2c9aded35741df19997f49b69eff2f12fd33e2226e2adad339a660c80a1"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/error-review-list-dark-390.png",
+      "sha256": "f3ddd64790a21956555798c63eeb2dfcdad0edae817fd6b096a2f06a5baedc08"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/error-review-list-light-1440.png",
+      "sha256": "27a1d14909bf3b0a386526e6e97b893c786cbc986de9c86897b1172c343035a6"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/error-review-list-light-390.png",
+      "sha256": "9d7a66dbb27004be8900708e971bcf16799180138e9cefb951580f731809c491"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/error-review-list-mint-1440.png",
+      "sha256": "1c9d7e3ac080f261931957080bdd5e045a3ab3b8916acf40e432768f80a2db65"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/error-review-list-mint-390.png",
+      "sha256": "5488027c8f4d8b88ca4427f05373481bd3d1a27f8224c437d5437c9a09c8f8ee"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/error-review-list-ocean-1440.png",
+      "sha256": "45ae3c26d5642f0b1607a533c151dc48a2c67e606601ed621b18bc029b18752f"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/error-review-list-ocean-390.png",
+      "sha256": "6ac86c514668be55da4714ae318919c1b2bbee45193717136c20907b62f5ea95"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/error-review-panel-dark-1440.png",
+      "sha256": "3186966d11e3279ea1303f03fb9875767e8615137107cb79d4a033952aab1d2d"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/error-review-panel-dark-390.png",
+      "sha256": "e35615cc022c939e47a2a5b7d9639cca4e95ac8ee93b91717da2af8862496768"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/error-review-panel-light-1440.png",
+      "sha256": "5afe3f6963a6e0d2a3b5826a1d2158613bd9a9cbd03ce0185b406ab3e1c27d83"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/error-review-panel-light-390.png",
+      "sha256": "ca1cdac8c64a695d08d7cc3451e32f93ea322904527b069065b23ad95f6a8e6b"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/error-review-panel-mint-1440.png",
+      "sha256": "950ac89764a4d74226ab16326acc3fef1ab5b587e36d3d54e8b6e294fff87a1b"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/error-review-panel-mint-390.png",
+      "sha256": "6937786359cb2767395cd1f24781ac5b5ed408495a0b633eb7e0fe81e345e810"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/error-review-panel-ocean-1440.png",
+      "sha256": "478c117d2280dafb156897cc9bfa9aecc61e9d597fd10c6c2e2fb325a96e96bc"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/error-review-panel-ocean-390.png",
+      "sha256": "8ad941ff820bdf59aa32d60c8bb96cc9c13a4e67ade9c3b5cb5b58c66b4afc88"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/geo-batch-dark-1440.png",
+      "sha256": "5001c4ab8cdd1f74f724ffacfcf63a44b276a2e40c02a633c881c085d27ed83f"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/geo-batch-dark-390.png",
+      "sha256": "a4ff7be7599d8658d30a8bf31f5e3433a40ecda1980d1306d6878e2e526b0f5e"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/geo-batch-light-1440.png",
+      "sha256": "751eaa64b264639e18f8cbdc5bcbb9485a7a44117c6db5f2168e5a64dd8a45d4"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/geo-batch-light-390.png",
+      "sha256": "bfc4974d25eae0958766a6092f0fffd418d31b3a37962ba86221a57ee6e06ecd"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/geo-batch-mint-1440.png",
+      "sha256": "71ced4f07773e6224ec10e6ec4a7d3f8fc2cc978aba83504338143ecd21308f9"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/geo-batch-mint-390.png",
+      "sha256": "16c768b891a23e789a962cc9d8afb92de63118c822c4baf18152393e4eb3d074"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/geo-batch-ocean-1440.png",
+      "sha256": "f08bb14109521ca6a799a7f69ee8552ff6f0dfd2d5487cdd98c084b8cebffc15"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/geo-batch-ocean-390.png",
+      "sha256": "a74a628ef8b6eac6c0b0cdd2aaf63cb56bcd36cd057cdfff32923deb4d2feae2"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/geo-detail-dark-1440.png",
+      "sha256": "e4bae3e08bb293f44cd00c0bed875c2a2046d925da6831bb092157df51d31762"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/geo-detail-dark-390.png",
+      "sha256": "ad3313711060770df11e3c8ed88283193e5a234fa47aa1ad1bcf4ec4187a842e"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/geo-detail-light-1440.png",
+      "sha256": "d891e62d7ae0dcf38892fdecb7211140ad35ab5c5170e7e4c568062ecf8ff7f2"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/geo-detail-light-390.png",
+      "sha256": "c9948e72d7afffa7bae940b688114aa6c5c015790fecc7f7b8a52e3ddb5ebcb5"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/geo-detail-mint-1440.png",
+      "sha256": "b65bdc9b16f9174b79c14c222f13809b2bdabdff6ae3474a499b88a3ece2d72b"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/geo-detail-mint-390.png",
+      "sha256": "98ef2925ecbf694dda429e3dc22c96c1ae08b6c160f9b379fcf01a217ec80ba0"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/geo-detail-ocean-1440.png",
+      "sha256": "4e0b6f5eb396a2bb65196c0e12d5fcd53cdbd87ac910d55bdb7d92597072d75b"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/geo-detail-ocean-390.png",
+      "sha256": "e865764ea35b19e7525992308ed1b724643b85a42c2f01722f547b2610409a41"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-analysis-1440.png",
+      "sha256": "6a1a71a53ae2d84ae294d5d951ad92d21c3dfe38e4deda3bc0660be1aac9060d"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-card-320.png",
+      "sha256": "1b1f1055f684c1dc6aa81541d7632a34c371bc2562a2899c0c7cd698a51cbaae"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-card-390.png",
+      "sha256": "4fe780feb6bd973cf569d33bf099de8ffda91d48244b49e2cbb92928b3b4dd07"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-cleanup-1440.png",
+      "sha256": "5a288a6ba069464315895534aeae57000e32bc5b94e3768762ab187e5fb1f46a"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-cleanup-390.png",
+      "sha256": "ba87bd2870e238924206246a02d27884b6352c9742f00c80b1ccdd329d3ab2d0"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-ip-geo-390.png",
+      "sha256": "c9948e72d7afffa7bae940b688114aa6c5c015790fecc7f7b8a52e3ddb5ebcb5"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-ip-geo-batch-320.png",
+      "sha256": "aa59d7a5433bb74abc68ee4453ac22f38cf08b42fac77e5e1049ac9d539e1cef"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-management-1440.png",
+      "sha256": "e60ac97a1ac5ec2e29a10ff250eb39e82387f70070831b246ca7f6997740d6b7"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-management-320.png",
+      "sha256": "c316d35523bb21fafd913b222f5e2886c42cd57587cd862a0fecce5db2bfb15a"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-management-390.png",
+      "sha256": "0ccba0b9e99d38f572557620dd9a980d7308d8eba2e75e4d42313ea1cb97ac78"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-operational-ranking-dark-1440.png",
+      "sha256": "fb1e8a14af3f7c87f86453acf8b06971c416e747bfe0f7464e9ea8a46ea9e279"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-operational-ranking-dark-390.png",
+      "sha256": "e33ac3cb64276bf5a0ff1064819705793c1bb12e49987f13039a8fe62dad55d3"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-operational-ranking-light-1440.png",
+      "sha256": "5171958b0d4e58bcbc035d12c1902e2aea32a240aa2e88ea26d61fd27977c782"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-operational-ranking-light-390.png",
+      "sha256": "abaac03b11e4af991888fd8b4c34a4b6cbc731d294307c83fe7ac295651a19f1"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-operational-ranking-mint-1440.png",
+      "sha256": "3d752704e22f57e0a46cbe8d1f6e4f138c10dace47a1c0599bffe1c483e54a31"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-operational-ranking-mint-390.png",
+      "sha256": "77632b4e47912f6b03410e289dd45ecee7636b8232eaa6c2cf16a1493346e418"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-operational-ranking-ocean-1440.png",
+      "sha256": "d8d5acfc0406df840467da54f84081a9fd7c26cceaf167dbb25fe38a800f7146"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-operational-ranking-ocean-390.png",
+      "sha256": "4dccd12a76bad3cb2bc8a6993a60b6f794116ceff243b392d2501ebab782f10e"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-operations-only-dark-1440.png",
+      "sha256": "998e58a3029704e2793462fc30df6447b1d8363060e4d74b7b2d06e43bb772b5"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-operations-only-dark-390.png",
+      "sha256": "36e02cc161aeb2e0c6ff7631a123f2b1fe5b035bd7f308a08c2867643b424881"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-operations-only-light-1440.png",
+      "sha256": "94e4772d33423c7419a99ab3b978a5bb8613751f81bdb433df9da86a37a5c59a"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-operations-only-light-390.png",
+      "sha256": "3dca8c3c72a324ca760064b72481a0c14d08532dba965d7c81f8f6709f4ffc7e"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-operations-only-mint-1440.png",
+      "sha256": "a5652eb4cc336702d48a16e8280e593275d5202c72f5e884e8e01fa0ff4168df"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-operations-only-mint-390.png",
+      "sha256": "2e38e12cb6140f566b2a78a82f798a2ed2536d01044ac26a607c0d3fa17bf7af"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-operations-only-ocean-1440.png",
+      "sha256": "1c23a21d1d297c4cecaecd89bc45a69d3411a013c4d9bfb868614943ba20d276"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-operations-only-ocean-390.png",
+      "sha256": "aceed02fad90f6a569ed214c72d2c75b53ab798b47c6b7dea9dd6426c81d92d4"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-review-list-320.png",
+      "sha256": "0a56bb93a98e8dde539e86ef0dd862b1da7abecb6a653bdec2d34a3a3c16f53a"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-review-list-390.png",
+      "sha256": "1d1eacd097f3c78924115e32c16d5d14f4590e62432a642712219da6f2079266"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-review-panel-390.png",
+      "sha256": "c1026d76a35ace45d721883fc0bddf03bd0a5116bddb3eda64c7285a1cc44359"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-shell-dark-1440.png",
+      "sha256": "20711c02eb66ee14d24f4352791779e88ccdef7dc140bb565f3d31364bf7153b"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-shell-dark-390.png",
+      "sha256": "399df5b56655b0de0376a92b31b323bf79595acefac35ae4e2658a05e293f77b"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-shell-light-1440.png",
+      "sha256": "e60ac97a1ac5ec2e29a10ff250eb39e82387f70070831b246ca7f6997740d6b7"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-shell-light-390.png",
+      "sha256": "0ccba0b9e99d38f572557620dd9a980d7308d8eba2e75e4d42313ea1cb97ac78"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-shell-mint-1440.png",
+      "sha256": "dbe13eaf842468579a41f086d70bf2139612db43d323309f8bba413ad2057c56"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-shell-mint-390.png",
+      "sha256": "40feaa4e9a2ce42e597e7486d0e281da1896837c796e3b1853912a73f330b902"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-shell-ocean-1440.png",
+      "sha256": "d3e96fc12ad63b0fca8764639fa73027da32887d8088e59a778c17c019b4bfaf"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-shell-ocean-390.png",
+      "sha256": "2f40ad857681c1b029ca199d413a56162f0c1e17ee2a1c46ff4e63fdddc5daa8"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-usage-coverage-ranking-dark-1440.png",
+      "sha256": "bbd569022e8e9e707bab34b577b597d6d92e6095ab3cb8265740c08b9f195c0f"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-usage-coverage-ranking-dark-390.png",
+      "sha256": "4f3f013af92a0f6292146cf6c150fd0e29cdcf10a65dcff99ae69a4e1a468c48"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-usage-coverage-ranking-light-1440.png",
+      "sha256": "f5be290222b3118281d99eb56572e86640b1f280720d28b0a72ffd8c0472dfda"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-usage-coverage-ranking-light-390.png",
+      "sha256": "967fd8f06f42c8d6e2d872f01ba6c5d24cbaae5df2d2e2700db5145a48194af1"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-usage-coverage-ranking-mint-1440.png",
+      "sha256": "fa6cf02767a9223d7d04b3828391355b6f2c1859651221ff7713f6e6c10c96ff"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-usage-coverage-ranking-mint-390.png",
+      "sha256": "47094d44cce94ecc94ab230c153c68463cc74dfff708fd1b1a3cff2d08097955"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-usage-coverage-ranking-ocean-1440.png",
+      "sha256": "cdb9ddd44bb9a03c939db8e095c56f555b35e31450f73f3fb7f5edbcecde257d"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-usage-coverage-ranking-ocean-390.png",
+      "sha256": "137b74c26b831e0c8ae9cad1a7b35ec2adc70f4e1c7b8d7e834ba096dffd2176"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-usage-coverage-trend-dark-1440.png",
+      "sha256": "c030d7e563c594727d2270cd0b3cfc738ed2276babd05b87e41d1f04d6d725ea"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-usage-coverage-trend-dark-390.png",
+      "sha256": "ad449d8908a06a055f975577c5d90ddc88eda0fe002c5d9371d14c3b7587b8ff"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-usage-coverage-trend-light-1440.png",
+      "sha256": "228ad21de9156e64208ac6cdb230f78695c0604809101fb1bbb641d46d63a1b5"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-usage-coverage-trend-light-390.png",
+      "sha256": "ee4db769856db1b24e28d244e2d7d4e31b0a8110bcba9000f9d89396378512b8"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-usage-coverage-trend-mint-1440.png",
+      "sha256": "75bd0faf88f5647b63b8b58454bab62985a99cfb0f09897f6d58966bb5c09012"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-usage-coverage-trend-mint-390.png",
+      "sha256": "42abf3835c5d00913c737008b097e88b4cc81106d18c249c26958f285a36a525"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-usage-coverage-trend-ocean-1440.png",
+      "sha256": "9438008d4e48366032f3b1e8819016c7b1e6f1e5c7d3ddbd3db9a30dfaff4d70"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/logs-usage-coverage-trend-ocean-390.png",
+      "sha256": "ebf851b05b354c6752d26c35f48dddb0c7b38bc743ee776379e1d42954a94f3a"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-mobile-column-320.png",
+      "sha256": "8d47c6b7ba748d141a84b955380c38cb388c2b8e9eff067be2b1f10d92128cd6"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-mobile-column-dark-390.png",
+      "sha256": "75802ed4b6518ed69c57c2fbac390c70cf176a6d77c9a9fd13453574dd175614"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-mobile-column-light-390.png",
+      "sha256": "e7ebd2a4a73a47066233a003ac97f4807ff40a6eae0034513fd40ed19688185e"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-mobile-column-mint-390.png",
+      "sha256": "e7ebd2a4a73a47066233a003ac97f4807ff40a6eae0034513fd40ed19688185e"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-mobile-column-ocean-390.png",
+      "sha256": "e7ebd2a4a73a47066233a003ac97f4807ff40a6eae0034513fd40ed19688185e"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-model-chain-dark-1440.png",
+      "sha256": "6a2638ab3bb03895838c10f1865a556b838ef8e838bb9d29e541a24a35b3755e"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-model-chain-dark-390.png",
+      "sha256": "de9983e828c8580fb3adec5759ae05caf2586a31d6e81cc0a7c649786fd9e5d7"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-model-chain-light-1440.png",
+      "sha256": "71d2d3adb71b9da27ae157b864edac2911337839126fd98f3f44729d4e8ece9c"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-model-chain-light-390.png",
+      "sha256": "45ea4ba7622c6624480d4604c336ccd3324079182e7d8a3df45c80db95310745"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-model-chain-mint-1440.png",
+      "sha256": "71d2d3adb71b9da27ae157b864edac2911337839126fd98f3f44729d4e8ece9c"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-model-chain-mint-390.png",
+      "sha256": "f593553f2d280e3581e7a4ad24fcab1cec6717e2d9b65d186888b645e5952932"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-model-chain-ocean-1440.png",
+      "sha256": "71d2d3adb71b9da27ae157b864edac2911337839126fd98f3f44729d4e8ece9c"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-model-chain-ocean-390.png",
+      "sha256": "f593553f2d280e3581e7a4ad24fcab1cec6717e2d9b65d186888b645e5952932"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-no-header-attempt-dark-1440.png",
+      "sha256": "572e9c7deaf6fe5a15ffdf69ff40c6db41188ed414e34e39c04038959c7f8ea1"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-no-header-attempt-dark-390.png",
+      "sha256": "7f1fa4d99b974d20854c57abafa6668d96d4f40e9852ddbd2a2f3c2b246bc782"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-no-header-attempt-light-1440.png",
+      "sha256": "26cefdf6e6fee3fec3ffb6a8fd56dd22890362a53405d8e1a01e18388dd9333e"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-no-header-attempt-light-390.png",
+      "sha256": "2f66e05a254ede1033f5bc3e0d84feeb71f85d072e0be034f6b2baab1ffa39c9"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-no-header-attempt-mint-1440.png",
+      "sha256": "26cefdf6e6fee3fec3ffb6a8fd56dd22890362a53405d8e1a01e18388dd9333e"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-no-header-attempt-mint-390.png",
+      "sha256": "2f66e05a254ede1033f5bc3e0d84feeb71f85d072e0be034f6b2baab1ffa39c9"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-no-header-attempt-ocean-1440.png",
+      "sha256": "26cefdf6e6fee3fec3ffb6a8fd56dd22890362a53405d8e1a01e18388dd9333e"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-no-header-attempt-ocean-390.png",
+      "sha256": "2f66e05a254ede1033f5bc3e0d84feeb71f85d072e0be034f6b2baab1ffa39c9"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-schema-dark-1440.png",
+      "sha256": "30010f884a92bc9b3277ced30c8ccfff354962dd33cc661958d2ce17cfd79efa"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-schema-dark-390.png",
+      "sha256": "3f1bc5710d58d631d91734dcac81284e7a4805eaafd146f906b970fc3cebfc77"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-schema-light-1440.png",
+      "sha256": "ab410f6f5408dd48d9fa0f7a3df66eb34ba3357455edc8d8eea289c701e433fe"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-schema-light-390.png",
+      "sha256": "6a6970129b83af7065237c01c7eb37a7ce49262cd0f4e4bd620f39cd5a3f8b80"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-schema-mint-1440.png",
+      "sha256": "ab410f6f5408dd48d9fa0f7a3df66eb34ba3357455edc8d8eea289c701e433fe"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-schema-mint-390.png",
+      "sha256": "6a6970129b83af7065237c01c7eb37a7ce49262cd0f4e4bd620f39cd5a3f8b80"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-schema-ocean-1440.png",
+      "sha256": "ab410f6f5408dd48d9fa0f7a3df66eb34ba3357455edc8d8eea289c701e433fe"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-schema-ocean-390.png",
+      "sha256": "6a6970129b83af7065237c01c7eb37a7ce49262cd0f4e4bd620f39cd5a3f8b80"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-sent-distribution-dark-1440.png",
+      "sha256": "21f28532313d0785a8e5ffae8a3178fb5c855ccabbedfb088ae5c1d3240c0b98"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-sent-distribution-dark-390.png",
+      "sha256": "41716fe210f4e051e30f2380280906b661b50567180cf597d7ba20b4781764fd"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-sent-distribution-light-1440.png",
+      "sha256": "a83a0e6a4c66481c77cf3c4a922e714b9732ee5512aefc4493ddd8f3fe491e0b"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-sent-distribution-light-390.png",
+      "sha256": "7e820bb176e606cc48b25419b32e1d64a0c392356298b6eb8b9230d65b12ccd4"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-sent-distribution-mint-1440.png",
+      "sha256": "e6c09e50b85cb15f12445f2365d44f33ac1ea5d3203c731d407e5939d33103d6"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-sent-distribution-mint-390.png",
+      "sha256": "82fdcce09138453b9c90b413fe0841e8d6e2f75eb38a2e1f3e42475ed593f749"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-sent-distribution-ocean-1440.png",
+      "sha256": "393a614afa81788c44149804ee71cc83d72d52ee90727e7d8e90ad716be751a0"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-sent-distribution-ocean-390.png",
+      "sha256": "bdcf3cece3328eca1e740853fd64a73ee140238764e6fc7b87ccf248709da8e4"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-stage-coverage-dark-1440.png",
+      "sha256": "16df485b7103ef75106a0bddc1f5b6551772d292a76f98c3df407336db87b45c"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-stage-coverage-dark-390.png",
+      "sha256": "02940773b53fb25da42d4325a857ad71ff0fe948663b22b2d68291fa0de64379"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-stage-coverage-light-1440.png",
+      "sha256": "9229733174e753337648d77f7f54fe51fddcc344917e5ee9e8d1023dcdcb9587"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-stage-coverage-light-390.png",
+      "sha256": "a07c91f652cb7b50d5c1b10bba8e4b2898c227dde11d83cae8d136406b5af9ed"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-stage-coverage-mint-1440.png",
+      "sha256": "9229733174e753337648d77f7f54fe51fddcc344917e5ee9e8d1023dcdcb9587"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-stage-coverage-mint-390.png",
+      "sha256": "a07c91f652cb7b50d5c1b10bba8e4b2898c227dde11d83cae8d136406b5af9ed"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-stage-coverage-ocean-1440.png",
+      "sha256": "9229733174e753337648d77f7f54fe51fddcc344917e5ee9e8d1023dcdcb9587"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-stage-coverage-ocean-390.png",
+      "sha256": "a07c91f652cb7b50d5c1b10bba8e4b2898c227dde11d83cae8d136406b5af9ed"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-stage-times-dark-1440.png",
+      "sha256": "734e7f3f25d8282ef7669438b0466b3b1fc875991abd014952790367bfac63a9"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-stage-times-dark-390.png",
+      "sha256": "c8b1893e8992aefeffec0f16e72a0ddaed32152149485dddde3b3ac01912f59f"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-stage-times-light-1440.png",
+      "sha256": "0fe0b2eb6bcc7c85e369ca3b442231a0a96cb5830f5054a7467b2d85e7e6849a"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-stage-times-light-390.png",
+      "sha256": "611d76e244186b239ae9fd80c12ebd6c1ca6e1def0fb2511e14a0c756aa94cfb"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-stage-times-mint-1440.png",
+      "sha256": "0fe0b2eb6bcc7c85e369ca3b442231a0a96cb5830f5054a7467b2d85e7e6849a"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-stage-times-mint-390.png",
+      "sha256": "611d76e244186b239ae9fd80c12ebd6c1ca6e1def0fb2511e14a0c756aa94cfb"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-stage-times-ocean-1440.png",
+      "sha256": "0fe0b2eb6bcc7c85e369ca3b442231a0a96cb5830f5054a7467b2d85e7e6849a"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/observation-stage-times-ocean-390.png",
+      "sha256": "611d76e244186b239ae9fd80c12ebd6c1ca6e1def0fb2511e14a0c756aa94cfb"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/report.json",
+      "sha256": "a93254fc3a14b70f09ad8d4f66de2a80af4be060bad7bef7c336c35365627c8f"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/websocket-warmup-detail-dark-1440.png",
+      "sha256": "5bf1c661fa6f0ae25740d8198a28a1e8da0de3435b362dcc514f9cee099c01ef"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/websocket-warmup-detail-dark-390.png",
+      "sha256": "3ba5661b0068f565092b575eabe728afe375dd255faa4b8393d06db43d429727"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/websocket-warmup-detail-light-1440.png",
+      "sha256": "d6ab7e4779040497f132e7410e553cfb5b3896e1198df37727634b8b66d65315"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/websocket-warmup-detail-light-390.png",
+      "sha256": "dac59a74f979e221a930f9419ee7e04f4576f1f02f4267fd37552579a7dd1bbf"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/websocket-warmup-detail-mint-1440.png",
+      "sha256": "d6ab7e4779040497f132e7410e553cfb5b3896e1198df37727634b8b66d65315"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/websocket-warmup-detail-mint-390.png",
+      "sha256": "dac59a74f979e221a930f9419ee7e04f4576f1f02f4267fd37552579a7dd1bbf"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/websocket-warmup-detail-ocean-1440.png",
+      "sha256": "d6ab7e4779040497f132e7410e553cfb5b3896e1198df37727634b8b66d65315"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-browser/websocket-warmup-detail-ocean-390.png",
+      "sha256": "dac59a74f979e221a930f9419ee7e04f4576f1f02f4267fd37552579a7dd1bbf"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/logs-verification.json",
+      "sha256": "accec5df82cf7323a75b04b7e39080aafa4e9ebba59f499e5f53c6ab21a4a155"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/go/source-manifest.json",
+      "sha256": "1a32b502e1839b048eb1213d686aef47ad94105dccc5b62d9df99d6bbb05904a"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/go/report.json",
+      "sha256": "78c0d745d7ab25088745f5327444dc2f0b9044283bccce26d2f4bda6d5cb728d"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/go/race.log",
+      "sha256": "c8319fe0e0f924f57c9263db0be08806214f693cab3d622aff9300d3d57bf57c"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/go/local-verification.json",
+      "sha256": "e447bb6e9d1e90a1af781158d382251f2529673076cfd01fc0dd36a7ee4050e2"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/go/local-test.jsonl",
+      "sha256": "2b10781a10f0450003fcf57a491988ab841ce7fdbd18449cc7f20b498ace2eff"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/tools/package_management_candidate.py",
+      "sha256": "7a5fda1f6451aa1eeebfdca9151d55ef620265f2fa7b7bbd5c5cdc8a00bfb433"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frozen-evidence-4a29cbad2281/tools/freeze_no_billing_candidate.py",
+      "sha256": "3c52ada41ad3c7cb6fb245371859d48cb09d89ac9e1be6bcc84441458df60665"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frontend-4a29cbad2281.zip",
+      "sha256": "e04d2736039c1148bc00cccfaabd1e8b78d3072940157703d47c114becde77c6"
+    },
+    {
+      "path": ".local/management-parity/account-status-20260918/frontend-source-4a29cbad2281.tar.gz",
+      "sha256": "70d243fb08ea16279998c308734cf1df6645ef9f81015d157de6870beebde2f8"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t071407-edcbb1/source.tar.gz",
+      "sha256": "40d56f2b123136d987c2f121a5a8bd870d2118fb19b3368a6f50b12040dffe12"
+    }
+  ]
+}

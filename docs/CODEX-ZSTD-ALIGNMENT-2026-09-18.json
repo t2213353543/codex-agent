@@ -1,0 +1,120 @@
+{
+  "schema": "codex-zstd-alignment-v1",
+  "completed_at": "2026-09-18T06:00:26.548623+00:00",
+  "go_source_sha256": "a6d5994719dca2ff1f9fcb1037ec5d858e47f1e7329ac82c64466f5dd5f027d0",
+  "helper_sha256": "6df426c0a8eb703929f888055192e09cec0d2f7eea9391f2ae891e1ca6213740",
+  "full_goal_completed": false,
+  "live_account_or_model_calls": 0,
+  "production_deployed": false,
+  "user_real_testing_cancellation_honored": true,
+  "compression_contract": {
+    "preserve_inbound_responses_zstd": true,
+    "other_routes_not_inferred": true,
+    "prepared_json_policy_applied_before_encoding": true,
+    "native_official_encoder_level": 3,
+    "go_fallback_not_claimed_bit_identical_to_rust": true,
+    "oauth_context_marker_cleared": true,
+    "missing_native_capability_http_status": 503,
+    "decoded_and_prepared_max_bytes": 33554432,
+    "compressed_wire_max_bytes": 34603008
+  },
+  "validation": {
+    "ordinary_tests_vet_builds_passed": true,
+    "actual_gateway_tests": 18,
+    "compressed_cli_assertions": {
+      "actual_tool_output_returned": true,
+      "gateway_completed_and_admission_released": true,
+      "inbound_official_zstd": true,
+      "native_helper_configured": true,
+      "no_go_upstream_fallback": true,
+      "official_cli_completed": true,
+      "original_json_semantics_preserved": true,
+      "outbound_native_zstd": true,
+      "two_gateway_response_usage_records": true,
+      "two_inbound_and_outbound_requests": true,
+      "usage_unchanged": true
+    },
+    "rust_http_uds_tests": 26,
+    "rust_ws_tests": 4,
+    "rust_compression_tests": 3,
+    "race_source_sha256": "591414e365496c6df37f168fff9aec1bd2f69de34d6d6b62d94d18169a2aa696",
+    "race_test_count": 272,
+    "race_pass_events": 590,
+    "candidate_race_scope": "Identical production and selected test files; sole changed opt-in test independently rerun, not a separate final-hash race run.",
+    "tls_comparison_passed": true
+  },
+  "limits": [
+    "Synthetic auth and loopback replies do not demonstrate external authentication, model quality or cache improvement.",
+    "Compressed wire identity across gateway preparation is not claimed; decoded JSON semantics are verified.",
+    "Official backend auth categories beyond the four explicit cases are source-reviewed, not all runtime-tested.",
+    "Prior owner revision mixed-writer deployment constraints remain; this candidate was not deployed.",
+    "Go ingress/decoded/prepared/encoded limits return413 before dispatch; the separate helper compressed-output defensive bound currently maps to transport failure, not413."
+  ],
+  "evidence": [
+    {
+      "kind": "manifest",
+      "path": ".local/source-20260918/gateway-overlay-20260918t055355-d97964/source-manifest.json",
+      "sha256": "f8a3b7495a3f7c65a3cbe87e1236102b69f12bfb782d896a018e0bbb73716a26"
+    },
+    {
+      "kind": "build",
+      "path": ".local/source-20260918/gateway-overlay-20260918t055355-d97964/build-verification.json",
+      "sha256": "5d66a76cbdb877a8379ce8ae6a566f3634305f1bc8aa66a2350284e29349bdf0"
+    },
+    {
+      "kind": "race_equivalence",
+      "path": ".local/source-20260918/gateway-overlay-20260918t055355-d97964/race-equivalence.json",
+      "sha256": "16bd86c91f0300b89514265ee06851a183773b919cbedb7193c088d5cf96ebaf"
+    },
+    {
+      "kind": "race",
+      "path": ".local/source-20260918/local-linux-race-20260918t055411-95b290/report.json",
+      "sha256": "9a6f73d152f908fc605fb246daeb69de636c21df03ed0655f48a96feaa2c0a49"
+    },
+    {
+      "kind": "gateway",
+      "path": ".local/native-transport-build/gateway-compare-20260918T055515-eb2d44/result.json",
+      "sha256": "72e1af4fbf41ac1b846c666b763fab584770dd1ac75d9b6f2261a836ed336f3b"
+    },
+    {
+      "kind": "compressed_cli",
+      "path": ".local/native-transport-build/gateway-compare-20260918T055515-eb2d44/gateway-compression-cli.json",
+      "sha256": "ed34cab4765750d748fffb760f7ef869814118e8c2aefdf4d30c7d6a1dad04ac"
+    },
+    {
+      "kind": "official_gate",
+      "path": ".local/native-compression/20260918T054235-af38b4/report.json",
+      "sha256": "8760aa7feb2711e852d552286c9213bc1ef3e3fa97179a872f95f8d104cb528c"
+    },
+    {
+      "kind": "official_gate_run",
+      "path": ".local/native-compression/20260918T054235-af38b4/result.json",
+      "sha256": "adc1218f61f6d471168e83a20ae8da9a595f497bc706700b8f3dc4a9435f3ee9"
+    },
+    {
+      "kind": "tls",
+      "path": ".local/native-transport-build/tls-compare-20260918T055626-1be7f0/result.json",
+      "sha256": "3b87a8f2dd976e53b8afd3d2998a2fe197f90b353ae14a9414abd9d1441e476f"
+    },
+    {
+      "kind": "package",
+      "path": ".local/native-releases/0.155.0-linux-x86_64-6df426c0a8eb/package-result.json",
+      "sha256": "ee0c7c0abb46eca64d85e5f68dd083bc6a236af4e8d3d4cfd1c659f3b28390f0"
+    },
+    {
+      "kind": "helper",
+      "path": ".local/native-local-build/20260918T054243Z-b43907cb/result.json",
+      "sha256": "8f4117fb73ee0659ae9d0df1ef29dca50939e11521730d211bee2a4a4a7093c1"
+    },
+    {
+      "kind": "helper_tests",
+      "path": ".local/native-local-build/20260918T054243Z-b43907cb/test-results.json",
+      "sha256": "53e965cba1eff0fa1a8e018cc8c2161444ed3e5e740051f4ca0dbf859770180d"
+    }
+  ],
+  "read_only_review": {
+    "evidence_hashes_verified": 12,
+    "helper_and_package_hashes_verified": true,
+    "limit_status_claim_narrowed": true
+  }
+}

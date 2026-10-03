@@ -1,0 +1,196 @@
+{
+  "schema": "codex-management-candidate-v1",
+  "status": "verified_management_candidate",
+  "completed_at": "2026-09-18T03:29:34.899605+00:00",
+  "iteration": "commercial-20260918",
+  "deployed": false,
+  "full_reference_parity": false,
+  "previous_candidates_unchanged": true,
+  "go_source_sha256": "5852e08850f5813fc77ada246efcbaca82e0baee2be71a0e838eb15596d74119",
+  "source_archive": ".local/management-parity/local-race-20260918t031440-112ef6/source.tar.gz",
+  "source_archive_sha256": "8a7bea2764442a21b3a3e83ef2dbe2c8de734222b355a6923b1e8d46d647b659",
+  "linux_binary": ".local/management-parity/local-race-20260918t031440-112ef6/codex-agent-linux-amd64",
+  "linux_binary_sha256": "4454acfe35256fad0ada4e0c3aa9ff96aa9345ef4cfa0f91284b690c1300feec",
+  "checks": {
+    "management_linux_race": {
+      "passed_top_level": 95,
+      "passed_events": 210,
+      "failed": 0,
+      "skipped": 0,
+      "postgres_version": "postgres (PostgreSQL) 16.15",
+      "redis_version": "Redis server v=7.4.11 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=fbf7a7d03c2e9219"
+    },
+    "full_go_test": {
+      "pass": 376,
+      "skip": 76,
+      "fail": 0
+    },
+    "full_go_test_events": {
+      "pass": 1020,
+      "skip": 85,
+      "fail": 0
+    },
+    "vet": "pass",
+    "windows_build": "pass",
+    "linux_build": "pass",
+    "frontend_node": {
+      "tests": 139,
+      "pass": 139,
+      "fail": 0,
+      "skipped": 0
+    },
+    "accounts_browser_groups": 46,
+    "logs_browser_groups": 44,
+    "browser_network": "synthetic",
+    "screenshots": {
+      "accounts": 93,
+      "logs_four_theme": 192
+    }
+  },
+  "frontend": {
+    "manifest_sha256": "fa845eab012f20603703d31488415b26b9adf9eb594c5d5318cd95c1324ddcb9",
+    "frontend_sha256": "e93f5b75148d01d5ec366b03d2628657f0763bfe45ed45cc000449e3db170bd4",
+    "entries": {
+      "Accounts": "accounts-managed-BGYtKyiw.js",
+      "Logs": "logs-managed-C_J6Btx1.js"
+    },
+    "file_count": 54,
+    "unchanged_baseline_resources": 48,
+    "archive": ".local/management-parity/commercial-20260918/frontend-fa845eab012f.zip",
+    "archive_sha256": "a15170a28bc519bfe49ce921c660271e88a2c2a81093584c83af9493641c01fb",
+    "source_archive": ".local/management-parity/commercial-20260918/frontend-source-fa845eab012f.tar.gz",
+    "source_archive_sha256": "f0b43682932bf2d472b3872575803ae50cbe2ef0756dbefc62846dfa23054c9a"
+  },
+  "source_delta": {
+    "previous_go_sha256": "3d791bba2fc1447a023d6e651660a3fbbe73ea737675057cefde23495f84d415",
+    "added": [
+      "admin_usage_procurement_tier_test.go",
+      "admin_usage_sale.go",
+      "admin_usage_sale_stats.go",
+      "admin_usage_sale_test.go",
+      "admin_usage_sale_transitions_test.go",
+      "gateway_native_cli_test.go",
+      "gateway_native_factory.go",
+      "gateway_native_factory_test.go",
+      "gateway_native_http.go",
+      "gateway_native_http_test.go",
+      "gateway_native_integration_test.go"
+    ],
+    "modified": [
+      "admin_usage_management.go",
+      "admin_usage_options.go",
+      "admin_usage_procurement.go",
+      "admin_usage_procurement_stats.go",
+      "admin_usage_query.go",
+      "admin_usage_review.go",
+      "admin_usage_snapshot.go",
+      "admin_usage_store.go",
+      "gateway.go",
+      "gateway_client_pool.go",
+      "gateway_observation_transport.go",
+      "gateway_request_route.go",
+      "main.go",
+      "source_native_capture_test.go"
+    ],
+    "removed": [],
+    "management_files": [
+      "admin_usage_procurement_tier_test.go",
+      "admin_usage_sale.go",
+      "admin_usage_sale_stats.go",
+      "admin_usage_sale_test.go",
+      "admin_usage_sale_transitions_test.go",
+      "admin_usage_management.go",
+      "admin_usage_options.go",
+      "admin_usage_procurement.go",
+      "admin_usage_procurement_stats.go",
+      "admin_usage_query.go",
+      "admin_usage_review.go",
+      "admin_usage_snapshot.go",
+      "admin_usage_store.go"
+    ],
+    "separate_owner_files": [
+      "gateway_native_cli_test.go",
+      "gateway_native_factory.go",
+      "gateway_native_factory_test.go",
+      "gateway_native_http.go",
+      "gateway_native_http_test.go",
+      "gateway_native_integration_test.go",
+      "gateway.go",
+      "gateway_client_pool.go",
+      "gateway_observation_transport.go",
+      "gateway_request_route.go",
+      "main.go",
+      "source_native_capture_test.go"
+    ],
+    "migrations_changed": false
+  },
+  "scope": "Codex accounts and retained usage management, preserving restored blue UI; no deployment or live inference.",
+  "limits": [
+    "The Go snapshot includes separately owned gateway changes. Management acceptance does not certify or release the gateway owners in-progress features.",
+    "User/group billing entities, full account behavior and remaining passive observation requirements must still be audited against the full objective.",
+    "Synthetic backend/browser tests do not prove live third-party availability, real charges, or restoration of historically missing usage.",
+    "Unknown and true zero remain distinct; configured reference, procurement and sale estimates are not actual subscription debits."
+  ],
+  "evidence": [
+    {
+      "path": ".local/management-parity/local-race-20260918t031440-112ef6/management-evidence/build-manifest.json",
+      "sha256": "fa845eab012f20603703d31488415b26b9adf9eb594c5d5318cd95c1324ddcb9"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t031440-112ef6/management-evidence/frontend-unit-report.json",
+      "sha256": "88e0d9277702c4bceab5c58db25a9b707672db581716cf138f643aa5c43afc2d"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t031440-112ef6/management-evidence/frontend-unit-tests.log",
+      "sha256": "f722ddbaf76b4e53e915ffd9730f2dcfa80efbaa3cb364fd2c2c2753c98fa8a8"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t031440-112ef6/management-evidence/account-procurement-verification.json",
+      "sha256": "372961a94789ed98a05846c39b2773d36c562e1451a95ed813284b8c5e6eeaf1"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t031440-112ef6/management-evidence/logs-verification.json",
+      "sha256": "cb137ccf9a6d2a38a3d7ff33d7d8626dc7d839694df616e257a66852b718bd68"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t031440-112ef6/management-evidence/account-cost-browser-report.json",
+      "sha256": "3c1360169ca44c3a44a761187d674dcf25467857ef92eff6a717de94ce68acfc"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t031440-112ef6/management-evidence/account-runtime-browser-report.json",
+      "sha256": "60a23a1c0a5da55ffdfec6a0efe5477ae670df5d8dcbf90bf4606ca6a9e3f0ba"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t031440-112ef6/management-evidence/account-regression-browser-report.json",
+      "sha256": "b9ada221e9719b514ffe58f61267d463add1eec196a231a0900b0004c8693ba7"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t031440-112ef6/management-evidence/logs-browser-report.json",
+      "sha256": "54a7500bff85e99ce24cb388f4cb1d2409740c6c1834666b30b92ee59e2d6a46"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t031440-112ef6/report.json",
+      "sha256": "1466a226dd19d0b12f0adc6acf03d2a438479aa2ed849ef0fb9b28169872b307"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t031440-112ef6/race.log",
+      "sha256": "4defc515cf00de1fd0dab8370c43485789d570bcb805327b5990a47878e1d0fb"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t031440-112ef6/local-verification.json",
+      "sha256": "649f1a6c296ed5dfb6c01f16a69ccad219aab9fba0a9ddcc7fea43377b526f39"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t031440-112ef6/source-manifest.json",
+      "sha256": "95381a154fb9109d911f995fafeae2ae3f34e0279bd0719fd8a7ce235a9c31f6"
+    },
+    {
+      "path": ".local/management-parity/commercial-20260918/frontend-fa845eab012f.zip",
+      "sha256": "a15170a28bc519bfe49ce921c660271e88a2c2a81093584c83af9493641c01fb"
+    },
+    {
+      "path": ".local/management-parity/commercial-20260918/frontend-source-fa845eab012f.tar.gz",
+      "sha256": "f0b43682932bf2d472b3872575803ae50cbe2ef0756dbefc62846dfa23054c9a"
+    }
+  ]
+}

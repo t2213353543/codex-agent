@@ -1,0 +1,104 @@
+{
+  "schema": "bound-session-cancellation-verification-v1",
+  "date": "2026-09-18",
+  "go_source_sha256": "db13679d158e6cbe1ab79d3e50f205eba04d0341d7edc6d88f09d282c5c7a0fc",
+  "verified_baseline_sha256": "38a94373a0bfc64106564d574d407459861be5f71c91784e3f7025f49876d931",
+  "linux_gateway_sha256": "8cd9a190843eb2043b1a77fbf57b3d1813cea914ab883b19643c97ff0701abb0",
+  "windows_gateway_sha256": "71fbdbf6cbbac9e207624018782d50a5c22bb37ac9f280ba07d353617560ea92",
+  "helper_sha256": "6df426c0a8eb703929f888055192e09cec0d2f7eea9391f2ae891e1ca6213740",
+  "helper_changed_or_rebuilt": false,
+  "production_deployed": false,
+  "live_model_requests": 0,
+  "desktop_auth_read": false,
+  "goal_complete": false,
+  "repair": {
+    "bound_http_authoritative_account_read_uses_request_context": true,
+    "websocket_per_turn_authoritative_account_read_uses_connection_context": true,
+    "caller_error_precedes_sanitized_storage_error": true,
+    "full_owner_ref_enabled_and_exact_id_checks_preserved": true,
+    "cancelled_read_falls_back_to_cached_account": false,
+    "cancelled_read_rebinds_session": false,
+    "http_refresh_failure_releases_before_returning_cancellation": true,
+    "outer_note_account_error_skipped_on_cancel_or_deadline": true,
+    "websocket_cancelled_preparation_fabricates_authorization_error": false,
+    "oauth_exchange_and_persistence_changed": false,
+    "request_fingerprint_cache_key_retry_budget_changed": false
+  },
+  "validation": {
+    "pre_fix_two_pg_consumers_failed_after_confirmed_blocked_acquire": true,
+    "pre_fix_file_refresh_cancellation_and_last_error_failed": true,
+    "fixed_expired_context_cases_passed": ["cancelled", "deadline"],
+    "fixed_blocked_pg_consumers_passed": ["http_bound_selection", "websocket_authorization"],
+    "fixed_real_ws_pending_turn_cancellation_passed": true,
+    "ordinary_go_tests_passed": true,
+    "ordinary_go_tests_seconds": 27.279,
+    "vet_passed": true,
+    "windows_linux_builds_passed": true,
+    "joint_linux_race": {
+      "gateway_selected": 351,
+      "management_selected": 131,
+      "overlap": 6,
+      "passed_top_level_tests": 476,
+      "passed_test_events": 1188,
+      "new_top_level_tests": 4,
+      "failed_tests": [],
+      "skipped_tests": [],
+      "missing_tests": [],
+      "duration_seconds": 181.16,
+      "temporary_resources_independently_verified_removed": true
+    },
+    "native_top_level_tests": 29,
+    "go_cli_top_level_tests": 1,
+    "go_cli_subcases": 3,
+    "required_runtime_reports_passed": 7,
+    "runtime_skipped_tests": [],
+    "native_comparison_network": "none",
+    "native_comparison_container_independently_verified_removed": true,
+    "freeze_tool_unit_tests_passed": 8
+  },
+  "limits": [
+    "No real account, live model, production deployment, cache-rate or geographic identity claim.",
+    "The two-second fixture deadline proves cancellation of an occupied account-pool acquire, not a global request deadline.",
+    "File-store locks, settings, refresh locks and already-started OAuth persistence retain existing behavior.",
+    "Existing pgRefresh callback-failure handling may still persist refresh_failed after an OAuth failure; this policy was not changed.",
+    "PG no-mutation assertions cover the account-read boundary before OAuth. The outer refresh-error annotation assertion uses the file store.",
+    "The real WS cancellation case uses a local protocol client; official CLI compatibility is independently covered by the linked full runtime suite."
+  ],
+  "evidence": [
+    {
+      "kind": "source_manifest",
+      "path": ".local/source-20260918/gateway-delta-20260918t104942-4dd6aa/source-manifest.json",
+      "sha256": "4c6eabd6de3b8e42b9db0073d618070708b51c201e4ff3374efe8f461a4fc5d7"
+    },
+    {
+      "kind": "explicit_delta",
+      "path": ".local/source-20260918/gateway-delta-20260918t104942-4dd6aa/overlay-manifest.json",
+      "sha256": "32134183ac1d193272607e7c2b1b55851ef13e739b7092374e6f804da7f9ab18"
+    },
+    {
+      "kind": "build",
+      "path": ".local/source-20260918/gateway-delta-20260918t104942-4dd6aa/build-verification.json",
+      "sha256": "d36a9169ea7a3846713fb189070fb46bd86ed43ae9ec0561ad43681cb3fbbc41"
+    },
+    {
+      "kind": "joint_race",
+      "path": ".local/management-parity/local-race-20260918t105134-2570b5/report.json",
+      "sha256": "abdf2ac8661b11091e44e3cc47eb82dc7091391eb9f9384fe42949299d5fc0da"
+    },
+    {
+      "kind": "native_and_go_cli",
+      "path": ".local/native-transport-build/gateway-compare-20260918T105007-84284e/result.json",
+      "sha256": "9c5c15a064419f7c059abcda306416ec15e7d3f1ad367a36c61c0a5be24b16d6"
+    },
+    {
+      "kind": "pre_fix_failed_reproduction",
+      "path": ".local/management-parity/local-race-20260918t104655-e6bc6b/report.json",
+      "sha256": "3e02b0da1953786439cf0ea85b8c7596c0170f334ef6f8a92d3068c8c522a70b"
+    },
+    {
+      "kind": "gateway_race_selector",
+      "path": "tools/gateway_source_race.py",
+      "sha256": "e91f73660e8f8f8771c374dae9993b9f279b1de410cb4d173cff526a60da71d8"
+    }
+  ]
+}

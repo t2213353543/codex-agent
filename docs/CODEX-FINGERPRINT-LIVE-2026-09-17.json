@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "run_id": "20260917T124813Z",
+  "model": "gpt-5.6-luna",
+  "transport": "http_sse",
+  "scope": "application_headers_only",
+  "acceptance_scope": "conversation_and_shell",
+  "test_binary_sha256": "5f529a4a1c2eaee8ce55238049591fd851328f683b89109ea6713d074efe4815",
+  "cli_binary_sha256": "be96b992178b1e467c225800da0d65f2c86d5eba1ef0b14632f65db381cbdfde",
+  "smoke_script_sha256": "8e0bcfc34db62cf0da0ffac2323ceb3e9c5da2786803969c1b2512c6b99bc2fd",
+  "refresh_disabled": true,
+  "production_modified": false,
+  "results": [
+    {
+      "profile": "linux",
+      "started_utc": "2026-09-17T12:48:13.304966+00:00",
+      "exit_code": 0,
+      "conversation_evidence": ".local/fingerprint-live/20260917T124813Z/linux-conversation.json",
+      "header_evidence": ".local/fingerprint-live/20260917T124813Z/linux-headers.json",
+      "conversation": {
+        "schema_version": 1,
+        "acceptance_scope": "conversation_and_shell",
+        "imported_account": true,
+        "passed": true,
+        "cli_version": "codex-cli 0.154.0",
+        "elapsed_seconds": 63.8931776,
+        "process_exit_code": 0,
+        "timed_out": false,
+        "checks": [
+          {
+            "name": "initial_session",
+            "passed": true,
+            "assertions": {
+              "final_reply_matches": true,
+              "no_commands_for_memory_check": true,
+              "no_error_events": true,
+              "process_exited_successfully": true,
+              "thread_started": true,
+              "turn_completed": true,
+              "turn_started": true
+            },
+            "returncode": 0,
+            "timed_out": false,
+            "completed_command_count": 0
+          },
+          {
+            "name": "resume_memory",
+            "passed": true,
+            "assertions": {
+              "final_reply_matches": true,
+              "no_commands_for_memory_check": true,
+              "no_error_events": true,
+              "process_exited_successfully": true,
+              "same_thread_resumed": true,
+              "thread_started": true,
+              "turn_completed": true,
+              "turn_started": true
+            },
+            "returncode": 0,
+            "timed_out": false,
+            "completed_command_count": 0
+          },
+          {
+            "name": "shell_tool",
+            "passed": true,
+            "assertions": {
+              "final_reply_matches": true,
+              "marker_file_unchanged": true,
+              "no_error_events": true,
+              "process_exited_successfully": true,
+              "same_thread_resumed": true,
+              "shell_read_marker": true,
+              "thread_started": true,
+              "turn_completed": true,
+              "turn_started": true
+            },
+            "returncode": 0,
+            "timed_out": false,
+            "completed_command_count": 1
+          }
+        ],
+        "inference_requests": 4,
+        "http_status_counts": {
+          "200": 4
+        },
+        "failed_inference_requests": 0,
+        "requests_without_usage": 0,
+        "input_tokens": 31106,
+        "output_tokens": 292,
+        "cached_tokens": 19712,
+        "failures": []
+      },
+      "headers": {
+        "timestamp": "2026-09-17T12:49:17.2303609Z",
+        "profile": "linux",
+        "model": "gpt-5.6-luna",
+        "transport": "http_sse",
+        "linked_integration_evidence": "linux-conversation.json",
+        "expected_user_agent": "codex_cli_rs/0.154.0 (Linux 6.8.0; x86_64) unknown",
+        "expected_originator": "codex_cli_rs",
+        "expected_version": "0.154.0",
+        "request_count": 4,
+        "matched_count": 4,
+        "mismatched_count": 0,
+        "written_request_count": 4,
+        "written_matched_count": 4,
+        "written_mismatched_count": 0,
+        "network_error_count": 0,
+        "upstream_failure_count": 0,
+        "endpoint_counts": {
+          "/responses": 4
+        },
+        "upstream_http_status_counts": {
+          "200": 4
+        },
+        "header_verified": true,
+        "all_test_passed": true,
+        "identity_scope": "application_headers_only",
+        "no_tls_claim": true
+      },
+      "passed": true
+    },
+    {
+      "profile": "macos",
+      "started_utc": "2026-09-17T12:49:17.237142+00:00",
+      "exit_code": 0,
+      "conversation_evidence": ".local/fingerprint-live/20260917T124813Z/macos-conversation.json",
+      "header_evidence": ".local/fingerprint-live/20260917T124813Z/macos-headers.json",
+      "conversation": {
+        "schema_version": 1,
+        "acceptance_scope": "conversation_and_shell",
+        "imported_account": true,
+        "passed": true,
+        "cli_version": "codex-cli 0.154.0",
+        "elapsed_seconds": 64.9185975,
+        "process_exit_code": 0,
+        "timed_out": false,
+        "checks": [
+          {
+            "name": "initial_session",
+            "passed": true,
+            "assertions": {
+              "final_reply_matches": true,
+              "no_commands_for_memory_check": true,
+              "no_error_events": true,
+              "process_exited_successfully": true,
+              "thread_started": true,
+              "turn_completed": true,
+              "turn_started": true
+            },
+            "returncode": 0,
+            "timed_out": false,
+            "completed_command_count": 0
+          },
+          {
+            "name": "resume_memory",
+            "passed": true,
+            "assertions": {
+              "final_reply_matches": true,
+              "no_commands_for_memory_check": true,
+              "no_error_events": true,
+              "process_exited_successfully": true,
+              "same_thread_resumed": true,
+              "thread_started": true,
+              "turn_completed": true,
+              "turn_started": true
+            },
+            "returncode": 0,
+            "timed_out": false,
+            "completed_command_count": 0
+          },
+          {
+            "name": "shell_tool",
+            "passed": true,
+            "assertions": {
+              "final_reply_matches": true,
+              "marker_file_unchanged": true,
+              "no_error_events": true,
+              "process_exited_successfully": true,
+              "same_thread_resumed": true,
+              "shell_read_marker": true,
+              "thread_started": true,
+              "turn_completed": true,
+              "turn_started": true
+            },
+            "returncode": 0,
+            "timed_out": false,
+            "completed_command_count": 1
+          }
+        ],
+        "inference_requests": 4,
+        "http_status_counts": {
+          "200": 4
+        },
+        "failed_inference_requests": 0,
+        "requests_without_usage": 0,
+        "input_tokens": 30974,
+        "output_tokens": 219,
+        "cached_tokens": 5888,
+        "failures": []
+      },
+      "headers": {
+        "timestamp": "2026-09-17T12:50:22.1836074Z",
+        "profile": "macos",
+        "model": "gpt-5.6-luna",
+        "transport": "http_sse",
+        "linked_integration_evidence": "macos-conversation.json",
+        "expected_user_agent": "codex_cli_rs/0.154.0 (Mac OS 15.0.0; arm64) unknown",
+        "expected_originator": "codex_cli_rs",
+        "expected_version": "0.154.0",
+        "request_count": 4,
+        "matched_count": 4,
+        "mismatched_count": 0,
+        "written_request_count": 4,
+        "written_matched_count": 4,
+        "written_mismatched_count": 0,
+        "network_error_count": 0,
+        "upstream_failure_count": 0,
+        "endpoint_counts": {
+          "/responses": 4
+        },
+        "upstream_http_status_counts": {
+          "200": 4
+        },
+        "header_verified": true,
+        "all_test_passed": true,
+        "identity_scope": "application_headers_only",
+        "no_tls_claim": true
+      },
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "completed_utc": "2026-09-17T12:50:22.193056+00:00",
+  "smoke_script_unchanged": true
+}

@@ -1,0 +1,21 @@
+{
+  "checked_date": "2026-09-17",
+  "release_tag": "rust-v0.154.0",
+  "released_at": "2026-09-09T22:35:38Z",
+  "release_url": "https://github.com/openai/codex/releases/tag/rust-v0.154.0",
+  "commit": "6b9826e3aa83b1a5947db50f4332cb9c65f1b340",
+  "source_archive_sha256": "3e3668930229d4a1013938173ed18ab18383370e77ad85d85b7828261f8534f6",
+  "files": {
+    "codex-rs/core/src/client.rs": "6979098f4ad7b5ec16f19ca90d5c927d3b1e33d0f6d926c70388d0237c52af35",
+    "codex-rs/core/src/session/session.rs": "8baee944befc7896a19d8d59327c3566498c5cc8e8d497eb8085c60f27ccaa05",
+    "codex-rs/core/src/session/tests.rs": "1d3ac68b6d56dadd1b335ba6b4f1975a1477e9a23ad8ab77ad123ef70b8e9649",
+    "codex-rs/codex-api/src/endpoint/responses.rs": "95a744b3ddaae824ae5773a1409f72ed2de4d6fe98188f5ddacba12bcbbcff90",
+    "codex-rs/codex-api/src/endpoint/compact.rs": "2532b11307ac1df7d04df80d257beeaf9ee47b915a2955a6255eec524d7eb33b",
+    "codex-rs/codex-api/src/endpoint/models.rs": "31a685084b8d0fb0b6fd2957c320030fad25a643610e3111f687e99603ca09b6",
+    "codex-rs/codex-api/src/requests/headers.rs": "98c9579a8f17327fda1792ffbf22e8d09241fdc79620c37b699d94cd9637cd47",
+    "codex-rs/codex-api/src/sse/responses.rs": "38c1fbcfee732d1b9c3f8990cccf08f2043f4c8526143b939c11e318c57f6f01",
+    "codex-rs/core/tests/suite/websocket_fallback.rs": "010b4853a5e4eea35085f87c3213d9883c63ca1c7584f37b6cd97777d356688e",
+    "codex-rs/model-provider-info/src/lib.rs": "03ba8ea303b9763f7c5e25a468b7f6675c9970dfb91109205beb6d0509f574d1",
+    "codex-rs/Cargo.lock": "29b37678141ef79e8548a8f135161e5360cd5c2c775cf497589bcfdfe9efc1a0"
+  }
+}

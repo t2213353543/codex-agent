@@ -1,0 +1,65 @@
+package main
+
+import (
+	"context"
+	"crypto/sha256"
+	"encoding/hex"
+	"encoding/json"
+	"errors"
+	"net/http"
+	"net/http/httptest"
+	"os"
+	"os/exec"
+	"path/filepath"
+	"sync/atomic"
+	"testing"
+	"time"
+)
+
+type bridgeContractDenyTransport struct{ calls *atomic.Int64 }
+
+func (d bridgeContractDenyTransport) RoundTrip(*http.Request) (*http.Response, error) {
+	d.calls.Add(1)
+	return nil, errors.New("bridge contract forbids every upstream request")
+}
+
+func TestBridgeRealManagementContract(t *testing.T) {
+	python, client := os.Getenv("BRIDGE_CONTRACT_PYTHON"), os.Getenv("BRIDGE_CONTRACT_CLIENT")
+	if python == "" || client == "" { t.Fatal("explicit local contract runner required") }
+	for _, scenario := range []string{"initial_update", "identity_rejection", "cas_conflict", "refresh_token_preserved", "reauthorize_existing_rt", "cas_refresh_token_added"} {
+		t.Run(scenario, func(t *testing.T) {
+			p, handler := webTestSetup(t)
+			if p.Store.DB != nil { t.Fatal("file-store fixture required") }
+			var upstream atomic.Int64
+			p.Client = &http.Client{Transport: bridgeContractDenyTransport{calls: &upstream}}
+			server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				if r.URL.Path == "/api/accounts/refresh" || r.URL.Path == "/v1/responses" { t.Error("forbidden inference or refresh route"); http.Error(w, "forbidden", 400); return }
+				handler.ServeHTTP(w, r)
+			}))
+			defer server.Close()
+			ctx, cancel := context.WithTimeout(context.Background(), 35*time.Second)
+			defer cancel()
+			directory := t.TempDir()
+			command := exec.CommandContext(ctx, python, client, "--scenario", scenario)
+			command.Env = append(os.Environ(), "BRIDGE_CONTRACT_BASE="+server.URL, "BRIDGE_CONTRACT_KEY="+webTestKey, "BRIDGE_CONTRACT_STORE="+p.Store.Path, "BRIDGE_CONTRACT_TEMP="+directory)
+			output, err := command.CombinedOutput()
+			if err != nil { t.Fatalf("Python real-HTTP contract failed: %s", output) }
+			var result struct {
+				Checks []string `json:"checks"`
+				Expected map[string]struct { Access string `json:"access_sha256"`; Refresh string `json:"refresh_sha256"` } `json:"expected"`
+			}
+			if err := json.Unmarshal(output, &result); err != nil { t.Fatal("invalid sanitized Python result") }
+			for id, expected := range result.Expected {
+				account, err := p.Store.Get(id)
+				if err != nil { t.Fatal("persisted account unavailable") }
+				access, refresh := sha256.Sum256([]byte(account.AccessToken)), sha256.Sum256([]byte(account.RefreshToken))
+				if hex.EncodeToString(access[:]) != expected.Access || hex.EncodeToString(refresh[:]) != expected.Refresh { t.Fatal("real file-store credentials differ from expected Python transaction outcome") }
+			}
+			if upstream.Load() != 0 { t.Fatal("upstream was contacted") }
+			if len(result.Checks) == 0 { t.Fatal("no completed contract checks") }
+			resultFile := filepath.Join(os.Getenv("BRIDGE_CONTRACT_OUTPUT"), scenario+".json")
+			if err := os.WriteFile(resultFile, output, 0600); err != nil { t.Fatal(err) }
+			t.Logf("BRIDGE_REAL_HTTP_CONTRACT scenario=%s checks=%d upstream_requests=0 storage=file", scenario, len(result.Checks))
+		})
+	}
+}

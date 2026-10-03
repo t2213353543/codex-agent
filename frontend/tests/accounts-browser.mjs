@@ -1,0 +1,210 @@
+import assert from 'node:assert/strict'
+import { readFile } from 'node:fs/promises'
+import { expect } from 'playwright/test'
+import { htmlText } from './mock-api.mjs'
+
+// This module only runs against the runner's local HTTP server and mocked API.
+export async function testAccounts(page, state) {
+  const base = new URL(page.url()).origin
+  assert.ok(['localhost', '127.0.0.1'].includes(new URL(base).hostname))
+  const originalAccounts = structuredClone(state.accounts)
+  const originalImported = state.imported.length
+  const assertions = []
+  const table = () => page.locator('.accounts-panel .el-table')
+  const go = async (query = '') => {
+    await page.goto(`${base}/#/accounts${query}`)
+    await expect(page.locator('.page-header')).toContainText('账号管理')
+    await expect(table().locator('.el-loading-mask')).toHaveCount(0)
+  }
+  const importDialog = () => page.getByRole('dialog', { name: '导入账号 · 先预览再提交' })
+  const openImport = async () => {
+    await page.getByRole('button', { name: '导入账号', exact: true }).click()
+    await expect(importDialog()).toBeVisible()
+  }
+  const preview = async (source) => {
+    await importDialog().getByRole('button', { name: '粘贴内容', exact: true }).click()
+    await importDialog().getByRole('textbox', { name: '账号导入内容' }).fill(source)
+    await importDialog().getByRole('button', { name: '生成预览', exact: true }).click()
+    await expect(importDialog().locator('.preview-counts')).toBeVisible()
+  }
+  try {
+    await go()
+    await expect(table().locator('.el-table__header th')).toHaveCount(13)
+    for (const label of ['并发', '优先级', '权重', '用量窗口', '请求 / 成功 / 失败', '平均耗时']) await expect(table().locator('thead')).toContainText(label)
+    await expect(table().locator('tbody')).toContainText('含刷新令牌')
+    await page.getByRole('button', { name: '显示列', exact: true }).click()
+    const columns = page.getByRole('dialog', { name: '显示 / 隐藏列' })
+    await columns.getByText('输入 / 输出 / 缓存', { exact: true }).click()
+    await expect(columns.getByRole('checkbox', { name: '输入 / 输出 / 缓存', exact: true })).toBeChecked()
+    await columns.getByRole('button', { name: '完成', exact: true }).click()
+    const preference = await page.evaluate(() => JSON.parse(localStorage.getItem('accountColumns')))
+    assert.equal(preference.version, 1)
+    assert.ok(preference.value.includes('tokens'))
+    await page.reload()
+    await expect(table().locator('thead')).toContainText('输入 / 输出 / 缓存')
+    await page.getByRole('button', { name: '显示列', exact: true }).click()
+    await columns.getByRole('button', { name: '恢复默认', exact: true }).click()
+    await columns.getByRole('button', { name: '完成', exact: true }).click()
+    await expect(table().locator('.el-table__header th')).toHaveCount(13)
+    await page.evaluate(() => localStorage.setItem('accountColumns', JSON.stringify({ version: 999, value: ['not-a-column'] })))
+    await page.reload()
+    await expect(table().locator('.el-table__header th')).toHaveCount(13)
+    await page.evaluate(() => localStorage.setItem('accountColumns', JSON.stringify({ version: 1, value: ['name', 'status', 'expires_at', 'groups', 'proxies', 'actions'] })))
+    await page.reload()
+    await expect(table().locator('.el-table__header th')).toHaveCount(13)
+    assertions.push('恢复账号12默认列和完整可选元数据；列选择持久化；旧6列默认自动升级；损坏偏好回退')
+
+    await page.getByRole('button', { name: '下一页', exact: true }).click()
+    await expect(table()).toContainText('Expired sample')
+    assert.ok(page.url().includes('cursor=mock-cursor-page-2'))
+    await page.reload()
+    await expect(table()).toContainText('Expired sample')
+    assert.ok(page.url().includes('page=2'))
+    await page.getByRole('button', { name: '返回首页', exact: true }).click()
+    await expect(table()).toContainText('示例账号 Alpha')
+    const search = page.getByRole('textbox', { name: '搜索账号名称', exact: true })
+    await search.fill('slow')
+    await expect.poll(() => state.requests.some(request => request.path === '/accounts' && request.params?.search === 'slow')).toBeTruthy()
+    await search.fill('fast')
+    await expect(table()).toContainText('fast result')
+    await page.waitForTimeout(450) // Deliberately allow the older 350ms response to arrive.
+    await expect(table()).not.toContainText('slow result')
+    await page.reload()
+    await expect(search).toHaveValue('fast')
+    await expect(table()).toContainText('fast result')
+    assertions.push('服务端游标翻页与刷新保留；筛选URL持久化；慢旧响应不覆盖新筛选')
+
+    await go('?account_id=a1')
+    const drawer = page.getByRole('dialog', { name: '账号详情' })
+    await expect(drawer).toBeVisible()
+    await expect(drawer).toContainText('隔离测试备注')
+    for (const label of ['并发占用 / 容量', '优先级 / 权重', '本地 Token / 额度', '输入 / 输出 / 缓存', '账号 ID / 版本', '含刷新令牌']) await expect(drawer).toContainText(label)
+    await expect(drawer.locator('.account-chart canvas')).toHaveCount(1)
+    await drawer.locator('.request-record summary').click()
+    await expect(drawer.locator('.request-record')).toContainText(htmlText)
+    assert.equal(await drawer.locator('img[src="x"]').count(), 0)
+    assert.equal(await page.evaluate(() => window.__injected), undefined)
+    await drawer.getByRole('button', { name: /close|关闭/i }).click()
+    await expect(drawer).toBeHidden()
+    await expect(page.locator('.account-chart canvas')).toHaveCount(0)
+    assert.ok(!page.url().includes('account_id='))
+    assertions.push('稳定 account_id 直达详情；备注标签/真实请求；HTML按文本显示；关闭销毁图表')
+
+    await go()
+    await table().locator('tbody tr').first().getByRole('button', { name: '编辑', exact: true }).click()
+    const edit = page.getByRole('dialog').filter({ has: page.getByRole('textbox', { name: '账号备注' }) })
+    await expect(edit.getByRole('spinbutton', { name: '账号并发容量', exact: true })).toHaveValue('8')
+    await expect(edit.getByRole('spinbutton', { name: '账号优先级', exact: true })).toHaveValue('3')
+    await expect(edit.getByRole('spinbutton', { name: '账号权重', exact: true })).toHaveValue('5')
+    await expect(edit.getByRole('spinbutton', { name: '账号窗口天数', exact: true })).toHaveCount(0)
+    await expect(edit.getByRole('spinbutton', { name: '账号 Token 额度', exact: true })).toHaveCount(0)
+    await expect(edit).not.toContainText('本地 Token 预算')
+    await edit.getByRole('textbox', { name: '账号备注' }).fill('更新备注 <b>文本</b>')
+    const beforeUpdate = state.requests.filter(request => request.path === '/accounts/a1' && request.method === 'PUT').length
+    await edit.getByRole('button', { name: '保存', exact: true }).evaluate(button => { button.click(); button.click() })
+    await expect(edit).toBeHidden()
+    const updates = state.requests.filter(request => request.path === '/accounts/a1' && request.method === 'PUT')
+    assert.equal(updates.length, beforeUpdate + 1)
+    assert.equal(updates.at(-1).body.version, 1)
+    assert.equal(updates.at(-1).body.notes, '更新备注 <b>文本</b>')
+    assert.equal(updates.at(-1).body.concurrency, 8)
+    assert.equal(updates.at(-1).body.priority, 3)
+    assert.equal(updates.at(-1).body.weight, 5)
+    assert.equal('quota' in updates.at(-1).body, false)
+    assert.equal('window_days' in updates.at(-1).body, false)
+    assert.equal('reset_window' in updates.at(-1).body, false)
+    await table().locator('thead .el-checkbox').click()
+    await expect(table().locator('thead').getByRole('checkbox')).toBeChecked()
+    await page.getByRole('button', { name: '批量管理（2）', exact: true }).click()
+    const bulk = page.getByRole('dialog', { name: '批量管理', exact: true })
+    await bulk.getByRole('button', { name: '执行批量操作', exact: true }).evaluate(button => { button.click(); button.click() })
+    await expect(bulk.locator('.result-table')).toContainText('版本冲突')
+    await expect(bulk.locator('.result-table')).toContainText('成功')
+    const batches = state.requests.filter(request => request.path === '/accounts/batch')
+    assert.equal(batches.length, 1)
+    assert.deepEqual(batches[0].body.items.map(item => item.id), ['a1', 'a2'])
+    assert.ok(batches[0].body.items.every(item => Number.isInteger(item.version)))
+    await bulk.getByRole('button', { name: '关闭', exact: true }).click()
+    assertions.push('账号保存防双击、使用ID/version；批量结果逐项展示成功和版本冲突')
+
+    await openImport()
+    const beforePreview = state.requests.filter(request => request.path === '/accounts/import/preview').length
+    await preview('{\n "access_token": "never-send-secret",\n "bad": broken\n}')
+    await expect(importDialog().locator('.preview-table')).toContainText('JSON 格式错误')
+    await expect(importDialog().locator('.preview-table tbody tr')).toContainText('3')
+    assert.equal(state.requests.filter(request => request.path === '/accounts/import/preview').length, beforePreview)
+    await expect(importDialog().getByRole('button', { name: /确认导入/ })).toBeDisabled()
+    await preview(JSON.stringify({ tokens: { access_token: 'isolated-multiline-access', refresh_token: 'isolated-refresh-secret' } }, null, 2))
+    assert.equal(state.requests.filter(request => request.path === '/accounts/import/preview').at(-1).body.defaults.concurrency, 1)
+    await importDialog().locator('.import-advanced summary').click()
+    await expect(importDialog().getByRole('spinbutton', { name: '导入默认窗口天数', exact: true })).toHaveCount(0)
+    await importDialog().locator('.import-advanced summary').click()
+    await expect(importDialog().locator('.preview-counts')).toContainText('新增 1')
+    await importDialog().getByRole('button', { name: '确认导入 1 项', exact: true }).evaluate(button => { button.click(); button.click() })
+    await expect(importDialog().locator('.result-table')).toContainText('已新增')
+    assert.equal(state.imported.length, originalImported + 1)
+    assert.equal(state.imported.at(-1).replace, false)
+    assert.equal(JSON.parse(state.imported.at(-1).raw).credentials.access_token, 'isolated-multiline-access')
+    const downloaded = page.waitForEvent('download')
+    await importDialog().getByRole('button', { name: '下载脱敏结果', exact: true }).click()
+    const download = await downloaded
+    const report = await readFile(await download.path(), 'utf8')
+    assert.ok(!report.includes('isolated-multiline-access') && !report.includes('isolated-refresh-secret'))
+    assert.equal(JSON.parse(report)[0].result, 'success')
+    await importDialog().getByRole('button', { name: '关闭', exact: true }).click()
+    assertions.push('多行auth.json单条预览与提交；错误行号且不静默降级；双击导入一次；脱敏结果下载')
+
+    await openImport()
+    const one = 'eyJhbGciOiJIUzI1NiJ9.first-unique.signature'
+    const two = 'eyJhbGciOiJIUzI1NiJ9.second-unique.signature'
+    await preview(`${one}\n${two}\n${one}`)
+    await expect(importDialog().locator('.preview-counts')).toContainText('新增 2')
+    await expect(importDialog().locator('.preview-counts')).toContainText('重复 1')
+    const names = await importDialog().locator('.preview-table tbody tr td:nth-child(2)').allTextContents()
+    assert.notEqual(names[0], names[1])
+    assert.ok(!names[0].includes(one.slice(0, 16)))
+    await importDialog().getByRole('button', { name: '确认导入 2 项', exact: true }).click()
+    await expect(importDialog().locator('.result-table tbody tr')).toHaveCount(2)
+    await importDialog().getByRole('button', { name: '关闭', exact: true }).click()
+    assertions.push('共享JWT头/同工作区不造成名称碰撞；输入重复凭据仅提交一次')
+
+    // The mock fixture implements real name_conflict semantics. Explicitly choose
+    // replacement for one row while the adjacent new row remains replace:false.
+    await openImport()
+    await preview(JSON.stringify([{ name: originalAccounts[0].name, access_token: 'replacement-test-token' }, { name: 'independent-new', access_token: 'new-test-token' }]))
+    await expect(importDialog().locator('.preview-counts')).toContainText('替换 1')
+    await expect(importDialog().getByRole('button', { name: '确认导入 1 项', exact: true })).toBeEnabled()
+    await importDialog().locator('.preview-table tbody tr').first().locator('.el-select').click()
+    await page.getByRole('option', { name: '替换已有凭据', exact: true }).click()
+    await importDialog().getByRole('button', { name: '确认导入 2 项', exact: true }).click()
+    await expect(importDialog().locator('.result-table')).toContainText('凭据已替换')
+    assert.equal(state.imported.at(-2).replace, true)
+    assert.equal(state.imported.at(-1).replace, false)
+    await importDialog().getByRole('button', { name: '关闭', exact: true }).click()
+    assertions.push('重名默认跳过；覆盖必须逐项明确选择；同批新行保持replace:false')
+
+    await openImport()
+    const sourceAccount = { name: 'sub2api-file-account', platform: 'openai', type: 'oauth', concurrency: 9, priority: 4, enabled: false, notes: 'preserve source metadata', credentials: { access_token: 'synthetic-sub2api-access', refresh_token: 'synthetic-sub2api-refresh', id_token: 'synthetic-sub2api-id', chatgpt_account_id: 'synthetic-workspace' }, extra: { privacy_mode: 'training_disabled' } }
+    await importDialog().getByLabel('选择账号导入文件', { exact: true }).setInputFiles([
+      { name: 'sub2api-export.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify({ exported_at: '2026-09-17T00:00:00Z', proxies: [], accounts: [sourceAccount] })) },
+      { name: 'invalid.json', mimeType: 'application/json', buffer: Buffer.from('{"access_token": invalid}') },
+    ])
+    await expect(importDialog().getByLabel('已选择的账号文件')).toContainText('sub2api-export.json')
+    await importDialog().getByRole('button', { name: '生成预览', exact: true }).click()
+    await expect(importDialog().locator('.preview-counts')).toContainText('新增 1')
+    await expect(importDialog().locator('.preview-counts')).toContainText('失败 1')
+    await expect(importDialog().locator('.preview-table')).toContainText('invalid.json')
+    const previewRaw = JSON.parse(state.requests.filter(request => request.path === '/accounts/import/preview').at(-1).body.raw)
+    assert.deepEqual(previewRaw, [sourceAccount])
+    await importDialog().getByRole('button', { name: '确认导入 1 项', exact: true }).click()
+    await expect(importDialog().locator('.import-result-summary')).toContainText('成功 1 项，失败 1 项')
+    assert.deepEqual(JSON.parse(state.imported.at(-1).raw), sourceAccount)
+    await importDialog().getByRole('button', { name: '关闭', exact: true }).click()
+    assertions.push('多文件导入Sub2API信封；源并发/优先级/状态/扩展完整传递；坏文件逐项标记且其余可导入')
+    return assertions
+  } finally {
+    state.accounts = originalAccounts
+    await page.evaluate(() => localStorage.removeItem('accountColumns'))
+    await go()
+  }
+}

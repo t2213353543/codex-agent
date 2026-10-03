@@ -1,0 +1,25 @@
+{
+  "schema": "codex-native-ws-message-plan-v1",
+  "implemented": false,
+  "operation": "websocket_message_v1",
+  "frame_prefix": {"kind": "uint8", "length": "uint32-big-endian"},
+  "max_metadata_bytes": 65536,
+  "max_message_bytes": 33554432,
+  "max_handshake_tail_bytes": 16384,
+  "max_queued_messages_per_direction": 1,
+  "frames": {
+    "HANDSHAKE": {"code": 65, "direction": "helper_to_go", "encoding": "json", "required": ["status", "headers", "body_scope", "body_complete", "body_base64", "tail_truncated"]},
+    "MESSAGE": {"code": 66, "direction": "helper_to_go", "encoding": "uint64_sequence,uint8_message_kind,decoded_bytes"},
+    "CLOSE": {"code": 67, "direction": "helper_to_go", "encoding": "json", "required": ["code", "reason"]},
+    "ERROR": {"code": 68, "direction": "helper_to_go", "encoding": "json", "required": ["phase", "code", "accepted"]},
+    "END": {"code": 69, "direction": "helper_to_go", "encoding": "empty"},
+    "WRITE_ACK": {"code": 70, "direction": "helper_to_go", "encoding": "uint64_sequence"},
+    "SEND": {"code": 82, "direction": "go_to_helper", "encoding": "uint64_sequence,uint8_message_kind,decoded_bytes"},
+    "SEND_CLOSE": {"code": 83, "direction": "go_to_helper", "encoding": "json", "required": ["code", "reason"]},
+    "CANCEL": {"code": 84, "direction": "go_to_helper", "encoding": "empty"}
+  },
+  "message_kinds": {"text": 1, "binary": 2},
+  "recovery": {"owner": "go", "target_http_401_only": true, "maximum_redials": 1, "after_101_replay": false, "proxy_failure_is_target_rejection": false},
+  "handshake_tail": {"scope": "handshake_tail", "complete": null, "full_http_body_guaranteed": false},
+  "capabilities": {"native_http_implies_native_websocket": false, "native_websocket_required_capability": "websocket_message_v1", "silent_go_fallback": false}
+}

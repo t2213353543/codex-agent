@@ -1,0 +1,81 @@
+{
+  "schema": "native-startup-validation-v1",
+  "date": "2026-09-18",
+  "go_source_sha256": "88ff8d9bfb21fe59b65998946aa5d17b94aed9c6483f88bc3dc2337a0a555cdb",
+  "helper_sha256": "6df426c0a8eb703929f888055192e09cec0d2f7eea9391f2ae891e1ca6213740",
+  "linux_gateway_sha256": "f46f5aa591b88e288d2f0851424abd99bd21b9cd218e4e9ddfb41aca3a6f9039",
+  "helper_production_changed": false,
+  "helper_rebuilt": false,
+  "production_deployed": false,
+  "live_model_requests": 0,
+  "goal_complete": false,
+  "implementation": {
+    "before_pool_publication": true,
+    "fixed_origin": "http://127.0.0.1:1",
+    "proxy": null,
+    "request_envelopes_sent_by_preflight": 0,
+    "required_capability": "request_zstd_v1",
+    "required_when_native_websocket_enabled": "websocket_message_v1",
+    "http_lifecycle_must_match": true,
+    "helper_clean_exit_required": true,
+    "probe_process_kept_in_serving_pool": false,
+    "unready_socket_cleanup_after_process_exit": true,
+    "known_socket_identity_is_not_resampled": true
+  },
+  "validation": {
+    "ordinary_go_tests_passed": true,
+    "ordinary_go_tests_seconds": 21.945,
+    "vet_passed": true,
+    "windows_linux_builds_passed": true,
+    "race": {
+      "passed_top_level_tests": 283,
+      "passed_test_events": 627,
+      "failed_tests": [],
+      "skipped_tests": [],
+      "missing_tests": [],
+      "duration_seconds": 159.831,
+      "cleanup_complete": true
+    },
+    "native_release_interop_top_level_tests": 20,
+    "native_startup_factory_subcases": 6,
+    "independent_native_startup_cases": 5,
+    "independent_startup_origin_connections_observed": 0,
+    "probe_runner_cleanup_unit_tests": 2
+  },
+  "limits": [
+    "No real-account or production requests; user cancellation remains honored.",
+    "Readiness checks local executable/client/TLS configuration and IPC, not target connectivity or trust.",
+    "Only the configured loopback origin was monitored; no-other-dial also relies on source review.",
+    "Unknown pre-ready socket identity is inspected in the private directory after child exit, not proven against same-UID active replacement.",
+    "Startup validation runs only before the pool is published, not concurrently with serving or Close.",
+    "The sealed helper was not rebuilt; new external probe sources are separate from its original build snapshot.",
+    "No production success-rate, cache-rate or complete device-fingerprint improvement is claimed."
+  ],
+  "evidence": [
+    {
+      "kind": "source_manifest",
+      "path": ".local/source-20260918/gateway-overlay-20260918t065038-5660d3/source-manifest.json",
+      "sha256": "a1fa1e670b780d7d081bd0b7089dc1410f0275a6c438079f50fa33bbb11bd0d5"
+    },
+    {
+      "kind": "build",
+      "path": ".local/source-20260918/gateway-overlay-20260918t065038-5660d3/build-verification.json",
+      "sha256": "ba1ff147d3c1546be468fea2b6e09b1b87c137fe94727ef43404705d19519dc2"
+    },
+    {
+      "kind": "race",
+      "path": ".local/source-20260918/local-linux-race-20260918t065208-ccec67/report.json",
+      "sha256": "801d25b72e64cc419768fbc00e20c929cbf2c0d0de15a30600db055d506efaa4"
+    },
+    {
+      "kind": "gateway",
+      "path": ".local/native-transport-build/gateway-compare-20260918T065109-adc725/result.json",
+      "sha256": "3ebd605b43c2c9d0a536d7e21cd79caa6e34c68d8e9f3b695ef4ae37e6bb1dcf"
+    },
+    {
+      "kind": "independent_startup",
+      "path": ".local/native-startup-probe/20260918T065226Z-115d0caf/report.json",
+      "sha256": "c397abadae02134c77b206e2230fc0600ddfb5ae8aeb6168be7ac8eab71a8833"
+    }
+  ]
+}

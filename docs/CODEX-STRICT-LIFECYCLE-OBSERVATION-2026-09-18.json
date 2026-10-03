@@ -1,0 +1,129 @@
+{
+  "schema": "strict-lifecycle-attempt-observation-v1",
+  "completed_at": "2026-09-18T04:45:47.101615+00:00",
+  "cli_release": "0.155.0",
+  "go_source_sha256": "4205b9633bcba32f9c14a2efc347051205cb8cb49962d1008a7d373cc9cdc237",
+  "helper_sha256": "200bf8758823766918fc1799e006501c6e37401e2d3f560f11038ed3a899488f",
+  "goal_complete": false,
+  "production_deployed_by_this_phase": false,
+  "model_inference_requests_this_phase": 0,
+  "native_http_lifecycle_default": "cli_request",
+  "pooled_is_explicit_performance_mode": true,
+  "gateway_actual_top_level_tests": 13,
+  "race": {
+    "passed_top_level_tests": 227,
+    "passed_test_events": 485,
+    "failed_tests": [],
+    "skipped_tests": [],
+    "missing_tests": [],
+    "duration_seconds": 110.322,
+    "cleanup_complete": true
+  },
+  "fingerprint": {
+    "controlled_comparisons": [
+      {
+        "mode": "default_native",
+        "http2_observed_both": false,
+        "initial_settings_match": null,
+        "initial_window_updates_match": null,
+        "priorities_match": null,
+        "session_reuse_sequence_matches": true,
+        "official_reused_sessions": 0,
+        "helper_reused_sessions": 0,
+        "pooled_control_reused_sessions": 0
+      },
+      {
+        "mode": "custom_ca",
+        "http2_observed_both": true,
+        "initial_settings_match": true,
+        "initial_window_updates_match": true,
+        "priorities_match": true,
+        "session_reuse_sequence_matches": true,
+        "official_reused_sessions": 0,
+        "helper_reused_sessions": 0,
+        "pooled_control_reused_sessions": 3
+      }
+    ],
+    "observations_completed": true,
+    "observed_resumption_parity": true,
+    "production_sni_or_geography_verified": false
+  },
+  "observations": {
+    "schema_version": 1,
+    "max_attempts_per_record": 4,
+    "records_forwarding_and_billing_unchanged": true,
+    "actual_send_call_not_acceptance_proof": true,
+    "stage_intervals_can_overlap": true,
+    "unknown_values_remain_null_or_omitted": true,
+    "new_fields_store_raw_prompt_tool_error_url_credentials": false,
+    "existing_redacted_error_field_retained": true
+  },
+  "remaining": [
+    "A currently eligible dedicated real-inference account window is required; original group returned503.",
+    "Production-model quality, cache and success-rate comparisons on final candidate are not yet measured.",
+    "Full device/OS/network fingerprint and production destination TLS behavior are not established.",
+    "Conservative persisted unknown-owner lifecycle remains incomplete."
+  ],
+  "evidence": [
+    {
+      "kind": "manifest",
+      "path": ".local/source-20260918/gateway-overlay-20260918t044026-f04f7c/source-manifest.json",
+      "sha256": "4b367cf7666eecae98a77968c5223e637cb471b8f5e5eac365668e764cdc0699"
+    },
+    {
+      "kind": "builds",
+      "path": ".local/source-20260918/gateway-overlay-20260918t044026-f04f7c/build-verification.json",
+      "sha256": "44a8134d306d596b7d8bba4de17c0e3d7c9659419db3be59ca15f635ee52e325"
+    },
+    {
+      "kind": "race",
+      "path": ".local/source-20260918/local-linux-race-20260918t044150-a3e9dc/report.json",
+      "sha256": "aa8d99ac11d9ea9eb8ccb7bd31f5309ee799fc4106fd67e89f49578db6cd67c9"
+    },
+    {
+      "kind": "helper",
+      "path": ".local/native-local-build/20260918T042849Z-171e64e6/result.json",
+      "sha256": "514b156335f76e14d55940145d2a48601018f9e656249989fb86d69ad0a45447"
+    },
+    {
+      "kind": "helper_tests",
+      "path": ".local/native-local-build/20260918T042849Z-171e64e6/test-results.json",
+      "sha256": "c20bf0bd6204d02474352f7a15f5e10c41e2a6c7ce53b3b8bb63b2dfde843fa7"
+    },
+    {
+      "kind": "fingerprint",
+      "path": ".local/native-fingerprint/20260918T043423Z-fee0f7cd/report.json",
+      "sha256": "7b32df8332b4f4918052853cf9c2a36d63e010731b08d8387474fc08bb629d45"
+    },
+    {
+      "kind": "fingerprint_prior",
+      "path": ".local/native-fingerprint/20260918T042215Z-dc02a08f/report.json",
+      "sha256": "db7e1e4b492b3a69c2fb3c4a67b6abee2bd486b118ea9e7e63004746d4b14c93"
+    },
+    {
+      "kind": "gateway",
+      "path": ".local/native-transport-build/gateway-compare-20260918T044102-7cd64f/result.json",
+      "sha256": "59f056d4a18d3dd516845ab7f612b4daf49370d8c7476da4f1ce82af2b121617"
+    },
+    {
+      "kind": "http_cli",
+      "path": ".local/native-transport-build/gateway-compare-20260918T044102-7cd64f/gateway-cli.json",
+      "sha256": "34d3317cb7c6b9b1bd2f6536c5a8d457e3bc41de3980d754b353f4cedc152b9b"
+    },
+    {
+      "kind": "ws_cli",
+      "path": ".local/native-transport-build/gateway-compare-20260918T044102-7cd64f/gateway-ws-cli.json",
+      "sha256": "62ed77f9d770c34599ddad73695689dde67a4400f437d7543e3c1760f5ab8c4a"
+    },
+    {
+      "kind": "live_preflight",
+      "path": ".local/native-live-preflight.json",
+      "sha256": "bb6f9a48f5cb8d8b514e59ef6aec633a6bb3ddf599142518cae64fe09062ad92"
+    }
+  ],
+  "read_only_review": {
+    "evidence_hashes_verified": 11,
+    "initial_probe_port_scope_corrected": true,
+    "final_probe_same_origin_confirmed": true
+  }
+}

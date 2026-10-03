@@ -1,0 +1,347 @@
+// Injected only into a frozen package-main snapshot with a Go overlay.
+package main
+
+import (
+	"bytes"
+	"context"
+	"crypto/rand"
+	"crypto/sha256"
+	"encoding/base64"
+	"encoding/hex"
+	"encoding/json"
+	"errors"
+	"fmt"
+	"net/url"
+	"os"
+	"os/exec"
+	"reflect"
+	"strings"
+	"sync"
+	"testing"
+	"time"
+
+	"github.com/jackc/pgx/v5"
+	"github.com/jackc/pgx/v5/pgconn"
+)
+
+func m003Open(t *testing.T, dsn string) *Database {
+	t.Helper()
+	db, err := OpenDatabase(context.Background(), dsn, base64.StdEncoding.EncodeToString(bytes.Repeat([]byte{13}, 32)), "synthetic-m003")
+	if err != nil {
+		t.Fatal("isolated test database unavailable")
+	}
+	return db
+}
+
+func m003Exec(t *testing.T, conn interface {
+	Exec(context.Context, string, ...any) (pgconn.CommandTag, error)
+}, query string, args ...any) {
+	t.Helper()
+	if _, err := conn.Exec(context.Background(), query, args...); err != nil {
+		t.Fatalf("synthetic SQL failed: %v", safeDBError(err))
+	}
+}
+
+func m003Denied(t *testing.T, conn *pgx.Conn, sql string) {
+	t.Helper()
+	_, err := conn.Exec(context.Background(), sql)
+	var pgerr *pgconn.PgError
+	if !errors.As(err, &pgerr) || pgerr.Code != "42501" {
+		t.Fatalf("expected permission denied, got %v", safeDBError(err))
+	}
+}
+
+func m003LegacyRead(t *testing.T, db *Database) []byte {
+	t.Helper()
+	store := Store{DB: db}
+	account, err := store.Get("synthetic-m003")
+	if err != nil || account.AccessToken != "synthetic-m003-access" || account.RefreshToken != "refresh-synthetic-m003-access" {
+		t.Fatal("legacy credential decryption changed")
+	}
+	page, err := store.ListPage(AccountListOptions{Limit: 10})
+	if err != nil || len(page.Accounts) != 1 {
+		t.Fatal("legacy account list changed")
+	}
+	metrics, err := NewPGMetrics(db)
+	if err != nil {
+		t.Fatal("legacy metrics unavailable")
+	}
+	logs, err := metrics.Logs(LogQuery{Size: 10})
+	if err != nil || len(logs.Items) != 1 {
+		t.Fatal("legacy logs changed")
+	}
+	totals := metrics.GrandTotals()
+	if totals.Requests != 1 || totals.Tokens != 17 {
+		t.Fatal("legacy totals changed")
+	}
+	raw, _ := json.Marshal(map[string]any{"account_id": page.Accounts[0].ID, "account_count": len(page.Accounts), "log_count": len(logs.Items), "event_id": logs.Items[0].EventID, "totals": totals})
+	return raw
+}
+
+func TestManagementCleanupMigrationRestartHelper(t *testing.T) {
+	if os.Getenv("CODEX_M003_CHILD") != "1" {
+		t.Skip("child process only")
+	}
+	db := m003Open(t, os.Getenv("CODEX_M003_SCHEMA_DSN"))
+	defer db.Close()
+	if err := db.Migrate(context.Background()); err != nil {
+		t.Fatal("fresh process migration recheck failed")
+	}
+	_ = m003LegacyRead(t, db)
+	var targets int
+	if err := db.Pool.QueryRow(context.Background(), "SELECT count(*) FROM management_cleanup_targets").Scan(&targets); err != nil || targets != 2 {
+		t.Fatal("fresh process lost cleanup targets")
+	}
+}
+
+func TestManagementCleanupMigration(t *testing.T) {
+	ctx := context.Background()
+	ownerDSN, adminDSN := os.Getenv("CODEX_M003_OWNER_DSN"), os.Getenv("CODEX_M003_ADMIN_DSN")
+	if ownerDSN == "" || adminDSN == "" {
+		t.Fatal("explicit isolated DB configuration required")
+	}
+	u, err := url.Parse(ownerDSN)
+	if err != nil || u.Path != "/codex_agent_integration" || u.User.Username() != "codex_agent_test" {
+		t.Fatal("refusing non-integration database")
+	}
+	owner, err := pgx.Connect(ctx, ownerDSN)
+	if err != nil {
+		t.Fatal("test owner unavailable")
+	}
+	t.Cleanup(func() { owner.Close(context.Background()) })
+	admin, err := pgx.Connect(ctx, adminDSN)
+	if err != nil {
+		t.Fatal("integration postgres admin unavailable")
+	}
+	t.Cleanup(func() { admin.Close(context.Background()) })
+	var database, role string
+	if err := owner.QueryRow(ctx, "SELECT current_database(),current_user").Scan(&database, &role); err != nil || database != "codex_agent_integration" || role != "codex_agent_test" {
+		t.Fatal("unexpected database identity")
+	}
+	var random [6]byte
+	_, _ = rand.Read(random[:])
+	suffix := hex.EncodeToString(random[:])
+	schema := "codex_agent_integration_m003_" + suffix
+	ro := schema + "_ro"
+	rt := schema + "_rt"
+	quote := func(name string) string { return pgx.Identifier{name}.Sanitize() }
+	m003Exec(t, owner, "CREATE SCHEMA "+quote(schema))
+	createdRoles := []string{}
+	var db *Database
+	keepSchema := false
+	t.Cleanup(func() {
+		if db != nil {
+			db.Close()
+		}
+		if !keepSchema {
+			if _, err := owner.Exec(context.Background(), "DROP SCHEMA "+quote(schema)+" CASCADE"); err != nil {
+				t.Errorf("cleanup schema failed: %v", safeDBError(err))
+			}
+		} else {
+			for _, name := range createdRoles {
+				if _, err := owner.Exec(context.Background(), "REVOKE ALL ON ALL TABLES IN SCHEMA "+quote(schema)+" FROM "+quote(name)); err != nil {
+					t.Errorf("cleanup grants failed: %v", safeDBError(err))
+				}
+				if _, err := owner.Exec(context.Background(), "REVOKE ALL ON SCHEMA "+quote(schema)+" FROM "+quote(name)); err != nil {
+					t.Errorf("cleanup schema grants failed: %v", safeDBError(err))
+				}
+			}
+		}
+		for _, name := range createdRoles {
+			if _, err := admin.Exec(context.Background(), "DROP ROLE "+quote(name)); err != nil {
+				t.Errorf("cleanup temporary role failed: %v", safeDBError(err))
+			}
+		}
+	})
+	for _, name := range []string{ro, rt} {
+		m003Exec(t, admin, "CREATE ROLE "+quote(name)+" NOLOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT")
+		createdRoles = append(createdRoles, name)
+	}
+	query := u.Query()
+	query.Set("search_path", schema)
+	u.RawQuery = query.Encode()
+	db = m003Open(t, u.String())
+	checks := map[string]bool{}
+	sqlHashes := map[string]string{}
+	for _, file := range []string{"000_core.sql", "001_accounts.sql", "002_metrics.sql", "003_management_cleanup.sql"} {
+		raw, err := migrationFiles.ReadFile("migrations/" + file)
+		if err != nil {
+			t.Fatal(err)
+		}
+		sum := sha256.Sum256(raw)
+		sqlHashes[file] = hex.EncodeToString(sum[:])
+	}
+	// The index name conflicts only after 003 has executed its CREATE TABLE.
+	m003Exec(t, db.Pool, "CREATE TABLE management_cleanup_targets_expiry_idx(sentinel integer)")
+	err = db.Migrate(ctx)
+	if err == nil || !strings.Contains(err.Error(), "003_management_cleanup.sql") || !strings.Contains(err.Error(), "42P07") {
+		t.Fatalf("expected 003 relation conflict: %v", err)
+	}
+	var count int
+	var absent bool
+	if err := db.Pool.QueryRow(ctx, "SELECT count(*) FROM schema_migrations").Scan(&count); err != nil || count != 3 {
+		t.Fatal("000-002 per-file commits were not retained")
+	}
+	if err := db.Pool.QueryRow(ctx, "SELECT to_regclass('management_cleanup_targets') IS NULL").Scan(&absent); err != nil || !absent {
+		t.Fatal("failed 003 left a partial table")
+	}
+	checks["failed_003_rollback_keeps_prior_three_commits"] = true
+	store := Store{DB: db}
+	account := pgImportForTest(t, store, "synthetic-m003", "synthetic-m003-access")
+	metrics, err := NewPGMetrics(db)
+	if err != nil {
+		t.Fatal(err)
+	}
+	metrics.Record(RequestRecord{EventID: "synthetic-m003-event", Account: account.Name, AccountID: account.ID, Time: time.Now().Unix(), Status: "ok", HTTPCode: 200, InputTokens: 11, OutputTokens: 6, CachedTokens: 4, LatencyMs: 20})
+	if err := metrics.Save(); err != nil {
+		t.Fatal(err)
+	}
+	before := m003LegacyRead(t, db)
+	for _, name := range []string{ro, rt} {
+		m003Exec(t, owner, "GRANT USAGE ON SCHEMA "+quote(schema)+" TO "+quote(name))
+	}
+	m003Exec(t, owner, "GRANT SELECT ON ALL TABLES IN SCHEMA "+quote(schema)+" TO "+quote(ro))
+	m003Exec(t, owner, "GRANT SELECT,INSERT,UPDATE,DELETE ON ALL TABLES IN SCHEMA "+quote(schema)+" TO "+quote(rt))
+	m003Exec(t, db.Pool, "DROP TABLE management_cleanup_targets_expiry_idx")
+	if err := db.Migrate(ctx); err != nil {
+		t.Fatal(err)
+	}
+	if !bytes.Equal(before, m003LegacyRead(t, db)) {
+		t.Fatal("003 changed legacy runtime reads")
+	}
+	checks["legacy_account_logs_totals_unchanged"] = true
+	var ledgerBefore string
+	if err := db.Pool.QueryRow(ctx, "SELECT string_agg(name||checksum||applied_at::text,',' ORDER BY name) FROM schema_migrations").Scan(&ledgerBefore); err != nil {
+		t.Fatal(err)
+	}
+	var wg sync.WaitGroup
+	failures := make(chan error, 4)
+	for range 4 {
+		wg.Add(1)
+		go func() { defer wg.Done(); failures <- db.Migrate(ctx) }()
+	}
+	wg.Wait()
+	close(failures)
+	for err := range failures {
+		if err != nil {
+			t.Fatal("concurrent idempotent migration failed", err)
+		}
+	}
+	var ledgerAfter string
+	if err := db.Pool.QueryRow(ctx, "SELECT string_agg(name||checksum||applied_at::text,',' ORDER BY name) FROM schema_migrations").Scan(&ledgerAfter); err != nil || ledgerAfter != ledgerBefore {
+		t.Fatal("idempotent migration changed ledger")
+	}
+	checks["concurrent_idempotent_actual_migrator"] = true
+	m003Exec(t, db.Pool, "UPDATE schema_migrations SET checksum='synthetic-invalid-checksum' WHERE name='migrations/003_management_cleanup.sql'")
+	err = db.Migrate(ctx)
+	if err == nil || !strings.Contains(err.Error(), "checksum mismatch") {
+		t.Fatal("checksum drift accepted")
+	}
+	m003Exec(t, db.Pool, "UPDATE schema_migrations SET checksum=$1 WHERE name='migrations/003_management_cleanup.sql'", sqlHashes["003_management_cleanup.sql"])
+	checks["checksum_drift_rejected"] = true
+	var indexDef string
+	var tableOwner, indexOwner string
+	var fkCount int
+	if err := db.Pool.QueryRow(ctx, "SELECT indexdef FROM pg_indexes WHERE schemaname=current_schema() AND indexname='management_cleanup_targets_expiry_idx'").Scan(&indexDef); err != nil || !strings.Contains(indexDef, "expires_at IS NOT NULL") {
+		t.Fatal("expiry partial index missing")
+	}
+	if err := db.Pool.QueryRow(ctx, "SELECT pg_get_userbyid(t.relowner),pg_get_userbyid(i.relowner) FROM pg_class t JOIN pg_namespace n ON n.oid=t.relnamespace JOIN pg_class i ON i.relnamespace=n.oid WHERE n.nspname=current_schema() AND t.relname='management_cleanup_targets' AND i.relname='management_cleanup_targets_expiry_idx'").Scan(&tableOwner, &indexOwner); err != nil || tableOwner != "codex_agent_test" || indexOwner != tableOwner {
+		t.Fatal("table/index ownership differs")
+	}
+	if err := db.Pool.QueryRow(ctx, "SELECT count(*) FROM pg_constraint WHERE conrelid='management_cleanup_targets'::regclass AND contype='f'").Scan(&fkCount); err != nil || fkCount != 0 {
+		t.Fatal("unexpected target FK")
+	}
+	checks["table_index_owner_and_no_fk"] = true
+	// Simulate a schema upgrade with grants applied only to pre-existing tables.
+	var canReadNew bool
+	if err := db.Pool.QueryRow(ctx, "SELECT has_table_privilege($1,'management_cleanup_targets','SELECT')", rt).Scan(&canReadNew); err != nil || canReadNew {
+		t.Fatal("expected explicit new-table privilege boundary")
+	}
+	m003Exec(t, owner, "GRANT SELECT ON "+quote(schema)+".management_cleanup_targets TO "+quote(ro))
+	m003Exec(t, owner, "GRANT SELECT,INSERT,UPDATE,DELETE ON "+quote(schema)+".management_cleanup_targets TO "+quote(rt))
+	for _, name := range []string{ro, rt} {
+		conn, err := pgx.Connect(ctx, adminDSN)
+		if err != nil {
+			t.Fatal("role test connection unavailable")
+		}
+		m003Exec(t, conn, "SET search_path TO "+quote(schema))
+		m003Exec(t, conn, "SET ROLE "+quote(name))
+		m003Exec(t, conn, "SELECT * FROM management_cleanup_targets")
+		m003Denied(t, conn, "CREATE TABLE forbidden_ddl(id integer)")
+		m003Denied(t, conn, "DROP INDEX management_cleanup_targets_expiry_idx")
+		if name == ro {
+			m003Denied(t, conn, "INSERT INTO management_cleanup_targets(preview_id,log_id) VALUES('forbidden',1)")
+		} else {
+			m003Exec(t, conn, "INSERT INTO management_cleanup_targets(preview_id,log_id,expires_at) VALUES('synthetic-a',900001,NULL),('synthetic-b',900001,NULL),('synthetic-expired',900002,now()-interval '1 minute')")
+			m003Exec(t, conn, "UPDATE management_cleanup_targets SET expires_at=NULL WHERE preview_id='synthetic-a'")
+			m003Exec(t, conn, "DELETE FROM management_cleanup_targets WHERE expires_at<=now()")
+		}
+		conn.Close(ctx)
+	}
+	checks["runtime_crud_after_explicit_grant"] = true
+	checks["readonly_and_runtime_cannot_ddl"] = true
+	checks["readonly_cannot_write"] = true
+	_, err = db.Pool.Exec(ctx, "INSERT INTO management_cleanup_targets(preview_id,log_id) VALUES('synthetic-a',900001)")
+	var pgerr *pgconn.PgError
+	if !errors.As(err, &pgerr) || pgerr.Code != "23505" {
+		t.Fatal("composite target PK was not enforced")
+	}
+	checks["composite_pk_and_missing_log_id_allowed"] = true
+	if !bytes.Equal(before, m003LegacyRead(t, db)) {
+		t.Fatal("target lifecycle changed legacy data")
+	}
+	db.Close()
+	db = m003Open(t, u.String())
+	if !bytes.Equal(before, m003LegacyRead(t, db)) {
+		t.Fatal("reopened pool lost data")
+	}
+	command := exec.Command(os.Args[0], "-test.run=^TestManagementCleanupMigrationRestartHelper$", "-test.v")
+	command.Env = append(os.Environ(), "CODEX_M003_CHILD=1", "CODEX_M003_SCHEMA_DSN="+u.String())
+	output, err := command.CombinedOutput()
+	if err != nil {
+		t.Fatalf("fresh process failed: %s", output)
+	}
+	checks["fresh_process_reopen_migrate_and_legacy_reads"] = true
+	if err := db.Migrate(ctx); err != nil {
+		t.Fatal(err)
+	}
+	var stored map[string]string = map[string]string{}
+	rows, err := db.Pool.Query(ctx, "SELECT name,checksum FROM schema_migrations ORDER BY name")
+	if err != nil {
+		t.Fatal(err)
+	}
+	for rows.Next() {
+		var name, sum string
+		if err := rows.Scan(&name, &sum); err != nil {
+			t.Fatal(err)
+		}
+		stored[strings.TrimPrefix(name, "migrations/")] = sum
+	}
+	rows.Close()
+	if !reflect.DeepEqual(stored, sqlHashes) {
+		t.Fatal("ledger hashes differ from exact embedded SQL")
+	}
+	checks["ledger_matches_all_four_sql_sha256"] = true
+	checks["credential_decryption_before_after_restart"] = true
+	if err := db.requireSchema(ctx); err != nil {
+		t.Fatal("actual requireSchema rejected migrated schema")
+	}
+	checks["current_snapshot_require_schema_passed"] = true
+	if os.Getenv("CODEX_M003_KEEP_SCHEMA") == "1" {
+		if err := (Store{DB: db}).UpdateAccount("synthetic-m003", func(a *Account) error {
+			a.Enabled = false
+			a.ExpiresAt = time.Now().Add(24 * time.Hour).Unix()
+			return nil
+		}); err != nil {
+			t.Fatal("disable synthetic fixture failed")
+		}
+		fixture, _ := json.Marshal(map[string]any{"schema": schema, "DATABASE_URL": u.String(), "CREDENTIAL_ENCRYPTION_KEY": base64.StdEncoding.EncodeToString(bytes.Repeat([]byte{13}, 32)), "CREDENTIAL_ENCRYPTION_KEY_ID": "synthetic-m003", "synthetic_only": true, "all_accounts_disabled": true, "sql_sha256": sqlHashes})
+		if err := os.WriteFile(os.Getenv("CODEX_M003_FIXTURE_PATH"), fixture, 0600); err != nil {
+			t.Fatal("private fixture write failed")
+		}
+		keepSchema = true
+	}
+	report, _ := json.Marshal(map[string]any{"checks": checks, "sql_sha256": sqlHashes, "table_owner": tableOwner, "index_owner": indexOwner, "new_table_grant_required_when_no_default_privileges": true, "ordinary_legacy_rows_preserved": true, "synthetic_only": true, "transaction_scope": "one SQL migration file per transaction", "restart_scope": "fresh test process and PG pool, not PG container/service restart"})
+	t.Log("MIGRATION_003_METRIC " + string(report))
+	fmt.Println("MIGRATION_003_SCOPED_CLEANUP_REGISTERED")
+}

@@ -1,0 +1,23 @@
+{
+  "provenance": {
+    "run": "20260927T101157.095768Z",
+    "route": "official_app_server",
+    "configuration": "bridge tool_mode direct; original name is deliberately gateway alias"
+  },
+  "tools": [
+    {
+      "namespace": "functions",
+      "tool": {
+        "type": "function",
+        "name": "gw_7da3a53ceada5a86dc8dc14ea95d7c0fd5ca31ca2db8c92b05c90fb926e1",
+        "description": "lookup_marker: Retrieve the marker.",
+        "strict": false,
+        "parameters": {
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      }
+    }
+  ]
+}

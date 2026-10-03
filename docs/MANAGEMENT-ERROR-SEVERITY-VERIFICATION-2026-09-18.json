@@ -1,0 +1,1000 @@
+{
+  "schema": "codex-management-candidate-v2",
+  "status": "verified_management_candidate",
+  "completed_at": "2026-09-18T07:40:46.817766+00:00",
+  "iteration": "error-severity-20260918",
+  "deployed": false,
+  "full_reference_parity": false,
+  "previous_candidates_unchanged": true,
+  "billing_enabled": false,
+  "retired_suites_counted_as_passed": false,
+  "separate_owner_changes": [
+    "The frozen Go snapshot includes independently owned native startup/transport/WebSocket changes, not certified here for their external runtime release."
+  ],
+  "go_source_sha256": "ff4ce018b14afdc1f1549cb6e1881f36c029fdd58a80da8f9a9238dbf877f10e",
+  "go_source_files": 239,
+  "source_archive": ".local/management-parity/local-race-20260918t073333-6f6254/source.tar.gz",
+  "source_archive_sha256": "9f3b6433e7d8d578227d865e6e951c4f3306900376c8847011eae152c348683c",
+  "binaries": {
+    "codex-agent-windows-amd64.exe": {
+      "path": ".local/management-parity/local-race-20260918t073333-6f6254/codex-agent-windows-amd64.exe",
+      "sha256": "dd06ed564d191d3f2983f5337531b016a7689aa96c8d302010f3fe4d04420c67",
+      "size": 15762432
+    },
+    "codex-agent-linux-amd64": {
+      "path": ".local/management-parity/local-race-20260918t073333-6f6254/codex-agent-linux-amd64",
+      "sha256": "9f93e0e24859b3c49bb9ede714cdf8ac234618a3af16ee21afc953e119e33da1",
+      "size": 15327394
+    }
+  },
+  "frontend": {
+    "manifest_sha256": "c3368f22919950b4ae2ca6de744714ccebeaaa21cb16bf4abc3eb9523fd37648",
+    "frontend_sha256": "db93d3c73cf1078a6e45a32d05380b5756c966d04bbde5b9cf9e325e3cbeac3b",
+    "source_aggregate_sha256": "a9e45912fa708f083746564c85770b95759659c2b40a90cba251ba0a32da074c",
+    "entries": {
+      "Accounts": "accounts-managed-BXbY_rsM.js",
+      "Logs": "logs-managed-COfEPxyG.js"
+    },
+    "file_count": 54,
+    "source_file_count": 67,
+    "unchanged_baseline_resources": 48,
+    "archive": ".local/management-parity/error-severity-20260918/frontend-c3368f229199.zip",
+    "archive_sha256": "f44425c47c11e4eed48ea104d7416da95912dd15397c994f1cfb03da11095c4e",
+    "source_archive": ".local/management-parity/error-severity-20260918/frontend-source-c3368f229199.tar.gz",
+    "source_archive_sha256": "2634d5ca645e4baa62a19c305293f8f174c0af703a0714592881c5ef027ea32f"
+  },
+  "checks": {
+    "management_linux_race": {
+      "pass": 108,
+      "skip": 0,
+      "fail": 0
+    },
+    "management_linux_race_events": {
+      "pass": 323,
+      "skip": 0,
+      "fail": 0
+    },
+    "full_go_test": {
+      "pass": 470,
+      "skip": 113,
+      "fail": 0
+    },
+    "full_go_test_events": {
+      "pass": 1224,
+      "skip": 126,
+      "fail": 0
+    },
+    "vet": "pass",
+    "windows_build": "pass",
+    "linux_build": "pass",
+    "frontend_node": {
+      "tests": 154,
+      "pass": 154,
+      "fail": 0,
+      "skipped": 0
+    },
+    "accounts_browser_groups": 55,
+    "logs_browser_groups": 46,
+    "browser_network": "isolated synthetic API",
+    "screenshots": {
+      "accounts": 48,
+      "logs": 162
+    }
+  },
+  "preview_evidence": "Published separately by the local preview owner; no preview directories or credentials read by this packager.",
+  "limits": [
+    "Environment-dependent Go skips remain separate from passes.",
+    "Historical missing observations remain unknown.",
+    "No deployment, rebuild, service change, upstream request or user data deletion performed."
+  ],
+  "evidence": [
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-batch-reauthorize-1440.png",
+      "sha256": "7f984ea51291babce2cf471d82582d6eca9dcf006924293c9c222eb03f5d56b7"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-controls-1440.png",
+      "sha256": "6893c50e95679abf6f6d7a1be728733151b3baa3c4575444360584341b05210a"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-controls-320.png",
+      "sha256": "877962c97570e986b81468b326649211329221d41979268de48373bc203446f8"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-crs-1440.png",
+      "sha256": "cb241a019e8cfc5b03059013ca205df0f52dbf0573598c0f43a062df403d3175"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-resource-restore-1440.png",
+      "sha256": "c4a67027e9f0e0e5e46752d0f8b1c1fc4abd69ce76482f61dd70444d75a4b30e"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-resource-restore-320.png",
+      "sha256": "d2c4cf0e559219345df2fa3acf3b03e7da62e6c582bff25f1fb0598ddad4b549"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-runtime-1440.png",
+      "sha256": "d3c2d0c7f9c4180320c1e173cbcdf7ba3adf28263451c58b8a25f2dff0b1cf49"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-runtime-320.png",
+      "sha256": "a417f04bdb719147ae04db793e4f80b6e32ca56e6e25a56e9191a4c87731b65f"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-runtime-policy-1440.png",
+      "sha256": "bc25f3ce2fc18e6f1f293557d21a83bd1442f0b7b85430aaadb3cb50e06c3c85"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-runtime-policy-320.png",
+      "sha256": "b4778df49df3605b20e3cc2846c6b83d5a01f4c10c3258ca952b47a87c8db25c"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-schedules-1440.png",
+      "sha256": "3c75b940bbbaa370dfbd27de8064ef1279b66b099b8e84485b59462cbe9ad1f7"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-schedules-320.png",
+      "sha256": "9bc93bc4c16d5895990f064738846c6aaf747cb8e8e701317a91a0f239cefefd"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-statistics-1440.png",
+      "sha256": "913c057ab526f56ce101c465af56098a7a26458d7562202544ff9c211c8a091b"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-usage-summary-dark-1440.png",
+      "sha256": "7e1335245017034e7f030230f53efd6d1d01e36f31fdb95d52506dbd31d5fa38"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-usage-summary-dark-390.png",
+      "sha256": "52f3a682090f7c150994831c7cb8e3f561a830e5d5ee1059e49c48a15b05cd06"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-usage-summary-light-1440.png",
+      "sha256": "96fa12b5d7246da679f9bea0c0f6332f8874f869dd26045f24a95c72caa2baa6"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-usage-summary-light-390.png",
+      "sha256": "d474350fe53fb9d93f4f989734eb162047dac0000558b938c7bbb384bf7bb23c"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-usage-summary-mint-1440.png",
+      "sha256": "96fa12b5d7246da679f9bea0c0f6332f8874f869dd26045f24a95c72caa2baa6"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-usage-summary-mint-390.png",
+      "sha256": "d474350fe53fb9d93f4f989734eb162047dac0000558b938c7bbb384bf7bb23c"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-usage-summary-ocean-1440.png",
+      "sha256": "96fa12b5d7246da679f9bea0c0f6332f8874f869dd26045f24a95c72caa2baa6"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-usage-summary-ocean-390.png",
+      "sha256": "d474350fe53fb9d93f4f989734eb162047dac0000558b938c7bbb384bf7bb23c"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-usage-trend-dark-1440.png",
+      "sha256": "e0a117880f27e72b2da33e4f12447bf2944ac6603b6378c424768e543faf6c32"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-usage-trend-dark-390.png",
+      "sha256": "40617061d65bda8e42f4ea73ddcaf153f45a46af8efb4bbc9b3fa9ca9fdde5ba"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-usage-trend-light-1440.png",
+      "sha256": "0df0a252ac5c6b27891b6f98b158d49ab7432543d4fb8d1e757c1117bf319579"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-usage-trend-light-390.png",
+      "sha256": "1000f649be359f0ba358ee7175f557d0c7594d64efb06b2ed22610cf853ef5ab"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-usage-trend-mint-1440.png",
+      "sha256": "0df0a252ac5c6b27891b6f98b158d49ab7432543d4fb8d1e757c1117bf319579"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-usage-trend-mint-390.png",
+      "sha256": "1000f649be359f0ba358ee7175f557d0c7594d64efb06b2ed22610cf853ef5ab"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-usage-trend-ocean-1440.png",
+      "sha256": "0df0a252ac5c6b27891b6f98b158d49ab7432543d4fb8d1e757c1117bf319579"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/account-usage-trend-ocean-390.png",
+      "sha256": "1000f649be359f0ba358ee7175f557d0c7594d64efb06b2ed22610cf853ef5ab"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/external-lease-expired-confirm-320.png",
+      "sha256": "9a4ff480f16d9ff134abab89573b4e17b9429674562258a51d42e1470bc26260"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/external-lease-independent-receipt-dark-1440.png",
+      "sha256": "8eb4f40a33f086553a0c4a001bd1534a145689cee5c7acbddc49b7faa26cdf37"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/external-lease-independent-receipt-dark-390.png",
+      "sha256": "4a7d1eaa71e4b9e717c40776b10e54df829e8d9cfc738ba78bfdb6310be65f58"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/external-lease-independent-receipt-light-1440.png",
+      "sha256": "7471622915990e4c43bccf094292b240393b6192ba35c0a7d0964e59eef6343e"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/external-lease-independent-receipt-light-390.png",
+      "sha256": "f3ca9288ee702af600324721c4000464a5ed14b4ac91a139419c3f0ed67a0384"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/external-lease-independent-receipt-mint-1440.png",
+      "sha256": "edc8f6b53c553a3258246ea12c5c110cfb48d5e13812433baa46449fe05c7c0c"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/external-lease-independent-receipt-mint-390.png",
+      "sha256": "a6a2f1190e4fbafb71ea6e1a201c716e63ff42f51c6beff0c98bc045b28c9863"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/external-lease-independent-receipt-ocean-1440.png",
+      "sha256": "c18aa28cb1fde9b9558261b03ef5bc35f56dbba25dfd768f4b30dc946d562c65"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/external-lease-independent-receipt-ocean-390.png",
+      "sha256": "dc8af7e500e0ec886e6519470f04e514f89fc5e190bcab0acf0c7dd7eaba4c37"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/external-lease-preview-dark-1440.png",
+      "sha256": "cabd218ef30b059bc922e0a5f369cf19593628b0fae0ba2a3ef80c073749ffcc"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/external-lease-preview-dark-390.png",
+      "sha256": "13bf0d713c8d8720205f1aac088d239b5b94fcd36ce43e7ada03bc8fc75f6040"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/external-lease-preview-light-1440.png",
+      "sha256": "d8bede63dd83afd20f1cd59b75fabf53b241969781c69c9004713551d755a5f0"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/external-lease-preview-light-390.png",
+      "sha256": "63d1743f9a01d865fd7542773e5baf5b4e872c2c5655077c4f833fe1650d70c1"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/external-lease-preview-mint-1440.png",
+      "sha256": "d8bede63dd83afd20f1cd59b75fabf53b241969781c69c9004713551d755a5f0"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/external-lease-preview-mint-390.png",
+      "sha256": "63d1743f9a01d865fd7542773e5baf5b4e872c2c5655077c4f833fe1650d70c1"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/external-lease-preview-ocean-1440.png",
+      "sha256": "d8bede63dd83afd20f1cd59b75fabf53b241969781c69c9004713551d755a5f0"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/external-lease-preview-ocean-390.png",
+      "sha256": "63d1743f9a01d865fd7542773e5baf5b4e872c2c5655077c4f833fe1650d70c1"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/lease-backup-ready-1440.png",
+      "sha256": "099b18b1c5e608ea3659579581274b86c6d022bf02fd17fe5cfdc72384c3240b"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/lease-backup-ready-320.png",
+      "sha256": "b501506ecef9c6b02e93912c167394cfa295e54b701385efc1cd30eb44580f73"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/account-browser/report.json",
+      "sha256": "77919b4bcc8ae00c8e61cfc5e722e0b12b07742c01aae9c8c56ce94be86ba4ee"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/accounts-no-billing-verification.json",
+      "sha256": "de31a9f83599239141d9cd6cfef7b717979cd8a0e329a17b8eb0eaa110b92b6f"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/build-manifest.json",
+      "sha256": "c3368f22919950b4ae2ca6de744714ccebeaaa21cb16bf4abc3eb9523fd37648"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/frontend-unit-report.json",
+      "sha256": "5e031280e3178b59cccab4f54607aea69884194ff7ab8382ad177b57531e011f"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/frontend-unit.tap",
+      "sha256": "d8bfc872b8cac75a7772aa9e60d1a7b3a62b0f9c4a4d3652770c3d3173bf93e7"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/error-review-list-dark-1440.png",
+      "sha256": "59ceee3b46c35c6199a301e9d12aae16a84a5ba62f8b500634f4ab4483543a40"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/error-review-list-dark-390.png",
+      "sha256": "a8c4f0ff4bb8595a31c695895a7ea5b6f21cddff0f04d8b6cacc09fb72f636ef"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/error-review-list-light-1440.png",
+      "sha256": "a872c07a00ded97fac1d90ef45923b070ab5c830c0df455fd7159943d6590c8e"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/error-review-list-light-390.png",
+      "sha256": "1f7db4b1e297287363e072eb75fc29cd7b9f531111ea2cd8b2d23cc19f7e1095"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/error-review-list-mint-1440.png",
+      "sha256": "7242002250516ff8d20a74f85f7c8e2b992ebdfde74ad16cc52e2989d91d1382"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/error-review-list-mint-390.png",
+      "sha256": "bdbba463a91659a5286febf796393fd89b19956982227b046720b70e86d999ac"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/error-review-list-ocean-1440.png",
+      "sha256": "0118bc71f5140882015731ac2055ef902e51151d8702292728abf42c21c1e82a"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/error-review-list-ocean-390.png",
+      "sha256": "4f23088f2b719e6e5093c6d58960b2571e9ec91650f9977e19743d5937de41b1"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/error-review-panel-dark-1440.png",
+      "sha256": "18baee92f62b0e90ba34bee930be954cf807c132fe055d616b597e648a691dbc"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/error-review-panel-dark-390.png",
+      "sha256": "b362af3ba5c86d4a16b796460f65dd58bd8d4219691e0b1705b3a3d2b9eb122c"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/error-review-panel-light-1440.png",
+      "sha256": "77d2da3c5cffe17b99979ebac708e739b8f7af0612d71cd8d92c90b405555bbd"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/error-review-panel-light-390.png",
+      "sha256": "03ff0a7450f33b777ccda19b5b1f97951398b50dfa2008c2cd168b791091e707"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/error-review-panel-mint-1440.png",
+      "sha256": "d5189a8cc338d2ab1d4445eca26de84fc66a0766058e97d819b16b06230fe2ee"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/error-review-panel-mint-390.png",
+      "sha256": "8ec51a8ef328aed66681be53ad08412d18089ac17b804624d998803ada9bca17"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/error-review-panel-ocean-1440.png",
+      "sha256": "457635c39758b52cf76fb58a43026d420810fbe149da1dff3e3a41b29eaef66f"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/error-review-panel-ocean-390.png",
+      "sha256": "bbb7e417c2ab50145b99a7f3adeb64a9981757c149d521c2522de09a7988ea14"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/geo-batch-dark-1440.png",
+      "sha256": "5001c4ab8cdd1f74f724ffacfcf63a44b276a2e40c02a633c881c085d27ed83f"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/geo-batch-dark-390.png",
+      "sha256": "a4ff7be7599d8658d30a8bf31f5e3433a40ecda1980d1306d6878e2e526b0f5e"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/geo-batch-light-1440.png",
+      "sha256": "751eaa64b264639e18f8cbdc5bcbb9485a7a44117c6db5f2168e5a64dd8a45d4"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/geo-batch-light-390.png",
+      "sha256": "bfc4974d25eae0958766a6092f0fffd418d31b3a37962ba86221a57ee6e06ecd"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/geo-batch-mint-1440.png",
+      "sha256": "71ced4f07773e6224ec10e6ec4a7d3f8fc2cc978aba83504338143ecd21308f9"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/geo-batch-mint-390.png",
+      "sha256": "16c768b891a23e789a962cc9d8afb92de63118c822c4baf18152393e4eb3d074"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/geo-batch-ocean-1440.png",
+      "sha256": "f08bb14109521ca6a799a7f69ee8552ff6f0dfd2d5487cdd98c084b8cebffc15"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/geo-batch-ocean-390.png",
+      "sha256": "a74a628ef8b6eac6c0b0cdd2aaf63cb56bcd36cd057cdfff32923deb4d2feae2"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/geo-detail-dark-1440.png",
+      "sha256": "e4bae3e08bb293f44cd00c0bed875c2a2046d925da6831bb092157df51d31762"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/geo-detail-dark-390.png",
+      "sha256": "ad3313711060770df11e3c8ed88283193e5a234fa47aa1ad1bcf4ec4187a842e"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/geo-detail-light-1440.png",
+      "sha256": "d891e62d7ae0dcf38892fdecb7211140ad35ab5c5170e7e4c568062ecf8ff7f2"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/geo-detail-light-390.png",
+      "sha256": "c9948e72d7afffa7bae940b688114aa6c5c015790fecc7f7b8a52e3ddb5ebcb5"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/geo-detail-mint-1440.png",
+      "sha256": "b65bdc9b16f9174b79c14c222f13809b2bdabdff6ae3474a499b88a3ece2d72b"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/geo-detail-mint-390.png",
+      "sha256": "98ef2925ecbf694dda429e3dc22c96c1ae08b6c160f9b379fcf01a217ec80ba0"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/geo-detail-ocean-1440.png",
+      "sha256": "4e0b6f5eb396a2bb65196c0e12d5fcd53cdbd87ac910d55bdb7d92597072d75b"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/geo-detail-ocean-390.png",
+      "sha256": "e865764ea35b19e7525992308ed1b724643b85a42c2f01722f547b2610409a41"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-analysis-1440.png",
+      "sha256": "d0e4195669af5c59e45e2932386a6482674abe1a60c71e1075d7e1d9a5934a9b"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-card-320.png",
+      "sha256": "1b1f1055f684c1dc6aa81541d7632a34c371bc2562a2899c0c7cd698a51cbaae"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-card-390.png",
+      "sha256": "4fe780feb6bd973cf569d33bf099de8ffda91d48244b49e2cbb92928b3b4dd07"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-cleanup-1440.png",
+      "sha256": "1ffb6afdaae857d5f1a6f3a95fc4a0a7ba01338a19d2b0347a002d3eaa3e10c3"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-cleanup-390.png",
+      "sha256": "987c6ba6524a137da6373ded11b9c517f5654b99e06a44f89f1f138d0dc24a32"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-ip-geo-390.png",
+      "sha256": "c9948e72d7afffa7bae940b688114aa6c5c015790fecc7f7b8a52e3ddb5ebcb5"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-ip-geo-batch-320.png",
+      "sha256": "aa59d7a5433bb74abc68ee4453ac22f38cf08b42fac77e5e1049ac9d539e1cef"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-management-1440.png",
+      "sha256": "8a5fa597d4bb532a605540cba86b10771e37b8877af5f947097bfb1ca5a923a9"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-management-320.png",
+      "sha256": "2286c5473177ce4e391b9cf2cdec2ddcca12cdd943d1629174ebf40dd81e8efe"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-management-390.png",
+      "sha256": "0ccba0b9e99d38f572557620dd9a980d7308d8eba2e75e4d42313ea1cb97ac78"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-operational-ranking-dark-1440.png",
+      "sha256": "8587b3ed87d05d6cba3325b05a790f1614e98ec7f83bf7a655df87ef150a836a"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-operational-ranking-dark-390.png",
+      "sha256": "017600a554843b8cd659655aed8fbb282d90e6b4844deddd39d0f31501a24f55"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-operational-ranking-light-1440.png",
+      "sha256": "cbe1d6c414588de61590b8ced7742497ea66de7ea743993761648c54724854ba"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-operational-ranking-light-390.png",
+      "sha256": "ce7ad6b0650c0c965961b68c2db6b39ffcb6283642ada81b57d8958a6687c779"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-operational-ranking-mint-1440.png",
+      "sha256": "f13df61fb7baba31463381e7b467ed59a0fe01f1219caaa82e5b73c5af4a4f74"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-operational-ranking-mint-390.png",
+      "sha256": "a83df954052b28fbccf13a79b0062ca6fa2c20a74fd805da44228d2bdfe07a61"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-operational-ranking-ocean-1440.png",
+      "sha256": "698c99b0d79c9d462a9de0f65765510dd6c86ce8a2a832823b252e567b4f6bcb"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-operational-ranking-ocean-390.png",
+      "sha256": "f0554367960a73b59551c59907500ec65349b51e59409f8cb3d38dc1c602c1c6"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-operations-only-dark-1440.png",
+      "sha256": "998e58a3029704e2793462fc30df6447b1d8363060e4d74b7b2d06e43bb772b5"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-operations-only-dark-390.png",
+      "sha256": "36e02cc161aeb2e0c6ff7631a123f2b1fe5b035bd7f308a08c2867643b424881"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-operations-only-light-1440.png",
+      "sha256": "94e4772d33423c7419a99ab3b978a5bb8613751f81bdb433df9da86a37a5c59a"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-operations-only-light-390.png",
+      "sha256": "3dca8c3c72a324ca760064b72481a0c14d08532dba965d7c81f8f6709f4ffc7e"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-operations-only-mint-1440.png",
+      "sha256": "a5652eb4cc336702d48a16e8280e593275d5202c72f5e884e8e01fa0ff4168df"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-operations-only-mint-390.png",
+      "sha256": "2e38e12cb6140f566b2a78a82f798a2ed2536d01044ac26a607c0d3fa17bf7af"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-operations-only-ocean-1440.png",
+      "sha256": "1c23a21d1d297c4cecaecd89bc45a69d3411a013c4d9bfb868614943ba20d276"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-operations-only-ocean-390.png",
+      "sha256": "aceed02fad90f6a569ed214c72d2c75b53ab798b47c6b7dea9dd6426c81d92d4"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-review-list-320.png",
+      "sha256": "2ffdf620b13c9755ecd201e418e99785e2a43753c9f12fd1242f080b4cfb0611"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-review-list-390.png",
+      "sha256": "e1f8320faab3e6c0371e20dbca8eb30bb78b73bf19dc2703aa556fd16eb7929b"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-review-panel-390.png",
+      "sha256": "6ed5fbc5e87ac37dcf2046f44dfede07db359ab114d7a3aaf6e99e1e5497fa99"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-shell-dark-1440.png",
+      "sha256": "50098dec82b8b58da8c4ea14f8a030c877518fd0153b9d338c27e0f531c30e8e"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-shell-dark-390.png",
+      "sha256": "399df5b56655b0de0376a92b31b323bf79595acefac35ae4e2658a05e293f77b"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-shell-light-1440.png",
+      "sha256": "8a5fa597d4bb532a605540cba86b10771e37b8877af5f947097bfb1ca5a923a9"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-shell-light-390.png",
+      "sha256": "0ccba0b9e99d38f572557620dd9a980d7308d8eba2e75e4d42313ea1cb97ac78"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-shell-mint-1440.png",
+      "sha256": "9fff02cb9de1cb0cbf8264851dbcaa3888f024a94d3edbe59d48f74fcfdd4a23"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-shell-mint-390.png",
+      "sha256": "40feaa4e9a2ce42e597e7486d0e281da1896837c796e3b1853912a73f330b902"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-shell-ocean-1440.png",
+      "sha256": "82b225c4769fd986c3c23a9090d4ace74962968ea99163bcf77475c7b3f03dfb"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-shell-ocean-390.png",
+      "sha256": "2f40ad857681c1b029ca199d413a56162f0c1e17ee2a1c46ff4e63fdddc5daa8"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-usage-coverage-ranking-dark-1440.png",
+      "sha256": "8939d157193b2172c85eb116e05de609f429b45ce6846081831fc8a8e195d2cf"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-usage-coverage-ranking-dark-390.png",
+      "sha256": "795c43107d0017d99e128dd73816541c83fa1e42906e2c6de464d10939cc257e"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-usage-coverage-ranking-light-1440.png",
+      "sha256": "2aefaf4b2dc5e7940e5030e65279fb4b50bfb34c72953d005928d5e25047d847"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-usage-coverage-ranking-light-390.png",
+      "sha256": "4bb785ed47266eecc5f3c512f0771279e10ecb57072d068e590b3dfc2dc8db1a"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-usage-coverage-ranking-mint-1440.png",
+      "sha256": "3070d7f4a891084df29c094bee03134dcf48f0a03ad2cd9ce7fd99f7c3873c49"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-usage-coverage-ranking-mint-390.png",
+      "sha256": "8a401e05cd9b7a4f91530f30ce84ec33a07c00c31b1180d550be35bf1c42e6d2"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-usage-coverage-ranking-ocean-1440.png",
+      "sha256": "1d60e370f550042274e16f347d1dd0803b6daccb502c46ab45d9c96bff8344d8"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-usage-coverage-ranking-ocean-390.png",
+      "sha256": "06c0a9c59da8570806aba9375eb54ea9d6589c735992830140b072a1f60fb87d"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-usage-coverage-trend-dark-1440.png",
+      "sha256": "c030d7e563c594727d2270cd0b3cfc738ed2276babd05b87e41d1f04d6d725ea"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-usage-coverage-trend-dark-390.png",
+      "sha256": "ad449d8908a06a055f975577c5d90ddc88eda0fe002c5d9371d14c3b7587b8ff"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-usage-coverage-trend-light-1440.png",
+      "sha256": "228ad21de9156e64208ac6cdb230f78695c0604809101fb1bbb641d46d63a1b5"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-usage-coverage-trend-light-390.png",
+      "sha256": "ee4db769856db1b24e28d244e2d7d4e31b0a8110bcba9000f9d89396378512b8"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-usage-coverage-trend-mint-1440.png",
+      "sha256": "75bd0faf88f5647b63b8b58454bab62985a99cfb0f09897f6d58966bb5c09012"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-usage-coverage-trend-mint-390.png",
+      "sha256": "42abf3835c5d00913c737008b097e88b4cc81106d18c249c26958f285a36a525"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-usage-coverage-trend-ocean-1440.png",
+      "sha256": "9438008d4e48366032f3b1e8819016c7b1e6f1e5c7d3ddbd3db9a30dfaff4d70"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/logs-usage-coverage-trend-ocean-390.png",
+      "sha256": "ebf851b05b354c6752d26c35f48dddb0c7b38bc743ee776379e1d42954a94f3a"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-mobile-column-320.png",
+      "sha256": "69c54f60bd6a311a0e8170339904bf083485f2ec977068494c7329b3680135fc"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-mobile-column-dark-390.png",
+      "sha256": "4639ee8f24bbecce723edc333a8460ddca631e278d0e80265097ae1a1c9673ea"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-mobile-column-light-390.png",
+      "sha256": "37e58b4f4ba2962ec6e8cd137fa42464b2a4534d17403c0a725765fa2590e8f0"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-mobile-column-mint-390.png",
+      "sha256": "37e58b4f4ba2962ec6e8cd137fa42464b2a4534d17403c0a725765fa2590e8f0"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-mobile-column-ocean-390.png",
+      "sha256": "37e58b4f4ba2962ec6e8cd137fa42464b2a4534d17403c0a725765fa2590e8f0"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-model-chain-dark-1440.png",
+      "sha256": "0ae07799b7899cbaf9e363016540f1de3b6b17b79127016065c7fb6ce883ad65"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-model-chain-dark-390.png",
+      "sha256": "22b634a5fb1ab5c5f36a888676f2641c56635a52431fb830e53ab02e2ff33a1c"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-model-chain-light-1440.png",
+      "sha256": "35d1e636ff2436028656265df50dd48dc80d1df6d283ae304c88670e080c68c5"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-model-chain-light-390.png",
+      "sha256": "8cd8bb024ebb82e5e0fc2d6d477bcc92b91f492d166c0477b3b06cbec310853d"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-model-chain-mint-1440.png",
+      "sha256": "35d1e636ff2436028656265df50dd48dc80d1df6d283ae304c88670e080c68c5"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-model-chain-mint-390.png",
+      "sha256": "8cd8bb024ebb82e5e0fc2d6d477bcc92b91f492d166c0477b3b06cbec310853d"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-model-chain-ocean-1440.png",
+      "sha256": "35d1e636ff2436028656265df50dd48dc80d1df6d283ae304c88670e080c68c5"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-model-chain-ocean-390.png",
+      "sha256": "8cd8bb024ebb82e5e0fc2d6d477bcc92b91f492d166c0477b3b06cbec310853d"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-no-header-attempt-dark-1440.png",
+      "sha256": "4db9c0c9aba91bd9e4df6c8f6f0078de94837c3efe4331810e30d62fd296c291"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-no-header-attempt-dark-390.png",
+      "sha256": "0b90b1db96db09137e07c01af25d082130634c5567c4a8faa627fcc65571ffe9"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-no-header-attempt-light-1440.png",
+      "sha256": "339d160b833179a1f23968617bb84e2831c0bc654fb9384c292bbf07f29090d2"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-no-header-attempt-light-390.png",
+      "sha256": "6cf9a54ba9dfdaa09ee5e617265e9313507d6e25da40ceca3d93be869fde5487"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-no-header-attempt-mint-1440.png",
+      "sha256": "339d160b833179a1f23968617bb84e2831c0bc654fb9384c292bbf07f29090d2"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-no-header-attempt-mint-390.png",
+      "sha256": "6cf9a54ba9dfdaa09ee5e617265e9313507d6e25da40ceca3d93be869fde5487"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-no-header-attempt-ocean-1440.png",
+      "sha256": "339d160b833179a1f23968617bb84e2831c0bc654fb9384c292bbf07f29090d2"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-no-header-attempt-ocean-390.png",
+      "sha256": "6cf9a54ba9dfdaa09ee5e617265e9313507d6e25da40ceca3d93be869fde5487"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-schema-dark-1440.png",
+      "sha256": "30010f884a92bc9b3277ced30c8ccfff354962dd33cc661958d2ce17cfd79efa"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-schema-dark-390.png",
+      "sha256": "3f1bc5710d58d631d91734dcac81284e7a4805eaafd146f906b970fc3cebfc77"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-schema-light-1440.png",
+      "sha256": "ab410f6f5408dd48d9fa0f7a3df66eb34ba3357455edc8d8eea289c701e433fe"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-schema-light-390.png",
+      "sha256": "6a6970129b83af7065237c01c7eb37a7ce49262cd0f4e4bd620f39cd5a3f8b80"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-schema-mint-1440.png",
+      "sha256": "ab410f6f5408dd48d9fa0f7a3df66eb34ba3357455edc8d8eea289c701e433fe"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-schema-mint-390.png",
+      "sha256": "6a6970129b83af7065237c01c7eb37a7ce49262cd0f4e4bd620f39cd5a3f8b80"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-schema-ocean-1440.png",
+      "sha256": "ab410f6f5408dd48d9fa0f7a3df66eb34ba3357455edc8d8eea289c701e433fe"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-schema-ocean-390.png",
+      "sha256": "6a6970129b83af7065237c01c7eb37a7ce49262cd0f4e4bd620f39cd5a3f8b80"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-sent-distribution-dark-1440.png",
+      "sha256": "21f28532313d0785a8e5ffae8a3178fb5c855ccabbedfb088ae5c1d3240c0b98"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-sent-distribution-dark-390.png",
+      "sha256": "41716fe210f4e051e30f2380280906b661b50567180cf597d7ba20b4781764fd"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-sent-distribution-light-1440.png",
+      "sha256": "a83a0e6a4c66481c77cf3c4a922e714b9732ee5512aefc4493ddd8f3fe491e0b"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-sent-distribution-light-390.png",
+      "sha256": "7e820bb176e606cc48b25419b32e1d64a0c392356298b6eb8b9230d65b12ccd4"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-sent-distribution-mint-1440.png",
+      "sha256": "e6c09e50b85cb15f12445f2365d44f33ac1ea5d3203c731d407e5939d33103d6"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-sent-distribution-mint-390.png",
+      "sha256": "82fdcce09138453b9c90b413fe0841e8d6e2f75eb38a2e1f3e42475ed593f749"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-sent-distribution-ocean-1440.png",
+      "sha256": "393a614afa81788c44149804ee71cc83d72d52ee90727e7d8e90ad716be751a0"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-sent-distribution-ocean-390.png",
+      "sha256": "bdcf3cece3328eca1e740853fd64a73ee140238764e6fc7b87ccf248709da8e4"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-stage-coverage-dark-1440.png",
+      "sha256": "16df485b7103ef75106a0bddc1f5b6551772d292a76f98c3df407336db87b45c"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-stage-coverage-dark-390.png",
+      "sha256": "02940773b53fb25da42d4325a857ad71ff0fe948663b22b2d68291fa0de64379"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-stage-coverage-light-1440.png",
+      "sha256": "9229733174e753337648d77f7f54fe51fddcc344917e5ee9e8d1023dcdcb9587"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-stage-coverage-light-390.png",
+      "sha256": "a07c91f652cb7b50d5c1b10bba8e4b2898c227dde11d83cae8d136406b5af9ed"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-stage-coverage-mint-1440.png",
+      "sha256": "9229733174e753337648d77f7f54fe51fddcc344917e5ee9e8d1023dcdcb9587"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-stage-coverage-mint-390.png",
+      "sha256": "a07c91f652cb7b50d5c1b10bba8e4b2898c227dde11d83cae8d136406b5af9ed"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-stage-coverage-ocean-1440.png",
+      "sha256": "9229733174e753337648d77f7f54fe51fddcc344917e5ee9e8d1023dcdcb9587"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-stage-coverage-ocean-390.png",
+      "sha256": "a07c91f652cb7b50d5c1b10bba8e4b2898c227dde11d83cae8d136406b5af9ed"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-stage-times-dark-1440.png",
+      "sha256": "09e754d1227ee867c57cb3792c05fb7c733c03c371b5fdea45964dd911f28d46"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-stage-times-dark-390.png",
+      "sha256": "0e5549feaaf568a97b9969cde26c1df173b7fb00c6344bf56a3b36d58f5e0dda"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-stage-times-light-1440.png",
+      "sha256": "47285854c81c95a4d6b20c39a42691dee6ab22a1d5e885e784ffdecb1ac40a29"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-stage-times-light-390.png",
+      "sha256": "1bf9eea694382070b597627aa56bacd001a862c0be6d737139323906dc7e25dd"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-stage-times-mint-1440.png",
+      "sha256": "47285854c81c95a4d6b20c39a42691dee6ab22a1d5e885e784ffdecb1ac40a29"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-stage-times-mint-390.png",
+      "sha256": "1bf9eea694382070b597627aa56bacd001a862c0be6d737139323906dc7e25dd"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-stage-times-ocean-1440.png",
+      "sha256": "47285854c81c95a4d6b20c39a42691dee6ab22a1d5e885e784ffdecb1ac40a29"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/observation-stage-times-ocean-390.png",
+      "sha256": "1bf9eea694382070b597627aa56bacd001a862c0be6d737139323906dc7e25dd"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/report.json",
+      "sha256": "8f16a4a1e83840b432043075b7f67ed72171e912b9f7722b90d5e9df6c55b300"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/severity-detail-dark-1440.png",
+      "sha256": "05ac100a69073d38e34dec836bfd810b212d89f208870c09f3e266838982b93f"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/severity-detail-dark-390.png",
+      "sha256": "775ae532d2b3e1b285e228952af4ad10d88698add1babb9939b8f4c360ff7da8"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/severity-detail-light-1440.png",
+      "sha256": "91767033bbe66f3bf11f412a2b89ef7a18de6c47518491b78ca8431dbf621057"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/severity-detail-light-390.png",
+      "sha256": "a51751618d6070c758d0339cbcf350191c0e9064a3703728879d5402045301f6"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/severity-detail-mint-1440.png",
+      "sha256": "91767033bbe66f3bf11f412a2b89ef7a18de6c47518491b78ca8431dbf621057"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/severity-detail-mint-390.png",
+      "sha256": "a51751618d6070c758d0339cbcf350191c0e9064a3703728879d5402045301f6"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/severity-detail-ocean-1440.png",
+      "sha256": "91767033bbe66f3bf11f412a2b89ef7a18de6c47518491b78ca8431dbf621057"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/severity-detail-ocean-390.png",
+      "sha256": "a51751618d6070c758d0339cbcf350191c0e9064a3703728879d5402045301f6"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/severity-review-list-dark-1440.png",
+      "sha256": "ef3ae9fc40b29ba26e7b9653d643765dc8dfd7c6087ea28560eb2fec293322e1"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/severity-review-list-dark-390.png",
+      "sha256": "1826e15c7a8b24ddf87354a549bbc28c88f321b7301c29c63959547d66eadc44"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/severity-review-list-light-1440.png",
+      "sha256": "60bee651429866e8008c047318c101fcea37fac224082bb2d791d4458e2958ee"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/severity-review-list-light-390.png",
+      "sha256": "2d6551b89c62596b71e165f192217ddf54da4c1182b492a22815a44046945965"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/severity-review-list-mint-1440.png",
+      "sha256": "81e9be25568e779241ce19442ba95926f498bcee925c7dbe08a549baf8d58e81"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/severity-review-list-mint-390.png",
+      "sha256": "fdd2e502b31fe1ca2bd7196fa34802ad395158672d41fa1bfba776194ed8b6fa"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/severity-review-list-ocean-1440.png",
+      "sha256": "a1b7cd0bd94a61485ad0cec46ed9c5b60761dfb0a5ff0583adfe07f67810df56"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/severity-review-list-ocean-390.png",
+      "sha256": "ef03c0f131279561a7d44da8596e23d5053fab293bc43c6626f52f2cdbcec266"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/websocket-warmup-detail-dark-1440.png",
+      "sha256": "5bf1c661fa6f0ae25740d8198a28a1e8da0de3435b362dcc514f9cee099c01ef"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/websocket-warmup-detail-dark-390.png",
+      "sha256": "3ba5661b0068f565092b575eabe728afe375dd255faa4b8393d06db43d429727"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/websocket-warmup-detail-light-1440.png",
+      "sha256": "d6ab7e4779040497f132e7410e553cfb5b3896e1198df37727634b8b66d65315"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/websocket-warmup-detail-light-390.png",
+      "sha256": "dac59a74f979e221a930f9419ee7e04f4576f1f02f4267fd37552579a7dd1bbf"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/websocket-warmup-detail-mint-1440.png",
+      "sha256": "d6ab7e4779040497f132e7410e553cfb5b3896e1198df37727634b8b66d65315"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/websocket-warmup-detail-mint-390.png",
+      "sha256": "dac59a74f979e221a930f9419ee7e04f4576f1f02f4267fd37552579a7dd1bbf"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/websocket-warmup-detail-ocean-1440.png",
+      "sha256": "d6ab7e4779040497f132e7410e553cfb5b3896e1198df37727634b8b66d65315"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-browser/websocket-warmup-detail-ocean-390.png",
+      "sha256": "dac59a74f979e221a930f9419ee7e04f4576f1f02f4267fd37552579a7dd1bbf"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/logs-verification.json",
+      "sha256": "34d0e1cfdd892cb3df4dcc33b3b03b2129fc57753494e26bf707bcf13c851cdb"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/go/source-manifest.json",
+      "sha256": "a6ac3294ac1c6489b0c2285b5fdef85654986cc2635d024e47ae7a2abc5e506e"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/go/report.json",
+      "sha256": "2fbca4635858c27e4025e275aebbf9af85abb6296d6bc306c0b9a7bc65d65a5d"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/go/race.log",
+      "sha256": "5a35c9dcc6ddd9adcbcb4a4866f1c7335ca704677209b43ad7c83ae7aaf65d83"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/go/local-verification.json",
+      "sha256": "01dc694b8546e460ebd0b62653e8d1334cba2a4933e9e88a8ecc090cf1cb484b"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/go/local-test.jsonl",
+      "sha256": "3c66fdb1909abec87c8cfc91c20d7b1890a2b7d0ff7ec02441e29338f89a5a06"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/tools/package_management_candidate.py",
+      "sha256": "4cc0f4de130b7b8313af539213342ebe1e26c5d72684dcef0c94d9cc3977b5ae"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frozen-evidence-c3368f229199/tools/freeze_no_billing_candidate.py",
+      "sha256": "3c52ada41ad3c7cb6fb245371859d48cb09d89ac9e1be6bcc84441458df60665"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frontend-c3368f229199.zip",
+      "sha256": "f44425c47c11e4eed48ea104d7416da95912dd15397c994f1cfb03da11095c4e"
+    },
+    {
+      "path": ".local/management-parity/error-severity-20260918/frontend-source-c3368f229199.tar.gz",
+      "sha256": "2634d5ca645e4baa62a19c305293f8f174c0af703a0714592881c5ef027ea32f"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t073333-6f6254/source.tar.gz",
+      "sha256": "9f3b6433e7d8d578227d865e6e951c4f3306900376c8847011eae152c348683c"
+    }
+  ]
+}

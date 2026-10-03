@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "passed": false,
+  "elapsed_ms": 2302,
+  "attempted_requests": 1,
+  "completed_responses": 1,
+  "websocket_handshake_ms": 0,
+  "websocket_handshake_http_status": 0,
+  "http_policy_observation": "actual_upstream_request_body",
+  "websocket_policy_observation": "not_observed_at_http_transport",
+  "checks": [
+    {
+      "transport": "http_json",
+      "sequence": 1,
+      "turn": 1,
+      "failure_code": "reply_marker_mismatch",
+      "passed": false,
+      "http_status": 200,
+      "upstream_http_status": 200,
+      "upstream_attempts": 1,
+      "upstream_protocol": "HTTP/2.0",
+      "tls_version": 772,
+      "tls_alpn": "h2",
+      "terminal_type": "json_response",
+      "completed": true,
+      "marker_matched": false,
+      "upstream_delta_marker_matched": true,
+      "output_items": 0,
+      "output_text_parts": 0,
+      "reply_bytes": 0,
+      "reply_matches_after_unquoting": false,
+      "usage_present": true,
+      "cache_usage_present": true,
+      "input_tokens": 1328,
+      "output_tokens": 11,
+      "cached_tokens": 0,
+      "cache_rate": 0,
+      "upstream_first_text_ms": 1978,
+      "downstream_first_text_ms": -1,
+      "response_available_ms": 2302,
+      "total_ms": 2302,
+      "sticky_account_verified": true,
+      "outbound_prompt_verified": true,
+      "outbound_cache_key_verified": true,
+      "outbound_store_false_verified": true,
+      "outbound_stream_true_verified": true
+    }
+  ],
+  "failures": [
+    "http_json_acceptance_failed"
+  ]
+}

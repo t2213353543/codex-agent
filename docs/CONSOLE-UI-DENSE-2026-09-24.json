@@ -1,0 +1,55 @@
+{
+  "deployed": true,
+  "verified_at": "2026-09-24T06:35:54.953301+00:00",
+  "url": "http://43.225.196.170:18879",
+  "release_id": "f67adb15dfb99294a16c02975f59ce5a46d0e4bfdc4a16308f188b1ea02dc1f3",
+  "themes": {
+    "light": "留白",
+    "dark": "夜航"
+  },
+  "frontend_source_sha256": "b9682a73f6d51a3fb6bee84af13486cf69e5055c784cba3bafadda6986e7d711",
+  "dist_sha256": "7d2346a4c597b1f3d45cbef972b4775dec51d2140804322debba5023b6fa445e",
+  "runtime": {
+    "release_id": "f67adb15dfb99294a16c02975f59ce5a46d0e4bfdc4a16308f188b1ea02dc1f3",
+    "deployed": true,
+    "currently_active": true,
+    "deployed_at": "2026-09-24T06:31:49.749197+00:00",
+    "previous_frontend": "/opt/codex-agent/ui-releases/67b748ab567493a99e78fffe43a316af1c56c8a833ee67b386e4a215fa60fb5a/frontend/dist",
+    "frontend_path": "/opt/codex-agent/ui-releases/f67adb15dfb99294a16c02975f59ce5a46d0e4bfdc4a16308f188b1ea02dc1f3/frontend/dist",
+    "runtime_binary_sha256": "a673bc08c798d95b3a3af64320008a0418d01aa6753e4da21957634e65cab1c6",
+    "pid": 1755926,
+    "unit_only_web_changed": true,
+    "environment_sha256": "8c9a00c84a8a7d86d28fa68e86dbae96a65abb55e9e910a8083b6b9da399f4d6",
+    "native_http_enabled": true,
+    "native_websocket_enabled": true,
+    "health": {
+      "/": 200,
+      "/health/live": 200,
+      "/health/ready": 200
+    },
+    "static_file_count": 54,
+    "static_files_match": true,
+    "service": "NRestarts=0\nActiveState=active\nSubState=running",
+    "bridge_timer": "active",
+    "environment_unchanged": true
+  },
+  "production_browser_checks": 25,
+  "production_browser_passed": true,
+  "business_writes": 0,
+  "gateway_requests": 0,
+  "ephemeral_query_snapshots": 3,
+  "evidence": [
+    {
+      "path": ".local/console-ui-dense-20260924/acceptance.json",
+      "sha256": "fa60ef0ee82d0d211754469d5b7f3e03279a098b0d23578868deca06439f231b"
+    },
+    {
+      "path": ".local/console-ui-dense-20260924/runtime-final.json",
+      "sha256": "5fd2921870c28795bd3bc274a54cf460ca5a3a60802ca5dabff875715fa45721"
+    },
+    {
+      "path": ".local/console-ui-dense-20260924/live-postdeploy.json",
+      "sha256": "45f4d3e70398b75e5459af154128d43e351ab2460dfd941dd31b01070bcff5dd"
+    }
+  ]
+}

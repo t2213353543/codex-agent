@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-09-17T12:52:39.497386+00:00",
+  "scope": "source-based gateway follow-up; shared tree includes parallel account/settings/fingerprint changes",
+  "source_tag": "rust-v0.154.0",
+  "source_commit": "6b9826e3aa83b1a5947db50f4332cb9c65f1b340",
+  "go_tests": {
+    "raw_evidence": ".local/source-followup-go-test.jsonl",
+    "package_passed": true,
+    "elapsed_seconds": 7.695,
+    "test_entries_passed": 431,
+    "top_level_passed": 178,
+    "failed": [],
+    "skipped": [
+      "TestPGSub2APIImportMetadataAndPartialValidation",
+      "TestPGAccountCredentialsAndMetadataIsolation",
+      "TestPGAccountConcurrentVersionAndForeignKeyRollback",
+      "TestPGAccountRefreshSerializesOnlySameAccount",
+      "TestPGEnsureReadyRefreshesDifferentAccountsConcurrently",
+      "TestPGAccountRefreshCASAndRestartRecovery",
+      "TestPGAccountRefreshFailureSurvivesRestartAndDoesNotMarkReplacement",
+      "TestPGAccountImportConflictAndDryRun",
+      "TestPGShutdownPersistsRefreshAfterClientDisconnectAndSIGTERM",
+      "TestPGAdminGroupDeletionRollsBackOnAuditFailure",
+      "TestPGAdminStableAccountLogsSurviveRenameAndRestart",
+      "TestCodexCLIIntegration",
+      "TestCodexFingerprintCLIConversation",
+      "TestGatewayRedisConfigurableSessionRenewal",
+      "TestGatewayRedisSessionSharing",
+      "TestGatewayLiveSettings",
+      "TestPGGatewaySettingsRefreshAcrossInstances",
+      "TestRealCodexCLIReadOnlyWindowsSandbox",
+      "TestRealCodexCLI",
+      "TestRealCodexCLIWebSocket",
+      "TestPGMetricsIdempotentConcurrentEventsRestartAndDelete",
+      "TestPGMetricsTransactionFailureRetryAndHealth",
+      "TestPGMetricsCursorStableDescendingAndNoCount",
+      "TestPGMetricsRebuildPruneAndLegacyExport",
+      "TestPGMetricsLegacyBaselinePreservesMissingLogsAndRebuild",
+      "TestPGGroupAndProxyDeleteRollback",
+      "TestPGProxyMetadataAndVersion",
+      "TestPGAdminRotationFailureAndLostResponseReplay",
+      "TestPGRedisSessionsFailClosed",
+      "TestPGLegacyImportExportRoundTrip"
+    ]
+  },
+  "go_vet": "passed",
+  "go_build": "passed",
+  "python_smoke_assertions": {
+    "passed": 8,
+    "failed": 0
+  },
+  "isolated_storage": {
+    "raw_evidence": ".local/source-followup-storage-final.jsonl",
+    "package_passed": true,
+    "elapsed_seconds": 141.65,
+    "test_entries_passed": 7,
+    "top_level_passed": 7,
+    "failed": [],
+    "skipped": []
+  },
+  "official_cli_controlled_upstream_evidence": "docs/CODEX-CLI-SOURCE-FOLLOWUP-REAL-CLI-2026-09-17.json",
+  "live_model_evidence_owned_by_account_conversation": "docs/CODEX-CLI-IMPORTED-ACCOUNT-2026-09-17.json",
+  "race_detector": {
+    "run": false,
+    "reason": "Windows CGO_ENABLED=0; no configured C compiler"
+  },
+  "candidate": {
+    "path": ".local/codex-agent-cli-followup.exe",
+    "sha256": "3dddb7764fdd32fa11c202a81e605276ae19c6e027d956fd2467db2e234abd49",
+    "deployed": false
+  },
+  "files_sha256": {
+    "gateway.go": "f070bf82dc8c9da5ce76c9346589e8d4f89e930a03dd6ef4f0f771b26ccc4146",
+    "gateway_auth.go": "e767f865ee1f6baf0a5492b26981c70fc88682ae5eb74876adfbfa1203596d6b",
+    "gateway_upstream.go": "3dc8e12dbfb2ab0e77a6d3d5336b9a3c27e1d179c1c19c45ee18a1314452317c",
+    "gateway_compact.go": "a5f71daab98e7ea510e895b07992781175553e17661aacfa7424b8689d8cd544",
+    "gateway_response_writer.go": "4987e6012f08af043e1570c5627b76bec9ac26d254fedc810aa8a2614de8928b",
+    "gateway_timeout.go": "b3711fdc8878b8b6b8afd624a1c006b15fe3649972dd5c2b465401f896486a60",
+    "proxy.go": "3b1a6b2094c6ec6099b786ba3186fc4d5ebcd23757d160ddb3dfdf0cd51f716d",
+    "stats.go": "9c7e2fbda99f81f6ddc402fc29a322658cc071b12ff4993b86d66ae8c7d37ecb",
+    "source_sse_lines.go": "369d648489525d4b1c4d7e6831358f8664c5f9d09c56a4c695e7aa6f8991c916",
+    "response_events.go": "a8ba861ed4939fe6c5ff982fb86dbcbf04c9202897213a4f11643628410be09a",
+    "gateway_response_writer_test.go": "f98b0a39f9807ef62f9331093976888bd68c9672ab8ccebd62d301722680732b",
+    "gateway_compact_test.go": "41598a6a1f1c326af840b2b6ec42c4643f71f1d3d0da0b091fe9766e36194c45",
+    "source_refresh_test.go": "08756ef687d8eb503f930e86260d430c617b4f7412b490ad2dd149eb7583be92",
+    "source_ready_test.go": "b6dcd2f3dc3fcb49e8e42653affddbd9004040fc962757e555f19627a7c779b8",
+    "source_unauthorized_test.go": "2319d2a9898ff64eeeac30623df4cd7c5360273e3cddb9d8d18235bc0e51537d",
+    "source_followup_sse_test.go": "0e27c391016f1768607f1f411970ef60c66aeb6becab458493060b719acb660c",
+    "source_error_detail_test.go": "be1afa3799ec95ca78e72641a76c5835333279369edf2b46fdbe8a14fce8d4f4",
+    "proxy_test.go": "458ad337497b40c083586fcf36d001a5f99fbede9069b4ef33a7e9aec742bec5",
+    "accounts_pg_test.go": "768a381c710e93840cd28558c22cd2efaf81f3e72955885c57fc7465fbc9d68f",
+    "codex_fingerprint_test.go": "bf09457230f972c6465f42d7355090ea5b254fe7041e4ee2f62eb3097d65dd95",
+    "go.mod": "12e51a0506c9e06e93526a7d818a0bdc7c5609850774b973b51c9a1e20a9e079",
+    "go.sum": "c953931186856c9a4fc07b616753db8f2875929998d1f12c58d76f7f6eb70a6c",
+    "real_cli_test.go": "8dcf3fb827d6978b0ec2520015f51927e32cde0cd062d093f52c1cade43025cc",
+    "real_cli_readonly_windows_test.go": "d91f352d80291c27cb3aa7a7544d56454a552c3e00f3dfa0b3ca92042fde7eb0",
+    "response_output.go": "0f2bd4cc47d9d0fbbe4c5643e3cc85b87595047df200f3d972ee224498cb52f5",
+    "response_output_test.go": "666e30667eceb13a71d71ae597b83dfef9674125db951712fbc4883bf3d4569c",
+    "tools/codex_cli_smoke.py": "8e0bcfc34db62cf0da0ffac2323ceb3e9c5da2786803969c1b2512c6b99bc2fd",
+    "tools/test_codex_cli_smoke.py": "e1c967ee03bbbf9b841d47b61bb6580112fe197b6895e3bc25da320c178419ba",
+    "codex_cli_integration_test.go": "3a058cf24a431c37cf6b22c3d969090dcbac92e2983620de299031c9db72a7ff"
+  },
+  "official_cli_readonly_windows_evidence": "docs/SOURCE-CLI-READONLY-WINDOWS-2026-09-17.json",
+  "live_model_acceptance": {
+    "passed": true,
+    "acceptance_scope": "conversation_and_shell",
+    "cli_version": "codex-cli 0.154.0",
+    "elapsed_seconds": 63.9426352,
+    "http_status_counts": {
+      "200": 4
+    },
+    "inference_requests": 4,
+    "input_tokens": 31074,
+    "output_tokens": 262,
+    "cached_tokens": 25600,
+    "failures": [],
+    "owner": "account/documentation conversation; official CLI through current local Proxy to actual upstream"
+  },
+  "known_followups": [
+    "Settings owner was notified about mixed explicit and implicit output_index collision in the non-stream convenience collector; normal official indexed events pass.",
+    "WebSocket handshake 401 recovery and pre-expiry refresh using the session proxy are follow-up routing improvements."
+  ],
+  "shared_settings_live_evidence": {
+    "path": "docs/GATEWAY-SETTINGS-LIVE-2026-09-17.json",
+    "passed": true,
+    "attempted_requests": 6,
+    "scope": "settings conversation actual HTTP JSON, HTTP SSE and native WebSocket two-turn checks"
+  }
+}

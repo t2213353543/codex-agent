@@ -1,0 +1,59 @@
+{
+  "schema": "codex-agent-functional-release-outcome-v1",
+  "release_id": "35624e0cafd9f60cae88f61d772464de2f0b891638c6a950f5f0a17668ebee70",
+  "url": "http://43.225.196.170:18879",
+  "deployed_at": "2026-09-18T04:00:54.850574Z",
+  "tested": true,
+  "production_migrated_003": true,
+  "production_deployed": true,
+  "complete_gateway_goal_verified": false,
+  "source_owner_sha256": "956fc90be91a922ac1593b283102bc5149674dac337564e6023479ec8e60a6f9",
+  "source_v2_sha256": "a1d958c3a3deab35278baa65c4c30553b117c4d9ecdd76263b80994637655abe",
+  "binary_sha256": "a66c7be3de344221d6433a6bc7140523d95a6a068fd2312757c80f2dc50c073d",
+  "previous_binary_sha256": "a9bf68d1899ec1d58381c788b84cc63123c88cb8196d1acb0b4faafa1b65831d",
+  "frontend": {"policy": "preserve_previous_bytes", "files": 47, "bytes": 1896250},
+  "functional_checks": {
+    "gateway_linux_pg_redis_race": 159,
+    "management_linux_pg_redis_race": 73,
+    "additional_storage_cases_composed": 17,
+    "exact_previous_binary_003_compatibility": 6,
+    "synthetic_candidate_browser": 13,
+    "production_browser": 17,
+    "production_disabled_synthetic_crud": 9,
+    "production_restart_strict_comparison": "pass",
+    "production_health_live_ready_public_root": "HTTP 200",
+    "cutover_data_digests_equal": true,
+    "write_freeze_seconds": 0.859897
+  },
+  "bridge": {
+    "timer_active": true,
+    "normal_observed_cycles": 3,
+    "qualified_accounts_at_observation": 2,
+    "refresh_tokens_forwarded": 0,
+    "natural_credential_rotation": "not_observed"
+  },
+  "real_concurrency": {
+    "levels": [30, 50, 70, 100],
+    "executed": false,
+    "measurements": null,
+    "reason": "Earlier execution request was rejected by the platform; not retried or replaced with synthetic results"
+  },
+  "evidence_root": ".local/upgrades/35624e0cafd9f60cae88f61d772464de2f0b891638c6a950f5f0a17668ebee70",
+  "evidence_files": [
+    "upgrade-manifest.json", "preflight.json", "activate.json", "status.json",
+    "before-switch-data.json", "after-switch-data.json", "restart.json",
+    "postdeploy-before-restart.json", "postdeploy-after-restart.json", "restart-comparison.json",
+    "public-health.json", "bridge-live-verification.json", "live-crud.json", "passive-after-deploy.json"
+  ],
+  "browser_evidence": ".local/production-browser/20260918T040536.461993Z/report.json",
+  "acceptance_evidence": ".local/gateway-functional-acceptance/20260918T035656.102703Z/upgrade-acceptance.json",
+  "rollback_command": "python tools/upgrade.py rollback --release .local/upgrades/35624e0cafd9f60cae88f61d772464de2f0b891638c6a950f5f0a17668ebee70/upgrade-manifest.json",
+  "rollback_prerequisite": "Stop bridge first; preserve current PostgreSQL data and encryption keys",
+  "ssh_environment": {"CODEX_AGENT_SSH_PROXY": "http://127.0.0.1:7897", "CODEX_AGENT_CLASH_REGION": "hk"},
+  "limitations": [
+    "Functional deployment is complete; actual upstream concurrency capacity and comparative error-rate benefit remain unverified.",
+    "Natural source access-token rotation did not occur during the observation window.",
+    "No later native transport or commercial management snapshot was included.",
+    "The existing public HTTP configuration was retained."
+  ]
+}

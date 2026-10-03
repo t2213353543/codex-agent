@@ -1,0 +1,195 @@
+{
+  "schema": "codex-management-pricing-verification-v1",
+  "status": "verified_management_candidate",
+  "completed_at": "2026-09-18T02:52:35.102855+00:00",
+  "deployed": false,
+  "full_reference_parity": false,
+  "previous_candidates_unchanged": true,
+  "go_source_sha256": "3d791bba2fc1447a023d6e651660a3fbbe73ea737675057cefde23495f84d415",
+  "source_archive": ".local/management-parity/local-race-20260918t024218-3fdde7/source.tar.gz",
+  "source_archive_sha256": "ddcd256d5a7950a564963ffcf83442543dff80a988ed9dcada066e9c26d12318",
+  "linux_binary": ".local/management-parity/local-race-20260918t023843-623047/codex-agent-linux-amd64",
+  "linux_binary_sha256": "e44620f8ddef219fad6894c20c94aa530af1a8a33389e2da12dd03bac83219cc",
+  "checks": {
+    "management_linux_race": {
+      "passed_top_level": 83,
+      "passed_events": 163,
+      "failed": 0,
+      "skipped": 0,
+      "postgres_version": "postgres (PostgreSQL) 16.15",
+      "redis_version": "Redis server v=7.4.11 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=fbf7a7d03c2e9219"
+    },
+    "full_go_test": {
+      "pass": 351,
+      "skip": 69,
+      "fail": 0
+    },
+    "full_go_test_events": {
+      "pass": 952,
+      "skip": 74,
+      "fail": 0
+    },
+    "vet": "pass",
+    "windows_build": "pass",
+    "linux_build": "pass",
+    "frontend_node": {
+      "tests": 126,
+      "pass": 126,
+      "fail": 0,
+      "skipped": 0
+    },
+    "accounts_browser_groups": 41,
+    "logs_browser_groups": 38,
+    "browser_network": "synthetic",
+    "screenshots": {
+      "accounts": 69,
+      "logs_four_theme": 128
+    }
+  },
+  "frontend": {
+    "manifest_sha256": "39bf89b3f14ac76511cf94a01ec61f42c6e99540654ab693ccc09b69d55b25ee",
+    "frontend_sha256": "01595549e741c1e113e2f70da1bf75ca5d64e2a99cf9deef56c685a7cc015fa7",
+    "entries": {
+      "Accounts": "accounts-managed-D_F84EDE.js",
+      "Logs": "logs-managed-Dac1Oqqj.js"
+    },
+    "file_count": 54,
+    "unchanged_baseline_resources": 48,
+    "archive": ".local/management-parity/pricing-next-20260918/frontend-39bf89b3f14a.zip",
+    "archive_sha256": "8772b8b232abf6c002838178e856e0e30730b4d5188b8d6470332dd6681a53d9",
+    "source_archive": ".local/management-parity/pricing-next-20260918/frontend-source-39bf89b3f14a.tar.gz",
+    "source_archive_sha256": "e15c2509c48f32b4663c1590bc0dccfc6c2c5a9d997cfd9bca62795296f0574e"
+  },
+  "source_delta_from_previous": {
+    "added": [
+      "admin_usage_procurement.go",
+      "admin_usage_procurement_stats.go",
+      "admin_usage_procurement_test.go",
+      "admin_usage_time_pricing.go",
+      "admin_usage_time_pricing_test.go",
+      "gateway_observation_hooks_test.go",
+      "gateway_observation_transport.go",
+      "source_native_helper_test.go"
+    ],
+    "modified": [
+      "admin_usage_account_batch.go",
+      "admin_usage_management.go",
+      "admin_usage_options.go",
+      "admin_usage_pricing.go",
+      "admin_usage_query.go",
+      "admin_usage_review.go",
+      "admin_usage_snapshot.go",
+      "admin_usage_stats_pg.go",
+      "admin_usage_store.go",
+      "gateway.go",
+      "gateway_client_pool.go",
+      "gateway_observation.go",
+      "gateway_timeout_pool_test.go",
+      "gateway_websocket.go"
+    ],
+    "removed": [],
+    "management_files": [
+      "admin_usage_procurement.go",
+      "admin_usage_procurement_stats.go",
+      "admin_usage_procurement_test.go",
+      "admin_usage_time_pricing.go",
+      "admin_usage_time_pricing_test.go",
+      "admin_usage_account_batch.go",
+      "admin_usage_management.go",
+      "admin_usage_options.go",
+      "admin_usage_pricing.go",
+      "admin_usage_query.go",
+      "admin_usage_review.go",
+      "admin_usage_snapshot.go",
+      "admin_usage_stats_pg.go",
+      "admin_usage_store.go"
+    ],
+    "separate_owner_gateway_files": [
+      "gateway_observation_hooks_test.go",
+      "gateway_observation_transport.go",
+      "source_native_helper_test.go",
+      "gateway.go",
+      "gateway_client_pool.go",
+      "gateway_observation.go",
+      "gateway_timeout_pool_test.go",
+      "gateway_websocket.go"
+    ],
+    "migrations_changed": false
+  },
+  "implemented": [
+    "Explicit IANA weekday/time-window reference pricing, exact decimals, composition with long-context pricing, same file/PG estimates and exports.",
+    "Independent versioned procurement rates and multiplier by stable account or explicit group, immutable history and disable versions, CAS/atomic audit, actual-record preview.",
+    "Procurement amount and known/unknown coverage in request details, full stats, trend, dimensions, rankings and CSV/JSONL, with default source/supplier/identity redaction.",
+    "Detail now uses the displayed list pricing/record snapshot; PostgreSQL reference/procurement aggregates share a read-only repeatable-read transaction."
+  ],
+  "limits": [
+    "Management tests use synthetic data and local ephemeral PG/Redis, never production inference.",
+    "First local-race run completed Go tests but report parsing failed on go-env scalar output. The runner was corrected and the same source was rerun to completion; the failed report remains.",
+    "Go archive includes separate gateway owners additions; this management acceptance does not certify their complete runtime behavior or authorize a shared-tree deployment.",
+    "Unimplemented reference scope includes explicit customer-pricing group/KEY overrides, channel entities/model-price override precedence, subscription peak policy and procurement cost tiers.",
+    "Per-account gateway policies, full retry/model/endpoint observation and historical missing usage remain separate unfinished requirements; no fake switches, prices or charges added.",
+    "Production joint acceptance and reviewed migration-003 release remain separate; no deployment performed."
+  ],
+  "evidence": [
+    {
+      "path": ".local/management-parity/local-race-20260918t024218-3fdde7/frontend-build-manifest.json",
+      "sha256": "39bf89b3f14ac76511cf94a01ec61f42c6e99540654ab693ccc09b69d55b25ee"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t024218-3fdde7/frontend-unit-report.json",
+      "sha256": "5121c4e83e64159b0be2cfe1bf442deff7b736040e80ac2a80a87ec0d1481b2e"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t024218-3fdde7/frontend-unit-tests.log",
+      "sha256": "9fe162b0475142285b57fd6563b45a0ed0f94c18ecef35094e860968a6fb123d"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t024218-3fdde7/accounts-verification.json",
+      "sha256": "5faf77e6dcfdaaa835a55c6ae811f0bb9805ef8d0692e047c862985da52b4f47"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t024218-3fdde7/logs-verification.json",
+      "sha256": "6c3aea147fcc6bb5b0d4437234371d698a9d1eb39393b83357f555f9ef489e72"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t024218-3fdde7/logs-browser-report.json",
+      "sha256": "5fb2f274d218e88d0bb5c730a423ddbb4187026e35ee7e4580e9d0a6bb676c6e"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t024218-3fdde7/local-verification.json",
+      "sha256": "55deb9816184e27f0f2ac304490be496f30c966084d55ace4379a2d5a93a756c"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t024218-3fdde7/account-cost-browser.json",
+      "sha256": "19027c788f14113abb6d9b0e77bee007be63ed9dac56e476eac804cd7647ce4c"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t024218-3fdde7/account-regression-browser.json",
+      "sha256": "ea2abfc5984f8c3525e825bdaee281319aa743e78658e58c8bec61a349afb594"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t024218-3fdde7/account-runtime-browser.json",
+      "sha256": "042b8e0b67533eccfc9a17862008067c0269199f81c518e2028881c7b9c072df"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t024218-3fdde7/report.json",
+      "sha256": "0fa59310cd71de7dab2b78c79f7ad224497df1d8318ee9eafc7af79f089aaf91"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t024218-3fdde7/race.log",
+      "sha256": "9a76ebe1fe54c70943d692ceb47204b13be7e5547b0f99356a609300b1f7d5d7"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t024218-3fdde7/source-manifest.json",
+      "sha256": "9bed36c458030c9ab6b20666ff82b0d80f090cecaf4c1fb5f05a65dc11c3adff"
+    },
+    {
+      "path": ".local/management-parity/pricing-next-20260918/frontend-39bf89b3f14a.zip",
+      "sha256": "8772b8b232abf6c002838178e856e0e30730b4d5188b8d6470332dd6681a53d9"
+    },
+    {
+      "path": ".local/management-parity/pricing-next-20260918/frontend-source-39bf89b3f14a.tar.gz",
+      "sha256": "e15c2509c48f32b4663c1590bc0dccfc6c2c5a9d997cfd9bca62795296f0574e"
+    }
+  ]
+}

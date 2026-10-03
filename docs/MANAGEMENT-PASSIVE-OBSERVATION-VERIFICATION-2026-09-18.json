@@ -1,0 +1,1287 @@
+{
+  "schema": "codex-management-candidate-v2",
+  "status": "verified_management_candidate",
+  "completed_at": "2026-09-18T08:46:25.348735+00:00",
+  "iteration": "passive-observations-20260918",
+  "deployed": false,
+  "full_reference_parity": false,
+  "previous_candidates_unchanged": true,
+  "billing_enabled": false,
+  "retired_suites_counted_as_passed": false,
+  "separate_owner_changes": [
+    "The frozen Go snapshot includes independently owned native startup/transport/WebSocket changes, not certified here for their external runtime release."
+  ],
+  "go_source_sha256": "d52eda2accb3af36ea09269c7385b1875b4c50e709d19a132995dc24c76aad2d",
+  "go_source_files": 254,
+  "source_archive": ".local/management-parity/local-race-20260918t083846-425102/source.tar.gz",
+  "source_archive_sha256": "cebc00cc721ae642f620eafdb6bc870a9926f29b5a1553623a32d2eb0698bd9f",
+  "binaries": {
+    "codex-agent-windows-amd64.exe": {
+      "path": ".local/management-parity/local-race-20260918t083846-425102/codex-agent-windows-amd64.exe",
+      "sha256": "9ddf74db27544f4f71389e2d5cef3dcd8ac887d9340671282d1b891838ed9fc8",
+      "size": 15835136
+    },
+    "codex-agent-linux-amd64": {
+      "path": ".local/management-parity/local-race-20260918t083846-425102/codex-agent-linux-amd64",
+      "sha256": "b311145928ff95e2593d964cd5c73a7c4f4faddac301fd0ac07b6e62fa2b0392",
+      "size": 15397026
+    }
+  },
+  "frontend": {
+    "manifest_sha256": "15aee9e0b8008d0a32e44b9c0e029504124a2f63d9a09bad5574ce22d2e98718",
+    "frontend_sha256": "22bc3735626dd8ce5dcd8c79e3c05143fdf895cc8897505f5fe6f1ef8b7b5c38",
+    "source_aggregate_sha256": "3d3a8eb45b5e34ec244d30f08b24cfd2a9413a1af40b0d74465997567a7871b5",
+    "entries": {
+      "Accounts": "accounts-managed-DbyyGTOP.js",
+      "Logs": "logs-managed-BWnE9MOu.js"
+    },
+    "file_count": 54,
+    "source_file_count": 71,
+    "unchanged_baseline_resources": 48,
+    "archive": ".local/management-parity/passive-observations-20260918/frontend-15aee9e0b800.zip",
+    "archive_sha256": "d3fbe59678358a0d90229f0a0d6d08e3f7bbd2e8a7e9129684b4228c30ab1c6f",
+    "source_archive": ".local/management-parity/passive-observations-20260918/frontend-source-15aee9e0b800.tar.gz",
+    "source_archive_sha256": "9b7af4d0250993311b3727a9af9cb3959e0da7b10e1f9e0ddacc17df65288b0f"
+  },
+  "checks": {
+    "management_linux_race": {
+      "pass": 131,
+      "skip": 0,
+      "fail": 0
+    },
+    "management_linux_race_events": {
+      "pass": 373,
+      "skip": 0,
+      "fail": 0
+    },
+    "full_go_test": {
+      "pass": 498,
+      "skip": 121,
+      "fail": 0
+    },
+    "full_go_test_events": {
+      "pass": 1292,
+      "skip": 137,
+      "fail": 0
+    },
+    "vet": "pass",
+    "windows_build": "pass",
+    "linux_build": "pass",
+    "frontend_node": {
+      "tests": 161,
+      "pass": 161,
+      "fail": 0,
+      "skipped": 0
+    },
+    "accounts_browser_groups": 55,
+    "logs_browser_groups": 54,
+    "browser_network": "isolated synthetic API",
+    "screenshots": {
+      "accounts": 48,
+      "logs": 226
+    }
+  },
+  "preview_evidence": "Published separately by the local preview owner; no preview directories or credentials read by this packager.",
+  "limits": [
+    "Environment-dependent Go skips remain separate from passes.",
+    "Historical missing observations remain unknown.",
+    "No deployment, rebuild, service change, upstream request or user data deletion performed."
+  ],
+  "evidence": [
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-batch-reauthorize-1440.png",
+      "sha256": "b4b33496bd23b846a34f8352d872f394fb031169b557129c54aa834ffcc5a37a"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-controls-1440.png",
+      "sha256": "0a2ffce83e5d1a03fa57b33446e7a06af4b7f0d81894079bee0e1534327a45d2"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-controls-320.png",
+      "sha256": "f44510727a7769456153a8e2f8cec6ede0a23eedb491474fd32904bc569cb4bb"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-crs-1440.png",
+      "sha256": "6a8eb022597e12d3657a0cb488dcb9c623ca4b6075975da903892d03b038a53b"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-resource-restore-1440.png",
+      "sha256": "c4a67027e9f0e0e5e46752d0f8b1c1fc4abd69ce76482f61dd70444d75a4b30e"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-resource-restore-320.png",
+      "sha256": "d2c4cf0e559219345df2fa3acf3b03e7da62e6c582bff25f1fb0598ddad4b549"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-runtime-1440.png",
+      "sha256": "207b95794a46e42e7f3c0ac55b2e5fcad4674731ab3afe4bb94e6c0ff550531d"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-runtime-320.png",
+      "sha256": "de6369155ca2b29473885ad55399a3bc03c19068de665e466b6085d1810aa7c0"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-runtime-policy-1440.png",
+      "sha256": "bc25f3ce2fc18e6f1f293557d21a83bd1442f0b7b85430aaadb3cb50e06c3c85"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-runtime-policy-320.png",
+      "sha256": "b4778df49df3605b20e3cc2846c6b83d5a01f4c10c3258ca952b47a87c8db25c"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-schedules-1440.png",
+      "sha256": "59ef3d0fb72555aef60a439d9d41845737d2736c0454802ff276f8bb9cd762f8"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-schedules-320.png",
+      "sha256": "2c128857bd26a12c80f9a7cbdcc96a33d62a8554bd20f5363a35f53ec7d29c38"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-statistics-1440.png",
+      "sha256": "307c8bffe7a55afa46c120abded5c37103b27e3aa90cf76e9ee2dee39e4d33bf"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-usage-summary-dark-1440.png",
+      "sha256": "7e1335245017034e7f030230f53efd6d1d01e36f31fdb95d52506dbd31d5fa38"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-usage-summary-dark-390.png",
+      "sha256": "52f3a682090f7c150994831c7cb8e3f561a830e5d5ee1059e49c48a15b05cd06"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-usage-summary-light-1440.png",
+      "sha256": "96fa12b5d7246da679f9bea0c0f6332f8874f869dd26045f24a95c72caa2baa6"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-usage-summary-light-390.png",
+      "sha256": "d474350fe53fb9d93f4f989734eb162047dac0000558b938c7bbb384bf7bb23c"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-usage-summary-mint-1440.png",
+      "sha256": "96fa12b5d7246da679f9bea0c0f6332f8874f869dd26045f24a95c72caa2baa6"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-usage-summary-mint-390.png",
+      "sha256": "d474350fe53fb9d93f4f989734eb162047dac0000558b938c7bbb384bf7bb23c"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-usage-summary-ocean-1440.png",
+      "sha256": "96fa12b5d7246da679f9bea0c0f6332f8874f869dd26045f24a95c72caa2baa6"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-usage-summary-ocean-390.png",
+      "sha256": "d474350fe53fb9d93f4f989734eb162047dac0000558b938c7bbb384bf7bb23c"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-usage-trend-dark-1440.png",
+      "sha256": "e0a117880f27e72b2da33e4f12447bf2944ac6603b6378c424768e543faf6c32"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-usage-trend-dark-390.png",
+      "sha256": "40617061d65bda8e42f4ea73ddcaf153f45a46af8efb4bbc9b3fa9ca9fdde5ba"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-usage-trend-light-1440.png",
+      "sha256": "0df0a252ac5c6b27891b6f98b158d49ab7432543d4fb8d1e757c1117bf319579"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-usage-trend-light-390.png",
+      "sha256": "1000f649be359f0ba358ee7175f557d0c7594d64efb06b2ed22610cf853ef5ab"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-usage-trend-mint-1440.png",
+      "sha256": "0df0a252ac5c6b27891b6f98b158d49ab7432543d4fb8d1e757c1117bf319579"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-usage-trend-mint-390.png",
+      "sha256": "1000f649be359f0ba358ee7175f557d0c7594d64efb06b2ed22610cf853ef5ab"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-usage-trend-ocean-1440.png",
+      "sha256": "0df0a252ac5c6b27891b6f98b158d49ab7432543d4fb8d1e757c1117bf319579"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/account-usage-trend-ocean-390.png",
+      "sha256": "1000f649be359f0ba358ee7175f557d0c7594d64efb06b2ed22610cf853ef5ab"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/external-lease-expired-confirm-320.png",
+      "sha256": "9a4ff480f16d9ff134abab89573b4e17b9429674562258a51d42e1470bc26260"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/external-lease-independent-receipt-dark-1440.png",
+      "sha256": "d274d2ae18fdce14c3c9925be0ed8144d6cf02bd751b233a1d5609eb32c384f7"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/external-lease-independent-receipt-dark-390.png",
+      "sha256": "a67836e0e4fcbae3109ac36c00122df5a5a38d885ad3f6f61847aa24e755cf17"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/external-lease-independent-receipt-light-1440.png",
+      "sha256": "affc1d3b1312e8c2d591668245e4b72f92f005497e05fc6b2aede2af8e4619a0"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/external-lease-independent-receipt-light-390.png",
+      "sha256": "f83d9d78f9e588cdcc28156091d7957cd7ddba0769e602b7dd8cf01cb2c2eee0"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/external-lease-independent-receipt-mint-1440.png",
+      "sha256": "917e8213a7e60df094023b1bde5c50db8e0ba5ca50e63cc142a83e59a20faaab"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/external-lease-independent-receipt-mint-390.png",
+      "sha256": "e4c342e4c8370ea84f69b7ad117f5f2c7acf0b36af5486dc31f266695bd4a3e3"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/external-lease-independent-receipt-ocean-1440.png",
+      "sha256": "6a32a1da5ed8c3b4eefc3e67f4b1d55da0991916f14eb249b3d7f56262ca12fd"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/external-lease-independent-receipt-ocean-390.png",
+      "sha256": "49b100cfd283617d80644180f988d3a1ad553b795685a5a5cd097b4e55870f6d"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/external-lease-preview-dark-1440.png",
+      "sha256": "6031db8f44bfd7282794c3545606bf2870424a0adeff1582ec422edb65103a5a"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/external-lease-preview-dark-390.png",
+      "sha256": "e683ce9c59e0c05bd373a6c481a3d619b330d271ed1dd6c3a8e5206ae1405d30"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/external-lease-preview-light-1440.png",
+      "sha256": "f896096b30bffd62f74b9c02b6d13a0181da067c7d2f822d82696f31309d7a98"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/external-lease-preview-light-390.png",
+      "sha256": "8737f04159d08330ca55fe6f4076e7903df9d15029a5758ae495464affebd8cd"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/external-lease-preview-mint-1440.png",
+      "sha256": "f896096b30bffd62f74b9c02b6d13a0181da067c7d2f822d82696f31309d7a98"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/external-lease-preview-mint-390.png",
+      "sha256": "8737f04159d08330ca55fe6f4076e7903df9d15029a5758ae495464affebd8cd"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/external-lease-preview-ocean-1440.png",
+      "sha256": "f896096b30bffd62f74b9c02b6d13a0181da067c7d2f822d82696f31309d7a98"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/external-lease-preview-ocean-390.png",
+      "sha256": "8737f04159d08330ca55fe6f4076e7903df9d15029a5758ae495464affebd8cd"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/lease-backup-ready-1440.png",
+      "sha256": "9ac68e0d3bb8a26613217dc84d5d91d64dd4fa3bc0c6c7a8a83e27061e60fc86"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/lease-backup-ready-320.png",
+      "sha256": "949ced958d676ec26e9447450cacbefaa2397a22c515a5d21bb618b2b6f27526"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/account-browser/report.json",
+      "sha256": "d30633615689a62b6e036fed02218741c2ac274ee2e3679682c69ba7f818fbb3"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/accounts-no-billing-verification.json",
+      "sha256": "dd30f77c05a0c33f867ddf971b6a973beea24ee81332186977b0b1f2373504b2"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/build-manifest.json",
+      "sha256": "15aee9e0b8008d0a32e44b9c0e029504124a2f63d9a09bad5574ce22d2e98718"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/frontend-unit-report.json",
+      "sha256": "9931bbb4845240bd134b859bb917264e83ef7fd751e88d46eb35ca621169f79c"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/frontend-unit.tap",
+      "sha256": "6a7b02e6eabe4c9942e9f165e522570bb6005ca2f76d278dc096794d365572c0"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/error-review-list-dark-1440.png",
+      "sha256": "15291b07f41b953e0cde704de644621f1a9ec9ad0ac0c9feb3951f2f6420fd22"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/error-review-list-dark-390.png",
+      "sha256": "a8c4f0ff4bb8595a31c695895a7ea5b6f21cddff0f04d8b6cacc09fb72f636ef"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/error-review-list-light-1440.png",
+      "sha256": "f1df829bd7d98aada72785592680a808e121b84d8391607e0b0d6982250537ff"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/error-review-list-light-390.png",
+      "sha256": "1f7db4b1e297287363e072eb75fc29cd7b9f531111ea2cd8b2d23cc19f7e1095"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/error-review-list-mint-1440.png",
+      "sha256": "d13f8c3b8413b236908591f80970d688cd3fa9c23eb5165a216271f59149eb0c"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/error-review-list-mint-390.png",
+      "sha256": "bdbba463a91659a5286febf796393fd89b19956982227b046720b70e86d999ac"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/error-review-list-ocean-1440.png",
+      "sha256": "a5bee251e6c6e0fa758acd2f689f1eda696f5646d376e0783c9c31b5bbac28df"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/error-review-list-ocean-390.png",
+      "sha256": "4f23088f2b719e6e5093c6d58960b2571e9ec91650f9977e19743d5937de41b1"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/error-review-panel-dark-1440.png",
+      "sha256": "975512ebd48b42e1ab012521bf24f03d160a1c28f2c26506e0363695f3cc64cf"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/error-review-panel-dark-390.png",
+      "sha256": "dbcfb1298e0c6ab382862e59bd09a42c9153bc544627bf18bd76900d42f3d71f"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/error-review-panel-light-1440.png",
+      "sha256": "fdfad1908da06e487266b7b08c41a755ff5131e5edd5e04a2a024a7d60c9ebf9"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/error-review-panel-light-390.png",
+      "sha256": "bb74ec74c34266d2f07fdc5f3f9ea08baaaf63006858f98bc60215a183d93a53"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/error-review-panel-mint-1440.png",
+      "sha256": "498ba769cb9f4b5c9d15d228ce69d2f796f27f3eedf2ac3ef9b1c5b120bcf4d5"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/error-review-panel-mint-390.png",
+      "sha256": "373a11871484b11ff822ab7ffe24981cfc1423457d2dc559339edf0d0d3d76a0"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/error-review-panel-ocean-1440.png",
+      "sha256": "3aac4023ff2a063aade041ae28946bb66d347998efc0d53518e4c3829de4d4be"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/error-review-panel-ocean-390.png",
+      "sha256": "b37672650f678451bec2c4e92eab3b901fe7978138b36259b5fe622efd4c0780"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/geo-batch-dark-1440.png",
+      "sha256": "6e0a1685476a6a16a1ddbc17a5683a286ffa15fc708e702b87dad593a910b9a9"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/geo-batch-dark-390.png",
+      "sha256": "a4ff7be7599d8658d30a8bf31f5e3433a40ecda1980d1306d6878e2e526b0f5e"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/geo-batch-light-1440.png",
+      "sha256": "db7fecbd3d2a0b21f9a1fb9ede12a42a09ffbbfd742e73f404e46fa66e11874a"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/geo-batch-light-390.png",
+      "sha256": "bfc4974d25eae0958766a6092f0fffd418d31b3a37962ba86221a57ee6e06ecd"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/geo-batch-mint-1440.png",
+      "sha256": "36d57ab848cf06e395e3df23b978ba6676cae628e1d7c30c29865de123b0b50d"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/geo-batch-mint-390.png",
+      "sha256": "16c768b891a23e789a962cc9d8afb92de63118c822c4baf18152393e4eb3d074"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/geo-batch-ocean-1440.png",
+      "sha256": "9a69a97ef125b5e29df24849618d358288391c25daccdb0a3a68adced3b03cb3"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/geo-batch-ocean-390.png",
+      "sha256": "a74a628ef8b6eac6c0b0cdd2aaf63cb56bcd36cd057cdfff32923deb4d2feae2"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/geo-detail-dark-1440.png",
+      "sha256": "b1841f9ea2db9b1f8c232ac7611dea537241cc60143aa1dcca13e7b71a74eeed"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/geo-detail-dark-390.png",
+      "sha256": "437b30ce1d7d5ccac7245c6e82eddabf0d61c754d55dc237dd4b7eabf9bb5874"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/geo-detail-light-1440.png",
+      "sha256": "cd77da81ec531dcbd0e12ea140ad42d7d793688930c236c61308988b67fe251c"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/geo-detail-light-390.png",
+      "sha256": "6e6382d0927f8376910d04e3e355177c271b2c01d2669299ead1ca405be5886a"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/geo-detail-mint-1440.png",
+      "sha256": "d557f3e898c2ae3f942b59556e9cac2f1f7623765f5c83628c3e0c919ad67575"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/geo-detail-mint-390.png",
+      "sha256": "6d3bd01da4899249e9fb39510e942f5794c35ca293212f7a8279bb6ae2af8d9d"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/geo-detail-ocean-1440.png",
+      "sha256": "2fb53287dc5420a2abfee0537c0ab17ddab569f19201fee54654e713fc40c4e7"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/geo-detail-ocean-390.png",
+      "sha256": "06df271b9292d6eb061bfee3be4e73130f24fc8989a6fa69b48326da314960b9"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-collector-dark-1440.png",
+      "sha256": "ce8739cf19a69c7c8ee0ebb5a11154ea541cd054db89cca1a1e965237d174a4b"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-collector-dark-320.png",
+      "sha256": "e7d8f6389ce5e18ef2241d107e2c1e3c4ccc81331234eeec740b93d691ff4ac4"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-collector-dark-390.png",
+      "sha256": "ff7e89dfbeb64d809f5b30abc27cac7dccfc56ecb9bee7f7398e30b7391eaaf3"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-collector-light-1440.png",
+      "sha256": "a552559630ec9d1905f29db90f4fdc3f6832f51fc5c07860a515d4636860c72d"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-collector-light-320.png",
+      "sha256": "662f6df4d0d8df218ba9b1652aff69c6baed6132af8dd28bcba3b6ab6ca4e3ed"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-collector-light-390.png",
+      "sha256": "dafff89127be8b07d6b4e8a2e1a448b229cbfb36cdaf7b4041c7f5dd340d9aaa"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-collector-mint-1440.png",
+      "sha256": "c3019d3be289a0e4967044898da9cf36ec00dc4463b980e32807ae25520404b8"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-collector-mint-320.png",
+      "sha256": "1b26c88b465b6363c60ed050f08a40a67feb5fff70b0b9ceec080a0730b33fce"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-collector-mint-390.png",
+      "sha256": "92e2a79b6fdab65842dd2d3b2cfe6b90fffa7a65724cab89fbf12fc529f26559"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-collector-ocean-1440.png",
+      "sha256": "11aeaebc55c99e40a390a15ddcae4d664e3915270acb7869002583e97d25f58d"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-collector-ocean-320.png",
+      "sha256": "2157a067f8ce46c1be5db8b4e9d47ca8dc6200b4e5b79e1fae199d8e648cafdf"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-collector-ocean-390.png",
+      "sha256": "82f7d145d44af396bcee5c155c7cb0f83bb51b2ad73b608c959f5bb2c95674c2"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-event-detail-dark-1440.png",
+      "sha256": "06bd0aa5f7115805463ef9f896f5d1390e10118d41b207a9a20067d2552649e3"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-event-detail-dark-320.png",
+      "sha256": "acae800c42267d5378914c3c2189034ee9aeab33b7c51bf292763df31be9e09f"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-event-detail-dark-390.png",
+      "sha256": "9fe94a9e88ac79384363855b3bece2ea27dacaa62f578fc72399be0b6735a49c"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-event-detail-light-1440.png",
+      "sha256": "66dee9e1d26ecf112e638e928afd962524fed223f03ce05f3d03af5295f0a354"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-event-detail-light-320.png",
+      "sha256": "586f7b42f98cbbd0e5a304bea266cae3e9e9681bc7d3b8d43cca0285fc663b47"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-event-detail-light-390.png",
+      "sha256": "cb63ae1680ce257666cbfce55ea463ac1369f156c33332ebc43e684613c6565b"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-event-detail-mint-1440.png",
+      "sha256": "8d632bda6a68b218f57b69ea2f42570e1c559f9a4743519342afe640f2b3072f"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-event-detail-mint-320.png",
+      "sha256": "c389840e373bb073c19dad04b077f108583867a837c64c24066455efa07fd2fe"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-event-detail-mint-390.png",
+      "sha256": "371b14b468812f8d70fa8b5537a057f5ed97c1d02302001eab3e49e3d9cd40d2"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-event-detail-ocean-1440.png",
+      "sha256": "c9a39c7bcd158154dccdfafce6fdd0031a791207dc8c63b4988c405effe23129"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-event-detail-ocean-320.png",
+      "sha256": "090472c06f406298d517783c7354e6ab7c630a3eaa1bf4d7e7505754523cb2c1"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-event-detail-ocean-390.png",
+      "sha256": "d5ea326cd3fcfa7bd90727fe041b913a127cec1e16dd9a91123c88e2e4f62b52"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-events-dark-1440.png",
+      "sha256": "776dac778b0eca100c5055c9c33807e8c31317b0d48625a17de748458f68ab12"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-events-dark-390.png",
+      "sha256": "a0be16d49b1537b0f67b95eeec17748a6e968b2b48b83ecab97c0247c9723e1b"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-events-light-1440.png",
+      "sha256": "145c81b3c30e85ef1741dc1ec5861f6c5f5aa9646a82563c4e2cbc03c1f1203f"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-events-light-390.png",
+      "sha256": "6a890fd8a7ecde486f150597187a90caceda094cfe9ef8991afd168830884fbb"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-events-mint-1440.png",
+      "sha256": "0e194acc1604a6e230db368bbcb8b9ac69b51624cd17a284d1b348212a5a0d1e"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-events-mint-390.png",
+      "sha256": "3733943f5349bf74a634912695f91bca1e75086fea26aeb5fd2ddf220c7bcd00"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-events-ocean-1440.png",
+      "sha256": "67bdb65b96af64ddee5325a772bd8c97e350603609954c327b5628ae7f9b4e60"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-events-ocean-390.png",
+      "sha256": "834354419021968df42161706b872c1abfcbc3431c1577d21920c366b5400285"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/ingress-visual-report.json",
+      "sha256": "c90ed791c19d8def0e491387d9f8d5f4e2a8c44e917c51df540d6da1d5c1e6d9"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-analysis-1440.png",
+      "sha256": "1495d16eabe54609d68b48e391befd778032f5117b8ad73fee2dac636c9810b9"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-card-320.png",
+      "sha256": "1b1f1055f684c1dc6aa81541d7632a34c371bc2562a2899c0c7cd698a51cbaae"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-card-390.png",
+      "sha256": "4fe780feb6bd973cf569d33bf099de8ffda91d48244b49e2cbb92928b3b4dd07"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-cleanup-1440.png",
+      "sha256": "b31ffac06ca148aa894bde236e38ab560f76c7c2cceb301e9af3752a4e731ad4"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-cleanup-390.png",
+      "sha256": "d1e56a68f56f6376238d8c391cc99eaca86b345bc0cb61a8c990e706d2d7a2e6"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-ip-geo-390.png",
+      "sha256": "6e6382d0927f8376910d04e3e355177c271b2c01d2669299ead1ca405be5886a"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-ip-geo-batch-320.png",
+      "sha256": "aa59d7a5433bb74abc68ee4453ac22f38cf08b42fac77e5e1049ac9d539e1cef"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-management-1440.png",
+      "sha256": "e22e2dcae105711432ed31caecdb4b1f29be36ef4c46db1d3e12f81253a657bf"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-management-320.png",
+      "sha256": "2286c5473177ce4e391b9cf2cdec2ddcca12cdd943d1629174ebf40dd81e8efe"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-management-390.png",
+      "sha256": "e7a0210641a43931623a3e9f8914c81ed44a56c64b6b9a07dd5ff75b1b4c7c21"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-operational-ranking-dark-1440.png",
+      "sha256": "be6c71971af6cd1f328dec7ba764304272459911a4dcbf5e7828af1d5d02862d"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-operational-ranking-dark-390.png",
+      "sha256": "017600a554843b8cd659655aed8fbb282d90e6b4844deddd39d0f31501a24f55"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-operational-ranking-light-1440.png",
+      "sha256": "fd37183e1a99582a5c2ed1f7588eb4677e584a64b2dfd040b6876021ce5eb324"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-operational-ranking-light-390.png",
+      "sha256": "ce7ad6b0650c0c965961b68c2db6b39ffcb6283642ada81b57d8958a6687c779"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-operational-ranking-mint-1440.png",
+      "sha256": "51af84137ee79d0809595753aea3ffbe3337b346b9ec0d9afe65a07aa876602c"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-operational-ranking-mint-390.png",
+      "sha256": "a83df954052b28fbccf13a79b0062ca6fa2c20a74fd805da44228d2bdfe07a61"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-operational-ranking-ocean-1440.png",
+      "sha256": "5886ea258df0fc6efa0114a6a32e05d51ec345fd1ab29d9d077044cecab98a95"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-operational-ranking-ocean-390.png",
+      "sha256": "f0554367960a73b59551c59907500ec65349b51e59409f8cb3d38dc1c602c1c6"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-operations-only-dark-1440.png",
+      "sha256": "773d6709163300c21d1692498f1df2376ce0504615473225634594515203b5e3"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-operations-only-dark-390.png",
+      "sha256": "1b89fecfbb0f59731cd245439a88179f6adb67b54fab7790f5b49de1cf3889a7"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-operations-only-light-1440.png",
+      "sha256": "b597c865df52ee0b6034007254a32c55ec5b23885d87d815a62b4ac54cabffee"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-operations-only-light-390.png",
+      "sha256": "e00b997131d41bb39d7eb35d567d84fffc7f72d823c9340b14004fdee1d251ab"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-operations-only-mint-1440.png",
+      "sha256": "64443fe1d7439b491e41cb0b7ecdf03f015847c77d9f981fc01be11321026cf2"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-operations-only-mint-390.png",
+      "sha256": "bb1d853021b695140cb6b0ab36fa2d6861f38354424be8aa22ce56a110c78090"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-operations-only-ocean-1440.png",
+      "sha256": "6051895066d0abfb062ddb37ef853de0197f76b08bb1a25027a3c08a05880842"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-operations-only-ocean-390.png",
+      "sha256": "a445b0366f20d834368b5159776b8b585d69c1e0e3e8d1b1567023a427e99742"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-review-list-320.png",
+      "sha256": "2ffdf620b13c9755ecd201e418e99785e2a43753c9f12fd1242f080b4cfb0611"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-review-list-390.png",
+      "sha256": "e1f8320faab3e6c0371e20dbca8eb30bb78b73bf19dc2703aa556fd16eb7929b"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-review-panel-390.png",
+      "sha256": "019341321a4acbb5a433255e39dbffcd3814f6fb5c42d6301080ec7fb05ba7ae"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-shell-dark-1440.png",
+      "sha256": "1a26127a2e6fc0843d7d95fd84ff0521cd62950f2873a200a438c85c5b8996dd"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-shell-dark-390.png",
+      "sha256": "0a82a3fdec48f3499841681bf4d6ea9cc2aa0c14c5dfd1d63d53e8257da8f351"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-shell-light-1440.png",
+      "sha256": "e22e2dcae105711432ed31caecdb4b1f29be36ef4c46db1d3e12f81253a657bf"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-shell-light-390.png",
+      "sha256": "e7a0210641a43931623a3e9f8914c81ed44a56c64b6b9a07dd5ff75b1b4c7c21"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-shell-mint-1440.png",
+      "sha256": "d17643dee6fab290c579ad0748bc1eeb3d1f2995dab2cfc870db48a47e4a0215"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-shell-mint-390.png",
+      "sha256": "c354b0954e4d6ccac1726ee8511284533f6e0d9bed285f8499a2e08afc04fda3"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-shell-ocean-1440.png",
+      "sha256": "ba33977ccd9daf52d60423ca7153e39ffa75dd768e045991281ae1be2cea4e03"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-shell-ocean-390.png",
+      "sha256": "ff98eaa29c1458dcd145c5bffb83c0447f4ecb1caa4cac35f7e8a4193b8b66e7"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-usage-coverage-ranking-dark-1440.png",
+      "sha256": "14e56d50d5e98721903374c56f29a45dd85b7ce37e987dff92b87f8fad0600fd"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-usage-coverage-ranking-dark-390.png",
+      "sha256": "f5a7a5b46172965332b7a066eaf2507a1ab3f42967dda663710f03a9c7c0f85a"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-usage-coverage-ranking-light-1440.png",
+      "sha256": "d17505d6102acddd20911b853ebb944f88300242b476730202cb54d3ba95aaea"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-usage-coverage-ranking-light-390.png",
+      "sha256": "28e3354d03b9311d495da538975acfd996c75d9b7749c0ce812d47e3f5a6995a"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-usage-coverage-ranking-mint-1440.png",
+      "sha256": "14ff7bb38076892cc20e7148e529b63a11ee84c702f78d05f180cc7ecbc503e7"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-usage-coverage-ranking-mint-390.png",
+      "sha256": "e4666abce616cf9315bec2e32992d6c1e58c7b8c82fdb9ba4ec1903139304bed"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-usage-coverage-ranking-ocean-1440.png",
+      "sha256": "4a659bcae00f77b333ec7135aec2eab8bf5ba193ced9ac05bbf9cbf0ab6f8d73"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-usage-coverage-ranking-ocean-390.png",
+      "sha256": "923e06893d4f9491a6e013d62a9236cc59b66e0ccc5fd10342f9a6838e86ba90"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-usage-coverage-trend-dark-1440.png",
+      "sha256": "e238ffad12fce408db9e332737abb0d4b0f70a959f9ffb929cc3f49aca60e27a"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-usage-coverage-trend-dark-390.png",
+      "sha256": "d5e9bd4630738f8e902f5c7d5a5e05c4cd9d92ed600705597a838f87681ad0e2"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-usage-coverage-trend-light-1440.png",
+      "sha256": "4783e15b60105cbe7c15630406a31eacb73e4753466dacb53bcb053928f6a7bc"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-usage-coverage-trend-light-390.png",
+      "sha256": "437631edfc3edb88aa51f978765057275cfdbade01121484245ed20bda6122d0"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-usage-coverage-trend-mint-1440.png",
+      "sha256": "7a8d9982445500e702bac077349307f60da019de41f2afb039ba460398457700"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-usage-coverage-trend-mint-390.png",
+      "sha256": "6e435a62b13575f10f50f2233c2c19c2e220eb261ba064e0a40ee5b0c8b118c5"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-usage-coverage-trend-ocean-1440.png",
+      "sha256": "4c441387c4200cdcc6443f95378b24c3e9199d0efcf18c1ab338e92ff1c88d05"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/logs-usage-coverage-trend-ocean-390.png",
+      "sha256": "0aca9b44c15abd2c72f42dfc41675f4ab3a2cd1e0d322219155c965aebbc01b8"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-mobile-column-320.png",
+      "sha256": "b2005a5fdb468bfa916436ec39b9dd6c73d659cd70efc46e964250620e456c82"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-mobile-column-dark-390.png",
+      "sha256": "4639ee8f24bbecce723edc333a8460ddca631e278d0e80265097ae1a1c9673ea"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-mobile-column-light-390.png",
+      "sha256": "37e58b4f4ba2962ec6e8cd137fa42464b2a4534d17403c0a725765fa2590e8f0"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-mobile-column-mint-390.png",
+      "sha256": "37e58b4f4ba2962ec6e8cd137fa42464b2a4534d17403c0a725765fa2590e8f0"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-mobile-column-ocean-390.png",
+      "sha256": "37e58b4f4ba2962ec6e8cd137fa42464b2a4534d17403c0a725765fa2590e8f0"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-model-chain-dark-1440.png",
+      "sha256": "6a2638ab3bb03895838c10f1865a556b838ef8e838bb9d29e541a24a35b3755e"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-model-chain-dark-390.png",
+      "sha256": "b49e7f2a31154423ef713c348c5e23cd17d08acedc5830e8a99b3f1fa73883f3"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-model-chain-light-1440.png",
+      "sha256": "71d2d3adb71b9da27ae157b864edac2911337839126fd98f3f44729d4e8ece9c"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-model-chain-light-390.png",
+      "sha256": "c206c72049f7090475d39488d6b9dccc2c6657cdbb953afbafe665c5737be78c"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-model-chain-mint-1440.png",
+      "sha256": "71d2d3adb71b9da27ae157b864edac2911337839126fd98f3f44729d4e8ece9c"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-model-chain-mint-390.png",
+      "sha256": "c206c72049f7090475d39488d6b9dccc2c6657cdbb953afbafe665c5737be78c"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-model-chain-ocean-1440.png",
+      "sha256": "71d2d3adb71b9da27ae157b864edac2911337839126fd98f3f44729d4e8ece9c"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-model-chain-ocean-390.png",
+      "sha256": "c206c72049f7090475d39488d6b9dccc2c6657cdbb953afbafe665c5737be78c"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-no-header-attempt-dark-1440.png",
+      "sha256": "aa8d5c9753deeeeb2e063bf2c297df0763c505147abe2830fb3ab4c00de94ad4"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-no-header-attempt-dark-390.png",
+      "sha256": "7f1fa4d99b974d20854c57abafa6668d96d4f40e9852ddbd2a2f3c2b246bc782"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-no-header-attempt-light-1440.png",
+      "sha256": "9849c47a98c81d98ba6bed9b3b5f1fb9430b25656287c9546d2379ea487b4053"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-no-header-attempt-light-390.png",
+      "sha256": "2f66e05a254ede1033f5bc3e0d84feeb71f85d072e0be034f6b2baab1ffa39c9"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-no-header-attempt-mint-1440.png",
+      "sha256": "9849c47a98c81d98ba6bed9b3b5f1fb9430b25656287c9546d2379ea487b4053"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-no-header-attempt-mint-390.png",
+      "sha256": "2f66e05a254ede1033f5bc3e0d84feeb71f85d072e0be034f6b2baab1ffa39c9"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-no-header-attempt-ocean-1440.png",
+      "sha256": "9849c47a98c81d98ba6bed9b3b5f1fb9430b25656287c9546d2379ea487b4053"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-no-header-attempt-ocean-390.png",
+      "sha256": "2f66e05a254ede1033f5bc3e0d84feeb71f85d072e0be034f6b2baab1ffa39c9"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-schema-dark-1440.png",
+      "sha256": "bc173eca727fe88d113f078d9319d27f7497165add45ff4193d0fc9180747100"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-schema-dark-390.png",
+      "sha256": "3f1bc5710d58d631d91734dcac81284e7a4805eaafd146f906b970fc3cebfc77"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-schema-light-1440.png",
+      "sha256": "7a2113f32bddc8174100cd32ef401f79d82ee1610a4c22b54106b34113037da9"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-schema-light-390.png",
+      "sha256": "6a6970129b83af7065237c01c7eb37a7ce49262cd0f4e4bd620f39cd5a3f8b80"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-schema-mint-1440.png",
+      "sha256": "7a2113f32bddc8174100cd32ef401f79d82ee1610a4c22b54106b34113037da9"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-schema-mint-390.png",
+      "sha256": "6a6970129b83af7065237c01c7eb37a7ce49262cd0f4e4bd620f39cd5a3f8b80"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-schema-ocean-1440.png",
+      "sha256": "7a2113f32bddc8174100cd32ef401f79d82ee1610a4c22b54106b34113037da9"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-schema-ocean-390.png",
+      "sha256": "6a6970129b83af7065237c01c7eb37a7ce49262cd0f4e4bd620f39cd5a3f8b80"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-sent-distribution-dark-1440.png",
+      "sha256": "f264109454b720267f41e8c85e10ebede8a65867b3420a72af522253550f5b7d"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-sent-distribution-dark-390.png",
+      "sha256": "41716fe210f4e051e30f2380280906b661b50567180cf597d7ba20b4781764fd"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-sent-distribution-light-1440.png",
+      "sha256": "8df930176dee9e89f82057f44c6a64913d545c2496daf7e1a23e911f9b55aa34"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-sent-distribution-light-390.png",
+      "sha256": "7e820bb176e606cc48b25419b32e1d64a0c392356298b6eb8b9230d65b12ccd4"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-sent-distribution-mint-1440.png",
+      "sha256": "9869c99a4c1fef201f5066683a7addaef7b4f9182f7cbf661a58019b1fe97ec6"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-sent-distribution-mint-390.png",
+      "sha256": "82fdcce09138453b9c90b413fe0841e8d6e2f75eb38a2e1f3e42475ed593f749"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-sent-distribution-ocean-1440.png",
+      "sha256": "0d655a92702965a46801c16e45c0bd6613f888f25845c131c15073b553e883d0"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-sent-distribution-ocean-390.png",
+      "sha256": "bdcf3cece3328eca1e740853fd64a73ee140238764e6fc7b87ccf248709da8e4"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-stage-coverage-dark-1440.png",
+      "sha256": "f5da3500d592281deaa2f69d4b3c363b8a85a560e5a2e72c3794aad9b2821d9b"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-stage-coverage-dark-390.png",
+      "sha256": "a8f840a4a02c04c816176ddd4da689565314d8f2ecc7f0824116f2e54a00a31c"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-stage-coverage-light-1440.png",
+      "sha256": "45fd99e6085aaec9a5d04032aebf80e3be22c1ca3402a58b0ec242fec41a9e68"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-stage-coverage-light-390.png",
+      "sha256": "a5ae951078cb06e2e8f7a609f03c8f6966e77bc8e34ff206107a15b1ee710efb"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-stage-coverage-mint-1440.png",
+      "sha256": "45fd99e6085aaec9a5d04032aebf80e3be22c1ca3402a58b0ec242fec41a9e68"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-stage-coverage-mint-390.png",
+      "sha256": "a5ae951078cb06e2e8f7a609f03c8f6966e77bc8e34ff206107a15b1ee710efb"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-stage-coverage-ocean-1440.png",
+      "sha256": "45fd99e6085aaec9a5d04032aebf80e3be22c1ca3402a58b0ec242fec41a9e68"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-stage-coverage-ocean-390.png",
+      "sha256": "a5ae951078cb06e2e8f7a609f03c8f6966e77bc8e34ff206107a15b1ee710efb"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-stage-times-dark-1440.png",
+      "sha256": "b9deed95fbdac490690a3ea8a69cf8b0fd1f63ea074228e563b595d3a1c32587"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-stage-times-dark-390.png",
+      "sha256": "d3d17191828fd5ae4df08dd14906a18cbeaacadf6062ff5ba1fc9cb00372e287"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-stage-times-light-1440.png",
+      "sha256": "693e00ccf4f06eb56b698e1665a81eb2f8d74a6150e7bfb864f5743011fdf3ab"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-stage-times-light-390.png",
+      "sha256": "e27498f4daccff46bd60adb582121a118ad13aa535514a62dede66140aa8914a"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-stage-times-mint-1440.png",
+      "sha256": "693e00ccf4f06eb56b698e1665a81eb2f8d74a6150e7bfb864f5743011fdf3ab"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-stage-times-mint-390.png",
+      "sha256": "e27498f4daccff46bd60adb582121a118ad13aa535514a62dede66140aa8914a"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-stage-times-ocean-1440.png",
+      "sha256": "693e00ccf4f06eb56b698e1665a81eb2f8d74a6150e7bfb864f5743011fdf3ab"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/observation-stage-times-ocean-390.png",
+      "sha256": "e27498f4daccff46bd60adb582121a118ad13aa535514a62dede66140aa8914a"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-client-correlation-dark-1440.png",
+      "sha256": "5586f521cb9a82a8a936aad02518dad53f8a551246303ed93bb6706455b05daa"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-client-correlation-dark-390.png",
+      "sha256": "2b77ede43fcacd579f061de57408232a1e1b8c210fea253f131369a58297aa57"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-client-correlation-light-1440.png",
+      "sha256": "7ea92b770882d64c0d80534bfe3ca470f9206a1e95478d60d0e8d8ffa6f5c637"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-client-correlation-light-390.png",
+      "sha256": "cd2901a29b9d4c0facd21b33c155b3cef70355e77306c2304c95af587ccc362e"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-client-correlation-mint-1440.png",
+      "sha256": "9f2acc88d4671d88a94dfd1a7467d5ea7dc295726ebc646bc1e77a39c784272c"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-client-correlation-mint-390.png",
+      "sha256": "0ede2ff7086aa7ed4d226a8df34aaa73e5af7487798254997e6a0de5de71410b"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-client-correlation-ocean-1440.png",
+      "sha256": "d28ac665542fc6ebcf1fc5f3edf9b387d0af0d8535954a8ecfbe2f2fd6700623"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-client-correlation-ocean-390.png",
+      "sha256": "d169c345a8280ee21db98ebc761e9042f4a5574c8211fd0aadefb1babd4f9f28"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-image-coverage-dark-1440.png",
+      "sha256": "c065e26c5ef09c31f56d84c708ada94e4971edee1bced41344986cee6239d23f"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-image-coverage-dark-390.png",
+      "sha256": "555c73da686061124b4b45d02c2b7d3a30725b1ff53bdcb143391de0863ae00f"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-image-coverage-light-1440.png",
+      "sha256": "7ba7235607343f22ec68269816cfda6e96b0dd194d9cb9e3bb9af08422b4e596"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-image-coverage-light-390.png",
+      "sha256": "f97f2bada3a3a0bca3935eef821bacf9c4bb1390974ac2450cc77598387c3846"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-image-coverage-mint-1440.png",
+      "sha256": "7ba7235607343f22ec68269816cfda6e96b0dd194d9cb9e3bb9af08422b4e596"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-image-coverage-mint-390.png",
+      "sha256": "f97f2bada3a3a0bca3935eef821bacf9c4bb1390974ac2450cc77598387c3846"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-image-coverage-ocean-1440.png",
+      "sha256": "7ba7235607343f22ec68269816cfda6e96b0dd194d9cb9e3bb9af08422b4e596"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-image-coverage-ocean-390.png",
+      "sha256": "f97f2bada3a3a0bca3935eef821bacf9c4bb1390974ac2450cc77598387c3846"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-image-detail-dark-1440.png",
+      "sha256": "c057b8468651f456ecdc0039c51f656837e56629e4c37932d1148fb2039d73dc"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-image-detail-dark-390.png",
+      "sha256": "ac69a42c7a61beac1f88f44516c6248983b195f5385e49fc896f6ab794cf5996"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-image-detail-light-1440.png",
+      "sha256": "d2de8c158cc8f9f613c38b2c9ff0c1c580372cf005bccb8c501720a9273df728"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-image-detail-light-390.png",
+      "sha256": "b5f6fdb8832f4711511fd8d2555cb1cebc24680e035944370903359259bbd4f0"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-image-detail-mint-1440.png",
+      "sha256": "d2de8c158cc8f9f613c38b2c9ff0c1c580372cf005bccb8c501720a9273df728"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-image-detail-mint-390.png",
+      "sha256": "b5f6fdb8832f4711511fd8d2555cb1cebc24680e035944370903359259bbd4f0"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-image-detail-ocean-1440.png",
+      "sha256": "d2de8c158cc8f9f613c38b2c9ff0c1c580372cf005bccb8c501720a9273df728"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-image-detail-ocean-390.png",
+      "sha256": "b5f6fdb8832f4711511fd8d2555cb1cebc24680e035944370903359259bbd4f0"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-ws-timing-dark-1440.png",
+      "sha256": "7e5535312ae66c526c948d7bc10ab14a7429579582086acd02236ac133af8fd9"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-ws-timing-dark-390.png",
+      "sha256": "1a8b5f0ede4b8424a719be67e12ed716504aa8e2cd00bbfff7d0be8247f52617"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-ws-timing-light-1440.png",
+      "sha256": "5dad6bfffe5727c5605220b4c45dd9dd0b34f3ed41e4b835c20ef4e969539b9a"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-ws-timing-light-390.png",
+      "sha256": "d9eb5eb9a2c7f3a30763a55ffef978de4cdc91e223a5daa3ba1c860cea0c463d"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-ws-timing-mint-1440.png",
+      "sha256": "5dad6bfffe5727c5605220b4c45dd9dd0b34f3ed41e4b835c20ef4e969539b9a"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-ws-timing-mint-390.png",
+      "sha256": "d9eb5eb9a2c7f3a30763a55ffef978de4cdc91e223a5daa3ba1c860cea0c463d"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-ws-timing-ocean-1440.png",
+      "sha256": "5dad6bfffe5727c5605220b4c45dd9dd0b34f3ed41e4b835c20ef4e969539b9a"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/passive-ws-timing-ocean-390.png",
+      "sha256": "d9eb5eb9a2c7f3a30763a55ffef978de4cdc91e223a5daa3ba1c860cea0c463d"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/report.json",
+      "sha256": "691d9f17b622cc82ab555fac0e8494910ec32047ade5cb0ed83c879783f3b6f4"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/severity-detail-dark-1440.png",
+      "sha256": "05ac100a69073d38e34dec836bfd810b212d89f208870c09f3e266838982b93f"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/severity-detail-dark-390.png",
+      "sha256": "775ae532d2b3e1b285e228952af4ad10d88698add1babb9939b8f4c360ff7da8"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/severity-detail-light-1440.png",
+      "sha256": "91767033bbe66f3bf11f412a2b89ef7a18de6c47518491b78ca8431dbf621057"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/severity-detail-light-390.png",
+      "sha256": "a51751618d6070c758d0339cbcf350191c0e9064a3703728879d5402045301f6"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/severity-detail-mint-1440.png",
+      "sha256": "91767033bbe66f3bf11f412a2b89ef7a18de6c47518491b78ca8431dbf621057"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/severity-detail-mint-390.png",
+      "sha256": "a51751618d6070c758d0339cbcf350191c0e9064a3703728879d5402045301f6"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/severity-detail-ocean-1440.png",
+      "sha256": "91767033bbe66f3bf11f412a2b89ef7a18de6c47518491b78ca8431dbf621057"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/severity-detail-ocean-390.png",
+      "sha256": "a51751618d6070c758d0339cbcf350191c0e9064a3703728879d5402045301f6"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/severity-review-list-dark-1440.png",
+      "sha256": "d47890d2a3bf77fc1102499ac555ad9c9cde36387d733fa1c4f43874a9784f76"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/severity-review-list-dark-390.png",
+      "sha256": "1826e15c7a8b24ddf87354a549bbc28c88f321b7301c29c63959547d66eadc44"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/severity-review-list-light-1440.png",
+      "sha256": "ce37a9ad4ed9cf60f7807d30ebe0d47bbf76e6883e7307ab90f3a6e23ec918ac"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/severity-review-list-light-390.png",
+      "sha256": "2d6551b89c62596b71e165f192217ddf54da4c1182b492a22815a44046945965"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/severity-review-list-mint-1440.png",
+      "sha256": "e1f72710ec8601c65fdf135d9acbc411b54313f32aef507c1d07ab609b4d05fc"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/severity-review-list-mint-390.png",
+      "sha256": "fdd2e502b31fe1ca2bd7196fa34802ad395158672d41fa1bfba776194ed8b6fa"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/severity-review-list-ocean-1440.png",
+      "sha256": "167a27da6dd9c863d8e93ffa92e7d4af4a9d1c19c667695233f5491661b87e8d"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/severity-review-list-ocean-390.png",
+      "sha256": "ef03c0f131279561a7d44da8596e23d5053fab293bc43c6626f52f2cdbcec266"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/websocket-warmup-detail-dark-1440.png",
+      "sha256": "86273e7b4dc5daf24b6903ea4cd74ce5268a5ae04c8656aead394c99a3b0cf81"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/websocket-warmup-detail-dark-390.png",
+      "sha256": "707141289b65baf63e5cf31fd80682820a088accf7812d0f1ca1d531509ac733"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/websocket-warmup-detail-light-1440.png",
+      "sha256": "3b70f088282729617ca4da4d0c8704ecbc57ffddf80dd9ce7145f3a403bac0b9"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/websocket-warmup-detail-light-390.png",
+      "sha256": "e3cf443cf75b4ac8ce35831fa9ea76abae2ee2922dca884854e011d672da5a18"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/websocket-warmup-detail-mint-1440.png",
+      "sha256": "3b70f088282729617ca4da4d0c8704ecbc57ffddf80dd9ce7145f3a403bac0b9"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/websocket-warmup-detail-mint-390.png",
+      "sha256": "e3cf443cf75b4ac8ce35831fa9ea76abae2ee2922dca884854e011d672da5a18"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/websocket-warmup-detail-ocean-1440.png",
+      "sha256": "3b70f088282729617ca4da4d0c8704ecbc57ffddf80dd9ce7145f3a403bac0b9"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-browser/websocket-warmup-detail-ocean-390.png",
+      "sha256": "e3cf443cf75b4ac8ce35831fa9ea76abae2ee2922dca884854e011d672da5a18"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/logs-verification.json",
+      "sha256": "b6a6ef36ede6ff902303ccf111591b179035bc2948f6224a2dbfde9e1c33bf57"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/go/source-manifest.json",
+      "sha256": "a788e7123cb4a43f30a75677dfa496f23c7cadb5dd5d8a1ff8c996123e93ffff"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/go/report.json",
+      "sha256": "b7522180ace7e51fa0ef78fefa9a2c0f07523301db01d48d6e8296902d8ee04e"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/go/race.log",
+      "sha256": "f8b7563e5057be77aa5ccc7f0db98ddcd1338cdc188f3e8b0d26e63affadbccb"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/go/local-verification.json",
+      "sha256": "e8aeb7e026157584182aaa901e2e8fdb77733f747d2062cdc1266e5293f017f3"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/go/local-test.jsonl",
+      "sha256": "b0bf4d8b894e4d32ff177d7188581afcbcc996b65ecc89197cd8b18ad6e9fe49"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/supplementary-go/source-manifest.json",
+      "sha256": "73a79d70ba8852f762b30137c79d633bf6446f60955a25b1bea1507ba575490e"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/supplementary-go/report.json",
+      "sha256": "af593bedc016de8fbf2b5d12aba1b1b66f7242d810821aa66b5290695fefeef6"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/supplementary-go/race.log",
+      "sha256": "b63c48b417cd2c38a78594ac296f92d564a66f1765e5090ffecff66005fa37ea"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/tools/package_management_candidate.py",
+      "sha256": "a50f0661ba0e1b0088030d5e2c212995f0f5986d4da3a9bea9f0c5033ed04237"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frozen-evidence-15aee9e0b800/tools/freeze_no_billing_candidate.py",
+      "sha256": "3c52ada41ad3c7cb6fb245371859d48cb09d89ac9e1be6bcc84441458df60665"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frontend-15aee9e0b800.zip",
+      "sha256": "d3fbe59678358a0d90229f0a0d6d08e3f7bbd2e8a7e9129684b4228c30ab1c6f"
+    },
+    {
+      "path": ".local/management-parity/passive-observations-20260918/frontend-source-15aee9e0b800.tar.gz",
+      "sha256": "9b7af4d0250993311b3727a9af9cb3959e0da7b10e1f9e0ddacc17df65288b0f"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t083846-425102/source.tar.gz",
+      "sha256": "cebc00cc721ae642f620eafdb6bc870a9926f29b5a1553623a32d2eb0698bd9f"
+    }
+  ],
+  "supplementary_joint_race": {
+    "run": ".local/management-parity/local-race-20260918t084201-027055",
+    "go_source_sha256": "d52eda2accb3af36ea09269c7385b1875b4c50e709d19a132995dc24c76aad2d",
+    "top_level": {
+      "pass": 440,
+      "skip": 0,
+      "fail": 0
+    },
+    "events": {
+      "pass": 1053,
+      "skip": 0,
+      "fail": 0
+    },
+    "counted_additively": false
+  }
+}

@@ -1,0 +1,359 @@
+{
+  "schema": "codex-system-cost-oracle-v1",
+  "capture_id": "20260927T125419.084184Z",
+  "official_binary_sha256": "660e159a49e823ac8e5986cb238f73158ce4b957d40d9292f8de90862644b501",
+  "script_sha256": "945f42d6967afde9419b700c2b1e3bd7e9cac00f03053b8bd7f7eaaf18a242a3",
+  "only_loopback_available": true,
+  "synthetic_credentials_only": true,
+  "responses_are_synthetic_backend_fixtures": true,
+  "official_timer_seconds": 150,
+  "cases": [
+    {
+      "case": "api-key",
+      "thread_id": "01a0e2ee-58f8-7100-8ec1-96e41a85a980",
+      "turn_id": "01a0e2ee-5909-78f3-8469-94dd562ac4bc",
+      "response_id": "resp-system-fixture-api-key",
+      "source_sha256": "1d1638845da56b8be12d09be58fbb4c7f14421f2767e94af5e7d8bab6242dd0d",
+      "cost_requests": [
+        {
+          "method": "POST",
+          "path": "/v1/analytics/codex/turn-costs",
+          "headers": {
+            "user-agent": "codex-cli",
+            "authorization": "Bearer sk-synthetic-system-api-key",
+            "content-type": "application/json",
+            "accept": "*/*",
+            "host": "127.0.0.1:32877",
+            "content-length": "53"
+          },
+          "body": {
+            "turn_ids": [
+              "16ce0f30-338f-4f49-b679-9ea4cb96f970"
+            ]
+          },
+          "body_utf8": "{\"turn_ids\":[\"16ce0f30-338f-4f49-b679-9ea4cb96f970\"]}",
+          "body_sha256": "52df00cae497fc7d13837f008400bfb529afaca9ccea73fbc9cff12189a83c77",
+          "response": {
+            "turns": [
+              {
+                "turn_id": "16ce0f30-338f-4f49-b679-9ea4cb96f970",
+                "status": "priced",
+                "total_usd": "0.125001",
+                "event_count": 1,
+                "responses": [
+                  {
+                    "response_id": "resp-system-fixture-api-key",
+                    "total_usd": "0.125001"
+                  }
+                ],
+                "model": "mock-model",
+                "speed": "standard",
+                "reasoning_effort": "high"
+              }
+            ]
+          },
+          "elapsed_ms": 226
+        },
+        {
+          "method": "POST",
+          "path": "/v1/analytics/codex/turn-costs",
+          "headers": {
+            "user-agent": "codex-cli",
+            "authorization": "Bearer sk-synthetic-system-api-key",
+            "content-type": "application/json",
+            "accept": "*/*",
+            "host": "127.0.0.1:32877",
+            "content-length": "53"
+          },
+          "body": {
+            "turn_ids": [
+              "01a0e2ee-5909-78f3-8469-94dd562ac4bc"
+            ]
+          },
+          "body_utf8": "{\"turn_ids\":[\"01a0e2ee-5909-78f3-8469-94dd562ac4bc\"]}",
+          "body_sha256": "121df43155b84ecd0fc9a3933e2ab16205e9cde0c705c661a5c181f4f5711185",
+          "response": {
+            "turns": [
+              {
+                "turn_id": "01a0e2ee-5909-78f3-8469-94dd562ac4bc",
+                "status": "priced",
+                "total_usd": "0.125001",
+                "event_count": 1,
+                "responses": [
+                  {
+                    "response_id": "resp-system-fixture-api-key",
+                    "total_usd": "0.125001"
+                  }
+                ],
+                "model": "mock-model",
+                "speed": "standard",
+                "reasoning_effort": "high"
+              }
+            ]
+          },
+          "elapsed_ms": 150242
+        }
+      ],
+      "gate_requests": [
+        {
+          "method": "GET",
+          "path": "/backend-api/plugins/featured?platform=codex",
+          "headers": {
+            "originator": "codex_cli_rs",
+            "user-agent": "system-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown",
+            "accept": "*/*",
+            "host": "127.0.0.1:32877"
+          },
+          "response": []
+        }
+      ],
+      "model_request_ids": [
+        {
+          "thread_id": "01a0e2ee-58f8-7100-8ec1-96e41a85a980",
+          "turn_id": "01a0e2ee-5909-78f3-8469-94dd562ac4bc",
+          "session_id": "01a0e2ee-58f8-7100-8ec1-96e41a85a980"
+        }
+      ],
+      "actual_cost_metric_points": [
+        {
+          "asInt": 125001,
+          "attributes": {
+            "app.version": "0.155.0",
+            "auth_mode": "ApiKey",
+            "conversation.id": "01a0e2ee-58f8-7100-8ec1-96e41a85a980",
+            "model": "mock-model",
+            "originator": "system-loopback-fixture",
+            "reasoning_effort": "high",
+            "session_source": "vscode",
+            "speed": "standard",
+            "turn.id": "01a0e2ee-5909-78f3-8469-94dd562ac4bc",
+            "turn.interrupted": "false"
+          }
+        }
+      ],
+      "rate_limits_rpc": {
+        "error": {
+          "code": -32600,
+          "message": "chatgpt authentication required to read rate limits"
+        },
+        "id": 2
+      }
+    },
+    {
+      "case": "chatgpt",
+      "thread_id": "01a0e2ee-5a2c-7292-83a4-891b4b6bd183",
+      "turn_id": "01a0e2ee-5a3f-7501-8ece-0c4b2462bad9",
+      "response_id": "resp-system-fixture-chatgpt",
+      "source_sha256": "016979734ecc2e589da2bcf5b5c6a50820883489df82e4dbcdd259e17123c72a",
+      "cost_requests": [
+        {
+          "method": "POST",
+          "path": "/backend-api/wham/usage/thread-estimates/query",
+          "headers": {
+            "user-agent": "codex_cli_rs/0.155.0 (CentOS 9.0.0; x86_64) unknown",
+            "authorization": "Bearer synthetic-system-chatgpt-token",
+            "chatgpt-account-id": "system-fixture-account",
+            "content-type": "application/json",
+            "accept": "*/*",
+            "host": "127.0.0.1:36381",
+            "content-length": "154"
+          },
+          "body": {
+            "threads": [
+              {
+                "thread_id": "01a0e2ee-58fe-7c63-8324-8994fcbc19e1",
+                "turn_ids": [
+                  "d5cd63ca-8697-4991-8de4-9d3ff4155c03"
+                ]
+              }
+            ],
+            "include_settled_response_ids": true
+          },
+          "body_utf8": "{\"threads\":[{\"thread_id\":\"01a0e2ee-58fe-7c63-8324-8994fcbc19e1\",\"turn_ids\":[\"d5cd63ca-8697-4991-8de4-9d3ff4155c03\"]}],\"include_settled_response_ids\":true}",
+          "body_sha256": "ca525b461e21099bc9ea7d160476d7bd3c095d51d523ef7d82f43040a73a3ade",
+          "response": {
+            "threads": [
+              {
+                "thread_id": "01a0e2ee-58fe-7c63-8324-8994fcbc19e1",
+                "turns": [
+                  {
+                    "turn_id": "d5cd63ca-8697-4991-8de4-9d3ff4155c03",
+                    "model": "mock-model",
+                    "estimated_usage_usd_micros": 125001,
+                    "settled_response_ids": [
+                      "resp-system-fixture-chatgpt"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "elapsed_ms": 193
+        },
+        {
+          "method": "POST",
+          "path": "/backend-api/wham/usage/thread-estimates/query",
+          "headers": {
+            "user-agent": "system-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (system-loopback-fixture; 1)",
+            "authorization": "Bearer synthetic-system-chatgpt-token",
+            "chatgpt-account-id": "system-fixture-account",
+            "content-type": "application/json",
+            "accept": "*/*",
+            "host": "127.0.0.1:36381",
+            "content-length": "154"
+          },
+          "body": {
+            "threads": [
+              {
+                "thread_id": "01a0e2ee-5a2c-7292-83a4-891b4b6bd183",
+                "turn_ids": [
+                  "01a0e2ee-5a3f-7501-8ece-0c4b2462bad9"
+                ]
+              }
+            ],
+            "include_settled_response_ids": true
+          },
+          "body_utf8": "{\"threads\":[{\"thread_id\":\"01a0e2ee-5a2c-7292-83a4-891b4b6bd183\",\"turn_ids\":[\"01a0e2ee-5a3f-7501-8ece-0c4b2462bad9\"]}],\"include_settled_response_ids\":true}",
+          "body_sha256": "8383deee6bf1483b60a1bfa9f6975d3994264528b51e41c6d9300c33da73e561",
+          "response": {
+            "threads": [
+              {
+                "thread_id": "01a0e2ee-5a2c-7292-83a4-891b4b6bd183",
+                "turns": [
+                  {
+                    "turn_id": "01a0e2ee-5a3f-7501-8ece-0c4b2462bad9",
+                    "model": "mock-model",
+                    "estimated_usage_usd_micros": 125001,
+                    "settled_response_ids": [
+                      "resp-system-fixture-chatgpt"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "elapsed_ms": 150207
+        }
+      ],
+      "gate_requests": [
+        {
+          "method": "GET",
+          "path": "/backend-api/plugins/featured?platform=codex",
+          "headers": {
+            "originator": "codex_cli_rs",
+            "user-agent": "system-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown",
+            "authorization": "Bearer synthetic-system-chatgpt-token",
+            "chatgpt-account-id": "system-fixture-account",
+            "accept": "*/*",
+            "host": "127.0.0.1:36381"
+          },
+          "response": []
+        },
+        {
+          "method": "GET",
+          "path": "/backend-api/wham/usage",
+          "headers": {
+            "user-agent": "system-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (system-loopback-fixture; 1)",
+            "authorization": "Bearer synthetic-system-chatgpt-token",
+            "chatgpt-account-id": "system-fixture-account",
+            "accept": "*/*",
+            "host": "127.0.0.1:36381"
+          },
+          "response": {
+            "plan_type": "pro",
+            "rate_limit": {
+              "allowed": true,
+              "limit_reached": false,
+              "primary_window": {
+                "used_percent": 7,
+                "limit_window_seconds": 300,
+                "reset_after_seconds": 60,
+                "reset_at": 2000000000
+              }
+            }
+          }
+        },
+        {
+          "method": "GET",
+          "path": "/backend-api/wham/settings/user",
+          "headers": {
+            "user-agent": "system-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (system-loopback-fixture; 1)",
+            "authorization": "Bearer synthetic-system-chatgpt-token",
+            "chatgpt-account-id": "system-fixture-account",
+            "cache-control": "no-cache, no-store",
+            "accept": "*/*",
+            "host": "127.0.0.1:36381"
+          },
+          "response": {
+            "commit_attribution_enabled": true
+          }
+        }
+      ],
+      "model_request_ids": [
+        {
+          "thread_id": "01a0e2ee-5a2c-7292-83a4-891b4b6bd183",
+          "turn_id": "01a0e2ee-5a3f-7501-8ece-0c4b2462bad9",
+          "session_id": "01a0e2ee-5a2c-7292-83a4-891b4b6bd183"
+        }
+      ],
+      "actual_cost_metric_points": [
+        {
+          "asInt": 125001,
+          "attributes": {
+            "app.version": "0.155.0",
+            "auth_mode": "Chatgpt",
+            "conversation.id": "01a0e2ee-5a2c-7292-83a4-891b4b6bd183",
+            "model": "mock-model",
+            "originator": "system-loopback-fixture",
+            "session_source": "vscode",
+            "turn.id": "01a0e2ee-5a3f-7501-8ece-0c4b2462bad9",
+            "turn.interrupted": "false"
+          }
+        }
+      ],
+      "rate_limits_rpc": {
+        "id": 2,
+        "result": {
+          "ordinaryUsageAllowed": null,
+          "rateLimits": {
+            "limitId": "codex",
+            "limitName": null,
+            "normalModelSlug": null,
+            "primary": {
+              "usedPercent": 7,
+              "windowDurationMins": 5,
+              "resetsAt": 2000000000
+            },
+            "secondary": null,
+            "credits": null,
+            "individualLimit": null,
+            "spendControlReached": null,
+            "planType": "pro",
+            "rateLimitReachedType": null
+          },
+          "rateLimitsByLimitId": {
+            "codex": {
+              "limitId": "codex",
+              "limitName": null,
+              "normalModelSlug": null,
+              "primary": {
+                "usedPercent": 7,
+                "windowDurationMins": 5,
+                "resetsAt": 2000000000
+              },
+              "secondary": null,
+              "credits": null,
+              "individualLimit": null,
+              "spendControlReached": null,
+              "planType": "pro",
+              "rateLimitReachedType": null
+            }
+          },
+          "rateLimitResetCredits": null,
+          "accountId": null,
+          "rateLimitUpsell": null
+        }
+      }
+    }
+  ]
+}

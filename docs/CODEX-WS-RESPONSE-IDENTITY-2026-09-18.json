@@ -1,0 +1,147 @@
+{
+  "schema": "websocket-response-identity-verification-v1",
+  "date": "2026-09-18",
+  "final_go_source_sha256": "d7ba78b4cf67e07fdffabf63f7c48de6f6ed120fbc790101385d45d0d7036b45",
+  "integrated_go_source_sha256": "241bdfb0479a5f6da6f3d06f2d8d1a3ebefb30b5a3a5daaeb0af22ab168b244c",
+  "pre_repair_verified_go_source_sha256": "db13679d158e6cbe1ab79d3e50f205eba04d0341d7edc6d88f09d282c5c7a0fc",
+  "final_vs_integrated_changed_files": ["gateway_websocket_test.go"],
+  "final_vs_integrated_production_identical": true,
+  "final_vs_integrated_native_cli_test_files_identical": true,
+  "final_vs_integrated_binaries_identical": true,
+  "linux_gateway_sha256": "7a04c6617458bbd10116a678a51b018443bb3dfba0dd2482b5fb86d723ceac21",
+  "windows_gateway_sha256": "557d8a81d78ab6dda5d1cdf923c454887ecfec9b4ff48eefb48f62dc12d06d51",
+  "helper_sha256": "6df426c0a8eb703929f888055192e09cec0d2f7eea9391f2ae891e1ca6213740",
+  "helper_changed_or_rebuilt": false,
+  "production_deployed": false,
+  "live_model_requests": 0,
+  "desktop_auth_read": false,
+  "goal_complete": false,
+  "repair": {
+    "completed_response_history_scope": "connection-local",
+    "completed_response_history_capacity": 256,
+    "identity_storage": "SHA256 set and FIFO ring; no raw IDs retained in completed history",
+    "maximum_accepted_id_bytes": 1024,
+    "duplicates_refresh_fifo_position": false,
+    "recent_stale_event_mutates_pending_turn": false,
+    "recent_stale_event_releases_next_turn": false,
+    "recent_stale_rate_limit_creates_or_broadens_cooldown": false,
+    "first_genuine_rate_limit_preserved": true,
+    "idless_terminal_compatibility_preserved": true,
+    "wire_frames_suppressed_or_rewritten": false,
+    "top_level_error_forward_and_close_preserved": true,
+    "request_fingerprint_cache_key_retry_budget_changed": false
+  },
+  "verification": {
+    "pre_fix_stale_subcases": 8,
+    "pre_fix_failed_stale_subcases": 7,
+    "integrated_full_go_tests_passed": true,
+    "integrated_full_go_tests_seconds": 26.485,
+    "integrated_vet_and_both_builds_passed": true,
+    "integrated_joint_race": {
+      "source_sha256": "241bdfb0479a5f6da6f3d06f2d8d1a3ebefb30b5a3a5daaeb0af22ab168b244c",
+      "gateway_selected": 357,
+      "management_selected": 131,
+      "overlap": 6,
+      "passed_top_level_tests": 482,
+      "passed_test_events": 1207,
+      "failed_tests": [],
+      "skipped_tests": [],
+      "missing_tests": [],
+      "duration_seconds": 175.589
+    },
+    "integrated_native_cli": {
+      "source_sha256": "241bdfb0479a5f6da6f3d06f2d8d1a3ebefb30b5a3a5daaeb0af22ab168b244c",
+      "native_top_level_tests": 30,
+      "go_cli_top_level_tests": 1,
+      "go_cli_subcases": 3,
+      "required_runtime_reports_passed": 7,
+      "skipped_tests": [],
+      "network": "none",
+      "stale_identity_subcases_passed": ["duplicate_completed", "stale_failed_429"],
+      "stale_identity_seconds": 0.25,
+      "each_stale_case_handshakes": 1,
+      "each_stale_case_creates": 2,
+      "each_stale_case_final_records": 2,
+      "each_stale_case_go_fallback_attempts": 0,
+      "stale_frames_exact_bytes_forwarded": true,
+      "next_turn_admission_retained_until_own_terminal": true
+    },
+    "final_full_go_tests_passed": true,
+    "final_full_go_tests_seconds": 26.535,
+    "final_vet_and_both_builds_passed": true,
+    "final_targeted_race": {
+      "source_sha256": "d7ba78b4cf67e07fdffabf63f7c48de6f6ed120fbc790101385d45d0d7036b45",
+      "passed_top_level_tests": 2,
+      "passed_test_events": 4,
+      "failed_tests": [],
+      "skipped_tests": [],
+      "missing_tests": [],
+      "duration_seconds": 51.889,
+      "tests": ["TestGatewayWebSocketPerTurnAdmissionAndIdleRelease", "TestGatewayWebSocketRechecksAuthorizationAndPolicy"]
+    },
+    "final_full_joint_race_rerun": false,
+    "final_full_native_cli_rerun": false,
+    "inherited_scope": "Integrated reports cover byte-identical production and unchanged test functions; the only two changed test functions were separately rerun with Linux race on the final source.",
+    "all_owned_test_resources_independently_verified_removed": true
+  },
+  "limits": [
+    "The deliberately scripted duplicate sequence does not establish its frequency in official CLI traffic.",
+    "Frames remain visible to the CLI; this repairs gateway attribution, not the client's response to an abnormal upstream.",
+    "A known-stale top-level error still closes the connection and aborts pending turns under existing rules.",
+    "Empty, oversized, unknown, evicted and other-connection response IDs have no de-duplication guarantee.",
+    "An exact ID reused for a different response inside the retention window is indistinguishable from a duplicate.",
+    "No account, production, real cache-rate, geographic identity or model-quality claims."
+  ],
+  "evidence": [
+    {
+      "kind": "final_build",
+      "path": ".local/source-20260918/gateway-delta-20260918t111622-51c409/build-verification.json",
+      "sha256": "ccaacac042600f58aa7feea19d171d8dbd99a7cef378a9b875db752706efa5e9"
+    },
+    {
+      "kind": "final_source_manifest",
+      "path": ".local/source-20260918/gateway-delta-20260918t111622-51c409/source-manifest.json",
+      "sha256": "2d00bf1b7387de5e84319f3ce6240b15fd86b55526fad229f1efcdbaca270c85"
+    },
+    {
+      "kind": "final_test_delta",
+      "path": ".local/source-20260918/gateway-delta-20260918t111622-51c409/overlay-manifest.json",
+      "sha256": "c063c8ef9f76597a68bec5b7d27d5557c42924acd4457551d4530f4d3c491322"
+    },
+    {
+      "kind": "integrated_source_manifest",
+      "path": ".local/source-20260918/gateway-delta-20260918t110818-cb5ad4/source-manifest.json",
+      "sha256": "7d1d2aee8a2dca0ac67b08d7f140b9adbc593ebff2cfc142a6fb8ad8aabca360"
+    },
+    {
+      "kind": "integrated_build",
+      "path": ".local/source-20260918/gateway-delta-20260918t110818-cb5ad4/build-verification.json",
+      "sha256": "c3b784fea69c06b77a7df749c3d43805f02a862cf2153c081d6ca66d1d8be079"
+    },
+    {
+      "kind": "integrated_joint_race",
+      "path": ".local/management-parity/local-race-20260918t111136-2f0628/report.json",
+      "sha256": "3a77364bf1a9ec8afd44408cbfc3b75026ae058791f28c0cfb872ea238c29fff"
+    },
+    {
+      "kind": "integrated_native_cli",
+      "path": ".local/native-transport-build/gateway-compare-20260918T110841-df6203/result.json",
+      "sha256": "b479fea2a0dcc1be2d80a9fbc4ff956a017918e676953dda3ef68525c1d34cdd"
+    },
+    {
+      "kind": "final_targeted_race",
+      "path": ".local/management-parity/local-race-20260918t111800-07dafa/report.json",
+      "sha256": "e8aea7fdfb0222b4bfd8d604ecea500c9f1f4a9e2dc5a918642daa4d7e5107fd"
+    },
+    {
+      "kind": "pre_fix_reproduction",
+      "path": ".local/source-20260918/gateway-delta-20260918t110110-c947aa/reproduction.json",
+      "sha256": "726e0586f026641b4fcd0be5e6f20a889028ffdd27831c624b1ae94af509c370"
+    },
+    {
+      "kind": "race_selector",
+      "path": "tools/gateway_source_race.py",
+      "sha256": "095f5343546fb4381e5127d6b12d6bf2490409c599ce35aad9e1b1026a7b6fe2"
+    }
+  ]
+}

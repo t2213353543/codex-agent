@@ -1,0 +1,860 @@
+{
+  "schema": "codex-realtime-official-writer-oracle-v1",
+  "official_binary_sha256": "660e159a49e823ac8e5986cb238f73158ce4b957d40d9292f8de90862644b501",
+  "official_version": "codex-cli 0.155.0",
+  "script_sha256": "049733c5bf0e93dee40c14aa841f3cf3fff580c3fcf18e8f50c7ac5d8166fc00",
+  "capture_id": "20260927T115657.454227Z",
+  "remote_output": "/opt/codex-agent-integration/appserver-parity/realtime/20260927T115657.454227Z",
+  "only_loopback_available": true,
+  "auth_mode": "synthetic API key on custom provider; no real account",
+  "real_model_called": false,
+  "normalizations": [
+    "header names lowercased",
+    "thread/session IDs",
+    "loopback authority",
+    "random WebSocket key",
+    "synthetic Authorization redacted"
+  ],
+  "body_bytes_normalized": false,
+  "body_sha256_verified": true,
+  "cases": [
+    {
+      "case": "websocket",
+      "version": "v2",
+      "source_requests_sha256": "b806e143eb5f5f2f986e3e0c366ba85e45533db46dbaa7e89137b9dec886e6f9",
+      "client_text_observed": true,
+      "reply_observed_by_official_rpc": true,
+      "sdp_answer_observed": false,
+      "outbound": [
+        {
+          "kind": "http",
+          "method": "GET",
+          "path": "/v1/realtime?model=gpt-realtime-1.5",
+          "headers": {
+            "host": "<LOOPBACK_AUTHORITY>",
+            "connection": "Upgrade",
+            "upgrade": "websocket",
+            "sec-websocket-version": "13",
+            "sec-websocket-key": "<RANDOM_WEBSOCKET_KEY>",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "originator": "realtime-loopback-fixture",
+            "thread-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "authorization": "<synthetic-auth-redacted>",
+            "x-session-id": "<THREAD_ID>"
+          },
+          "body_utf8": "",
+          "body": null,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "kind": "websocket_client_message",
+          "method": "GET",
+          "path": "/v1/realtime?model=gpt-realtime-1.5",
+          "headers": {
+            "host": "<LOOPBACK_AUTHORITY>",
+            "connection": "Upgrade",
+            "upgrade": "websocket",
+            "sec-websocket-version": "13",
+            "sec-websocket-key": "<RANDOM_WEBSOCKET_KEY>",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "originator": "realtime-loopback-fixture",
+            "thread-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "authorization": "<synthetic-auth-redacted>",
+            "x-session-id": "<THREAD_ID>"
+          },
+          "body_utf8": "{\"type\":\"session.update\",\"session\":{\"type\":\"realtime\",\"instructions\":\"synthetic backend prompt\",\"output_modalities\":[\"text\"],\"audio\":{\"input\":{\"format\":{\"type\":\"audio/pcm\",\"rate\":24000},\"noise_reduction\":{\"type\":\"near_field\"},\"transcription\":{\"model\":\"gpt-4o-mini-transcribe\"},\"turn_detection\":{\"type\":\"server_vad\",\"interrupt_response\":true,\"create_response\":true,\"silence_duration_ms\":500}},\"output\":{\"format\":{\"type\":\"audio/pcm\",\"rate\":24000},\"voice\":\"marin\"}},\"tools\":[{\"type\":\"function\",\"name\":\"background_agent\",\"description\":\"Send a user request to the background agent. Use this as the default action. Do not rephrase the user's ask or rewrite it in your own words; pass along the user's own words. If the background agent is idle, this starts a new task and returns the final result to the user. If the background agent is already working on a task, this sends the request as guidance to steer that previous task. If the user asks to do something next, later, after this, or once current work finishes, call this tool so the work is actually queued instead of merely promising to do it later.\",\"parameters\":{\"type\":\"object\",\"properties\":{\"prompt\":{\"type\":\"string\",\"description\":\"The user request to delegate to the background agent.\"}},\"required\":[\"prompt\"],\"additionalProperties\":false}},{\"type\":\"function\",\"name\":\"remain_silent\",\"description\":\"Call this when the best response is to say nothing. Use it instead of speaking after hidden system/control messages, after background agent updates in silent modes, or whenever acknowledging aloud would be distracting. This tool has no user-visible effect.\",\"parameters\":{\"type\":\"object\",\"properties\":{},\"additionalProperties\":false}}],\"tool_choice\":\"auto\"}}",
+          "body": {
+            "type": "session.update",
+            "session": {
+              "type": "realtime",
+              "instructions": "synthetic backend prompt",
+              "output_modalities": [
+                "text"
+              ],
+              "audio": {
+                "input": {
+                  "format": {
+                    "type": "audio/pcm",
+                    "rate": 24000
+                  },
+                  "noise_reduction": {
+                    "type": "near_field"
+                  },
+                  "transcription": {
+                    "model": "gpt-4o-mini-transcribe"
+                  },
+                  "turn_detection": {
+                    "type": "server_vad",
+                    "interrupt_response": true,
+                    "create_response": true,
+                    "silence_duration_ms": 500
+                  }
+                },
+                "output": {
+                  "format": {
+                    "type": "audio/pcm",
+                    "rate": 24000
+                  },
+                  "voice": "marin"
+                }
+              },
+              "tools": [
+                {
+                  "type": "function",
+                  "name": "background_agent",
+                  "description": "Send a user request to the background agent. Use this as the default action. Do not rephrase the user's ask or rewrite it in your own words; pass along the user's own words. If the background agent is idle, this starts a new task and returns the final result to the user. If the background agent is already working on a task, this sends the request as guidance to steer that previous task. If the user asks to do something next, later, after this, or once current work finishes, call this tool so the work is actually queued instead of merely promising to do it later.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "prompt": {
+                        "type": "string",
+                        "description": "The user request to delegate to the background agent."
+                      }
+                    },
+                    "required": [
+                      "prompt"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                {
+                  "type": "function",
+                  "name": "remain_silent",
+                  "description": "Call this when the best response is to say nothing. Use it instead of speaking after hidden system/control messages, after background agent updates in silent modes, or whenever acknowledging aloud would be distracting. This tool has no user-visible effect.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": false
+                  }
+                }
+              ],
+              "tool_choice": "auto"
+            }
+          },
+          "body_sha256": "e90b9546270e40736a62c812049f6262f469fb244daa6c077a51514c83feb3f9"
+        },
+        {
+          "kind": "websocket_client_message",
+          "method": "GET",
+          "path": "/v1/realtime?model=gpt-realtime-1.5",
+          "headers": {
+            "host": "<LOOPBACK_AUTHORITY>",
+            "connection": "Upgrade",
+            "upgrade": "websocket",
+            "sec-websocket-version": "13",
+            "sec-websocket-key": "<RANDOM_WEBSOCKET_KEY>",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "originator": "realtime-loopback-fixture",
+            "thread-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "authorization": "<synthetic-auth-redacted>",
+            "x-session-id": "<THREAD_ID>"
+          },
+          "body_utf8": "{\"type\":\"conversation.item.create\",\"item\":{\"type\":\"message\",\"role\":\"user\",\"content\":[{\"type\":\"input_text\",\"text\":\"[USER] SYNTHETIC_REALTIME_TEXT_MARKER\"}]}}",
+          "body": {
+            "type": "conversation.item.create",
+            "item": {
+              "type": "message",
+              "role": "user",
+              "content": [
+                {
+                  "type": "input_text",
+                  "text": "[USER] SYNTHETIC_REALTIME_TEXT_MARKER"
+                }
+              ]
+            }
+          },
+          "body_sha256": "baff6c4aa007937ef6fa9dafd8a8ce2fb66ba46fa628babe0b97e3b28db7cdc9"
+        }
+      ]
+    },
+    {
+      "case": "websocket-v1",
+      "version": "v1",
+      "source_requests_sha256": "f7b0330f670c99306b879dcef92bcda232c15f111a616b6d7b6b9d0a8aea7c88",
+      "client_text_observed": true,
+      "reply_observed_by_official_rpc": true,
+      "sdp_answer_observed": false,
+      "outbound": [
+        {
+          "kind": "http",
+          "method": "GET",
+          "path": "/v1/realtime?intent=quicksilver&model=gpt-realtime-1.5",
+          "headers": {
+            "host": "<LOOPBACK_AUTHORITY>",
+            "connection": "Upgrade",
+            "upgrade": "websocket",
+            "sec-websocket-version": "13",
+            "sec-websocket-key": "<RANDOM_WEBSOCKET_KEY>",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "originator": "realtime-loopback-fixture",
+            "thread-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "authorization": "<synthetic-auth-redacted>",
+            "openai-alpha": "quicksilver=v1",
+            "x-session-id": "<THREAD_ID>"
+          },
+          "body_utf8": "",
+          "body": null,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "kind": "websocket_client_message",
+          "method": "GET",
+          "path": "/v1/realtime?intent=quicksilver&model=gpt-realtime-1.5",
+          "headers": {
+            "host": "<LOOPBACK_AUTHORITY>",
+            "connection": "Upgrade",
+            "upgrade": "websocket",
+            "sec-websocket-version": "13",
+            "sec-websocket-key": "<RANDOM_WEBSOCKET_KEY>",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "originator": "realtime-loopback-fixture",
+            "thread-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "authorization": "<synthetic-auth-redacted>",
+            "openai-alpha": "quicksilver=v1",
+            "x-session-id": "<THREAD_ID>"
+          },
+          "body_utf8": "{\"type\":\"session.update\",\"session\":{\"type\":\"quicksilver\",\"instructions\":\"synthetic backend prompt\",\"audio\":{\"input\":{\"format\":{\"type\":\"audio/pcm\",\"rate\":24000}},\"output\":{\"voice\":\"cove\"}}}}",
+          "body": {
+            "type": "session.update",
+            "session": {
+              "type": "quicksilver",
+              "instructions": "synthetic backend prompt",
+              "audio": {
+                "input": {
+                  "format": {
+                    "type": "audio/pcm",
+                    "rate": 24000
+                  }
+                },
+                "output": {
+                  "voice": "cove"
+                }
+              }
+            }
+          },
+          "body_sha256": "e65ba67832d456124caa35ca1dbd747afad9a9fb2cd5de62476ee17a21d4d66f"
+        },
+        {
+          "kind": "websocket_client_message",
+          "method": "GET",
+          "path": "/v1/realtime?intent=quicksilver&model=gpt-realtime-1.5",
+          "headers": {
+            "host": "<LOOPBACK_AUTHORITY>",
+            "connection": "Upgrade",
+            "upgrade": "websocket",
+            "sec-websocket-version": "13",
+            "sec-websocket-key": "<RANDOM_WEBSOCKET_KEY>",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "originator": "realtime-loopback-fixture",
+            "thread-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "authorization": "<synthetic-auth-redacted>",
+            "openai-alpha": "quicksilver=v1",
+            "x-session-id": "<THREAD_ID>"
+          },
+          "body_utf8": "{\"type\":\"conversation.item.create\",\"item\":{\"type\":\"message\",\"role\":\"user\",\"content\":[{\"type\":\"input_text\",\"text\":\"SYNTHETIC_REALTIME_TEXT_MARKER\"}]}}",
+          "body": {
+            "type": "conversation.item.create",
+            "item": {
+              "type": "message",
+              "role": "user",
+              "content": [
+                {
+                  "type": "input_text",
+                  "text": "SYNTHETIC_REALTIME_TEXT_MARKER"
+                }
+              ]
+            }
+          },
+          "body_sha256": "380e65f78fdfdd23ca39f7cfcbe3d4135a5a52529d468f8f317cf2beacefe893"
+        }
+      ]
+    },
+    {
+      "case": "websocket-v3",
+      "version": "v3",
+      "source_requests_sha256": "8ee59c5d218c80c1d00f1c1f5d283d335c33fcb4244ade1b79299b4be28a5716",
+      "client_text_observed": true,
+      "reply_observed_by_official_rpc": true,
+      "sdp_answer_observed": false,
+      "outbound": [
+        {
+          "kind": "http",
+          "method": "GET",
+          "path": "/v1/live?model=gpt-realtime-1.5",
+          "headers": {
+            "host": "<LOOPBACK_AUTHORITY>",
+            "connection": "Upgrade",
+            "upgrade": "websocket",
+            "sec-websocket-version": "13",
+            "sec-websocket-key": "<RANDOM_WEBSOCKET_KEY>",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "originator": "realtime-loopback-fixture",
+            "thread-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "authorization": "<synthetic-auth-redacted>",
+            "openai-alpha": "quicksilver=v2",
+            "x-session-id": "<THREAD_ID>"
+          },
+          "body_utf8": "",
+          "body": null,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "kind": "websocket_client_message",
+          "method": "GET",
+          "path": "/v1/live?model=gpt-realtime-1.5",
+          "headers": {
+            "host": "<LOOPBACK_AUTHORITY>",
+            "connection": "Upgrade",
+            "upgrade": "websocket",
+            "sec-websocket-version": "13",
+            "sec-websocket-key": "<RANDOM_WEBSOCKET_KEY>",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "originator": "realtime-loopback-fixture",
+            "thread-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "authorization": "<synthetic-auth-redacted>",
+            "openai-alpha": "quicksilver=v2",
+            "x-session-id": "<THREAD_ID>"
+          },
+          "body_utf8": "{\"type\":\"session.update\",\"session\":{\"instructions\":\"synthetic backend prompt\",\"audio\":{\"output\":{\"voice\":\"cove\"}},\"delegation\":{\"type\":\"client\"}}}",
+          "body": {
+            "type": "session.update",
+            "session": {
+              "instructions": "synthetic backend prompt",
+              "audio": {
+                "output": {
+                  "voice": "cove"
+                }
+              },
+              "delegation": {
+                "type": "client"
+              }
+            }
+          },
+          "body_sha256": "f79dbb7dcb281e55c2b9466fc0ee055cb784823764ea0960e421ad2114fe2df1"
+        },
+        {
+          "kind": "websocket_client_message",
+          "method": "GET",
+          "path": "/v1/live?model=gpt-realtime-1.5",
+          "headers": {
+            "host": "<LOOPBACK_AUTHORITY>",
+            "connection": "Upgrade",
+            "upgrade": "websocket",
+            "sec-websocket-version": "13",
+            "sec-websocket-key": "<RANDOM_WEBSOCKET_KEY>",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "originator": "realtime-loopback-fixture",
+            "thread-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "authorization": "<synthetic-auth-redacted>",
+            "openai-alpha": "quicksilver=v2",
+            "x-session-id": "<THREAD_ID>"
+          },
+          "body_utf8": "{\"type\":\"session.context.append\",\"content\":[{\"type\":\"input_text\",\"text\":\"SYNTHETIC_REALTIME_TEXT_MARKER\"}]}",
+          "body": {
+            "type": "session.context.append",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "SYNTHETIC_REALTIME_TEXT_MARKER"
+              }
+            ]
+          },
+          "body_sha256": "45a3176737e5433927bcb3def06fdcdabfa291f6ff5fe62ce346dc4dd7453579"
+        }
+      ]
+    },
+    {
+      "case": "webrtc-api",
+      "version": "v1",
+      "source_requests_sha256": "409e6c600e36a21827516f11465dccfb4eade0c063154cd6412f48e3a08ce9c3",
+      "client_text_observed": true,
+      "reply_observed_by_official_rpc": true,
+      "sdp_answer_observed": true,
+      "outbound": [
+        {
+          "kind": "http",
+          "method": "POST",
+          "path": "/v1/realtime/calls?intent=quicksilver&architecture=avas",
+          "headers": {
+            "openai-alpha": "quicksilver=v1",
+            "x-session-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "thread-id": "<THREAD_ID>",
+            "content-type": "multipart/form-data; boundary=codex-realtime-call-boundary",
+            "authorization": "<synthetic-auth-redacted>",
+            "accept": "*/*",
+            "originator": "realtime-loopback-fixture",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "host": "<LOOPBACK_AUTHORITY>",
+            "content-length": "450"
+          },
+          "body_utf8": "--codex-realtime-call-boundary\r\nContent-Disposition: form-data; name=\"sdp\"\r\nContent-Type: application/sdp\r\n\r\nv=offer\r\n\r\n--codex-realtime-call-boundary\r\nContent-Disposition: form-data; name=\"session\"\r\nContent-Type: application/json\r\n\r\n{\"audio\":{\"input\":{\"format\":{\"type\":\"audio/pcm\",\"rate\":24000}},\"output\":{\"voice\":\"cove\"}},\"type\":\"quicksilver\",\"model\":\"gpt-realtime-1.5\",\"instructions\":\"synthetic backend prompt\"}\r\n--codex-realtime-call-boundary--\r\n",
+          "body": null,
+          "body_sha256": "9f67cc65c4ba720543bfd63f919981ea4f6b84bcd9f331dbd9a06a48c880be8a",
+          "multipart_parts": {
+            "sdp": "v=offer\r\n",
+            "session": {
+              "audio": {
+                "input": {
+                  "format": {
+                    "type": "audio/pcm",
+                    "rate": 24000
+                  }
+                },
+                "output": {
+                  "voice": "cove"
+                }
+              },
+              "type": "quicksilver",
+              "model": "gpt-realtime-1.5",
+              "instructions": "synthetic backend prompt"
+            }
+          }
+        },
+        {
+          "kind": "http",
+          "method": "GET",
+          "path": "/v1/realtime?intent=quicksilver&call_id=rtc_fixture",
+          "headers": {
+            "host": "<LOOPBACK_AUTHORITY>",
+            "connection": "Upgrade",
+            "upgrade": "websocket",
+            "sec-websocket-version": "13",
+            "sec-websocket-key": "<RANDOM_WEBSOCKET_KEY>",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "originator": "realtime-loopback-fixture",
+            "authorization": "<synthetic-auth-redacted>",
+            "thread-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "openai-alpha": "quicksilver=v1",
+            "x-session-id": "<THREAD_ID>"
+          },
+          "body_utf8": "",
+          "body": null,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "kind": "websocket_client_message",
+          "method": "GET",
+          "path": "/v1/realtime?intent=quicksilver&call_id=rtc_fixture",
+          "headers": {
+            "host": "<LOOPBACK_AUTHORITY>",
+            "connection": "Upgrade",
+            "upgrade": "websocket",
+            "sec-websocket-version": "13",
+            "sec-websocket-key": "<RANDOM_WEBSOCKET_KEY>",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "originator": "realtime-loopback-fixture",
+            "authorization": "<synthetic-auth-redacted>",
+            "thread-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "openai-alpha": "quicksilver=v1",
+            "x-session-id": "<THREAD_ID>"
+          },
+          "body_utf8": "{\"type\":\"session.update\",\"session\":{\"type\":\"quicksilver\",\"instructions\":\"synthetic backend prompt\",\"audio\":{\"input\":{\"format\":{\"type\":\"audio/pcm\",\"rate\":24000}},\"output\":{\"voice\":\"cove\"}}}}",
+          "body": {
+            "type": "session.update",
+            "session": {
+              "type": "quicksilver",
+              "instructions": "synthetic backend prompt",
+              "audio": {
+                "input": {
+                  "format": {
+                    "type": "audio/pcm",
+                    "rate": 24000
+                  }
+                },
+                "output": {
+                  "voice": "cove"
+                }
+              }
+            }
+          },
+          "body_sha256": "e65ba67832d456124caa35ca1dbd747afad9a9fb2cd5de62476ee17a21d4d66f"
+        },
+        {
+          "kind": "websocket_client_message",
+          "method": "GET",
+          "path": "/v1/realtime?intent=quicksilver&call_id=rtc_fixture",
+          "headers": {
+            "host": "<LOOPBACK_AUTHORITY>",
+            "connection": "Upgrade",
+            "upgrade": "websocket",
+            "sec-websocket-version": "13",
+            "sec-websocket-key": "<RANDOM_WEBSOCKET_KEY>",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "originator": "realtime-loopback-fixture",
+            "authorization": "<synthetic-auth-redacted>",
+            "thread-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "openai-alpha": "quicksilver=v1",
+            "x-session-id": "<THREAD_ID>"
+          },
+          "body_utf8": "{\"type\":\"conversation.item.create\",\"item\":{\"type\":\"message\",\"role\":\"user\",\"content\":[{\"type\":\"input_text\",\"text\":\"SYNTHETIC_REALTIME_TEXT_MARKER\"}]}}",
+          "body": {
+            "type": "conversation.item.create",
+            "item": {
+              "type": "message",
+              "role": "user",
+              "content": [
+                {
+                  "type": "input_text",
+                  "text": "SYNTHETIC_REALTIME_TEXT_MARKER"
+                }
+              ]
+            }
+          },
+          "body_sha256": "380e65f78fdfdd23ca39f7cfcbe3d4135a5a52529d468f8f317cf2beacefe893"
+        }
+      ]
+    },
+    {
+      "case": "webrtc-backend",
+      "version": "v1",
+      "source_requests_sha256": "d253536d4b17c8708f1637cf67bd407773a28211fa288d08fb5ae6ae637a7c55",
+      "client_text_observed": true,
+      "reply_observed_by_official_rpc": true,
+      "sdp_answer_observed": true,
+      "outbound": [
+        {
+          "kind": "http",
+          "method": "POST",
+          "path": "/backend-api/codex/realtime/calls?intent=quicksilver&architecture=avas",
+          "headers": {
+            "openai-alpha": "quicksilver=v1",
+            "x-session-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "thread-id": "<THREAD_ID>",
+            "authorization": "<synthetic-auth-redacted>",
+            "content-type": "application/json",
+            "accept": "*/*",
+            "originator": "realtime-loopback-fixture",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "host": "<LOOPBACK_AUTHORITY>",
+            "content-length": "212"
+          },
+          "body_utf8": "{\"sdp\":\"v=offer\\r\\n\",\"session\":{\"audio\":{\"input\":{\"format\":{\"type\":\"audio/pcm\",\"rate\":24000}},\"output\":{\"voice\":\"cove\"}},\"type\":\"quicksilver\",\"model\":\"gpt-realtime-1.5\",\"instructions\":\"synthetic backend prompt\"}}",
+          "body": {
+            "sdp": "v=offer\r\n",
+            "session": {
+              "audio": {
+                "input": {
+                  "format": {
+                    "type": "audio/pcm",
+                    "rate": 24000
+                  }
+                },
+                "output": {
+                  "voice": "cove"
+                }
+              },
+              "type": "quicksilver",
+              "model": "gpt-realtime-1.5",
+              "instructions": "synthetic backend prompt"
+            }
+          },
+          "body_sha256": "2c41b3288859f692f27b10ffad3d985b2e58802f3c02435921937fa57eaa8573"
+        },
+        {
+          "kind": "http",
+          "method": "GET",
+          "path": "/v1/realtime?intent=quicksilver&call_id=rtc_fixture",
+          "headers": {
+            "host": "<LOOPBACK_AUTHORITY>",
+            "connection": "Upgrade",
+            "upgrade": "websocket",
+            "sec-websocket-version": "13",
+            "sec-websocket-key": "<RANDOM_WEBSOCKET_KEY>",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "originator": "realtime-loopback-fixture",
+            "authorization": "<synthetic-auth-redacted>",
+            "thread-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "openai-alpha": "quicksilver=v1",
+            "x-session-id": "<THREAD_ID>"
+          },
+          "body_utf8": "",
+          "body": null,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "kind": "websocket_client_message",
+          "method": "GET",
+          "path": "/v1/realtime?intent=quicksilver&call_id=rtc_fixture",
+          "headers": {
+            "host": "<LOOPBACK_AUTHORITY>",
+            "connection": "Upgrade",
+            "upgrade": "websocket",
+            "sec-websocket-version": "13",
+            "sec-websocket-key": "<RANDOM_WEBSOCKET_KEY>",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "originator": "realtime-loopback-fixture",
+            "authorization": "<synthetic-auth-redacted>",
+            "thread-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "openai-alpha": "quicksilver=v1",
+            "x-session-id": "<THREAD_ID>"
+          },
+          "body_utf8": "{\"type\":\"session.update\",\"session\":{\"type\":\"quicksilver\",\"instructions\":\"synthetic backend prompt\",\"audio\":{\"input\":{\"format\":{\"type\":\"audio/pcm\",\"rate\":24000}},\"output\":{\"voice\":\"cove\"}}}}",
+          "body": {
+            "type": "session.update",
+            "session": {
+              "type": "quicksilver",
+              "instructions": "synthetic backend prompt",
+              "audio": {
+                "input": {
+                  "format": {
+                    "type": "audio/pcm",
+                    "rate": 24000
+                  }
+                },
+                "output": {
+                  "voice": "cove"
+                }
+              }
+            }
+          },
+          "body_sha256": "e65ba67832d456124caa35ca1dbd747afad9a9fb2cd5de62476ee17a21d4d66f"
+        },
+        {
+          "kind": "websocket_client_message",
+          "method": "GET",
+          "path": "/v1/realtime?intent=quicksilver&call_id=rtc_fixture",
+          "headers": {
+            "host": "<LOOPBACK_AUTHORITY>",
+            "connection": "Upgrade",
+            "upgrade": "websocket",
+            "sec-websocket-version": "13",
+            "sec-websocket-key": "<RANDOM_WEBSOCKET_KEY>",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "originator": "realtime-loopback-fixture",
+            "authorization": "<synthetic-auth-redacted>",
+            "thread-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "openai-alpha": "quicksilver=v1",
+            "x-session-id": "<THREAD_ID>"
+          },
+          "body_utf8": "{\"type\":\"conversation.item.create\",\"item\":{\"type\":\"message\",\"role\":\"user\",\"content\":[{\"type\":\"input_text\",\"text\":\"SYNTHETIC_REALTIME_TEXT_MARKER\"}]}}",
+          "body": {
+            "type": "conversation.item.create",
+            "item": {
+              "type": "message",
+              "role": "user",
+              "content": [
+                {
+                  "type": "input_text",
+                  "text": "SYNTHETIC_REALTIME_TEXT_MARKER"
+                }
+              ]
+            }
+          },
+          "body_sha256": "380e65f78fdfdd23ca39f7cfcbe3d4135a5a52529d468f8f317cf2beacefe893"
+        }
+      ]
+    },
+    {
+      "case": "webrtc-api-v3",
+      "version": "v3",
+      "source_requests_sha256": "3c05ff5398fa2c3187341326baf49652e135237940f9e3a241428849a01454a4",
+      "client_text_observed": true,
+      "reply_observed_by_official_rpc": true,
+      "sdp_answer_observed": true,
+      "outbound": [
+        {
+          "kind": "http",
+          "method": "POST",
+          "path": "/v1/live",
+          "headers": {
+            "openai-alpha": "quicksilver=v2",
+            "x-session-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "thread-id": "<THREAD_ID>",
+            "content-type": "multipart/form-data; boundary=codex-realtime-call-boundary",
+            "authorization": "<synthetic-auth-redacted>",
+            "accept": "*/*",
+            "originator": "realtime-loopback-fixture",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "host": "<LOOPBACK_AUTHORITY>",
+            "content-length": "407"
+          },
+          "body_utf8": "--codex-realtime-call-boundary\r\nContent-Disposition: form-data; name=\"sdp\"\r\nContent-Type: application/sdp\r\n\r\nv=offer\r\n\r\n--codex-realtime-call-boundary\r\nContent-Disposition: form-data; name=\"session\"\r\nContent-Type: application/json\r\n\r\n{\"instructions\":\"synthetic backend prompt\",\"audio\":{\"output\":{\"voice\":\"cove\"}},\"delegation\":{\"type\":\"client\"},\"model\":\"gpt-realtime-1.5\"}\r\n--codex-realtime-call-boundary--\r\n",
+          "body": null,
+          "body_sha256": "fefe651df6997c0d2ab411508eb67ef0d78eca8495aae8f64d14d4a9c1c9768d",
+          "multipart_parts": {
+            "sdp": "v=offer\r\n",
+            "session": {
+              "instructions": "synthetic backend prompt",
+              "audio": {
+                "output": {
+                  "voice": "cove"
+                }
+              },
+              "delegation": {
+                "type": "client"
+              },
+              "model": "gpt-realtime-1.5"
+            }
+          }
+        },
+        {
+          "kind": "http",
+          "method": "GET",
+          "path": "/v1/live/rtc_fixture",
+          "headers": {
+            "host": "<LOOPBACK_AUTHORITY>",
+            "connection": "Upgrade",
+            "upgrade": "websocket",
+            "sec-websocket-version": "13",
+            "sec-websocket-key": "<RANDOM_WEBSOCKET_KEY>",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "originator": "realtime-loopback-fixture",
+            "authorization": "<synthetic-auth-redacted>",
+            "thread-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "openai-alpha": "quicksilver=v2",
+            "x-session-id": "<THREAD_ID>"
+          },
+          "body_utf8": "",
+          "body": null,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "kind": "websocket_client_message",
+          "method": "GET",
+          "path": "/v1/live/rtc_fixture",
+          "headers": {
+            "host": "<LOOPBACK_AUTHORITY>",
+            "connection": "Upgrade",
+            "upgrade": "websocket",
+            "sec-websocket-version": "13",
+            "sec-websocket-key": "<RANDOM_WEBSOCKET_KEY>",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "originator": "realtime-loopback-fixture",
+            "authorization": "<synthetic-auth-redacted>",
+            "thread-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "openai-alpha": "quicksilver=v2",
+            "x-session-id": "<THREAD_ID>"
+          },
+          "body_utf8": "{\"type\":\"session.context.append\",\"content\":[{\"type\":\"input_text\",\"text\":\"SYNTHETIC_REALTIME_TEXT_MARKER\"}]}",
+          "body": {
+            "type": "session.context.append",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "SYNTHETIC_REALTIME_TEXT_MARKER"
+              }
+            ]
+          },
+          "body_sha256": "45a3176737e5433927bcb3def06fdcdabfa291f6ff5fe62ce346dc4dd7453579"
+        }
+      ]
+    },
+    {
+      "case": "webrtc-backend-v3",
+      "version": "v3",
+      "source_requests_sha256": "099a3af1f29246e046abc2e7f1f323b0f6cbd72fcbdaeb77153267e4ee73e603",
+      "client_text_observed": true,
+      "reply_observed_by_official_rpc": true,
+      "sdp_answer_observed": true,
+      "outbound": [
+        {
+          "kind": "http",
+          "method": "POST",
+          "path": "/backend-api/codex/realtime/calls?intent=quicksilver&architecture=avas",
+          "headers": {
+            "openai-alpha": "quicksilver=v2",
+            "x-session-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "thread-id": "<THREAD_ID>",
+            "authorization": "<synthetic-auth-redacted>",
+            "content-type": "application/json",
+            "accept": "*/*",
+            "originator": "realtime-loopback-fixture",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "host": "<LOOPBACK_AUTHORITY>",
+            "content-length": "169"
+          },
+          "body_utf8": "{\"sdp\":\"v=offer\\r\\n\",\"session\":{\"instructions\":\"synthetic backend prompt\",\"audio\":{\"output\":{\"voice\":\"cove\"}},\"delegation\":{\"type\":\"client\"},\"model\":\"gpt-realtime-1.5\"}}",
+          "body": {
+            "sdp": "v=offer\r\n",
+            "session": {
+              "instructions": "synthetic backend prompt",
+              "audio": {
+                "output": {
+                  "voice": "cove"
+                }
+              },
+              "delegation": {
+                "type": "client"
+              },
+              "model": "gpt-realtime-1.5"
+            }
+          },
+          "body_sha256": "4a5c3a0bcfad86491cd37a8a8c03891db7b9f5a53b5ed71636674ff6efde3b4c"
+        },
+        {
+          "kind": "http",
+          "method": "GET",
+          "path": "/v1/live/rtc_fixture",
+          "headers": {
+            "host": "<LOOPBACK_AUTHORITY>",
+            "connection": "Upgrade",
+            "upgrade": "websocket",
+            "sec-websocket-version": "13",
+            "sec-websocket-key": "<RANDOM_WEBSOCKET_KEY>",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "originator": "realtime-loopback-fixture",
+            "authorization": "<synthetic-auth-redacted>",
+            "thread-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "openai-alpha": "quicksilver=v2",
+            "x-session-id": "<THREAD_ID>"
+          },
+          "body_utf8": "",
+          "body": null,
+          "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "kind": "websocket_client_message",
+          "method": "GET",
+          "path": "/v1/live/rtc_fixture",
+          "headers": {
+            "host": "<LOOPBACK_AUTHORITY>",
+            "connection": "Upgrade",
+            "upgrade": "websocket",
+            "sec-websocket-version": "13",
+            "sec-websocket-key": "<RANDOM_WEBSOCKET_KEY>",
+            "user-agent": "realtime-loopback-fixture/0.155.0 (CentOS 9.0.0; x86_64) unknown (realtime-loopback-fixture; 1)",
+            "originator": "realtime-loopback-fixture",
+            "authorization": "<synthetic-auth-redacted>",
+            "thread-id": "<THREAD_ID>",
+            "session-id": "<THREAD_ID>",
+            "openai-alpha": "quicksilver=v2",
+            "x-session-id": "<THREAD_ID>"
+          },
+          "body_utf8": "{\"type\":\"session.context.append\",\"content\":[{\"type\":\"input_text\",\"text\":\"SYNTHETIC_REALTIME_TEXT_MARKER\"}]}",
+          "body": {
+            "type": "session.context.append",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "SYNTHETIC_REALTIME_TEXT_MARKER"
+              }
+            ]
+          },
+          "body_sha256": "45a3176737e5433927bcb3def06fdcdabfa291f6ff5fe62ce346dc4dd7453579"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+/* Shared interaction surfaces: readable controls and one centered dialog model. */
+html[data-theme] .el-overlay-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  overflow: auto;
+}
+html[data-theme] .el-overlay-dialog .el-dialog {
+  margin: auto;
+  max-width: min(1280px, calc(100vw - 32px));
+  max-height: calc(100dvh - 48px);
+}
+html[data-theme] .el-dialog__header { padding: 18px 58px 18px 22px; }
+html[data-theme] .el-dialog__headerbtn { top: 15px; right: 16px; width: 34px; height: 34px; }
+html[data-theme] .el-dialog__body { padding: 20px 22px; line-height: 1.65; }
+html[data-theme] .el-dialog__footer { padding: 14px 22px; gap: 10px; }
+html[data-theme] .el-dialog .el-form-item__label,
+html[data-theme] .el-dialog .el-tabs__item,
+html[data-theme] .el-dialog .el-alert__title { font-size: 13px; }
+html[data-theme] .el-dialog .el-descriptions__cell { font-size: 12px !important; line-height: 1.7; }
+html[data-theme] .el-dialog .el-tabs__item { height: 40px; }
+html[data-theme] .el-dialog .el-form-item { margin-bottom: 19px; }
+html[data-theme] .detail-dialog .el-dialog__body { min-height: 0; overscroll-behavior: contain; }
+html[data-theme] .detail-dialog .el-dialog__footer { background: var(--dialog-footer-bg); }
+html[data-theme] .detail-dialog .el-table { width: 100%; }
+html[data-theme] .detail-dialog pre { white-space: pre-wrap; overflow-wrap: anywhere; max-width: 100%; }
+html[data-theme] .detail-dialog .el-descriptions__label { white-space: normal; }
+html[data-theme] .detail-dialog .el-tabs__header { margin-bottom: 18px; }
+.dialog-footer-actions { display: flex; justify-content: flex-end; align-items: center; gap: 10px; width: 100%; flex-wrap: wrap; }
+.dialog-footer-actions > .dialog-footer-note { margin-right: auto; color: var(--text-3); font-size: 12px; }
+.workflow-filter-summary { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; color: var(--text-3); font-size: 12px; }
+.workflow-selection { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+html[data-theme] .console-shell[data-density='comfortable'] :is(.el-input__wrapper, .el-select__wrapper) { min-height: 34px; }
+html[data-theme] .console-shell[data-density='comfortable'] .el-button:not(.is-link):not(.is-circle) { min-height: 33px; }
+html[data-theme] .console-shell[data-density='comfortable'] .el-table { font-size: 12px; }
+html[data-theme] .console-shell[data-density='comfortable'] .el-table .cell { line-height: 1.4; }
+html[data-theme] .el-dialog :is(.el-input__wrapper, .el-select__wrapper) { min-height: 36px; }
+html[data-theme] .el-dialog .el-button:not(.is-link):not(.is-circle) { min-height: 36px; }
+
+@media (max-width: 767px) {
+  html[data-theme] .el-overlay-dialog { padding: 12px 8px; }
+  html[data-theme] .el-overlay-dialog .el-dialog { max-width: calc(100vw - 16px); max-height: calc(100dvh - 24px); }
+  html[data-theme] .el-dialog__header { padding: 16px 52px 16px 16px; }
+  html[data-theme] .el-dialog__headerbtn { top: 12px; right: 10px; }
+  html[data-theme] .el-dialog__body { padding: 16px; }
+  html[data-theme] .el-dialog__footer { padding: 12px 16px max(12px, env(safe-area-inset-bottom)); }
+  html[data-theme] .el-dialog__footer .el-button { min-width: 76px; flex: 0 1 auto; }
+  html[data-theme] .el-dialog :is(.el-button:not(.is-link), .el-input__wrapper, .el-select__wrapper) { min-height: 40px; }
+  html[data-theme] .el-dialog .el-input-number { line-height: 38px; }
+  html[data-theme] .el-dialog .el-input-number.is-controls-right :is(.el-input-number__decrease, .el-input-number__increase) { --el-input-number-controls-height: 19px; }
+  html[data-theme] .console-shell .el-pagination :is(.btn-next, .btn-prev, .el-pager li) { min-width: 32px; height: 32px; line-height: 32px; }
+  .dialog-footer-actions { gap: 8px; }
+  .dialog-footer-actions > .dialog-footer-note { width: 100%; }
+}

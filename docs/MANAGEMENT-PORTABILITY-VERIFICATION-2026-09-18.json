@@ -1,0 +1,226 @@
+{
+  "schema": "codex-management-candidate-v1",
+  "status": "verified_management_candidate",
+  "completed_at": "2026-09-18T04:48:19.706502+00:00",
+  "iteration": "portability-20260918",
+  "deployed": false,
+  "full_reference_parity": false,
+  "previous_candidates_unchanged": true,
+  "go_source_sha256": "72c7362bc12a4c1ee58b02b723de99bb715d7b06d1ceeed6c525d973a72bb69f",
+  "source_archive": ".local/management-parity/local-race-20260918t044112-156756/source.tar.gz",
+  "source_archive_sha256": "27397d206326cf58a7aad93729a4e644fd7984a647583cb6777f511247a4b744",
+  "linux_binary": ".local/management-parity/local-race-20260918t044112-156756/codex-agent-linux-amd64",
+  "linux_binary_sha256": "1af84581543233d2656e5482f573d333a2ad4fa633a1b4e94674894d4e0cc96b",
+  "checks": {
+    "management_linux_race": {
+      "passed_top_level": 115,
+      "passed_events": 256,
+      "failed": 0,
+      "skipped": 0,
+      "postgres_version": "postgres (PostgreSQL) 16.15",
+      "redis_version": "Redis server v=7.4.11 sha=00000000:0 malloc=jemalloc-5.3.0 bits=64 build=fbf7a7d03c2e9219"
+    },
+    "full_go_test": {
+      "pass": 430,
+      "skip": 93,
+      "fail": 0
+    },
+    "full_go_test_events": {
+      "pass": 1114,
+      "skip": 104,
+      "fail": 0
+    },
+    "vet": "pass",
+    "windows_build": "pass",
+    "linux_build": "pass",
+    "frontend_node": {
+      "tests": 169,
+      "pass": 169,
+      "fail": 0,
+      "skipped": 0
+    },
+    "accounts_browser_groups": 58,
+    "logs_browser_groups": 51,
+    "additional_browser_groups": {
+      "lease_restore": 3,
+      "external_import": 5
+    },
+    "browser_network": "synthetic",
+    "screenshots": {
+      "accounts": 141,
+      "logs_four_theme": 256
+    }
+  },
+  "frontend": {
+    "manifest_sha256": "93bb82ff3f34b04fe212c23f1fc76e2119e104c015d0dfd9d90dc11de1c6218e",
+    "frontend_sha256": "32c2bb68c0c44e8b633ee95bd57585d8ad15872f2a0495c8e907075763a47070",
+    "entries": {
+      "Accounts": "accounts-managed-DNUcEyc_.js",
+      "Logs": "logs-managed-E0IrKgCL.js"
+    },
+    "file_count": 54,
+    "unchanged_baseline_resources": 48,
+    "archive": ".local/management-parity/portability-20260918/frontend-93bb82ff3f34.zip",
+    "archive_sha256": "07623a93036c39e726a95492b8bd9b31d6237d0b43ef9325301e47800b22ca7c",
+    "source_archive": ".local/management-parity/portability-20260918/frontend-source-93bb82ff3f34.tar.gz",
+    "source_archive_sha256": "b8228369074206bf3d23dd9d8f8ede9a824b0d7ac5df4640ea8a60c361c3c662"
+  },
+  "source_delta": {
+    "previous_go_sha256": "cff3981d7efc24c7652faee5a7c725568c57039de9606f9982a46fd57b942f59",
+    "added": [
+      "admin_account_bundle_costs.go",
+      "admin_account_bundle_costs_test.go",
+      "admin_account_external_leases.go",
+      "admin_account_external_leases_test.go",
+      "admin_usage_observation_privacy_test.go",
+      "gateway_attempt_hooks.go",
+      "gateway_attempt_hooks_test.go",
+      "gateway_attempt_observation.go",
+      "gateway_attempt_observation_test.go",
+      "gateway_owner_identity_test.go"
+    ],
+    "modified": [
+      "admin.go",
+      "admin_account_bundle_leases.go",
+      "admin_accounts_management.go",
+      "admin_usage_cleanup.go",
+      "admin_usage_export_privacy.go",
+      "admin_usage_options.go",
+      "gateway.go",
+      "gateway_native_cookie_test.go",
+      "gateway_native_factory.go",
+      "gateway_native_factory_test.go",
+      "gateway_native_http.go",
+      "gateway_native_http_test.go",
+      "gateway_native_integration_test.go",
+      "gateway_native_socks_integration_test.go",
+      "gateway_observation.go",
+      "gateway_observation_transport.go",
+      "gateway_sessions.go",
+      "gateway_websocket.go",
+      "proxy.go",
+      "stats.go"
+    ],
+    "removed": [],
+    "management_files": [
+      "admin_account_bundle_costs.go",
+      "admin_account_bundle_costs_test.go",
+      "admin_account_external_leases.go",
+      "admin_account_external_leases_test.go",
+      "admin_usage_observation_privacy_test.go",
+      "admin_account_bundle_leases.go",
+      "admin_accounts_management.go",
+      "admin_usage_cleanup.go",
+      "admin_usage_export_privacy.go",
+      "admin_usage_options.go"
+    ],
+    "separate_owner_files": [
+      "gateway_attempt_hooks.go",
+      "gateway_attempt_hooks_test.go",
+      "gateway_attempt_observation.go",
+      "gateway_attempt_observation_test.go",
+      "gateway_owner_identity_test.go",
+      "admin.go",
+      "gateway.go",
+      "gateway_native_cookie_test.go",
+      "gateway_native_factory.go",
+      "gateway_native_factory_test.go",
+      "gateway_native_http.go",
+      "gateway_native_http_test.go",
+      "gateway_native_integration_test.go",
+      "gateway_native_socks_integration_test.go",
+      "gateway_observation.go",
+      "gateway_observation_transport.go",
+      "gateway_sessions.go",
+      "gateway_websocket.go",
+      "proxy.go",
+      "stats.go"
+    ],
+    "migrations_changed": false
+  },
+  "scope": "Codex accounts and retained usage management, preserving restored blue UI; no deployment or live inference.",
+  "limits": [
+    "The Go snapshot includes separately owned gateway changes. Management acceptance does not certify or release the gateway owners in-progress features.",
+    "User/group billing entities, full account behavior and remaining passive observation requirements must still be audited against the full objective.",
+    "Synthetic backend/browser tests do not prove live third-party availability, real charges, or restoration of historically missing usage.",
+    "Unknown and true zero remain distinct; configured reference, procurement and sale estimates are not actual subscription debits."
+  ],
+  "evidence": [
+    {
+      "path": ".local/management-parity/local-race-20260918t044112-156756/management-evidence/build-manifest.json",
+      "sha256": "93bb82ff3f34b04fe212c23f1fc76e2119e104c015d0dfd9d90dc11de1c6218e"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t044112-156756/management-evidence/frontend-unit-report.json",
+      "sha256": "6d43690b52d4f8f93bc9a00099b5be40204ee194a3787f2f68d661ed5932addf"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t044112-156756/management-evidence/frontend-unit-tests.log",
+      "sha256": "45a61bd585b13ac6042cb1e2eb58e4e65517531922001b9414d96295622da9e6"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t044112-156756/management-evidence/account-procurement-verification.json",
+      "sha256": "317441924e8b37448e6923aeb28246471a5be1722f410e67450452e6668fdb67"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t044112-156756/management-evidence/logs-verification.json",
+      "sha256": "32c5dc92819ddc800345cbf2d0cd64dccbe5913a38f04ec30393c2eb7d640a00"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t044112-156756/management-evidence/account-cost-browser-report.json",
+      "sha256": "edd5a0c675df56778398b5776b5ba4dfe8e8ab67452bb99a1f9998a3ff12e7af"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t044112-156756/management-evidence/account-runtime-browser-report.json",
+      "sha256": "8ed00a0dfbadb044a0b318db2f6d791a3f6bb7551b59f3585fd3a9e0b6ef69d8"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t044112-156756/management-evidence/account-regression-browser-report.json",
+      "sha256": "03865961d6039d2680f3cde6b5d8a602faf8df6516e5cd671153956462eb2dd3"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t044112-156756/management-evidence/logs-browser-report.json",
+      "sha256": "aea87175902bd21fbd45e8241c89484032836132373f7ac8c8ab3675d684729b"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t044112-156756/management-evidence/account-daily-browser-report.json",
+      "sha256": "4065fb3ed2908f20ab0ccf4b8eae29a3f50ad4fd143f66cdde9a251fd13976e2"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t044112-156756/management-evidence/lease-browser-report.json",
+      "sha256": "ff3469173d255e84e488d0b8c12539a7888321ea900e637a1daac723fcd2bf26"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t044112-156756/management-evidence/cost-backup-browser-report.json",
+      "sha256": "546f3c1e355f61b10dff7016a0a0c28240f38e22f3596e52f9f86d6412e20902"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t044112-156756/management-evidence/external-import-browser-report.json",
+      "sha256": "291a606164ff81cfb4831f2bb46644097fe5d3cc90d3de8ba71c82f8acd546f9"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t044112-156756/report.json",
+      "sha256": "ac6370585ec226fa274ab4c5734a9d5da4b7f09b55a18d1f9795f16067a9b0b5"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t044112-156756/race.log",
+      "sha256": "7f6c739a5b46432701548f2cbb0fb23add4f2dfaec2508c5fa90422496824191"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t044112-156756/local-verification.json",
+      "sha256": "5ee6f35889729af5f0e20a3f0e79bbf901553deb72f6a7d5994a5ac7da23255e"
+    },
+    {
+      "path": ".local/management-parity/local-race-20260918t044112-156756/source-manifest.json",
+      "sha256": "5ebad346a59bcd5eef21184fc42fe88afe4da7cfb638e2ee1ff5d9414b0f0b2b"
+    },
+    {
+      "path": ".local/management-parity/portability-20260918/frontend-93bb82ff3f34.zip",
+      "sha256": "07623a93036c39e726a95492b8bd9b31d6237d0b43ef9325301e47800b22ca7c"
+    },
+    {
+      "path": ".local/management-parity/portability-20260918/frontend-source-93bb82ff3f34.tar.gz",
+      "sha256": "b8228369074206bf3d23dd9d8f8ede9a824b0d7ac5df4640ea8a60c361c3c662"
+    }
+  ]
+}

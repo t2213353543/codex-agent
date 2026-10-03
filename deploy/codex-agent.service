@@ -1,0 +1,23 @@
+[Unit]
+Description=PowerPoint BPS gateway for Codex clients
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=exec
+DynamicUser=yes
+StateDirectory=codex-agent
+StateDirectoryMode=0700
+WorkingDirectory=/opt/codex-agent
+ExecStart=/opt/codex-agent/codex-agent --data /var/lib/codex-agent --listen 0.0.0.0:18879 --web /opt/codex-agent/frontend/dist
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=180
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

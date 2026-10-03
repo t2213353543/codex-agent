@@ -1,0 +1,114 @@
+{
+  "schema": "official-cli-parallel-tool-verification-v1",
+  "date": "2026-09-18",
+  "go_source_sha256": "38a94373a0bfc64106564d574d407459861be5f71c91784e3f7025f49876d931",
+  "verified_baseline_sha256": "bbb0ed103f7b526f1fb131071ee5aaad44fad658aaece85c0480824ccb2715c0",
+  "production_files_identical_to_base": true,
+  "gateway_binaries_identical_to_base": true,
+  "helper_sha256": "6df426c0a8eb703929f888055192e09cec0d2f7eea9391f2ae891e1ca6213740",
+  "official_cli_version": "0.155.0",
+  "official_cli_sha256": "660e159a49e823ac8e5986cb238f73158ce4b957d40d9292f8de90862644b501",
+  "production_deployed": false,
+  "live_model_requests": 0,
+  "desktop_auth_read": false,
+  "goal_complete": false,
+  "validation": {
+    "full_go_tests_passed": true,
+    "full_go_tests_seconds": 31.224,
+    "vet_passed": true,
+    "windows_linux_builds_passed": true,
+    "native_top_level_tests": 29,
+    "go_cli_top_level_tests": 1,
+    "go_cli_subcases": 3,
+    "runtime_skipped_tests": [],
+    "required_runtime_reports_passed": 7,
+    "comparison_runner_unit_tests_passed": 6,
+    "network": "none",
+    "comparison_containers_independently_verified_removed": true,
+    "historical_race_tests": 472,
+    "race_rerun_this_round": false,
+    "race_inheritance_scope": "only unchanged production and selected tests; new opt-in CLI test is excluded"
+  },
+  "scenarios": [
+    {
+      "transport": "TLS HTTP/2",
+      "passed": true,
+      "generated_requests": 2,
+      "actual_tool_calls": 2,
+      "verified_tool_outputs": 2,
+      "overlap_ns": 120242022,
+      "worker_completion_order": ["b", "a"],
+      "tool_exit_codes_by_issue_order": [0, 7],
+      "warmup_records": 0,
+      "generated_records": 2,
+      "go_fallback_attempts": 0,
+      "synthetic_usage": {"input_tokens": 80, "output_tokens": 3},
+      "checks_argument_echo": true
+    },
+    {
+      "transport": "TLS WebSocket",
+      "passed": true,
+      "generated_requests": 2,
+      "actual_tool_calls": 2,
+      "verified_tool_outputs": 2,
+      "overlap_ns": 120275669,
+      "worker_completion_order": ["b", "a"],
+      "tool_exit_codes_by_issue_order": [0, 7],
+      "warmup_records": 1,
+      "generated_records": 2,
+      "go_fallback_attempts": 0,
+      "synthetic_usage": {"input_tokens": 80, "output_tokens": 3},
+      "checks_argument_echo": false,
+      "checks_exact_previous_response_and_two_output_delta": true
+    }
+  ],
+  "limits": [
+    "Real official CLI and worker execution, but deterministic loopback model responses.",
+    "No live account, production traffic, model reasoning or real cache-performance claim.",
+    "Worker completed-marker order is not a measurement of OS process-exit order.",
+    "WS checks continuation identity and output delta, not full warmup input reconstruction.",
+    "No production logic, retry policy, routing, headers or fingerprint configuration changed."
+  ],
+  "evidence": [
+    {
+      "kind": "source_manifest",
+      "path": ".local/source-20260918/gateway-delta-20260918t103503-253f35/source-manifest.json",
+      "sha256": "4d238bb944e6e60813fee68cf9f6af2792a6cb9da5d2cd017a3660f6b3c47cb4"
+    },
+    {
+      "kind": "explicit_delta",
+      "path": ".local/source-20260918/gateway-delta-20260918t103503-253f35/overlay-manifest.json",
+      "sha256": "f800a4a819e3604ace7cf48384847117adfb65b16e278be4f563f56c517606d3"
+    },
+    {
+      "kind": "build",
+      "path": ".local/source-20260918/gateway-delta-20260918t103503-253f35/build-verification.json",
+      "sha256": "2061f0e2c7a9afd2b39fd4fb47c902955e026c3b499c32e48c52187ba925f590"
+    },
+    {
+      "kind": "native_and_go_cli_suite",
+      "path": ".local/native-transport-build/gateway-compare-20260918T103606-bd3fd9/result.json",
+      "sha256": "2dc9b9c107295dfcb96e92b6bf1c5580ec0415bf5597da0026f42564564207e2"
+    },
+    {
+      "kind": "actual_parallel_cli",
+      "path": ".local/native-transport-build/gateway-compare-20260918T103606-bd3fd9/gateway-parallel-cli.json",
+      "sha256": "97a5c9fae67b44c204c38c1d3ecdf6c708340ab6887939e201e50dd4ac38d67c"
+    },
+    {
+      "kind": "first_failed_fixture_run_retained",
+      "path": ".local/native-transport-build/gateway-compare-20260918T103317-9ea9ab/result.json",
+      "sha256": "83c25b75c4ad0a50f0c54b898188c40443779468f36d1a9a089a6a7b241adbfd"
+    },
+    {
+      "kind": "comparison_runner",
+      "path": "tools/native_transport_compare.py",
+      "sha256": "bac9658818ed54d5d61148246b4057ba8b16eb27f1a3da7bc528348e82d50c92"
+    },
+    {
+      "kind": "comparison_runner_unit_tests",
+      "path": "tools/test_native_transport_compare.py",
+      "sha256": "656b900db75e69770ca071f1343b8431a812932378dce7ef1118eb6fccf2373a"
+    }
+  ]
+}

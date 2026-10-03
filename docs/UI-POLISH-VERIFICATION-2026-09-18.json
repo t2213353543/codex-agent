@@ -1,0 +1,97 @@
+{
+  "passed": true,
+  "completed_at": "2026-09-17T19:49:50.627752+00:00",
+  "scope": "Five-page frontend UI polish; isolated reviewed snapshot, not a production release",
+  "production_deployed": false,
+  "synthetic_data_only": true,
+  "source_directory": "C:\\Users\\Administrator\\Desktop\\项目\\codex-agent\\.local\\ui-polish-20260918\\frozen-source",
+  "artifact_directory": "C:\\Users\\Administrator\\Desktop\\项目\\codex-agent\\.local\\ui-polish-20260918\\dist",
+  "artifact_files": 53,
+  "source_files": 100,
+  "checks": {
+    "unit": {
+      "passed": true,
+      "count": 63,
+      "report": "management-suite.log"
+    },
+    "management": {
+      "passed": true,
+      "count": 21,
+      "report": "management-browser/results.json"
+    },
+    "resources": {
+      "passed": true,
+      "count": 13,
+      "report": "resource-integrated/report.json"
+    },
+    "settings": {
+      "passed": true,
+      "count": 11,
+      "report": "settings/results.json"
+    },
+    "fingerprint": {
+      "passed": true,
+      "count": 6,
+      "report": "fingerprint/results.json"
+    },
+    "charts": {
+      "passed": true,
+      "count": 10,
+      "report": "charts/results.json"
+    },
+    "accounts": {
+      "passed": true,
+      "count": 13,
+      "report": "accounts-integrated/results.json"
+    },
+    "logs": {
+      "passed": true,
+      "count": 11,
+      "report": "logs-integrated/browser-report.json"
+    },
+    "modals": {
+      "passed": true,
+      "count": 96,
+      "report": "modals/results.json"
+    },
+    "visual": {
+      "passed": true,
+      "count": 70,
+      "report": "browser/results.json"
+    }
+  },
+  "contrast_samples": 12,
+  "minimum_measured_contrast": 4.673496658301169,
+  "manually_reviewed": [
+    "accounts-light-1440",
+    "accounts-light-390",
+    "groups-light-1440",
+    "groups-dark-390",
+    "keys-light-1440",
+    "keys-dark-1440",
+    "keys-dark-390",
+    "proxies-light-1440",
+    "proxies-light-320",
+    "proxies-dark-768",
+    "logs-light-1440",
+    "logs-light-390",
+    "logs-dark-768",
+    "logs-dark-1024",
+    "logs-ocean-1440"
+  ],
+  "shared_source_differs": [
+    "frontend/src/components/AccountBulkDialog.vue",
+    "frontend/src/components/LogUsageAnalytics.vue",
+    "frontend/src/utils/accountManagement.js",
+    "frontend/src/utils/logManagementState.js",
+    "frontend/src/views/Accounts.vue",
+    "frontend/src/views/Logs.vue"
+  ],
+  "parallel_work_note": "Shared Logs.vue has new management API work from another conversation. It was not overwritten; frozen-source contains the verified UI and existing API contract. Concurrent backend changes are recorded separately.",
+  "sha256": {
+    "source-manifest.json": "5c0a0deb72cf1415e5891bc77ecdebaf8bed989e333c8209e20ed53080651cd5",
+    "artifact-manifest.json": "af135c1023a0788a958bd9562f3c8c60585b3d97e6dc2b558fed8ebb90e05601",
+    "frontend-dist.zip": "383ffef51b5fd415977528cc5545ec87920700b738015985ec22d56357570a04",
+    "frontend-source.zip": "f83698814313beb356752dcd2813d95aeab5b110e781072730e6da946d965504"
+  }
+}
